@@ -12,7 +12,7 @@ using scg = global::System.Collections.Generic;
 namespace AElf.Contracts.Ewell {
 
   /// <summary>Holder for reflection information generated from ewell_contract.proto</summary>
-  public static partial class EwellContractReflection {
+  internal static partial class EwellContractReflection {
 
     #region Descriptor
     /// <summary>File descriptor for ewell_contract.proto</summary>
@@ -28,7 +28,7 @@ namespace AElf.Contracts.Ewell {
             "L29wdGlvbnMucHJvdG8aG2dvb2dsZS9wcm90b2J1Zi9lbXB0eS5wcm90bxof",
             "Z29vZ2xlL3Byb3RvYnVmL3RpbWVzdGFtcC5wcm90bxoeZ29vZ2xlL3Byb3Rv",
             "YnVmL3dyYXBwZXJzLnByb3RvIjwKD0luaXRpYWxpemVJbnB1dBIpChJ3aGl0",
-            "ZWxpc3RfY29udHJhY3QYASABKAsyDS5hZWxmLkFkZHJlc3MixQUKDVJlZ2lz",
+            "ZWxpc3RfY29udHJhY3QYASABKAsyDS5hZWxmLkFkZHJlc3Mi/QUKDVJlZ2lz",
             "dGVySW5wdXQSGQoRYWNjZXB0ZWRfY3VycmVuY3kYASABKAkSGAoQcHJvamVj",
             "dF9jdXJyZW5jeRgCIAEoCRIaChJjcm93ZF9mdW5kaW5nX3R5cGUYAyABKAkS",
             "IgoaY3Jvd2RfZnVuZGluZ19pc3N1ZV9hbW91bnQYBCABKAMSFgoOcHJlX3Nh",
@@ -44,162 +44,164 @@ namespace AElf.Contracts.Ewell {
             "EhQKDHRvdGFsX3BlcmlvZBgRIAEoBRIoCg9hZGRpdGlvbmFsX2luZm8YEiAB",
             "KAsyDy5BZGRpdGlvbmFsSW5mbxIjChtmaXJzdF9kaXN0cmlidXRlX3Byb3Bv",
             "cnRpb24YEyABKAUSIgoacmVzdF9kaXN0cmlidXRlX3Byb3BvcnRpb24YFCAB",
-            "KAUSFwoPcGVyaW9kX2R1cmF0aW9uGBUgASgDImUKGVVwZGF0ZUFkZGl0aW9u",
-            "YWxJbmZvSW5wdXQSHgoKcHJvamVjdF9pZBgBIAEoCzIKLmFlbGYuSGFzaBIo",
-            "Cg9hZGRpdGlvbmFsX2luZm8YAiABKAsyDy5BZGRpdGlvbmFsSW5mbyJSChJB",
-            "ZGRXaGl0ZWxpc3RzSW5wdXQSHgoKcHJvamVjdF9pZBgBIAEoCzIKLmFlbGYu",
-            "SGFzaBIcCgV1c2VycxgCIAMoCzINLmFlbGYuQWRkcmVzcyJVChVSZW1vdmVX",
-            "aGl0ZWxpc3RzSW5wdXQSHgoKcHJvamVjdF9pZBgBIAEoCzIKLmFlbGYuSGFz",
-            "aBIcCgV1c2VycxgCIAMoCzINLmFlbGYuQWRkcmVzcyJWCgtJbnZlc3RJbnB1",
-            "dBIeCgpwcm9qZWN0X2lkGAEgASgLMgouYWVsZi5IYXNoEhAKCGN1cnJlbmN5",
-            "GAIgASgJEhUKDWludmVzdF9hbW91bnQYAyABKAMiSQoKQ2xhaW1JbnB1dBIe",
-            "Cgpwcm9qZWN0X2lkGAEgASgLMgouYWVsZi5IYXNoEhsKBHVzZXIYAiABKAsy",
-            "DS5hZWxmLkFkZHJlc3MiUwoUR2V0SW52ZXN0RGV0YWlsSW5wdXQSHgoKcHJv",
+            "KAUSFwoPcGVyaW9kX2R1cmF0aW9uGBUgASgDEjYKEnRva2VuX3JlbGVhc2Vf",
+            "dGltZRgWIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXAiZQoZVXBk",
+            "YXRlQWRkaXRpb25hbEluZm9JbnB1dBIeCgpwcm9qZWN0X2lkGAEgASgLMgou",
+            "YWVsZi5IYXNoEigKD2FkZGl0aW9uYWxfaW5mbxgCIAEoCzIPLkFkZGl0aW9u",
+            "YWxJbmZvIlIKEkFkZFdoaXRlbGlzdHNJbnB1dBIeCgpwcm9qZWN0X2lkGAEg",
+            "ASgLMgouYWVsZi5IYXNoEhwKBXVzZXJzGAIgAygLMg0uYWVsZi5BZGRyZXNz",
+            "IlUKFVJlbW92ZVdoaXRlbGlzdHNJbnB1dBIeCgpwcm9qZWN0X2lkGAEgASgL",
+            "MgouYWVsZi5IYXNoEhwKBXVzZXJzGAIgAygLMg0uYWVsZi5BZGRyZXNzIlYK",
+            "C0ludmVzdElucHV0Eh4KCnByb2plY3RfaWQYASABKAsyCi5hZWxmLkhhc2gS",
+            "EAoIY3VycmVuY3kYAiABKAkSFQoNaW52ZXN0X2Ftb3VudBgDIAEoAyJJCgpD",
+            "bGFpbUlucHV0Eh4KCnByb2plY3RfaWQYASABKAsyCi5hZWxmLkhhc2gSGwoE",
+            "dXNlchgCIAEoCzINLmFlbGYuQWRkcmVzcyJTChRHZXRJbnZlc3REZXRhaWxJ",
+            "bnB1dBIeCgpwcm9qZWN0X2lkGAEgASgLMgouYWVsZi5IYXNoEhsKBHVzZXIY",
+            "AiABKAsyDS5hZWxmLkFkZHJlc3MiUwoUR2V0UHJvZml0RGV0YWlsSW5wdXQS",
+            "HgoKcHJvamVjdF9pZBgBIAEoCzIKLmFlbGYuSGFzaBIbCgR1c2VyGAIgASgL",
+            "Mg0uYWVsZi5BZGRyZXNzIlIKE1NldFdoaXRlbGlzdElkSW5wdXQSHgoKcHJv",
+            "amVjdF9pZBgBIAEoCzIKLmFlbGYuSGFzaBIbChNpc19lbmFibGVfd2hpdGVs",
+            "aXN0GAIgASgIIk4KDlJlRnVuZEFsbElucHV0Eh4KCnByb2plY3RfaWQYASAB",
+            "KAsyCi5hZWxmLkhhc2gSHAoFdXNlcnMYAiADKAsyDS5hZWxmLkFkZHJlc3Mi",
+            "LgoPRXh0cmFJbmZvSWRMaXN0EhsKBXZhbHVlGAEgAygLMgwuRXh0cmFJbmZv",
+            "SWQiRQoLRXh0cmFJbmZvSWQSHgoHYWRkcmVzcxgBIAEoCzINLmFlbGYuQWRk",
+            "cmVzcxIWCgJpZBgCIAEoCzIKLmFlbGYuSGFzaCLeBAoLUHJvamVjdEluZm8S",
+            "HgoKcHJvamVjdF9pZBgBIAEoCzIKLmFlbGYuSGFzaBIZChFhY2NlcHRlZF9j",
+            "dXJyZW5jeRgCIAEoCRIYChBwcm9qZWN0X2N1cnJlbmN5GAMgASgJEhoKEmNy",
+            "b3dkX2Z1bmRpbmdfdHlwZRgEIAEoCRIiChpjcm93ZF9mdW5kaW5nX2lzc3Vl",
+            "X2Ftb3VudBgFIAEoAxIWCg5wcmVfc2FsZV9wcmljZRgGIAEoAxIuCgpzdGFy",
+            "dF90aW1lGAggASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcBIsCghl",
+            "bmRfdGltZRgJIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXASGAoQ",
+            "bWluX3N1YnNjcmlwdGlvbhgKIAEoAxIYChBtYXhfc3Vic2NyaXB0aW9uGAsg",
+            "ASgDEhoKEmlzX2J1cm5fcmVzdF90b2tlbhgMIAEoCBIoCg9hZGRpdGlvbmFs",
+            "X2luZm8YDSABKAsyDy5BZGRpdGlvbmFsSW5mbxIeCgdjcmVhdG9yGA4gASgL",
+            "Mg0uYWVsZi5BZGRyZXNzEhgKEHRvX3JhaXNlZF9hbW91bnQYDyABKAMSHQoV",
+            "Y3VycmVudF9yYWlzZWRfYW1vdW50GBAgASgDEg8KB2VuYWJsZWQYESABKAgS",
+            "KAoUdmlydHVhbF9hZGRyZXNzX2hhc2gYEiABKAsyCi5hZWxmLkhhc2gSNgoS",
+            "dG9rZW5fcmVsZWFzZV90aW1lGBMgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRp",
+            "bWVzdGFtcCKCAwoPUHJvamVjdExpc3RJbmZvEh4KCnByb2plY3RfaWQYASAB",
+            "KAsyCi5hZWxmLkhhc2gSGQoRcHVibGljX3NhbGVfcHJpY2UYAiABKAMSKQoQ",
+            "bGlzdF9tYXJrZXRfaW5mbxgDIAEoCzIPLkxpc3RNYXJrZXRJbmZvEiEKGWxp",
+            "cXVpZGl0eV9sb2NrX3Byb3BvcnRpb24YBCABKAUSLwoLdW5sb2NrX3RpbWUY",
+            "BSABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wEhUKDWxhdGVzdF9w",
+            "ZXJpb2QYBiABKAUSFAoMdG90YWxfcGVyaW9kGAcgASgFEiMKG2ZpcnN0X2Rp",
+            "c3RyaWJ1dGVfcHJvcG9ydGlvbhgIIAEoBRIiChpyZXN0X2Rpc3RyaWJ1dGVf",
+            "cHJvcG9ydGlvbhgJIAEoBRIXCg9wZXJpb2RfZHVyYXRpb24YCiABKAMSEQoJ",
+            "aXNfbGlzdGVkGAsgASgIEhMKC2lzX3dpdGhkcmF3GAwgASgIIkoKDEludmVz",
+            "dERldGFpbBIVCg1pbnZlc3Rfc3ltYm9sGAEgASgJEg4KBmFtb3VudBgCIAEo",
+            "AxITCgtpc191bkludmVzdBgDIAEoCCKyAQoMUHJvZml0RGV0YWlsEhUKDWxh",
+            "dGVzdF9wZXJpb2QYASABKAUSDgoGc3ltYm9sGAIgASgJEhQKDHRvdGFsX3By",
+            "b2ZpdBgDIAEoAxIyCgthbW91bnRzX21hcBgEIAMoCzIdLlByb2ZpdERldGFp",
+            "bC5BbW91bnRzTWFwRW50cnkaMQoPQW1vdW50c01hcEVudHJ5EgsKA2tleRgB",
+            "IAEoBRINCgV2YWx1ZRgCIAEoAzoCOAEiNQoSQ2xhaW1lZFByb2ZpdHNJbmZv",
+            "Eh8KB2RldGFpbHMYASADKAsyDi5DbGFpbWVkUHJvZml0ImYKDUNsYWltZWRQ",
+            "cm9maXQSHgoKcHJvamVjdF9pZBgBIAEoCzIKLmFlbGYuSGFzaBIVCg1sYXRl",
+            "c3RfcGVyaW9kGAIgASgFEg4KBnN5bWJvbBgDIAEoCRIOCgZhbW91bnQYBCAB",
+            "KAMiWAoXTGlxdWlkYXRlZERhbWFnZURldGFpbHMSEwoLdG90YWxBbW91bnQY",
+            "ASABKAMSKAoHZGV0YWlscxgCIAMoCzIXLkxpcXVpZGF0ZWREYW1hZ2VEZXRh",
+            "aWwiZgoWTGlxdWlkYXRlZERhbWFnZURldGFpbBIbCgR1c2VyGAEgASgLMg0u",
+            "YWVsZi5BZGRyZXNzEg4KBnN5bWJvbBgCIAEoCRIOCgZhbW91bnQYAyABKAMS",
+            "DwoHY2xhaW1lZBgEIAEoCCJmCg5BZGRpdGlvbmFsSW5mbxInCgRkYXRhGAEg",
+            "AygLMhkuQWRkaXRpb25hbEluZm8uRGF0YUVudHJ5GisKCURhdGFFbnRyeRIL",
+            "CgNrZXkYASABKAkSDQoFdmFsdWUYAiABKAk6AjgBIisKDkxpc3RNYXJrZXRJ",
+            "bmZvEhkKBGRhdGEYASADKAsyCy5MaXN0TWFya2V0IjsKCkxpc3RNYXJrZXQS",
+            "HQoGbWFya2V0GAEgASgLMg0uYWVsZi5BZGRyZXNzEg4KBndlaWdodBgCIAEo",
+            "BSLRBgoRUHJvamVjdFJlZ2lzdGVyZWQSHgoKcHJvamVjdF9pZBgBIAEoCzIK",
+            "LmFlbGYuSGFzaBIZChFhY2NlcHRlZF9jdXJyZW5jeRgCIAEoCRIYChBwcm9q",
+            "ZWN0X2N1cnJlbmN5GAMgASgJEhoKEmNyb3dkX2Z1bmRpbmdfdHlwZRgEIAEo",
+            "CRIiChpjcm93ZF9mdW5kaW5nX2lzc3VlX2Ftb3VudBgFIAEoAxIWCg5wcmVf",
+            "c2FsZV9wcmljZRgGIAEoAxIuCgpzdGFydF90aW1lGAcgASgLMhouZ29vZ2xl",
+            "LnByb3RvYnVmLlRpbWVzdGFtcBIsCghlbmRfdGltZRgIIAEoCzIaLmdvb2ds",
+            "ZS5wcm90b2J1Zi5UaW1lc3RhbXASGAoQbWluX3N1YnNjcmlwdGlvbhgJIAEo",
+            "AxIYChBtYXhfc3Vic2NyaXB0aW9uGAogASgDEhkKEXB1YmxpY19zYWxlX3By",
+            "aWNlGAsgASgDEikKEGxpc3RfbWFya2V0X2luZm8YDCABKAsyDy5MaXN0TWFy",
+            "a2V0SW5mbxIhChlsaXF1aWRpdHlfbG9ja19wcm9wb3J0aW9uGA0gASgFEi8K",
+            "C3VubG9ja190aW1lGA4gASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFt",
+            "cBIbChNpc19lbmFibGVfd2hpdGVsaXN0GA8gASgIEiAKDHdoaXRlbGlzdF9p",
+            "ZBgQIAEoCzIKLmFlbGYuSGFzaBIaChJpc19idXJuX3Jlc3RfdG9rZW4YESAB",
+            "KAgSFAoMdG90YWxfcGVyaW9kGBIgASgFEigKD2FkZGl0aW9uYWxfaW5mbxgT",
+            "IAEoCzIPLkFkZGl0aW9uYWxJbmZvEhgKEHRvX3JhaXNlZF9hbW91bnQYFCAB",
+            "KAMSHgoHY3JlYXRvchgVIAEoCzINLmFlbGYuQWRkcmVzcxIjChtmaXJzdF9k",
+            "aXN0cmlidXRlX3Byb3BvcnRpb24YFiABKAUSIgoacmVzdF9kaXN0cmlidXRl",
+            "X3Byb3BvcnRpb24YFyABKAUSFwoPcGVyaW9kX2R1cmF0aW9uGBggASgDEiYK",
+            "D3ZpcnR1YWxfYWRkcmVzcxgZIAEoCzINLmFlbGYuQWRkcmVzczoEoLsYASJb",
+            "ChFOZXdXaGl0ZWxpc3RJZFNldBIeCgpwcm9qZWN0X2lkGAEgASgLMgouYWVs",
+            "Zi5IYXNoEiAKDHdoaXRlbGlzdF9pZBgCIAEoCzIKLmFlbGYuSGFzaDoEoLsY",
+            "ASJnChVBZGRpdGlvbmFsSW5mb1VwZGF0ZWQSHgoKcHJvamVjdF9pZBgBIAEo",
+            "CzIKLmFlbGYuSGFzaBIoCg9hZGRpdGlvbmFsX2luZm8YAiABKAsyDy5BZGRp",
+            "dGlvbmFsSW5mbzoEoLsYASI3Cg9Qcm9qZWN0Q2FuY2VsZWQSHgoKcHJvamVj",
+            "dF9pZBgBIAEoCzIKLmFlbGYuSGFzaDoEoLsYASJJCg1QZXJpb2RVcGRhdGVk",
+            "Eh4KCnByb2plY3RfaWQYASABKAsyCi5hZWxmLkhhc2gSEgoKbmV3X3Blcmlv",
+            "ZBgCIAEoBToEoLsYASK9AQoISW52ZXN0ZWQSHgoKcHJvamVjdF9pZBgBIAEo",
+            "CzIKLmFlbGYuSGFzaBIbCgR1c2VyGAIgASgLMg0uYWVsZi5BZGRyZXNzEhUK",
+            "DWludmVzdF9zeW1ib2wYAyABKAkSDgoGYW1vdW50GAQgASgDEhQKDHRvdGFs",
+            "X2Ftb3VudBgFIAEoAxIYChBwcm9qZWN0X2N1cnJlbmN5GAYgASgJEhcKD3Rv",
+            "X2NsYWltX2Ftb3VudBgHIAEoAzoEoLsYASKWAQoKVW5JbnZlc3RlZBIeCgpw",
+            "cm9qZWN0X2lkGAEgASgLMgouYWVsZi5IYXNoEhsKBHVzZXIYAiABKAsyDS5h",
+            "ZWxmLkFkZHJlc3MSFQoNaW52ZXN0X3N5bWJvbBgDIAEoCRIYChB1bl9pbnZl",
+            "c3RfYW1vdW50GAQgASgDEhQKDHRvdGFsX2Ftb3VudBgFIAEoAzoEoLsYASKC",
+            "AQoWTGlxdWlkYXRlZERhbWFnZVJlY29yZBIeCgpwcm9qZWN0X2lkGAEgASgL",
+            "MgouYWVsZi5IYXNoEhsKBHVzZXIYAiABKAsyDS5hZWxmLkFkZHJlc3MSFQoN",
+            "aW52ZXN0X3N5bWJvbBgDIAEoCRIOCgZhbW91bnQYBCABKAM6BKC7GAEigwEK",
+            "F0xpcXVpZGF0ZWREYW1hZ2VDbGFpbWVkEh4KCnByb2plY3RfaWQYASABKAsy",
+            "Ci5hZWxmLkhhc2gSGwoEdXNlchgCIAEoCzINLmFlbGYuQWRkcmVzcxIVCg1p",
+            "bnZlc3Rfc3ltYm9sGAMgASgJEg4KBmFtb3VudBgEIAEoAzoEoLsYASKjAQoH",
+            "Q2xhaW1lZBIeCgpwcm9qZWN0X2lkGAEgASgLMgouYWVsZi5IYXNoEhsKBHVz",
+            "ZXIYAiABKAsyDS5hZWxmLkFkZHJlc3MSGAoQcHJvamVjdF9jdXJyZW5jeRgD",
+            "IAEoCRIOCgZhbW91bnQYBCABKAMSFQoNbGF0ZXN0X3BlcmlvZBgFIAEoBRIU",
+            "Cgx0b3RhbF9wZXJpb2QYBiABKAU6BKC7GAEidAoIUmVGdW5kZWQSHgoKcHJv",
             "amVjdF9pZBgBIAEoCzIKLmFlbGYuSGFzaBIbCgR1c2VyGAIgASgLMg0uYWVs",
-            "Zi5BZGRyZXNzIlMKFEdldFByb2ZpdERldGFpbElucHV0Eh4KCnByb2plY3Rf",
-            "aWQYASABKAsyCi5hZWxmLkhhc2gSGwoEdXNlchgCIAEoCzINLmFlbGYuQWRk",
-            "cmVzcyJSChNTZXRXaGl0ZWxpc3RJZElucHV0Eh4KCnByb2plY3RfaWQYASAB",
-            "KAsyCi5hZWxmLkhhc2gSGwoTaXNfZW5hYmxlX3doaXRlbGlzdBgCIAEoCCJO",
-            "Cg5SZUZ1bmRBbGxJbnB1dBIeCgpwcm9qZWN0X2lkGAEgASgLMgouYWVsZi5I",
-            "YXNoEhwKBXVzZXJzGAIgAygLMg0uYWVsZi5BZGRyZXNzIi4KD0V4dHJhSW5m",
-            "b0lkTGlzdBIbCgV2YWx1ZRgBIAMoCzIMLkV4dHJhSW5mb0lkIkUKC0V4dHJh",
-            "SW5mb0lkEh4KB2FkZHJlc3MYASABKAsyDS5hZWxmLkFkZHJlc3MSFgoCaWQY",
-            "AiABKAsyCi5hZWxmLkhhc2gipgQKC1Byb2plY3RJbmZvEh4KCnByb2plY3Rf",
-            "aWQYASABKAsyCi5hZWxmLkhhc2gSGQoRYWNjZXB0ZWRfY3VycmVuY3kYAiAB",
-            "KAkSGAoQcHJvamVjdF9jdXJyZW5jeRgDIAEoCRIaChJjcm93ZF9mdW5kaW5n",
-            "X3R5cGUYBCABKAkSIgoaY3Jvd2RfZnVuZGluZ19pc3N1ZV9hbW91bnQYBSAB",
-            "KAMSFgoOcHJlX3NhbGVfcHJpY2UYBiABKAMSLgoKc3RhcnRfdGltZRgIIAEo",
-            "CzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXASLAoIZW5kX3RpbWUYCSAB",
-            "KAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wEhgKEG1pbl9zdWJzY3Jp",
-            "cHRpb24YCiABKAMSGAoQbWF4X3N1YnNjcmlwdGlvbhgLIAEoAxIaChJpc19i",
-            "dXJuX3Jlc3RfdG9rZW4YDCABKAgSKAoPYWRkaXRpb25hbF9pbmZvGA0gASgL",
-            "Mg8uQWRkaXRpb25hbEluZm8SHgoHY3JlYXRvchgOIAEoCzINLmFlbGYuQWRk",
-            "cmVzcxIYChB0b19yYWlzZWRfYW1vdW50GA8gASgDEh0KFWN1cnJlbnRfcmFp",
-            "c2VkX2Ftb3VudBgQIAEoAxIPCgdlbmFibGVkGBEgASgIEigKFHZpcnR1YWxf",
-            "YWRkcmVzc19oYXNoGBIgASgLMgouYWVsZi5IYXNoIoIDCg9Qcm9qZWN0TGlz",
-            "dEluZm8SHgoKcHJvamVjdF9pZBgBIAEoCzIKLmFlbGYuSGFzaBIZChFwdWJs",
-            "aWNfc2FsZV9wcmljZRgCIAEoAxIpChBsaXN0X21hcmtldF9pbmZvGAMgASgL",
-            "Mg8uTGlzdE1hcmtldEluZm8SIQoZbGlxdWlkaXR5X2xvY2tfcHJvcG9ydGlv",
-            "bhgEIAEoBRIvCgt1bmxvY2tfdGltZRgFIAEoCzIaLmdvb2dsZS5wcm90b2J1",
-            "Zi5UaW1lc3RhbXASFQoNbGF0ZXN0X3BlcmlvZBgGIAEoBRIUCgx0b3RhbF9w",
-            "ZXJpb2QYByABKAUSIwobZmlyc3RfZGlzdHJpYnV0ZV9wcm9wb3J0aW9uGAgg",
-            "ASgFEiIKGnJlc3RfZGlzdHJpYnV0ZV9wcm9wb3J0aW9uGAkgASgFEhcKD3Bl",
-            "cmlvZF9kdXJhdGlvbhgKIAEoAxIRCglpc19saXN0ZWQYCyABKAgSEwoLaXNf",
-            "d2l0aGRyYXcYDCABKAgiSgoMSW52ZXN0RGV0YWlsEhUKDWludmVzdF9zeW1i",
-            "b2wYASABKAkSDgoGYW1vdW50GAIgASgDEhMKC2lzX3VuSW52ZXN0GAMgASgI",
-            "IrIBCgxQcm9maXREZXRhaWwSFQoNbGF0ZXN0X3BlcmlvZBgBIAEoBRIOCgZz",
-            "eW1ib2wYAiABKAkSFAoMdG90YWxfcHJvZml0GAMgASgDEjIKC2Ftb3VudHNf",
-            "bWFwGAQgAygLMh0uUHJvZml0RGV0YWlsLkFtb3VudHNNYXBFbnRyeRoxCg9B",
-            "bW91bnRzTWFwRW50cnkSCwoDa2V5GAEgASgFEg0KBXZhbHVlGAIgASgDOgI4",
-            "ASI1ChJDbGFpbWVkUHJvZml0c0luZm8SHwoHZGV0YWlscxgBIAMoCzIOLkNs",
-            "YWltZWRQcm9maXQiZgoNQ2xhaW1lZFByb2ZpdBIeCgpwcm9qZWN0X2lkGAEg",
-            "ASgLMgouYWVsZi5IYXNoEhUKDWxhdGVzdF9wZXJpb2QYAiABKAUSDgoGc3lt",
-            "Ym9sGAMgASgJEg4KBmFtb3VudBgEIAEoAyJYChdMaXF1aWRhdGVkRGFtYWdl",
-            "RGV0YWlscxITCgt0b3RhbEFtb3VudBgBIAEoAxIoCgdkZXRhaWxzGAIgAygL",
-            "MhcuTGlxdWlkYXRlZERhbWFnZURldGFpbCJmChZMaXF1aWRhdGVkRGFtYWdl",
-            "RGV0YWlsEhsKBHVzZXIYASABKAsyDS5hZWxmLkFkZHJlc3MSDgoGc3ltYm9s",
-            "GAIgASgJEg4KBmFtb3VudBgDIAEoAxIPCgdjbGFpbWVkGAQgASgIImYKDkFk",
-            "ZGl0aW9uYWxJbmZvEicKBGRhdGEYASADKAsyGS5BZGRpdGlvbmFsSW5mby5E",
-            "YXRhRW50cnkaKwoJRGF0YUVudHJ5EgsKA2tleRgBIAEoCRINCgV2YWx1ZRgC",
-            "IAEoCToCOAEiKwoOTGlzdE1hcmtldEluZm8SGQoEZGF0YRgBIAMoCzILLkxp",
-            "c3RNYXJrZXQiOwoKTGlzdE1hcmtldBIdCgZtYXJrZXQYASABKAsyDS5hZWxm",
-            "LkFkZHJlc3MSDgoGd2VpZ2h0GAIgASgFItEGChFQcm9qZWN0UmVnaXN0ZXJl",
-            "ZBIeCgpwcm9qZWN0X2lkGAEgASgLMgouYWVsZi5IYXNoEhkKEWFjY2VwdGVk",
-            "X2N1cnJlbmN5GAIgASgJEhgKEHByb2plY3RfY3VycmVuY3kYAyABKAkSGgoS",
-            "Y3Jvd2RfZnVuZGluZ190eXBlGAQgASgJEiIKGmNyb3dkX2Z1bmRpbmdfaXNz",
-            "dWVfYW1vdW50GAUgASgDEhYKDnByZV9zYWxlX3ByaWNlGAYgASgDEi4KCnN0",
-            "YXJ0X3RpbWUYByABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wEiwK",
-            "CGVuZF90aW1lGAggASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcBIY",
-            "ChBtaW5fc3Vic2NyaXB0aW9uGAkgASgDEhgKEG1heF9zdWJzY3JpcHRpb24Y",
-            "CiABKAMSGQoRcHVibGljX3NhbGVfcHJpY2UYCyABKAMSKQoQbGlzdF9tYXJr",
-            "ZXRfaW5mbxgMIAEoCzIPLkxpc3RNYXJrZXRJbmZvEiEKGWxpcXVpZGl0eV9s",
-            "b2NrX3Byb3BvcnRpb24YDSABKAUSLwoLdW5sb2NrX3RpbWUYDiABKAsyGi5n",
-            "b29nbGUucHJvdG9idWYuVGltZXN0YW1wEhsKE2lzX2VuYWJsZV93aGl0ZWxp",
-            "c3QYDyABKAgSIAoMd2hpdGVsaXN0X2lkGBAgASgLMgouYWVsZi5IYXNoEhoK",
-            "EmlzX2J1cm5fcmVzdF90b2tlbhgRIAEoCBIUCgx0b3RhbF9wZXJpb2QYEiAB",
-            "KAUSKAoPYWRkaXRpb25hbF9pbmZvGBMgASgLMg8uQWRkaXRpb25hbEluZm8S",
-            "GAoQdG9fcmFpc2VkX2Ftb3VudBgUIAEoAxIeCgdjcmVhdG9yGBUgASgLMg0u",
-            "YWVsZi5BZGRyZXNzEiMKG2ZpcnN0X2Rpc3RyaWJ1dGVfcHJvcG9ydGlvbhgW",
-            "IAEoBRIiChpyZXN0X2Rpc3RyaWJ1dGVfcHJvcG9ydGlvbhgXIAEoBRIXCg9w",
-            "ZXJpb2RfZHVyYXRpb24YGCABKAMSJgoPdmlydHVhbF9hZGRyZXNzGBkgASgL",
-            "Mg0uYWVsZi5BZGRyZXNzOgSguxgBIlsKEU5ld1doaXRlbGlzdElkU2V0Eh4K",
-            "CnByb2plY3RfaWQYASABKAsyCi5hZWxmLkhhc2gSIAoMd2hpdGVsaXN0X2lk",
-            "GAIgASgLMgouYWVsZi5IYXNoOgSguxgBImcKFUFkZGl0aW9uYWxJbmZvVXBk",
-            "YXRlZBIeCgpwcm9qZWN0X2lkGAEgASgLMgouYWVsZi5IYXNoEigKD2FkZGl0",
-            "aW9uYWxfaW5mbxgCIAEoCzIPLkFkZGl0aW9uYWxJbmZvOgSguxgBIjcKD1By",
-            "b2plY3RDYW5jZWxlZBIeCgpwcm9qZWN0X2lkGAEgASgLMgouYWVsZi5IYXNo",
-            "OgSguxgBIkkKDVBlcmlvZFVwZGF0ZWQSHgoKcHJvamVjdF9pZBgBIAEoCzIK",
-            "LmFlbGYuSGFzaBISCgpuZXdfcGVyaW9kGAIgASgFOgSguxgBIr0BCghJbnZl",
-            "c3RlZBIeCgpwcm9qZWN0X2lkGAEgASgLMgouYWVsZi5IYXNoEhsKBHVzZXIY",
-            "AiABKAsyDS5hZWxmLkFkZHJlc3MSFQoNaW52ZXN0X3N5bWJvbBgDIAEoCRIO",
-            "CgZhbW91bnQYBCABKAMSFAoMdG90YWxfYW1vdW50GAUgASgDEhgKEHByb2pl",
-            "Y3RfY3VycmVuY3kYBiABKAkSFwoPdG9fY2xhaW1fYW1vdW50GAcgASgDOgSg",
-            "uxgBIpYBCgpVbkludmVzdGVkEh4KCnByb2plY3RfaWQYASABKAsyCi5hZWxm",
-            "Lkhhc2gSGwoEdXNlchgCIAEoCzINLmFlbGYuQWRkcmVzcxIVCg1pbnZlc3Rf",
-            "c3ltYm9sGAMgASgJEhgKEHVuX2ludmVzdF9hbW91bnQYBCABKAMSFAoMdG90",
-            "YWxfYW1vdW50GAUgASgDOgSguxgBIoIBChZMaXF1aWRhdGVkRGFtYWdlUmVj",
-            "b3JkEh4KCnByb2plY3RfaWQYASABKAsyCi5hZWxmLkhhc2gSGwoEdXNlchgC",
-            "IAEoCzINLmFlbGYuQWRkcmVzcxIVCg1pbnZlc3Rfc3ltYm9sGAMgASgJEg4K",
-            "BmFtb3VudBgEIAEoAzoEoLsYASKDAQoXTGlxdWlkYXRlZERhbWFnZUNsYWlt",
-            "ZWQSHgoKcHJvamVjdF9pZBgBIAEoCzIKLmFlbGYuSGFzaBIbCgR1c2VyGAIg",
-            "ASgLMg0uYWVsZi5BZGRyZXNzEhUKDWludmVzdF9zeW1ib2wYAyABKAkSDgoG",
-            "YW1vdW50GAQgASgDOgSguxgBIqMBCgdDbGFpbWVkEh4KCnByb2plY3RfaWQY",
-            "ASABKAsyCi5hZWxmLkhhc2gSGwoEdXNlchgCIAEoCzINLmFlbGYuQWRkcmVz",
-            "cxIYChBwcm9qZWN0X2N1cnJlbmN5GAMgASgJEg4KBmFtb3VudBgEIAEoAxIV",
-            "Cg1sYXRlc3RfcGVyaW9kGAUgASgFEhQKDHRvdGFsX3BlcmlvZBgGIAEoBToE",
-            "oLsYASJ0CghSZUZ1bmRlZBIeCgpwcm9qZWN0X2lkGAEgASgLMgouYWVsZi5I",
-            "YXNoEhsKBHVzZXIYAiABKAsyDS5hZWxmLkFkZHJlc3MSFQoNaW52ZXN0X3N5",
-            "bWJvbBgDIAEoCRIOCgZhbW91bnQYBCABKAM6BKC7GAEirgEKCVdpdGhkcmF3",
-            "bhIeCgpwcm9qZWN0X2lkGAEgASgLMgouYWVsZi5IYXNoEhcKD2FjY2VwdGVk",
-            "X3N5bWJvbBgCIAEoCRIXCg93aXRoZHJhd19hbW91bnQYAyABKAMSGAoQcHJv",
-            "amVjdF9jdXJyZW5jeRgEIAEoCRIaChJpc19idXJuX3Jlc3RfdG9rZW4YBSAB",
-            "KAgSEwoLYnVybl9hbW91bnQYBiABKAM6BKC7GAEy+Q0KDUV3ZWxsQ29udHJh",
-            "Y3QSOAoKSW5pdGlhbGl6ZRIQLkluaXRpYWxpemVJbnB1dBoWLmdvb2dsZS5w",
-            "cm90b2J1Zi5FbXB0eSIAEjQKCFJlZ2lzdGVyEg4uUmVnaXN0ZXJJbnB1dBoW",
-            "Lmdvb2dsZS5wcm90b2J1Zi5FbXB0eSIAEkwKFFVwZGF0ZUFkZGl0aW9uYWxJ",
-            "bmZvEhouVXBkYXRlQWRkaXRpb25hbEluZm9JbnB1dBoWLmdvb2dsZS5wcm90",
-            "b2J1Zi5FbXB0eSIAEi4KBkNhbmNlbBIKLmFlbGYuSGFzaBoWLmdvb2dsZS5w",
-            "cm90b2J1Zi5FbXB0eSIAEjUKDUxvY2tMaXF1aWRpdHkSCi5hZWxmLkhhc2ga",
-            "Fi5nb29nbGUucHJvdG9idWYuRW1wdHkiABIwCghXaXRoZHJhdxIKLmFlbGYu",
-            "SGFzaBoWLmdvb2dsZS5wcm90b2J1Zi5FbXB0eSIAEj4KDUFkZFdoaXRlbGlz",
-            "dHMSEy5BZGRXaGl0ZWxpc3RzSW5wdXQaFi5nb29nbGUucHJvdG9idWYuRW1w",
-            "dHkiABJEChBSZW1vdmVXaGl0ZWxpc3RzEhYuUmVtb3ZlV2hpdGVsaXN0c0lu",
-            "cHV0GhYuZ29vZ2xlLnByb3RvYnVmLkVtcHR5IgASMgoKTmV4dFBlcmlvZBIK",
-            "LmFlbGYuSGFzaBoWLmdvb2dsZS5wcm90b2J1Zi5FbXB0eSIAEkAKDlNldFdo",
-            "aXRlbGlzdElkEhQuU2V0V2hpdGVsaXN0SWRJbnB1dBoWLmdvb2dsZS5wcm90",
-            "b2J1Zi5FbXB0eSIAEjAKBkludmVzdBIMLkludmVzdElucHV0GhYuZ29vZ2xl",
-            "LnByb3RvYnVmLkVtcHR5IgASMAoIVW5JbnZlc3QSCi5hZWxmLkhhc2gaFi5n",
-            "b29nbGUucHJvdG9idWYuRW1wdHkiABIuCgZSZUZ1bmQSCi5hZWxmLkhhc2ga",
-            "Fi5nb29nbGUucHJvdG9idWYuRW1wdHkiABI2CglSZUZ1bmRBbGwSDy5SZUZ1",
-            "bmRBbGxJbnB1dBoWLmdvb2dsZS5wcm90b2J1Zi5FbXB0eSIAEi4KBUNsYWlt",
-            "EgsuQ2xhaW1JbnB1dBoWLmdvb2dsZS5wcm90b2J1Zi5FbXB0eSIAEj0KFUNs",
-            "YWltTGlxdWlkYXRlZERhbWFnZRIKLmFlbGYuSGFzaBoWLmdvb2dsZS5wcm90",
-            "b2J1Zi5FbXB0eSIAEkAKGENsYWltTGlxdWlkYXRlZERhbWFnZUFsbBIKLmFl",
-            "bGYuSGFzaBoWLmdvb2dsZS5wcm90b2J1Zi5FbXB0eSIAEksKG0dldFdoaXRl",
-            "bGlzdENvbnRyYWN0QWRkcmVzcxIWLmdvb2dsZS5wcm90b2J1Zi5FbXB0eRoN",
-            "LmFlbGYuQWRkcmVzcyIFiIn3AQESOAoIR2V0QWRtaW4SFi5nb29nbGUucHJv",
-            "dG9idWYuRW1wdHkaDS5hZWxmLkFkZHJlc3MiBYiJ9wEBEj8KD0dldFRva2Vu",
-            "QWRkcmVzcxIWLmdvb2dsZS5wcm90b2J1Zi5FbXB0eRoNLmFlbGYuQWRkcmVz",
-            "cyIFiIn3AQESMQoOR2V0UHJvamVjdEluZm8SCi5hZWxmLkhhc2gaDC5Qcm9q",
-            "ZWN0SW5mbyIFiIn3AQESOQoSR2V0UHJvamVjdExpc3RJbmZvEgouYWVsZi5I",
-            "YXNoGhAuUHJvamVjdExpc3RJbmZvIgWIifcBARIzCgxHZXRXaGl0ZWxpc3QS",
-            "Ci5hZWxmLkhhc2gaEC5FeHRyYUluZm9JZExpc3QiBYiJ9wEBEj4KD0dldElu",
-            "dmVzdERldGFpbBIVLkdldEludmVzdERldGFpbElucHV0Gg0uSW52ZXN0RGV0",
-            "YWlsIgWIifcBARI+Cg9HZXRQcm9maXREZXRhaWwSFS5HZXRQcm9maXREZXRh",
-            "aWxJbnB1dBoNLlByb2ZpdERldGFpbCIFiIn3AQESLwoOR2V0V2hpdGVsaXN0",
-            "SWQSCi5hZWxmLkhhc2gaCi5hZWxmLkhhc2giBYiJ9wEBEkkKGkdldExpcXVp",
-            "ZGF0ZWREYW1hZ2VEZXRhaWxzEgouYWVsZi5IYXNoGhguTGlxdWlkYXRlZERh",
-            "bWFnZURldGFpbHMiBYiJ9wEBEkIKHkdldFByb2plY3RBZGRyZXNzQnlQcm9q",
-            "ZWN0SGFzaBIKLmFlbGYuSGFzaBoNLmFlbGYuQWRkcmVzcyIFiIn3AQESPwoY",
-            "R2V0UGVuZGluZ1Byb2plY3RBZGRyZXNzEg0uYWVsZi5BZGRyZXNzGg0uYWVs",
-            "Zi5BZGRyZXNzIgWIifcBARosssz2ASdBRWxmLkNvbnRyYWN0cy5Fd2VsbC5F",
-            "d2VsbENvbnRyYWN0U3RhdGVCF6oCFEFFbGYuQ29udHJhY3RzLkV3ZWxsYgZw",
-            "cm90bzM="));
+            "Zi5BZGRyZXNzEhUKDWludmVzdF9zeW1ib2wYAyABKAkSDgoGYW1vdW50GAQg",
+            "ASgDOgSguxgBIq4BCglXaXRoZHJhd24SHgoKcHJvamVjdF9pZBgBIAEoCzIK",
+            "LmFlbGYuSGFzaBIXCg9hY2NlcHRlZF9zeW1ib2wYAiABKAkSFwoPd2l0aGRy",
+            "YXdfYW1vdW50GAMgASgDEhgKEHByb2plY3RfY3VycmVuY3kYBCABKAkSGgoS",
+            "aXNfYnVybl9yZXN0X3Rva2VuGAUgASgIEhMKC2J1cm5fYW1vdW50GAYgASgD",
+            "OgSguxgBMvkNCg1Fd2VsbENvbnRyYWN0EjgKCkluaXRpYWxpemUSEC5Jbml0",
+            "aWFsaXplSW5wdXQaFi5nb29nbGUucHJvdG9idWYuRW1wdHkiABI0CghSZWdp",
+            "c3RlchIOLlJlZ2lzdGVySW5wdXQaFi5nb29nbGUucHJvdG9idWYuRW1wdHki",
+            "ABJMChRVcGRhdGVBZGRpdGlvbmFsSW5mbxIaLlVwZGF0ZUFkZGl0aW9uYWxJ",
+            "bmZvSW5wdXQaFi5nb29nbGUucHJvdG9idWYuRW1wdHkiABIuCgZDYW5jZWwS",
+            "Ci5hZWxmLkhhc2gaFi5nb29nbGUucHJvdG9idWYuRW1wdHkiABI1Cg1Mb2Nr",
+            "TGlxdWlkaXR5EgouYWVsZi5IYXNoGhYuZ29vZ2xlLnByb3RvYnVmLkVtcHR5",
+            "IgASMAoIV2l0aGRyYXcSCi5hZWxmLkhhc2gaFi5nb29nbGUucHJvdG9idWYu",
+            "RW1wdHkiABI+Cg1BZGRXaGl0ZWxpc3RzEhMuQWRkV2hpdGVsaXN0c0lucHV0",
+            "GhYuZ29vZ2xlLnByb3RvYnVmLkVtcHR5IgASRAoQUmVtb3ZlV2hpdGVsaXN0",
+            "cxIWLlJlbW92ZVdoaXRlbGlzdHNJbnB1dBoWLmdvb2dsZS5wcm90b2J1Zi5F",
+            "bXB0eSIAEjIKCk5leHRQZXJpb2QSCi5hZWxmLkhhc2gaFi5nb29nbGUucHJv",
+            "dG9idWYuRW1wdHkiABJACg5TZXRXaGl0ZWxpc3RJZBIULlNldFdoaXRlbGlz",
+            "dElkSW5wdXQaFi5nb29nbGUucHJvdG9idWYuRW1wdHkiABIwCgZJbnZlc3QS",
+            "DC5JbnZlc3RJbnB1dBoWLmdvb2dsZS5wcm90b2J1Zi5FbXB0eSIAEjAKCFVu",
+            "SW52ZXN0EgouYWVsZi5IYXNoGhYuZ29vZ2xlLnByb3RvYnVmLkVtcHR5IgAS",
+            "LgoGUmVGdW5kEgouYWVsZi5IYXNoGhYuZ29vZ2xlLnByb3RvYnVmLkVtcHR5",
+            "IgASNgoJUmVGdW5kQWxsEg8uUmVGdW5kQWxsSW5wdXQaFi5nb29nbGUucHJv",
+            "dG9idWYuRW1wdHkiABIuCgVDbGFpbRILLkNsYWltSW5wdXQaFi5nb29nbGUu",
+            "cHJvdG9idWYuRW1wdHkiABI9ChVDbGFpbUxpcXVpZGF0ZWREYW1hZ2USCi5h",
+            "ZWxmLkhhc2gaFi5nb29nbGUucHJvdG9idWYuRW1wdHkiABJAChhDbGFpbUxp",
+            "cXVpZGF0ZWREYW1hZ2VBbGwSCi5hZWxmLkhhc2gaFi5nb29nbGUucHJvdG9i",
+            "dWYuRW1wdHkiABJLChtHZXRXaGl0ZWxpc3RDb250cmFjdEFkZHJlc3MSFi5n",
+            "b29nbGUucHJvdG9idWYuRW1wdHkaDS5hZWxmLkFkZHJlc3MiBYiJ9wEBEjgK",
+            "CEdldEFkbWluEhYuZ29vZ2xlLnByb3RvYnVmLkVtcHR5Gg0uYWVsZi5BZGRy",
+            "ZXNzIgWIifcBARI/Cg9HZXRUb2tlbkFkZHJlc3MSFi5nb29nbGUucHJvdG9i",
+            "dWYuRW1wdHkaDS5hZWxmLkFkZHJlc3MiBYiJ9wEBEjEKDkdldFByb2plY3RJ",
+            "bmZvEgouYWVsZi5IYXNoGgwuUHJvamVjdEluZm8iBYiJ9wEBEjkKEkdldFBy",
+            "b2plY3RMaXN0SW5mbxIKLmFlbGYuSGFzaBoQLlByb2plY3RMaXN0SW5mbyIF",
+            "iIn3AQESMwoMR2V0V2hpdGVsaXN0EgouYWVsZi5IYXNoGhAuRXh0cmFJbmZv",
+            "SWRMaXN0IgWIifcBARI+Cg9HZXRJbnZlc3REZXRhaWwSFS5HZXRJbnZlc3RE",
+            "ZXRhaWxJbnB1dBoNLkludmVzdERldGFpbCIFiIn3AQESPgoPR2V0UHJvZml0",
+            "RGV0YWlsEhUuR2V0UHJvZml0RGV0YWlsSW5wdXQaDS5Qcm9maXREZXRhaWwi",
+            "BYiJ9wEBEi8KDkdldFdoaXRlbGlzdElkEgouYWVsZi5IYXNoGgouYWVsZi5I",
+            "YXNoIgWIifcBARJJChpHZXRMaXF1aWRhdGVkRGFtYWdlRGV0YWlscxIKLmFl",
+            "bGYuSGFzaBoYLkxpcXVpZGF0ZWREYW1hZ2VEZXRhaWxzIgWIifcBARJCCh5H",
+            "ZXRQcm9qZWN0QWRkcmVzc0J5UHJvamVjdEhhc2gSCi5hZWxmLkhhc2gaDS5h",
+            "ZWxmLkFkZHJlc3MiBYiJ9wEBEj8KGEdldFBlbmRpbmdQcm9qZWN0QWRkcmVz",
+            "cxINLmFlbGYuQWRkcmVzcxoNLmFlbGYuQWRkcmVzcyIFiIn3AQEaLLLM9gEn",
+            "QUVsZi5Db250cmFjdHMuRXdlbGwuRXdlbGxDb250cmFjdFN0YXRlQheqAhRB",
+            "RWxmLkNvbnRyYWN0cy5Fd2VsbGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::AElf.Types.CoreReflection.Descriptor, global::AElf.OptionsReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.EmptyReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.WrappersReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::AElf.Contracts.Ewell.InitializeInput), global::AElf.Contracts.Ewell.InitializeInput.Parser, new[]{ "WhitelistContract" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::AElf.Contracts.Ewell.RegisterInput), global::AElf.Contracts.Ewell.RegisterInput.Parser, new[]{ "AcceptedCurrency", "ProjectCurrency", "CrowdFundingType", "CrowdFundingIssueAmount", "PreSalePrice", "StartTime", "EndTime", "MinSubscription", "MaxSubscription", "PublicSalePrice", "ListMarketInfo", "LiquidityLockProportion", "UnlockTime", "IsEnableWhitelist", "WhitelistId", "IsBurnRestToken", "TotalPeriod", "AdditionalInfo", "FirstDistributeProportion", "RestDistributeProportion", "PeriodDuration" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::AElf.Contracts.Ewell.RegisterInput), global::AElf.Contracts.Ewell.RegisterInput.Parser, new[]{ "AcceptedCurrency", "ProjectCurrency", "CrowdFundingType", "CrowdFundingIssueAmount", "PreSalePrice", "StartTime", "EndTime", "MinSubscription", "MaxSubscription", "PublicSalePrice", "ListMarketInfo", "LiquidityLockProportion", "UnlockTime", "IsEnableWhitelist", "WhitelistId", "IsBurnRestToken", "TotalPeriod", "AdditionalInfo", "FirstDistributeProportion", "RestDistributeProportion", "PeriodDuration", "TokenReleaseTime" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::AElf.Contracts.Ewell.UpdateAdditionalInfoInput), global::AElf.Contracts.Ewell.UpdateAdditionalInfoInput.Parser, new[]{ "ProjectId", "AdditionalInfo" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::AElf.Contracts.Ewell.AddWhitelistsInput), global::AElf.Contracts.Ewell.AddWhitelistsInput.Parser, new[]{ "ProjectId", "Users" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::AElf.Contracts.Ewell.RemoveWhitelistsInput), global::AElf.Contracts.Ewell.RemoveWhitelistsInput.Parser, new[]{ "ProjectId", "Users" }, null, null, null, null),
@@ -211,7 +213,7 @@ namespace AElf.Contracts.Ewell {
             new pbr::GeneratedClrTypeInfo(typeof(global::AElf.Contracts.Ewell.ReFundAllInput), global::AElf.Contracts.Ewell.ReFundAllInput.Parser, new[]{ "ProjectId", "Users" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::AElf.Contracts.Ewell.ExtraInfoIdList), global::AElf.Contracts.Ewell.ExtraInfoIdList.Parser, new[]{ "Value" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::AElf.Contracts.Ewell.ExtraInfoId), global::AElf.Contracts.Ewell.ExtraInfoId.Parser, new[]{ "Address", "Id" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::AElf.Contracts.Ewell.ProjectInfo), global::AElf.Contracts.Ewell.ProjectInfo.Parser, new[]{ "ProjectId", "AcceptedCurrency", "ProjectCurrency", "CrowdFundingType", "CrowdFundingIssueAmount", "PreSalePrice", "StartTime", "EndTime", "MinSubscription", "MaxSubscription", "IsBurnRestToken", "AdditionalInfo", "Creator", "ToRaisedAmount", "CurrentRaisedAmount", "Enabled", "VirtualAddressHash" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::AElf.Contracts.Ewell.ProjectInfo), global::AElf.Contracts.Ewell.ProjectInfo.Parser, new[]{ "ProjectId", "AcceptedCurrency", "ProjectCurrency", "CrowdFundingType", "CrowdFundingIssueAmount", "PreSalePrice", "StartTime", "EndTime", "MinSubscription", "MaxSubscription", "IsBurnRestToken", "AdditionalInfo", "Creator", "ToRaisedAmount", "CurrentRaisedAmount", "Enabled", "VirtualAddressHash", "TokenReleaseTime" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::AElf.Contracts.Ewell.ProjectListInfo), global::AElf.Contracts.Ewell.ProjectListInfo.Parser, new[]{ "ProjectId", "PublicSalePrice", "ListMarketInfo", "LiquidityLockProportion", "UnlockTime", "LatestPeriod", "TotalPeriod", "FirstDistributeProportion", "RestDistributeProportion", "PeriodDuration", "IsListed", "IsWithdraw" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::AElf.Contracts.Ewell.InvestDetail), global::AElf.Contracts.Ewell.InvestDetail.Parser, new[]{ "InvestSymbol", "Amount", "IsUnInvest" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::AElf.Contracts.Ewell.ProfitDetail), global::AElf.Contracts.Ewell.ProfitDetail.Parser, new[]{ "LatestPeriod", "Symbol", "TotalProfit", "AmountsMap" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
@@ -243,7 +245,7 @@ namespace AElf.Contracts.Ewell {
   /// <summary>
   ///input
   /// </summary>
-  public sealed partial class InitializeInput : pb::IMessage<InitializeInput>
+  internal sealed partial class InitializeInput : pb::IMessage<InitializeInput>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
@@ -441,7 +443,7 @@ namespace AElf.Contracts.Ewell {
 
   }
 
-  public sealed partial class RegisterInput : pb::IMessage<RegisterInput>
+  internal sealed partial class RegisterInput : pb::IMessage<RegisterInput>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
@@ -496,6 +498,7 @@ namespace AElf.Contracts.Ewell {
       firstDistributeProportion_ = other.firstDistributeProportion_;
       restDistributeProportion_ = other.restDistributeProportion_;
       periodDuration_ = other.periodDuration_;
+      tokenReleaseTime_ = other.tokenReleaseTime_ != null ? other.tokenReleaseTime_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -757,6 +760,18 @@ namespace AElf.Contracts.Ewell {
       }
     }
 
+    /// <summary>Field number for the "token_release_time" field.</summary>
+    public const int TokenReleaseTimeFieldNumber = 22;
+    private global::Google.Protobuf.WellKnownTypes.Timestamp tokenReleaseTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Google.Protobuf.WellKnownTypes.Timestamp TokenReleaseTime {
+      get { return tokenReleaseTime_; }
+      set {
+        tokenReleaseTime_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -793,6 +808,7 @@ namespace AElf.Contracts.Ewell {
       if (FirstDistributeProportion != other.FirstDistributeProportion) return false;
       if (RestDistributeProportion != other.RestDistributeProportion) return false;
       if (PeriodDuration != other.PeriodDuration) return false;
+      if (!object.Equals(TokenReleaseTime, other.TokenReleaseTime)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -821,6 +837,7 @@ namespace AElf.Contracts.Ewell {
       if (FirstDistributeProportion != 0) hash ^= FirstDistributeProportion.GetHashCode();
       if (RestDistributeProportion != 0) hash ^= RestDistributeProportion.GetHashCode();
       if (PeriodDuration != 0L) hash ^= PeriodDuration.GetHashCode();
+      if (tokenReleaseTime_ != null) hash ^= TokenReleaseTime.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -923,6 +940,10 @@ namespace AElf.Contracts.Ewell {
         output.WriteRawTag(168, 1);
         output.WriteInt64(PeriodDuration);
       }
+      if (tokenReleaseTime_ != null) {
+        output.WriteRawTag(178, 1);
+        output.WriteMessage(TokenReleaseTime);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -1017,6 +1038,10 @@ namespace AElf.Contracts.Ewell {
         output.WriteRawTag(168, 1);
         output.WriteInt64(PeriodDuration);
       }
+      if (tokenReleaseTime_ != null) {
+        output.WriteRawTag(178, 1);
+        output.WriteMessage(TokenReleaseTime);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -1089,6 +1114,9 @@ namespace AElf.Contracts.Ewell {
       }
       if (PeriodDuration != 0L) {
         size += 2 + pb::CodedOutputStream.ComputeInt64Size(PeriodDuration);
+      }
+      if (tokenReleaseTime_ != null) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(TokenReleaseTime);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -1182,6 +1210,12 @@ namespace AElf.Contracts.Ewell {
       }
       if (other.PeriodDuration != 0L) {
         PeriodDuration = other.PeriodDuration;
+      }
+      if (other.tokenReleaseTime_ != null) {
+        if (tokenReleaseTime_ == null) {
+          TokenReleaseTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+        }
+        TokenReleaseTime.MergeFrom(other.TokenReleaseTime);
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -1298,6 +1332,13 @@ namespace AElf.Contracts.Ewell {
           }
           case 168: {
             PeriodDuration = input.ReadInt64();
+            break;
+          }
+          case 178: {
+            if (tokenReleaseTime_ == null) {
+              TokenReleaseTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(TokenReleaseTime);
             break;
           }
         }
@@ -1417,6 +1458,13 @@ namespace AElf.Contracts.Ewell {
             PeriodDuration = input.ReadInt64();
             break;
           }
+          case 178: {
+            if (tokenReleaseTime_ == null) {
+              TokenReleaseTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(TokenReleaseTime);
+            break;
+          }
         }
       }
     }
@@ -1424,7 +1472,7 @@ namespace AElf.Contracts.Ewell {
 
   }
 
-  public sealed partial class UpdateAdditionalInfoInput : pb::IMessage<UpdateAdditionalInfoInput>
+  internal sealed partial class UpdateAdditionalInfoInput : pb::IMessage<UpdateAdditionalInfoInput>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
@@ -1668,7 +1716,7 @@ namespace AElf.Contracts.Ewell {
 
   }
 
-  public sealed partial class AddWhitelistsInput : pb::IMessage<AddWhitelistsInput>
+  internal sealed partial class AddWhitelistsInput : pb::IMessage<AddWhitelistsInput>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
@@ -1892,7 +1940,7 @@ namespace AElf.Contracts.Ewell {
 
   }
 
-  public sealed partial class RemoveWhitelistsInput : pb::IMessage<RemoveWhitelistsInput>
+  internal sealed partial class RemoveWhitelistsInput : pb::IMessage<RemoveWhitelistsInput>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
@@ -2116,7 +2164,7 @@ namespace AElf.Contracts.Ewell {
 
   }
 
-  public sealed partial class InvestInput : pb::IMessage<InvestInput>
+  internal sealed partial class InvestInput : pb::IMessage<InvestInput>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
@@ -2388,7 +2436,7 @@ namespace AElf.Contracts.Ewell {
 
   }
 
-  public sealed partial class ClaimInput : pb::IMessage<ClaimInput>
+  internal sealed partial class ClaimInput : pb::IMessage<ClaimInput>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
@@ -2632,7 +2680,7 @@ namespace AElf.Contracts.Ewell {
 
   }
 
-  public sealed partial class GetInvestDetailInput : pb::IMessage<GetInvestDetailInput>
+  internal sealed partial class GetInvestDetailInput : pb::IMessage<GetInvestDetailInput>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
@@ -2879,7 +2927,7 @@ namespace AElf.Contracts.Ewell {
 
   }
 
-  public sealed partial class GetProfitDetailInput : pb::IMessage<GetProfitDetailInput>
+  internal sealed partial class GetProfitDetailInput : pb::IMessage<GetProfitDetailInput>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
@@ -3126,7 +3174,7 @@ namespace AElf.Contracts.Ewell {
 
   }
 
-  public sealed partial class SetWhitelistIdInput : pb::IMessage<SetWhitelistIdInput>
+  internal sealed partial class SetWhitelistIdInput : pb::IMessage<SetWhitelistIdInput>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
@@ -3364,7 +3412,7 @@ namespace AElf.Contracts.Ewell {
 
   }
 
-  public sealed partial class ReFundAllInput : pb::IMessage<ReFundAllInput>
+  internal sealed partial class ReFundAllInput : pb::IMessage<ReFundAllInput>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
@@ -3594,7 +3642,7 @@ namespace AElf.Contracts.Ewell {
   /// <summary>
   ///Output
   /// </summary>
-  public sealed partial class ExtraInfoIdList : pb::IMessage<ExtraInfoIdList>
+  internal sealed partial class ExtraInfoIdList : pb::IMessage<ExtraInfoIdList>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
@@ -3772,7 +3820,7 @@ namespace AElf.Contracts.Ewell {
 
   }
 
-  public sealed partial class ExtraInfoId : pb::IMessage<ExtraInfoId>
+  internal sealed partial class ExtraInfoId : pb::IMessage<ExtraInfoId>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
@@ -4016,7 +4064,7 @@ namespace AElf.Contracts.Ewell {
 
   }
 
-  public sealed partial class ProjectInfo : pb::IMessage<ProjectInfo>
+  internal sealed partial class ProjectInfo : pb::IMessage<ProjectInfo>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
@@ -4067,6 +4115,7 @@ namespace AElf.Contracts.Ewell {
       currentRaisedAmount_ = other.currentRaisedAmount_;
       enabled_ = other.enabled_;
       virtualAddressHash_ = other.virtualAddressHash_ != null ? other.virtualAddressHash_.Clone() : null;
+      tokenReleaseTime_ = other.tokenReleaseTime_ != null ? other.tokenReleaseTime_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -4286,6 +4335,18 @@ namespace AElf.Contracts.Ewell {
       }
     }
 
+    /// <summary>Field number for the "token_release_time" field.</summary>
+    public const int TokenReleaseTimeFieldNumber = 19;
+    private global::Google.Protobuf.WellKnownTypes.Timestamp tokenReleaseTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Google.Protobuf.WellKnownTypes.Timestamp TokenReleaseTime {
+      get { return tokenReleaseTime_; }
+      set {
+        tokenReleaseTime_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -4318,6 +4379,7 @@ namespace AElf.Contracts.Ewell {
       if (CurrentRaisedAmount != other.CurrentRaisedAmount) return false;
       if (Enabled != other.Enabled) return false;
       if (!object.Equals(VirtualAddressHash, other.VirtualAddressHash)) return false;
+      if (!object.Equals(TokenReleaseTime, other.TokenReleaseTime)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -4342,6 +4404,7 @@ namespace AElf.Contracts.Ewell {
       if (CurrentRaisedAmount != 0L) hash ^= CurrentRaisedAmount.GetHashCode();
       if (Enabled != false) hash ^= Enabled.GetHashCode();
       if (virtualAddressHash_ != null) hash ^= VirtualAddressHash.GetHashCode();
+      if (tokenReleaseTime_ != null) hash ^= TokenReleaseTime.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -4428,6 +4491,10 @@ namespace AElf.Contracts.Ewell {
         output.WriteRawTag(146, 1);
         output.WriteMessage(VirtualAddressHash);
       }
+      if (tokenReleaseTime_ != null) {
+        output.WriteRawTag(154, 1);
+        output.WriteMessage(TokenReleaseTime);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -4506,6 +4573,10 @@ namespace AElf.Contracts.Ewell {
         output.WriteRawTag(146, 1);
         output.WriteMessage(VirtualAddressHash);
       }
+      if (tokenReleaseTime_ != null) {
+        output.WriteRawTag(154, 1);
+        output.WriteMessage(TokenReleaseTime);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -4566,6 +4637,9 @@ namespace AElf.Contracts.Ewell {
       }
       if (virtualAddressHash_ != null) {
         size += 2 + pb::CodedOutputStream.ComputeMessageSize(VirtualAddressHash);
+      }
+      if (tokenReleaseTime_ != null) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(TokenReleaseTime);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -4647,6 +4721,12 @@ namespace AElf.Contracts.Ewell {
           VirtualAddressHash = new global::AElf.Types.Hash();
         }
         VirtualAddressHash.MergeFrom(other.VirtualAddressHash);
+      }
+      if (other.tokenReleaseTime_ != null) {
+        if (tokenReleaseTime_ == null) {
+          TokenReleaseTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+        }
+        TokenReleaseTime.MergeFrom(other.TokenReleaseTime);
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -4747,6 +4827,13 @@ namespace AElf.Contracts.Ewell {
               VirtualAddressHash = new global::AElf.Types.Hash();
             }
             input.ReadMessage(VirtualAddressHash);
+            break;
+          }
+          case 154: {
+            if (tokenReleaseTime_ == null) {
+              TokenReleaseTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(TokenReleaseTime);
             break;
           }
         }
@@ -4850,6 +4937,13 @@ namespace AElf.Contracts.Ewell {
             input.ReadMessage(VirtualAddressHash);
             break;
           }
+          case 154: {
+            if (tokenReleaseTime_ == null) {
+              TokenReleaseTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(TokenReleaseTime);
+            break;
+          }
         }
       }
     }
@@ -4857,7 +4951,7 @@ namespace AElf.Contracts.Ewell {
 
   }
 
-  public sealed partial class ProjectListInfo : pb::IMessage<ProjectListInfo>
+  internal sealed partial class ProjectListInfo : pb::IMessage<ProjectListInfo>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
@@ -5480,7 +5574,7 @@ namespace AElf.Contracts.Ewell {
 
   }
 
-  public sealed partial class InvestDetail : pb::IMessage<InvestDetail>
+  internal sealed partial class InvestDetail : pb::IMessage<InvestDetail>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
@@ -5743,7 +5837,7 @@ namespace AElf.Contracts.Ewell {
 
   }
 
-  public sealed partial class ProfitDetail : pb::IMessage<ProfitDetail>
+  internal sealed partial class ProfitDetail : pb::IMessage<ProfitDetail>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
@@ -6035,7 +6129,7 @@ namespace AElf.Contracts.Ewell {
 
   }
 
-  public sealed partial class ClaimedProfitsInfo : pb::IMessage<ClaimedProfitsInfo>
+  internal sealed partial class ClaimedProfitsInfo : pb::IMessage<ClaimedProfitsInfo>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
@@ -6213,7 +6307,7 @@ namespace AElf.Contracts.Ewell {
 
   }
 
-  public sealed partial class ClaimedProfit : pb::IMessage<ClaimedProfit>
+  internal sealed partial class ClaimedProfit : pb::IMessage<ClaimedProfit>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
@@ -6534,7 +6628,7 @@ namespace AElf.Contracts.Ewell {
 
   }
 
-  public sealed partial class LiquidatedDamageDetails : pb::IMessage<LiquidatedDamageDetails>
+  internal sealed partial class LiquidatedDamageDetails : pb::IMessage<LiquidatedDamageDetails>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
@@ -6749,7 +6843,7 @@ namespace AElf.Contracts.Ewell {
 
   }
 
-  public sealed partial class LiquidatedDamageDetail : pb::IMessage<LiquidatedDamageDetail>
+  internal sealed partial class LiquidatedDamageDetail : pb::IMessage<LiquidatedDamageDetail>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
@@ -7067,7 +7161,7 @@ namespace AElf.Contracts.Ewell {
 
   }
 
-  public sealed partial class AdditionalInfo : pb::IMessage<AdditionalInfo>
+  internal sealed partial class AdditionalInfo : pb::IMessage<AdditionalInfo>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
@@ -7245,7 +7339,7 @@ namespace AElf.Contracts.Ewell {
 
   }
 
-  public sealed partial class ListMarketInfo : pb::IMessage<ListMarketInfo>
+  internal sealed partial class ListMarketInfo : pb::IMessage<ListMarketInfo>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
@@ -7423,7 +7517,7 @@ namespace AElf.Contracts.Ewell {
 
   }
 
-  public sealed partial class ListMarket : pb::IMessage<ListMarket>
+  internal sealed partial class ListMarket : pb::IMessage<ListMarket>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
@@ -7661,7 +7755,7 @@ namespace AElf.Contracts.Ewell {
 
   }
 
-  public sealed partial class ProjectRegistered : pb::IMessage<ProjectRegistered>
+  internal sealed partial class ProjectRegistered : pb::IMessage<ProjectRegistered>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
@@ -8819,7 +8913,7 @@ namespace AElf.Contracts.Ewell {
 
   }
 
-  public sealed partial class NewWhitelistIdSet : pb::IMessage<NewWhitelistIdSet>
+  internal sealed partial class NewWhitelistIdSet : pb::IMessage<NewWhitelistIdSet>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
@@ -9063,7 +9157,7 @@ namespace AElf.Contracts.Ewell {
 
   }
 
-  public sealed partial class AdditionalInfoUpdated : pb::IMessage<AdditionalInfoUpdated>
+  internal sealed partial class AdditionalInfoUpdated : pb::IMessage<AdditionalInfoUpdated>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
@@ -9307,7 +9401,7 @@ namespace AElf.Contracts.Ewell {
 
   }
 
-  public sealed partial class ProjectCanceled : pb::IMessage<ProjectCanceled>
+  internal sealed partial class ProjectCanceled : pb::IMessage<ProjectCanceled>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
@@ -9505,7 +9599,7 @@ namespace AElf.Contracts.Ewell {
 
   }
 
-  public sealed partial class PeriodUpdated : pb::IMessage<PeriodUpdated>
+  internal sealed partial class PeriodUpdated : pb::IMessage<PeriodUpdated>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
@@ -9740,7 +9834,7 @@ namespace AElf.Contracts.Ewell {
 
   }
 
-  public sealed partial class Invested : pb::IMessage<Invested>
+  internal sealed partial class Invested : pb::IMessage<Invested>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
@@ -10169,7 +10263,7 @@ namespace AElf.Contracts.Ewell {
 
   }
 
-  public sealed partial class UnInvested : pb::IMessage<UnInvested>
+  internal sealed partial class UnInvested : pb::IMessage<UnInvested>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
@@ -10524,7 +10618,7 @@ namespace AElf.Contracts.Ewell {
 
   }
 
-  public sealed partial class LiquidatedDamageRecord : pb::IMessage<LiquidatedDamageRecord>
+  internal sealed partial class LiquidatedDamageRecord : pb::IMessage<LiquidatedDamageRecord>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
@@ -10842,7 +10936,7 @@ namespace AElf.Contracts.Ewell {
 
   }
 
-  public sealed partial class LiquidatedDamageClaimed : pb::IMessage<LiquidatedDamageClaimed>
+  internal sealed partial class LiquidatedDamageClaimed : pb::IMessage<LiquidatedDamageClaimed>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
@@ -11160,7 +11254,7 @@ namespace AElf.Contracts.Ewell {
 
   }
 
-  public sealed partial class Claimed : pb::IMessage<Claimed>
+  internal sealed partial class Claimed : pb::IMessage<Claimed>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
@@ -11552,7 +11646,7 @@ namespace AElf.Contracts.Ewell {
 
   }
 
-  public sealed partial class ReFunded : pb::IMessage<ReFunded>
+  internal sealed partial class ReFunded : pb::IMessage<ReFunded>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
@@ -11870,7 +11964,7 @@ namespace AElf.Contracts.Ewell {
 
   }
 
-  public sealed partial class Withdrawn : pb::IMessage<Withdrawn>
+  internal sealed partial class Withdrawn : pb::IMessage<Withdrawn>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif

@@ -681,51 +681,209 @@ namespace AElf.Contracts.Whitelist {
     }
     #endregion
 
-    /*
-    public class WhitelistContractReferenceState : global::AElf.Sdk.CSharp.State.ContractReferenceState
+    public class WhitelistContractStub : aelf::ContractStubBase
     {
-      internal global::AElf.Sdk.CSharp.State.MethodReference<global::AElf.Standards.ACS1.MethodFees, global::Google.Protobuf.WellKnownTypes.Empty> SetMethodFee { get; set; }
-      internal global::AElf.Sdk.CSharp.State.MethodReference<global::AuthorityInfo, global::Google.Protobuf.WellKnownTypes.Empty> ChangeMethodFeeController { get; set; }
-      internal global::AElf.Sdk.CSharp.State.MethodReference<global::Google.Protobuf.WellKnownTypes.StringValue, global::AElf.Standards.ACS1.MethodFees> GetMethodFee { get; set; }
-      internal global::AElf.Sdk.CSharp.State.MethodReference<global::Google.Protobuf.WellKnownTypes.Empty, global::AuthorityInfo> GetMethodFeeController { get; set; }
-      internal global::AElf.Sdk.CSharp.State.MethodReference<global::Google.Protobuf.WellKnownTypes.Empty, global::Google.Protobuf.WellKnownTypes.Empty> Initialize { get; set; }
-      internal global::AElf.Sdk.CSharp.State.MethodReference<global::AElf.Contracts.Whitelist.CreateWhitelistInput, global::AElf.Types.Hash> CreateWhitelist { get; set; }
-      internal global::AElf.Sdk.CSharp.State.MethodReference<global::AElf.Contracts.Whitelist.AddExtraInfoInput, global::AElf.Types.Hash> AddExtraInfo { get; set; }
-      internal global::AElf.Sdk.CSharp.State.MethodReference<global::AElf.Contracts.Whitelist.AddAddressInfoListToWhitelistInput, global::Google.Protobuf.WellKnownTypes.Empty> AddAddressInfoListToWhitelist { get; set; }
-      internal global::AElf.Sdk.CSharp.State.MethodReference<global::AElf.Contracts.Whitelist.RemoveAddressInfoListFromWhitelistInput, global::Google.Protobuf.WellKnownTypes.Empty> RemoveAddressInfoListFromWhitelist { get; set; }
-      internal global::AElf.Sdk.CSharp.State.MethodReference<global::AElf.Contracts.Whitelist.RemoveTagInfoInput, global::Google.Protobuf.WellKnownTypes.Empty> RemoveTagInfo { get; set; }
-      internal global::AElf.Sdk.CSharp.State.MethodReference<global::AElf.Types.Hash, global::Google.Protobuf.WellKnownTypes.Empty> DisableWhitelist { get; set; }
-      internal global::AElf.Sdk.CSharp.State.MethodReference<global::AElf.Types.Hash, global::Google.Protobuf.WellKnownTypes.Empty> EnableWhitelist { get; set; }
-      internal global::AElf.Sdk.CSharp.State.MethodReference<global::AElf.Contracts.Whitelist.ChangeWhitelistCloneableInput, global::Google.Protobuf.WellKnownTypes.Empty> ChangeWhitelistCloneable { get; set; }
-      internal global::AElf.Sdk.CSharp.State.MethodReference<global::AElf.Contracts.Whitelist.UpdateExtraInfoInput, global::Google.Protobuf.WellKnownTypes.Empty> UpdateExtraInfo { get; set; }
-      internal global::AElf.Sdk.CSharp.State.MethodReference<global::AElf.Contracts.Whitelist.TransferManagerInput, global::Google.Protobuf.WellKnownTypes.Empty> TransferManager { get; set; }
-      internal global::AElf.Sdk.CSharp.State.MethodReference<global::AElf.Contracts.Whitelist.AddManagersInput, global::Google.Protobuf.WellKnownTypes.Empty> AddManagers { get; set; }
-      internal global::AElf.Sdk.CSharp.State.MethodReference<global::AElf.Contracts.Whitelist.RemoveManagersInput, global::Google.Protobuf.WellKnownTypes.Empty> RemoveManagers { get; set; }
-      internal global::AElf.Sdk.CSharp.State.MethodReference<global::AElf.Contracts.Whitelist.ResetWhitelistInput, global::Google.Protobuf.WellKnownTypes.Empty> ResetWhitelist { get; set; }
-      internal global::AElf.Sdk.CSharp.State.MethodReference<global::AElf.Contracts.Whitelist.SubscribeWhitelistInput, global::AElf.Types.Hash> SubscribeWhitelist { get; set; }
-      internal global::AElf.Sdk.CSharp.State.MethodReference<global::AElf.Types.Hash, global::Google.Protobuf.WellKnownTypes.Empty> UnsubscribeWhitelist { get; set; }
-      internal global::AElf.Sdk.CSharp.State.MethodReference<global::AElf.Contracts.Whitelist.ConsumeWhitelistInput, global::Google.Protobuf.WellKnownTypes.Empty> ConsumeWhitelist { get; set; }
-      internal global::AElf.Sdk.CSharp.State.MethodReference<global::AElf.Contracts.Whitelist.CloneWhitelistInput, global::AElf.Types.Hash> CloneWhitelist { get; set; }
-      internal global::AElf.Sdk.CSharp.State.MethodReference<global::AElf.Types.Address, global::AElf.Contracts.Whitelist.WhitelistIdList> GetWhitelistByManager { get; set; }
-      internal global::AElf.Sdk.CSharp.State.MethodReference<global::AElf.Types.Hash, global::AElf.Contracts.Whitelist.WhitelistInfo> GetWhitelist { get; set; }
-      internal global::AElf.Sdk.CSharp.State.MethodReference<global::AElf.Types.Hash, global::AElf.Contracts.Whitelist.ExtraInfoList> GetWhitelistDetail { get; set; }
-      internal global::AElf.Sdk.CSharp.State.MethodReference<global::AElf.Types.Hash, global::AElf.Contracts.Whitelist.WhitelistIdList> GetWhitelistByProject { get; set; }
-      internal global::AElf.Sdk.CSharp.State.MethodReference<global::AElf.Contracts.Whitelist.GetExtraInfoByTagInput, global::AElf.Contracts.Whitelist.ExtraInfo> GetExtraInfoByTag { get; set; }
-      internal global::AElf.Sdk.CSharp.State.MethodReference<global::AElf.Types.Hash, global::AElf.Contracts.Whitelist.TagInfo> GetTagInfoByHash { get; set; }
-      internal global::AElf.Sdk.CSharp.State.MethodReference<global::AElf.Contracts.Whitelist.GetExtraInfoIdListInput, global::AElf.Contracts.Whitelist.HashList> GetExtraInfoIdList { get; set; }
-      internal global::AElf.Sdk.CSharp.State.MethodReference<global::AElf.Contracts.Whitelist.GetTagIdByAddressInput, global::AElf.Types.Hash> GetTagIdByAddress { get; set; }
-      internal global::AElf.Sdk.CSharp.State.MethodReference<global::AElf.Contracts.Whitelist.GetExtraInfoByAddressInput, global::AElf.Contracts.Whitelist.TagInfo> GetExtraInfoByAddress { get; set; }
-      internal global::AElf.Sdk.CSharp.State.MethodReference<global::AElf.Contracts.Whitelist.GetAddressFromWhitelistInput, global::Google.Protobuf.WellKnownTypes.BoolValue> GetAddressFromWhitelist { get; set; }
-      internal global::AElf.Sdk.CSharp.State.MethodReference<global::AElf.Contracts.Whitelist.GetExtraInfoFromWhitelistInput, global::Google.Protobuf.WellKnownTypes.BoolValue> GetExtraInfoFromWhitelist { get; set; }
-      internal global::AElf.Sdk.CSharp.State.MethodReference<global::AElf.Contracts.Whitelist.GetTagInfoFromWhitelistInput, global::Google.Protobuf.WellKnownTypes.BoolValue> GetTagInfoFromWhitelist { get; set; }
-      internal global::AElf.Sdk.CSharp.State.MethodReference<global::AElf.Types.Hash, global::AElf.Contracts.Whitelist.AddressList> GetManagerList { get; set; }
-      internal global::AElf.Sdk.CSharp.State.MethodReference<global::AElf.Contracts.Whitelist.GetManagerExistFromWhitelistInput, global::Google.Protobuf.WellKnownTypes.BoolValue> GetManagerExistFromWhitelist { get; set; }
-      internal global::AElf.Sdk.CSharp.State.MethodReference<global::AElf.Types.Hash, global::AElf.Contracts.Whitelist.SubscribeWhitelistInfo> GetSubscribeWhitelist { get; set; }
-      internal global::AElf.Sdk.CSharp.State.MethodReference<global::AElf.Types.Hash, global::AElf.Contracts.Whitelist.ConsumedList> GetConsumedList { get; set; }
-      internal global::AElf.Sdk.CSharp.State.MethodReference<global::AElf.Types.Hash, global::AElf.Contracts.Whitelist.ExtraInfoList> GetAvailableWhitelist { get; set; }
-      internal global::AElf.Sdk.CSharp.State.MethodReference<global::AElf.Contracts.Whitelist.GetFromAvailableWhitelistInput, global::Google.Protobuf.WellKnownTypes.BoolValue> GetFromAvailableWhitelist { get; set; }
+      public aelf::IMethodStub<global::AElf.Standards.ACS1.MethodFees, global::Google.Protobuf.WellKnownTypes.Empty> SetMethodFee
+      {
+        get { return __factory.Create(__Method_SetMethodFee); }
+      }
+
+      public aelf::IMethodStub<global::AuthorityInfo, global::Google.Protobuf.WellKnownTypes.Empty> ChangeMethodFeeController
+      {
+        get { return __factory.Create(__Method_ChangeMethodFeeController); }
+      }
+
+      public aelf::IMethodStub<global::Google.Protobuf.WellKnownTypes.StringValue, global::AElf.Standards.ACS1.MethodFees> GetMethodFee
+      {
+        get { return __factory.Create(__Method_GetMethodFee); }
+      }
+
+      public aelf::IMethodStub<global::Google.Protobuf.WellKnownTypes.Empty, global::AuthorityInfo> GetMethodFeeController
+      {
+        get { return __factory.Create(__Method_GetMethodFeeController); }
+      }
+
+      public aelf::IMethodStub<global::Google.Protobuf.WellKnownTypes.Empty, global::Google.Protobuf.WellKnownTypes.Empty> Initialize
+      {
+        get { return __factory.Create(__Method_Initialize); }
+      }
+
+      public aelf::IMethodStub<global::AElf.Contracts.Whitelist.CreateWhitelistInput, global::AElf.Types.Hash> CreateWhitelist
+      {
+        get { return __factory.Create(__Method_CreateWhitelist); }
+      }
+
+      public aelf::IMethodStub<global::AElf.Contracts.Whitelist.AddExtraInfoInput, global::AElf.Types.Hash> AddExtraInfo
+      {
+        get { return __factory.Create(__Method_AddExtraInfo); }
+      }
+
+      public aelf::IMethodStub<global::AElf.Contracts.Whitelist.AddAddressInfoListToWhitelistInput, global::Google.Protobuf.WellKnownTypes.Empty> AddAddressInfoListToWhitelist
+      {
+        get { return __factory.Create(__Method_AddAddressInfoListToWhitelist); }
+      }
+
+      public aelf::IMethodStub<global::AElf.Contracts.Whitelist.RemoveAddressInfoListFromWhitelistInput, global::Google.Protobuf.WellKnownTypes.Empty> RemoveAddressInfoListFromWhitelist
+      {
+        get { return __factory.Create(__Method_RemoveAddressInfoListFromWhitelist); }
+      }
+
+      public aelf::IMethodStub<global::AElf.Contracts.Whitelist.RemoveTagInfoInput, global::Google.Protobuf.WellKnownTypes.Empty> RemoveTagInfo
+      {
+        get { return __factory.Create(__Method_RemoveTagInfo); }
+      }
+
+      public aelf::IMethodStub<global::AElf.Types.Hash, global::Google.Protobuf.WellKnownTypes.Empty> DisableWhitelist
+      {
+        get { return __factory.Create(__Method_DisableWhitelist); }
+      }
+
+      public aelf::IMethodStub<global::AElf.Types.Hash, global::Google.Protobuf.WellKnownTypes.Empty> EnableWhitelist
+      {
+        get { return __factory.Create(__Method_EnableWhitelist); }
+      }
+
+      public aelf::IMethodStub<global::AElf.Contracts.Whitelist.ChangeWhitelistCloneableInput, global::Google.Protobuf.WellKnownTypes.Empty> ChangeWhitelistCloneable
+      {
+        get { return __factory.Create(__Method_ChangeWhitelistCloneable); }
+      }
+
+      public aelf::IMethodStub<global::AElf.Contracts.Whitelist.UpdateExtraInfoInput, global::Google.Protobuf.WellKnownTypes.Empty> UpdateExtraInfo
+      {
+        get { return __factory.Create(__Method_UpdateExtraInfo); }
+      }
+
+      public aelf::IMethodStub<global::AElf.Contracts.Whitelist.TransferManagerInput, global::Google.Protobuf.WellKnownTypes.Empty> TransferManager
+      {
+        get { return __factory.Create(__Method_TransferManager); }
+      }
+
+      public aelf::IMethodStub<global::AElf.Contracts.Whitelist.AddManagersInput, global::Google.Protobuf.WellKnownTypes.Empty> AddManagers
+      {
+        get { return __factory.Create(__Method_AddManagers); }
+      }
+
+      public aelf::IMethodStub<global::AElf.Contracts.Whitelist.RemoveManagersInput, global::Google.Protobuf.WellKnownTypes.Empty> RemoveManagers
+      {
+        get { return __factory.Create(__Method_RemoveManagers); }
+      }
+
+      public aelf::IMethodStub<global::AElf.Contracts.Whitelist.ResetWhitelistInput, global::Google.Protobuf.WellKnownTypes.Empty> ResetWhitelist
+      {
+        get { return __factory.Create(__Method_ResetWhitelist); }
+      }
+
+      public aelf::IMethodStub<global::AElf.Contracts.Whitelist.SubscribeWhitelistInput, global::AElf.Types.Hash> SubscribeWhitelist
+      {
+        get { return __factory.Create(__Method_SubscribeWhitelist); }
+      }
+
+      public aelf::IMethodStub<global::AElf.Types.Hash, global::Google.Protobuf.WellKnownTypes.Empty> UnsubscribeWhitelist
+      {
+        get { return __factory.Create(__Method_UnsubscribeWhitelist); }
+      }
+
+      public aelf::IMethodStub<global::AElf.Contracts.Whitelist.ConsumeWhitelistInput, global::Google.Protobuf.WellKnownTypes.Empty> ConsumeWhitelist
+      {
+        get { return __factory.Create(__Method_ConsumeWhitelist); }
+      }
+
+      public aelf::IMethodStub<global::AElf.Contracts.Whitelist.CloneWhitelistInput, global::AElf.Types.Hash> CloneWhitelist
+      {
+        get { return __factory.Create(__Method_CloneWhitelist); }
+      }
+
+      public aelf::IMethodStub<global::AElf.Types.Address, global::AElf.Contracts.Whitelist.WhitelistIdList> GetWhitelistByManager
+      {
+        get { return __factory.Create(__Method_GetWhitelistByManager); }
+      }
+
+      public aelf::IMethodStub<global::AElf.Types.Hash, global::AElf.Contracts.Whitelist.WhitelistInfo> GetWhitelist
+      {
+        get { return __factory.Create(__Method_GetWhitelist); }
+      }
+
+      public aelf::IMethodStub<global::AElf.Types.Hash, global::AElf.Contracts.Whitelist.ExtraInfoList> GetWhitelistDetail
+      {
+        get { return __factory.Create(__Method_GetWhitelistDetail); }
+      }
+
+      public aelf::IMethodStub<global::AElf.Types.Hash, global::AElf.Contracts.Whitelist.WhitelistIdList> GetWhitelistByProject
+      {
+        get { return __factory.Create(__Method_GetWhitelistByProject); }
+      }
+
+      public aelf::IMethodStub<global::AElf.Contracts.Whitelist.GetExtraInfoByTagInput, global::AElf.Contracts.Whitelist.ExtraInfo> GetExtraInfoByTag
+      {
+        get { return __factory.Create(__Method_GetExtraInfoByTag); }
+      }
+
+      public aelf::IMethodStub<global::AElf.Types.Hash, global::AElf.Contracts.Whitelist.TagInfo> GetTagInfoByHash
+      {
+        get { return __factory.Create(__Method_GetTagInfoByHash); }
+      }
+
+      public aelf::IMethodStub<global::AElf.Contracts.Whitelist.GetExtraInfoIdListInput, global::AElf.Contracts.Whitelist.HashList> GetExtraInfoIdList
+      {
+        get { return __factory.Create(__Method_GetExtraInfoIdList); }
+      }
+
+      public aelf::IMethodStub<global::AElf.Contracts.Whitelist.GetTagIdByAddressInput, global::AElf.Types.Hash> GetTagIdByAddress
+      {
+        get { return __factory.Create(__Method_GetTagIdByAddress); }
+      }
+
+      public aelf::IMethodStub<global::AElf.Contracts.Whitelist.GetExtraInfoByAddressInput, global::AElf.Contracts.Whitelist.TagInfo> GetExtraInfoByAddress
+      {
+        get { return __factory.Create(__Method_GetExtraInfoByAddress); }
+      }
+
+      public aelf::IMethodStub<global::AElf.Contracts.Whitelist.GetAddressFromWhitelistInput, global::Google.Protobuf.WellKnownTypes.BoolValue> GetAddressFromWhitelist
+      {
+        get { return __factory.Create(__Method_GetAddressFromWhitelist); }
+      }
+
+      public aelf::IMethodStub<global::AElf.Contracts.Whitelist.GetExtraInfoFromWhitelistInput, global::Google.Protobuf.WellKnownTypes.BoolValue> GetExtraInfoFromWhitelist
+      {
+        get { return __factory.Create(__Method_GetExtraInfoFromWhitelist); }
+      }
+
+      public aelf::IMethodStub<global::AElf.Contracts.Whitelist.GetTagInfoFromWhitelistInput, global::Google.Protobuf.WellKnownTypes.BoolValue> GetTagInfoFromWhitelist
+      {
+        get { return __factory.Create(__Method_GetTagInfoFromWhitelist); }
+      }
+
+      public aelf::IMethodStub<global::AElf.Types.Hash, global::AElf.Contracts.Whitelist.AddressList> GetManagerList
+      {
+        get { return __factory.Create(__Method_GetManagerList); }
+      }
+
+      public aelf::IMethodStub<global::AElf.Contracts.Whitelist.GetManagerExistFromWhitelistInput, global::Google.Protobuf.WellKnownTypes.BoolValue> GetManagerExistFromWhitelist
+      {
+        get { return __factory.Create(__Method_GetManagerExistFromWhitelist); }
+      }
+
+      public aelf::IMethodStub<global::AElf.Types.Hash, global::AElf.Contracts.Whitelist.SubscribeWhitelistInfo> GetSubscribeWhitelist
+      {
+        get { return __factory.Create(__Method_GetSubscribeWhitelist); }
+      }
+
+      public aelf::IMethodStub<global::AElf.Types.Hash, global::AElf.Contracts.Whitelist.ConsumedList> GetConsumedList
+      {
+        get { return __factory.Create(__Method_GetConsumedList); }
+      }
+
+      public aelf::IMethodStub<global::AElf.Types.Hash, global::AElf.Contracts.Whitelist.ExtraInfoList> GetAvailableWhitelist
+      {
+        get { return __factory.Create(__Method_GetAvailableWhitelist); }
+      }
+
+      public aelf::IMethodStub<global::AElf.Contracts.Whitelist.GetFromAvailableWhitelistInput, global::Google.Protobuf.WellKnownTypes.BoolValue> GetFromAvailableWhitelist
+      {
+        get { return __factory.Create(__Method_GetFromAvailableWhitelist); }
+      }
+
     }
-  */
   }
 }
 #endregion

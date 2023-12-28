@@ -11,7 +11,7 @@ using aelf = global::AElf.CSharp.Core;
 namespace AElf.Contracts.Ewell {
 
   #region Events
-  public partial class ProjectRegistered : aelf::IEvent<ProjectRegistered>
+  internal partial class ProjectRegistered : aelf::IEvent<ProjectRegistered>
   {
     public global::System.Collections.Generic.IEnumerable<ProjectRegistered> GetIndexed()
     {
@@ -53,7 +53,7 @@ namespace AElf.Contracts.Ewell {
     }
   }
 
-  public partial class NewWhitelistIdSet : aelf::IEvent<NewWhitelistIdSet>
+  internal partial class NewWhitelistIdSet : aelf::IEvent<NewWhitelistIdSet>
   {
     public global::System.Collections.Generic.IEnumerable<NewWhitelistIdSet> GetIndexed()
     {
@@ -72,7 +72,7 @@ namespace AElf.Contracts.Ewell {
     }
   }
 
-  public partial class AdditionalInfoUpdated : aelf::IEvent<AdditionalInfoUpdated>
+  internal partial class AdditionalInfoUpdated : aelf::IEvent<AdditionalInfoUpdated>
   {
     public global::System.Collections.Generic.IEnumerable<AdditionalInfoUpdated> GetIndexed()
     {
@@ -91,7 +91,7 @@ namespace AElf.Contracts.Ewell {
     }
   }
 
-  public partial class ProjectCanceled : aelf::IEvent<ProjectCanceled>
+  internal partial class ProjectCanceled : aelf::IEvent<ProjectCanceled>
   {
     public global::System.Collections.Generic.IEnumerable<ProjectCanceled> GetIndexed()
     {
@@ -109,7 +109,7 @@ namespace AElf.Contracts.Ewell {
     }
   }
 
-  public partial class PeriodUpdated : aelf::IEvent<PeriodUpdated>
+  internal partial class PeriodUpdated : aelf::IEvent<PeriodUpdated>
   {
     public global::System.Collections.Generic.IEnumerable<PeriodUpdated> GetIndexed()
     {
@@ -128,7 +128,7 @@ namespace AElf.Contracts.Ewell {
     }
   }
 
-  public partial class Invested : aelf::IEvent<Invested>
+  internal partial class Invested : aelf::IEvent<Invested>
   {
     public global::System.Collections.Generic.IEnumerable<Invested> GetIndexed()
     {
@@ -152,7 +152,7 @@ namespace AElf.Contracts.Ewell {
     }
   }
 
-  public partial class UnInvested : aelf::IEvent<UnInvested>
+  internal partial class UnInvested : aelf::IEvent<UnInvested>
   {
     public global::System.Collections.Generic.IEnumerable<UnInvested> GetIndexed()
     {
@@ -174,7 +174,7 @@ namespace AElf.Contracts.Ewell {
     }
   }
 
-  public partial class LiquidatedDamageRecord : aelf::IEvent<LiquidatedDamageRecord>
+  internal partial class LiquidatedDamageRecord : aelf::IEvent<LiquidatedDamageRecord>
   {
     public global::System.Collections.Generic.IEnumerable<LiquidatedDamageRecord> GetIndexed()
     {
@@ -195,7 +195,7 @@ namespace AElf.Contracts.Ewell {
     }
   }
 
-  public partial class LiquidatedDamageClaimed : aelf::IEvent<LiquidatedDamageClaimed>
+  internal partial class LiquidatedDamageClaimed : aelf::IEvent<LiquidatedDamageClaimed>
   {
     public global::System.Collections.Generic.IEnumerable<LiquidatedDamageClaimed> GetIndexed()
     {
@@ -216,7 +216,7 @@ namespace AElf.Contracts.Ewell {
     }
   }
 
-  public partial class Claimed : aelf::IEvent<Claimed>
+  internal partial class Claimed : aelf::IEvent<Claimed>
   {
     public global::System.Collections.Generic.IEnumerable<Claimed> GetIndexed()
     {
@@ -239,7 +239,7 @@ namespace AElf.Contracts.Ewell {
     }
   }
 
-  public partial class ReFunded : aelf::IEvent<ReFunded>
+  internal partial class ReFunded : aelf::IEvent<ReFunded>
   {
     public global::System.Collections.Generic.IEnumerable<ReFunded> GetIndexed()
     {
@@ -260,7 +260,7 @@ namespace AElf.Contracts.Ewell {
     }
   }
 
-  public partial class Withdrawn : aelf::IEvent<Withdrawn>
+  internal partial class Withdrawn : aelf::IEvent<Withdrawn>
   {
     public global::System.Collections.Generic.IEnumerable<Withdrawn> GetIndexed()
     {
@@ -284,7 +284,7 @@ namespace AElf.Contracts.Ewell {
   }
 
   #endregion
-  public static partial class EwellContractContainer
+  internal static partial class EwellContractContainer
   {
     static readonly string __ServiceName = "EwellContract";
 
@@ -535,195 +535,154 @@ namespace AElf.Contracts.Ewell {
     }
     #endregion
 
-    /// <summary>Base class for the contract of EwellContract</summary>
-    /*
-    public abstract partial class EwellContractBase : AElf.Sdk.CSharp.CSharpSmartContract<AElf.Contracts.Ewell.EwellContractState>
+    public class EwellContractStub : aelf::ContractStubBase
     {
-      public virtual global::Google.Protobuf.WellKnownTypes.Empty Initialize(global::AElf.Contracts.Ewell.InitializeInput input)
+      public aelf::IMethodStub<global::AElf.Contracts.Ewell.InitializeInput, global::Google.Protobuf.WellKnownTypes.Empty> Initialize
       {
-        throw new global::System.NotImplementedException();
+        get { return __factory.Create(__Method_Initialize); }
       }
 
-      public virtual global::Google.Protobuf.WellKnownTypes.Empty Register(global::AElf.Contracts.Ewell.RegisterInput input)
+      public aelf::IMethodStub<global::AElf.Contracts.Ewell.RegisterInput, global::Google.Protobuf.WellKnownTypes.Empty> Register
       {
-        throw new global::System.NotImplementedException();
+        get { return __factory.Create(__Method_Register); }
       }
 
-      public virtual global::Google.Protobuf.WellKnownTypes.Empty UpdateAdditionalInfo(global::AElf.Contracts.Ewell.UpdateAdditionalInfoInput input)
+      public aelf::IMethodStub<global::AElf.Contracts.Ewell.UpdateAdditionalInfoInput, global::Google.Protobuf.WellKnownTypes.Empty> UpdateAdditionalInfo
       {
-        throw new global::System.NotImplementedException();
+        get { return __factory.Create(__Method_UpdateAdditionalInfo); }
       }
 
-      public virtual global::Google.Protobuf.WellKnownTypes.Empty Cancel(global::AElf.Types.Hash input)
+      public aelf::IMethodStub<global::AElf.Types.Hash, global::Google.Protobuf.WellKnownTypes.Empty> Cancel
       {
-        throw new global::System.NotImplementedException();
+        get { return __factory.Create(__Method_Cancel); }
       }
 
-      public virtual global::Google.Protobuf.WellKnownTypes.Empty LockLiquidity(global::AElf.Types.Hash input)
+      public aelf::IMethodStub<global::AElf.Types.Hash, global::Google.Protobuf.WellKnownTypes.Empty> LockLiquidity
       {
-        throw new global::System.NotImplementedException();
+        get { return __factory.Create(__Method_LockLiquidity); }
       }
 
-      public virtual global::Google.Protobuf.WellKnownTypes.Empty Withdraw(global::AElf.Types.Hash input)
+      public aelf::IMethodStub<global::AElf.Types.Hash, global::Google.Protobuf.WellKnownTypes.Empty> Withdraw
       {
-        throw new global::System.NotImplementedException();
+        get { return __factory.Create(__Method_Withdraw); }
       }
 
-      public virtual global::Google.Protobuf.WellKnownTypes.Empty AddWhitelists(global::AElf.Contracts.Ewell.AddWhitelistsInput input)
+      public aelf::IMethodStub<global::AElf.Contracts.Ewell.AddWhitelistsInput, global::Google.Protobuf.WellKnownTypes.Empty> AddWhitelists
       {
-        throw new global::System.NotImplementedException();
+        get { return __factory.Create(__Method_AddWhitelists); }
       }
 
-      public virtual global::Google.Protobuf.WellKnownTypes.Empty RemoveWhitelists(global::AElf.Contracts.Ewell.RemoveWhitelistsInput input)
+      public aelf::IMethodStub<global::AElf.Contracts.Ewell.RemoveWhitelistsInput, global::Google.Protobuf.WellKnownTypes.Empty> RemoveWhitelists
       {
-        throw new global::System.NotImplementedException();
+        get { return __factory.Create(__Method_RemoveWhitelists); }
       }
 
-      public virtual global::Google.Protobuf.WellKnownTypes.Empty NextPeriod(global::AElf.Types.Hash input)
+      public aelf::IMethodStub<global::AElf.Types.Hash, global::Google.Protobuf.WellKnownTypes.Empty> NextPeriod
       {
-        throw new global::System.NotImplementedException();
+        get { return __factory.Create(__Method_NextPeriod); }
       }
 
-      public virtual global::Google.Protobuf.WellKnownTypes.Empty SetWhitelistId(global::AElf.Contracts.Ewell.SetWhitelistIdInput input)
+      public aelf::IMethodStub<global::AElf.Contracts.Ewell.SetWhitelistIdInput, global::Google.Protobuf.WellKnownTypes.Empty> SetWhitelistId
       {
-        throw new global::System.NotImplementedException();
+        get { return __factory.Create(__Method_SetWhitelistId); }
       }
 
-      public virtual global::Google.Protobuf.WellKnownTypes.Empty Invest(global::AElf.Contracts.Ewell.InvestInput input)
+      public aelf::IMethodStub<global::AElf.Contracts.Ewell.InvestInput, global::Google.Protobuf.WellKnownTypes.Empty> Invest
       {
-        throw new global::System.NotImplementedException();
+        get { return __factory.Create(__Method_Invest); }
       }
 
-      public virtual global::Google.Protobuf.WellKnownTypes.Empty UnInvest(global::AElf.Types.Hash input)
+      public aelf::IMethodStub<global::AElf.Types.Hash, global::Google.Protobuf.WellKnownTypes.Empty> UnInvest
       {
-        throw new global::System.NotImplementedException();
+        get { return __factory.Create(__Method_UnInvest); }
       }
 
-      public virtual global::Google.Protobuf.WellKnownTypes.Empty ReFund(global::AElf.Types.Hash input)
+      public aelf::IMethodStub<global::AElf.Types.Hash, global::Google.Protobuf.WellKnownTypes.Empty> ReFund
       {
-        throw new global::System.NotImplementedException();
+        get { return __factory.Create(__Method_ReFund); }
       }
 
-      public virtual global::Google.Protobuf.WellKnownTypes.Empty ReFundAll(global::AElf.Contracts.Ewell.ReFundAllInput input)
+      public aelf::IMethodStub<global::AElf.Contracts.Ewell.ReFundAllInput, global::Google.Protobuf.WellKnownTypes.Empty> ReFundAll
       {
-        throw new global::System.NotImplementedException();
+        get { return __factory.Create(__Method_ReFundAll); }
       }
 
-      public virtual global::Google.Protobuf.WellKnownTypes.Empty Claim(global::AElf.Contracts.Ewell.ClaimInput input)
+      public aelf::IMethodStub<global::AElf.Contracts.Ewell.ClaimInput, global::Google.Protobuf.WellKnownTypes.Empty> Claim
       {
-        throw new global::System.NotImplementedException();
+        get { return __factory.Create(__Method_Claim); }
       }
 
-      public virtual global::Google.Protobuf.WellKnownTypes.Empty ClaimLiquidatedDamage(global::AElf.Types.Hash input)
+      public aelf::IMethodStub<global::AElf.Types.Hash, global::Google.Protobuf.WellKnownTypes.Empty> ClaimLiquidatedDamage
       {
-        throw new global::System.NotImplementedException();
+        get { return __factory.Create(__Method_ClaimLiquidatedDamage); }
       }
 
-      public virtual global::Google.Protobuf.WellKnownTypes.Empty ClaimLiquidatedDamageAll(global::AElf.Types.Hash input)
+      public aelf::IMethodStub<global::AElf.Types.Hash, global::Google.Protobuf.WellKnownTypes.Empty> ClaimLiquidatedDamageAll
       {
-        throw new global::System.NotImplementedException();
+        get { return __factory.Create(__Method_ClaimLiquidatedDamageAll); }
       }
 
-      public virtual global::AElf.Types.Address GetWhitelistContractAddress(global::Google.Protobuf.WellKnownTypes.Empty input)
+      public aelf::IMethodStub<global::Google.Protobuf.WellKnownTypes.Empty, global::AElf.Types.Address> GetWhitelistContractAddress
       {
-        throw new global::System.NotImplementedException();
+        get { return __factory.Create(__Method_GetWhitelistContractAddress); }
       }
 
-      public virtual global::AElf.Types.Address GetAdmin(global::Google.Protobuf.WellKnownTypes.Empty input)
+      public aelf::IMethodStub<global::Google.Protobuf.WellKnownTypes.Empty, global::AElf.Types.Address> GetAdmin
       {
-        throw new global::System.NotImplementedException();
+        get { return __factory.Create(__Method_GetAdmin); }
       }
 
-      public virtual global::AElf.Types.Address GetTokenAddress(global::Google.Protobuf.WellKnownTypes.Empty input)
+      public aelf::IMethodStub<global::Google.Protobuf.WellKnownTypes.Empty, global::AElf.Types.Address> GetTokenAddress
       {
-        throw new global::System.NotImplementedException();
+        get { return __factory.Create(__Method_GetTokenAddress); }
       }
 
-      public virtual global::AElf.Contracts.Ewell.ProjectInfo GetProjectInfo(global::AElf.Types.Hash input)
+      public aelf::IMethodStub<global::AElf.Types.Hash, global::AElf.Contracts.Ewell.ProjectInfo> GetProjectInfo
       {
-        throw new global::System.NotImplementedException();
+        get { return __factory.Create(__Method_GetProjectInfo); }
       }
 
-      public virtual global::AElf.Contracts.Ewell.ProjectListInfo GetProjectListInfo(global::AElf.Types.Hash input)
+      public aelf::IMethodStub<global::AElf.Types.Hash, global::AElf.Contracts.Ewell.ProjectListInfo> GetProjectListInfo
       {
-        throw new global::System.NotImplementedException();
+        get { return __factory.Create(__Method_GetProjectListInfo); }
       }
 
-      public virtual global::AElf.Contracts.Ewell.ExtraInfoIdList GetWhitelist(global::AElf.Types.Hash input)
+      public aelf::IMethodStub<global::AElf.Types.Hash, global::AElf.Contracts.Ewell.ExtraInfoIdList> GetWhitelist
       {
-        throw new global::System.NotImplementedException();
+        get { return __factory.Create(__Method_GetWhitelist); }
       }
 
-      public virtual global::AElf.Contracts.Ewell.InvestDetail GetInvestDetail(global::AElf.Contracts.Ewell.GetInvestDetailInput input)
+      public aelf::IMethodStub<global::AElf.Contracts.Ewell.GetInvestDetailInput, global::AElf.Contracts.Ewell.InvestDetail> GetInvestDetail
       {
-        throw new global::System.NotImplementedException();
+        get { return __factory.Create(__Method_GetInvestDetail); }
       }
 
-      public virtual global::AElf.Contracts.Ewell.ProfitDetail GetProfitDetail(global::AElf.Contracts.Ewell.GetProfitDetailInput input)
+      public aelf::IMethodStub<global::AElf.Contracts.Ewell.GetProfitDetailInput, global::AElf.Contracts.Ewell.ProfitDetail> GetProfitDetail
       {
-        throw new global::System.NotImplementedException();
+        get { return __factory.Create(__Method_GetProfitDetail); }
       }
 
-      public virtual global::AElf.Types.Hash GetWhitelistId(global::AElf.Types.Hash input)
+      public aelf::IMethodStub<global::AElf.Types.Hash, global::AElf.Types.Hash> GetWhitelistId
       {
-        throw new global::System.NotImplementedException();
+        get { return __factory.Create(__Method_GetWhitelistId); }
       }
 
-      public virtual global::AElf.Contracts.Ewell.LiquidatedDamageDetails GetLiquidatedDamageDetails(global::AElf.Types.Hash input)
+      public aelf::IMethodStub<global::AElf.Types.Hash, global::AElf.Contracts.Ewell.LiquidatedDamageDetails> GetLiquidatedDamageDetails
       {
-        throw new global::System.NotImplementedException();
+        get { return __factory.Create(__Method_GetLiquidatedDamageDetails); }
       }
 
-      public virtual global::AElf.Types.Address GetProjectAddressByProjectHash(global::AElf.Types.Hash input)
+      public aelf::IMethodStub<global::AElf.Types.Hash, global::AElf.Types.Address> GetProjectAddressByProjectHash
       {
-        throw new global::System.NotImplementedException();
+        get { return __factory.Create(__Method_GetProjectAddressByProjectHash); }
       }
 
-      public virtual global::AElf.Types.Address GetPendingProjectAddress(global::AElf.Types.Address input)
+      public aelf::IMethodStub<global::AElf.Types.Address, global::AElf.Types.Address> GetPendingProjectAddress
       {
-        throw new global::System.NotImplementedException();
+        get { return __factory.Create(__Method_GetPendingProjectAddress); }
       }
 
     }
-    */
-
-    /*
-    public static aelf::ServerServiceDefinition BindService(EwellContractBase serviceImpl)
-    {
-      return aelf::ServerServiceDefinition.CreateBuilder()
-          .AddDescriptors(Descriptors)
-          .AddMethod(__Method_Initialize, serviceImpl.Initialize)
-          .AddMethod(__Method_Register, serviceImpl.Register)
-          .AddMethod(__Method_UpdateAdditionalInfo, serviceImpl.UpdateAdditionalInfo)
-          .AddMethod(__Method_Cancel, serviceImpl.Cancel)
-          .AddMethod(__Method_LockLiquidity, serviceImpl.LockLiquidity)
-          .AddMethod(__Method_Withdraw, serviceImpl.Withdraw)
-          .AddMethod(__Method_AddWhitelists, serviceImpl.AddWhitelists)
-          .AddMethod(__Method_RemoveWhitelists, serviceImpl.RemoveWhitelists)
-          .AddMethod(__Method_NextPeriod, serviceImpl.NextPeriod)
-          .AddMethod(__Method_SetWhitelistId, serviceImpl.SetWhitelistId)
-          .AddMethod(__Method_Invest, serviceImpl.Invest)
-          .AddMethod(__Method_UnInvest, serviceImpl.UnInvest)
-          .AddMethod(__Method_ReFund, serviceImpl.ReFund)
-          .AddMethod(__Method_ReFundAll, serviceImpl.ReFundAll)
-          .AddMethod(__Method_Claim, serviceImpl.Claim)
-          .AddMethod(__Method_ClaimLiquidatedDamage, serviceImpl.ClaimLiquidatedDamage)
-          .AddMethod(__Method_ClaimLiquidatedDamageAll, serviceImpl.ClaimLiquidatedDamageAll)
-          .AddMethod(__Method_GetWhitelistContractAddress, serviceImpl.GetWhitelistContractAddress)
-          .AddMethod(__Method_GetAdmin, serviceImpl.GetAdmin)
-          .AddMethod(__Method_GetTokenAddress, serviceImpl.GetTokenAddress)
-          .AddMethod(__Method_GetProjectInfo, serviceImpl.GetProjectInfo)
-          .AddMethod(__Method_GetProjectListInfo, serviceImpl.GetProjectListInfo)
-          .AddMethod(__Method_GetWhitelist, serviceImpl.GetWhitelist)
-          .AddMethod(__Method_GetInvestDetail, serviceImpl.GetInvestDetail)
-          .AddMethod(__Method_GetProfitDetail, serviceImpl.GetProfitDetail)
-          .AddMethod(__Method_GetWhitelistId, serviceImpl.GetWhitelistId)
-          .AddMethod(__Method_GetLiquidatedDamageDetails, serviceImpl.GetLiquidatedDamageDetails)
-          .AddMethod(__Method_GetProjectAddressByProjectHash, serviceImpl.GetProjectAddressByProjectHash)
-          .AddMethod(__Method_GetPendingProjectAddress, serviceImpl.GetPendingProjectAddress).Build();
-    }
-    */
-
   }
 }
 #endregion
