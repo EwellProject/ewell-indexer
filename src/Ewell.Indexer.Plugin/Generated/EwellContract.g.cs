@@ -10263,7 +10263,7 @@ namespace AElf.Contracts.Ewell {
 
   }
 
-  internal sealed partial class UnInvested : pb::IMessage<UnInvested>
+  public sealed partial class UnInvested : pb::IMessage<UnInvested>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
@@ -11254,7 +11254,7 @@ namespace AElf.Contracts.Ewell {
 
   }
 
-  internal sealed partial class Claimed : pb::IMessage<Claimed>
+  public sealed partial class Claimed : pb::IMessage<Claimed>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
@@ -11646,7 +11646,7 @@ namespace AElf.Contracts.Ewell {
 
   }
 
-  internal sealed partial class ReFunded : pb::IMessage<ReFunded>
+  public sealed partial class ReFunded : pb::IMessage<ReFunded>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif

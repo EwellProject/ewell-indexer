@@ -12,6 +12,11 @@ public class IdGenerateHelper
         return GetId(chainId, symbol);
     }
 
+    public static string GetProjectId(string chainId, string projectHash)
+    {
+        return GetId(chainId, projectHash);
+    }
+    
     public static string GetUserProjectId(string chainId, string projectId, string userId)
     {
         return GetId(chainId, projectId, userId);

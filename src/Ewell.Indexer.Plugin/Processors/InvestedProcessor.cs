@@ -41,19 +41,18 @@ public class InvestedProcessor : AElfLogEventProcessorBase<Invested, LogEventInf
     {
         var projectHash = eventValue.ProjectId.ToHex();
         var user = eventValue.User.ToBase58();
-        _logger.LogInformation("[Invested] start chainId:{chainId} user:{user} projectId:{projectHash}",
-            context.ChainId,
-            user, projectHash);
+        var projectId = IdGenerateHelper.GetProjectId(context.ChainId, projectHash);
+        _logger.LogInformation("[Invested] start projectId:{projectId} user:{user} ", projectId, user);
         var crowdfundingProject =
-            await _crowdfundingProjectRepository.GetFromBlockStateSetAsync(projectHash, context.ChainId);
+            await _crowdfundingProjectRepository.GetFromBlockStateSetAsync(projectId, context.ChainId);
         if (crowdfundingProject == null)
         {
-            _logger.LogInformation("[Invested] crowd funding  project with id {id} does not exist.", projectHash);
+            _logger.LogInformation("[Invested] crowd funding  project with id {id} does not exist.", projectId);
             return;
         }
 
         var (isNewParticipant, lastClaimAmount) = await IsNewParicipantAsync(context, crowdfundingProject, user,
-            eventValue.Amount, eventValue.ToClaimAmount, null, null);
+            eventValue.Amount, eventValue.ToClaimAmount);
         if (isNewParticipant)
         {
             crowdfundingProject.ParticipantCount += 1;
@@ -64,15 +63,12 @@ public class InvestedProcessor : AElfLogEventProcessorBase<Invested, LogEventInf
         crowdfundingProject.CurrentRaisedAmount += eventValue.Amount;
         _objectMapper.Map(context, crowdfundingProject);
         await _crowdfundingProjectRepository.AddOrUpdateAsync(crowdfundingProject);
-        await AddUserRecordAsync(context, crowdfundingProject, user, eventValue.Amount,
-            eventValue.ToClaimAmount, null, null);
-        _logger.LogInformation("[Invested] end chainId:{chainId} user:{user} projectId:{projectHash} ", context.ChainId,
-            user, projectHash);
+        await AddUserRecordAsync(context, crowdfundingProject, user, eventValue.Amount, eventValue.ToClaimAmount);
+        _logger.LogInformation("[Invested] end projectId:{projectId} user:{user} ", projectId, user);
     }
 
-    private async Task<(bool, long)> IsNewParicipantAsync(LogEventContext context, CrowdfundingProjectIndex crowdfundingProject,
-        string user, long investAmount, long toClaimAmount, TokenBasicInfo toRaiseToken,
-        TokenBasicInfo crowdFundingIssueToken)
+    private async Task<(bool, long)> IsNewParicipantAsync(LogEventContext context, CrowdfundingProjectIndex crowdfundingProject, 
+        string user, long investAmount, long toClaimAmount)
     {
         var userProjectId = IdGenerateHelper.GetUserProjectId(context.ChainId, crowdfundingProject.Id, user);
         var userProjectInfo = await _userProjectInfoRepository.GetFromBlockStateSetAsync(userProjectId, context.ChainId);
@@ -87,9 +83,7 @@ public class InvestedProcessor : AElfLogEventProcessorBase<Invested, LogEventInf
                 CrowdfundingProjectId = crowdfundingProject.Id,
                 InvestAmount = investAmount,
                 ToClaimAmount = toClaimAmount,
-                CrowdfundingProject = crowdfundingProject,
-                ToRaiseToken = toRaiseToken,
-                CrowdFundingIssueToken = crowdFundingIssueToken
+                CrowdfundingProject = crowdfundingProject
             };
             _objectMapper.Map(context, userProjectInfo);
             await _userProjectInfoRepository.AddOrUpdateAsync(userProjectInfo);
@@ -105,12 +99,10 @@ public class InvestedProcessor : AElfLogEventProcessorBase<Invested, LogEventInf
     }
 
     private async Task AddUserRecordAsync(LogEventContext context, CrowdfundingProjectIndex crowdfundingProject,
-        string user,
-        long crowdFundingTokenAmount,
-        long toClaimAmount, TokenBasicInfo crowdfundingToken, TokenBasicInfo publicOfferingToken)
+        string user, long crowdFundingTokenAmount, long toClaimAmount)
     {
-        var userRecordId = IdGenerateHelper.GetId(context.ChainId, user,
-            crowdfundingProject.Id, "Invested", context.TransactionId);
+        var userRecordId = IdGenerateHelper.GetId(context.ChainId, crowdfundingProject.Id, user, 
+            BehaviorType.Invest, context.TransactionId);
         var userRecordIndex = new UserRecordIndex()
         {
             Id = userRecordId,
@@ -121,9 +113,7 @@ public class InvestedProcessor : AElfLogEventProcessorBase<Invested, LogEventInf
             ToRaiseTokenAmount = crowdFundingTokenAmount,
             CrowdFundingIssueAmount = toClaimAmount,
             DateTime = context.BlockTime,
-            CrowdfundingProject = crowdfundingProject,
-            ToRaiseToken = crowdfundingToken,
-            CrowdFundingIssueToken = publicOfferingToken
+            CrowdfundingProject = crowdfundingProject
         };
         _objectMapper.Map(context, userRecordIndex);
         await _userRecordRepository.AddOrUpdateAsync(userRecordIndex);
