@@ -1,5 +1,8 @@
 ﻿using AElfIndexer.Client;
+using AElfIndexer.Client.Handlers;
+using AElfIndexer.Grains.State.Client;
 using Ewell.Indexer.Plugin.GraphQL;
+using Ewell.Indexer.Plugin.Processors;
 using Microsoft.Extensions.DependencyInjection;
 using Volo.Abp.AutoMapper;
 using Volo.Abp.Modularity;
@@ -14,6 +17,8 @@ public class EwellIndexerPluginModule : AElfIndexerClientPluginBaseModule<EwellI
     {
         var configuration = serviceCollection.GetConfiguration();
         Configure<ContractInfoOptions>(configuration.GetSection("ContractInfo"));
+        //add processors
+        serviceCollection.AddSingleton<IAElfLogEventProcessor<LogEventInfo>, InvestedProcessor>();
     }
 
     protected override string ClientId => "AElfIndexer_ewell";

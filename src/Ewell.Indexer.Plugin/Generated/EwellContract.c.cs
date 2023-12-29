@@ -128,7 +128,7 @@ namespace AElf.Contracts.Ewell {
     }
   }
 
-  internal partial class Invested : aelf::IEvent<Invested>
+  public partial class Invested : aelf::IEvent<Invested>
   {
     public global::System.Collections.Generic.IEnumerable<Invested> GetIndexed()
     {

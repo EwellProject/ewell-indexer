@@ -9834,7 +9834,7 @@ namespace AElf.Contracts.Ewell {
 
   }
 
-  internal sealed partial class Invested : pb::IMessage<Invested>
+  public sealed partial class Invested : pb::IMessage<Invested>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif

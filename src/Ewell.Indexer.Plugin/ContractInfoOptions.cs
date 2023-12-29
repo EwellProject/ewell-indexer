@@ -7,5 +7,7 @@ public class ContractInfoOptions
 }
 public class ContractInfo
 {
-    
+    public string ChainId { get; set; }
+
+    public string EwellContractAddress { get; set; }
 }
