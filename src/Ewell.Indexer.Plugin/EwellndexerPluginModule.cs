@@ -19,6 +19,9 @@ public class EwellIndexerPluginModule : AElfIndexerClientPluginBaseModule<EwellI
         Configure<ContractInfoOptions>(configuration.GetSection("ContractInfo"));
         //add processors
         serviceCollection.AddSingleton<IAElfLogEventProcessor<LogEventInfo>, InvestedProcessor>();
+        serviceCollection.AddSingleton<IAElfLogEventProcessor<LogEventInfo>, UnInvestedProcessor>();
+        serviceCollection.AddSingleton<IAElfLogEventProcessor<LogEventInfo>, RefundedProcessor>();
+        serviceCollection.AddSingleton<IAElfLogEventProcessor<LogEventInfo>, ClaimedProcessor>();
     }
 
     protected override string ClientId => "AElfIndexer_ewell";
