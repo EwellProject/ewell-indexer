@@ -6,46 +6,32 @@ using Ewell.Indexer.Plugin.Entities;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
+using Volo.Abp.Json;
 using Volo.Abp.ObjectMapping;
 
 namespace Ewell.Indexer.Plugin.Processors;
 
-public class ProjectRegisteredProcessor : AElfLogEventProcessorBase<ProjectRegistered, LogEventInfo>
+public class ProjectRegisteredProcessor : ProjectProcessorBase<ProjectRegistered>
 {
-    private readonly ILogger<AElfLogEventProcessorBase<ProjectRegistered, LogEventInfo>> _logger;
-    private readonly IObjectMapper _objectMapper;
-    private readonly ContractInfoOptions _contractInfoOptions;
-
-    private readonly IAElfIndexerClientEntityRepository<CrowdfundingProjectIndex, LogEventInfo>
-        _crowdfundingProjectRepository;
-
-    public ProjectRegisteredProcessor(ILogger<AElfLogEventProcessorBase<ProjectRegistered, LogEventInfo>> logger,
+    public ProjectRegisteredProcessor(
+        ILogger<AElfLogEventProcessorBase<ProjectRegistered, LogEventInfo>> logger,
         IObjectMapper objectMapper,
         IOptionsSnapshot<ContractInfoOptions> contractInfoOptions,
+        IJsonSerializer jsonSerializer,
         IAElfIndexerClientEntityRepository<CrowdfundingProjectIndex, LogEventInfo> crowdfundingProjectRepository) :
-        base(logger)
+        base(logger, objectMapper, contractInfoOptions, jsonSerializer, crowdfundingProjectRepository)
     {
-        _logger = logger;
-        _objectMapper = objectMapper;
-        _contractInfoOptions = contractInfoOptions.Value;
-        _crowdfundingProjectRepository = crowdfundingProjectRepository;
-    }
-
-    public override string GetContractAddress(string chainId)
-    {
-        return _contractInfoOptions.ContractInfos[chainId].EwellContractAddress;
     }
 
     protected override async Task HandleEventAsync(ProjectRegistered eventValue, LogEventContext context)
     {
         var chainId = context.ChainId;
         var projectId = eventValue.ProjectId.ToHex();
-        _logger.LogInformation("[ProjectRegistered] start projectId:{projectId} chainId:{chainId} ", projectId, chainId);
-        var crowdfundingProject =
-            await _crowdfundingProjectRepository.GetFromBlockStateSetAsync(projectId, context.ChainId);
+        Logger.LogInformation("[ProjectRegistered] start projectId:{projectId} chainId:{chainId} ", projectId, chainId);
+        var crowdfundingProject = await CrowdfundingProjectRepository.GetFromBlockStateSetAsync(projectId, context.ChainId);
         if (crowdfundingProject != null)
         {
-            _logger.LogInformation(
+            Logger.LogInformation(
                 "[ProjectRegistered] crowd funding  project with id {id} chainId {chainId} has existed.", projectId,
                 chainId);
             return;
@@ -60,15 +46,15 @@ public class ProjectRegisteredProcessor : AElfLogEventProcessorBase<ProjectRegis
                 Market = l.Market.ToBase58(), l.Weight
             }).ToList())
             : string.Empty;
-        var projectIndex = _objectMapper.Map<ProjectRegistered, CrowdfundingProjectIndex>(eventValue);
-        _objectMapper.Map(context, projectIndex);
+        var projectIndex = ObjectMapper.Map<ProjectRegistered, CrowdfundingProjectIndex>(eventValue);
+        ObjectMapper.Map(context, projectIndex);
         projectIndex.Id = projectId;
         projectIndex.ListMarketInfo = marketInformation;
         projectIndex.AdditionalInfo = additionalInformation;
         projectIndex.IsCanceled = false;
         projectIndex.ToRaiseToken = new TokenBasicInfo { ChainId = chainId, Symbol = eventValue.AcceptedCurrency };
         projectIndex.CrowdFundingIssueToken = new TokenBasicInfo { ChainId = chainId, Symbol = eventValue.ProjectCurrency };
-        await _crowdfundingProjectRepository.AddOrUpdateAsync(projectIndex);
-        _logger.LogInformation("[ProjectRegistered] end projectId:{projectId} chainId:{chainId} ", projectId, chainId);
+        await CrowdfundingProjectRepository.AddOrUpdateAsync(projectIndex);
+        Logger.LogInformation("[ProjectRegistered] end projectId:{projectId} chainId:{chainId} ", projectId, chainId);
     }
 }

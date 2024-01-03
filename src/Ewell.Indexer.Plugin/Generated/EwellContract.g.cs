@@ -9157,7 +9157,7 @@ namespace AElf.Contracts.Ewell {
 
   }
 
-  internal sealed partial class AdditionalInfoUpdated : pb::IMessage<AdditionalInfoUpdated>
+  public sealed partial class AdditionalInfoUpdated : pb::IMessage<AdditionalInfoUpdated>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
@@ -9401,7 +9401,7 @@ namespace AElf.Contracts.Ewell {
 
   }
 
-  internal sealed partial class ProjectCanceled : pb::IMessage<ProjectCanceled>
+  public sealed partial class ProjectCanceled : pb::IMessage<ProjectCanceled>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
@@ -9599,7 +9599,7 @@ namespace AElf.Contracts.Ewell {
 
   }
 
-  internal sealed partial class PeriodUpdated : pb::IMessage<PeriodUpdated>
+  public sealed partial class PeriodUpdated : pb::IMessage<PeriodUpdated>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif

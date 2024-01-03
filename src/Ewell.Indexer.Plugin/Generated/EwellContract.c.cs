@@ -73,7 +73,7 @@ namespace AElf.Contracts.Ewell {
     }
   }
 
-  internal partial class AdditionalInfoUpdated : aelf::IEvent<AdditionalInfoUpdated>
+  public partial class AdditionalInfoUpdated : aelf::IEvent<AdditionalInfoUpdated>
   {
     public global::System.Collections.Generic.IEnumerable<AdditionalInfoUpdated> GetIndexed()
     {
@@ -92,7 +92,7 @@ namespace AElf.Contracts.Ewell {
     }
   }
 
-  internal partial class ProjectCanceled : aelf::IEvent<ProjectCanceled>
+  public partial class ProjectCanceled : aelf::IEvent<ProjectCanceled>
   {
     public global::System.Collections.Generic.IEnumerable<ProjectCanceled> GetIndexed()
     {
@@ -110,7 +110,7 @@ namespace AElf.Contracts.Ewell {
     }
   }
 
-  internal partial class PeriodUpdated : aelf::IEvent<PeriodUpdated>
+  public partial class PeriodUpdated : aelf::IEvent<PeriodUpdated>
   {
     public global::System.Collections.Generic.IEnumerable<PeriodUpdated> GetIndexed()
     {
