@@ -4,6 +4,7 @@ using AElfIndexer.Client.Handlers;
 using AElfIndexer.Grains.State.Client;
 using Ewell.Indexer.Plugin.Entities;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 using Volo.Abp.ObjectMapping;
 
 namespace Ewell.Indexer.Plugin.Processors;
@@ -22,14 +23,14 @@ public class RefundedProcessor : AElfLogEventProcessorBase<ReFunded, LogEventInf
 
     public RefundedProcessor(ILogger<AElfLogEventProcessorBase<ReFunded, LogEventInfo>> logger,
         IObjectMapper objectMapper,
-        ContractInfoOptions contractInfoOptions,
+        IOptionsSnapshot<ContractInfoOptions> contractInfoOptions,        
         IAElfIndexerClientEntityRepository<CrowdfundingProjectIndex, LogEventInfo> crowdfundingProjectRepository,
         IAElfIndexerClientEntityRepository<UserProjectInfoIndex, LogEventInfo> userProjectInfoRepository,
         IAElfIndexerClientEntityRepository<UserRecordIndex, LogEventInfo> userRecordRepository) : base(logger)
     {
         _logger = logger;
         _objectMapper = objectMapper;
-        _contractInfoOptions = contractInfoOptions;
+        _contractInfoOptions = contractInfoOptions.Value;
         _crowdfundingProjectRepository = crowdfundingProjectRepository;
         _userProjectInfoRepository = userProjectInfoRepository;
         _userRecordRepository = userRecordRepository;
@@ -42,12 +43,11 @@ public class RefundedProcessor : AElfLogEventProcessorBase<ReFunded, LogEventInf
 
     protected override async Task HandleEventAsync(ReFunded eventValue, LogEventContext context)
     {
-        var projectHash = eventValue.ProjectId.ToHex();
+        var projectId = eventValue.ProjectId.ToHex();
         var user = eventValue.User.ToBase58();
-        var projectId = IdGenerateHelper.GetProjectId(context.ChainId, projectHash);
         _logger.LogInformation("[ReFunded] start projectId:{projectId} user:{user} ", projectId, user);
         var refundAmount = eventValue.Amount;
-        var crowdfundingProject = await UpdateProjectAsync(context, projectHash, refundAmount);
+        var crowdfundingProject = await UpdateProjectAsync(context, projectId, refundAmount);
         await UpdateUserProjectInfoAsync(context, projectId, user, refundAmount);
         await AddUserRecordAsync(context, crowdfundingProject, user, refundAmount);
         _logger.LogInformation("[ReFunded] end projectId:{projectId} user:{user} ", projectId, user);

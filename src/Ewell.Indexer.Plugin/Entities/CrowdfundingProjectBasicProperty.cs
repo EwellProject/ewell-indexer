@@ -1,3 +1,5 @@
+using Nest;
+
 namespace Ewell.Indexer.Plugin.Entities;
 
 public class CrowdfundingProjectBasicProperty : CrowdfundingProjectBase
@@ -8,16 +10,16 @@ public class CrowdfundingProjectBasicProperty : CrowdfundingProjectBase
     public long PublicSalePrice { get; set; }
     public long MinSubscription { get; set; }
     public long MaxSubscription { get; set; }
-    public string ListMarketInfo { get; set; }
+    [Keyword] public string ListMarketInfo { get; set; }
     public int LiquidityLockProportion { get; set; }
     public DateTime? UnlockTime { get; set; }
     public int FirstDistributeProportion { get; set; }
     public int RestDistributeProportion { get; set; }
     public int TotalPeriod { get; set; }
-    public string AdditionalInfo { get; set; }
+    [Keyword] public string AdditionalInfo { get; set; }
     public bool IsCanceled { get; set; }
     public bool IsEnableWhitelist { get; set; }
-    public string WhitelistId { get; set; }
+    [Keyword] public string WhitelistId { get; set; }
     public long CurrentRaisedAmount { get; set; }
     public long CurrentCrowdFundingIssueAmount { get; set; }
     public long ParticipantCount { get; set; }

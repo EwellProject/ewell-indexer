@@ -11,7 +11,8 @@ using aelf = global::AElf.CSharp.Core;
 namespace AElf.Contracts.Ewell {
 
   #region Events
-  internal partial class ProjectRegistered : aelf::IEvent<ProjectRegistered>
+
+  public partial class ProjectRegistered : aelf::IEvent<ProjectRegistered>
   {
     public global::System.Collections.Generic.IEnumerable<ProjectRegistered> GetIndexed()
     {

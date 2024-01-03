@@ -78,11 +78,17 @@ public class EwellIndexerPluginTestModule : AbpModule
             options.ContractInfos = new Dictionary<string, ContractInfo>()
             {
                 {
-                    "tDVW", new ContractInfo()
+                    "AELF", new ContractInfo()
                     {
-                        //TODO
+                        EwellContractAddress = "ewellContractAddress"
                     }
-                }
+                },
+                {
+                    "tDVV", new ContractInfo()
+                    {
+                        EwellContractAddress = "ewellContractAddress"
+                    }
+                },
             };
         });
 

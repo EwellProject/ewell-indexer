@@ -7161,7 +7161,7 @@ namespace AElf.Contracts.Ewell {
 
   }
 
-  internal sealed partial class AdditionalInfo : pb::IMessage<AdditionalInfo>
+  public sealed partial class AdditionalInfo : pb::IMessage<AdditionalInfo>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
@@ -7339,7 +7339,7 @@ namespace AElf.Contracts.Ewell {
 
   }
 
-  internal sealed partial class ListMarketInfo : pb::IMessage<ListMarketInfo>
+  public sealed partial class ListMarketInfo : pb::IMessage<ListMarketInfo>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
@@ -7517,7 +7517,7 @@ namespace AElf.Contracts.Ewell {
 
   }
 
-  internal sealed partial class ListMarket : pb::IMessage<ListMarket>
+  public sealed partial class ListMarket : pb::IMessage<ListMarket>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
@@ -7755,7 +7755,7 @@ namespace AElf.Contracts.Ewell {
 
   }
 
-  internal sealed partial class ProjectRegistered : pb::IMessage<ProjectRegistered>
+  public sealed partial class ProjectRegistered : pb::IMessage<ProjectRegistered>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
