@@ -8,7 +8,6 @@ using AElfIndexer.Grains.State.Client;
 using Ewell.Indexer.Plugin.Entities;
 using Ewell.Indexer.Plugin.Processors;
 using Ewell.Indexer.Plugin.Tests.Helper;
-using Nethereum.Hex.HexConvertors.Extensions;
 using Shouldly;
 using Xunit;
 
