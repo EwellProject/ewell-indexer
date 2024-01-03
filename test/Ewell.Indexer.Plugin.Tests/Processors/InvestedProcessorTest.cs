@@ -52,7 +52,7 @@ public class InvestedProcessorTest : EwellIndexerPluginTestBase
         //step2: create logEventInfo
         var logEvent = new Invested()
         {
-            ProjectId = HashHelper.ComputeFrom(ProjectId),
+            ProjectId = HashHelper.ComputeFrom(Id),
             User = Address.FromBase58(BobAddress),
             Amount = 1000,
             TotalAmount = 1000,
@@ -81,8 +81,9 @@ public class InvestedProcessorTest : EwellIndexerPluginTestBase
         await BlockStateSetSaveDataAsync<LogEventInfo>(blockStateSetKey);
         await Task.Delay(0);
         
-        var userProjectId = IdGenerateHelper.GetUserProjectId(chainId, ProjectId, BobAddress);
-        var infoIndex = await _userProjectInfoRepository.GetAsync(IdGenerateHelper.GetId(chainId, userProjectId));
-        infoIndex.ShouldNotBeNull();
+        var userProjectId = IdGenerateHelper.GetUserProjectId(chainId, logEvent.ProjectId.ToHex(), BobAddress);
+        var userProjectInfoIndex = await _userProjectInfoRepository.GetFromBlockStateSetAsync(userProjectId, chainId);
+        userProjectInfoIndex.ShouldNotBeNull();
+        userProjectInfoIndex.InvestAmount.ShouldBe(logEvent.Amount);
     }
 }
