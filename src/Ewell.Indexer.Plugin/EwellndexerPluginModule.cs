@@ -2,6 +2,7 @@
 using AElfIndexer.Client.Handlers;
 using AElfIndexer.Grains.State.Client;
 using Ewell.Indexer.Plugin.GraphQL;
+using Ewell.Indexer.Plugin.GraphQL.Dto;
 using Ewell.Indexer.Plugin.Processors;
 using Microsoft.Extensions.DependencyInjection;
 using Volo.Abp.AutoMapper;

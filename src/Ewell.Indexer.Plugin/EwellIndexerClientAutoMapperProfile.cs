@@ -2,6 +2,7 @@ using AElf.Contracts.Ewell;
 using AElfIndexer.Client.Handlers;
 using AutoMapper;
 using Ewell.Indexer.Plugin.Entities;
+using Ewell.Indexer.Plugin.GraphQL.Dto;
 
 namespace Ewell.Indexer.Plugin;
 
@@ -26,5 +27,6 @@ public class EwellIndexerClientAutoMapperProfile : Profile
         CreateMap<LogEventContext, CrowdfundingProjectIndex>();
         CreateMap<LogEventContext, UserProjectInfoIndex>();
         CreateMap<LogEventContext, UserRecordIndex>();
+        CreateMap<CrowdfundingProjectIndex, CrowdfundingProjectDto>();
     }
 }
