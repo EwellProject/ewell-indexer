@@ -19,9 +19,9 @@ public class UnInvestedProcessorTest : EwellIndexerPluginTestBase
         _crowdfundingProjectRepository;
 
     private readonly IAElfIndexerClientEntityRepository<UserProjectInfoIndex, LogEventInfo> _userProjectInfoRepository;
+    
     private readonly IAElfIndexerClientEntityRepository<UserRecordIndex, LogEventInfo> _userRecordRepository;
-
-
+    
     public UnInvestedProcessorTest()
     {
         _crowdfundingProjectRepository =
@@ -34,7 +34,6 @@ public class UnInvestedProcessorTest : EwellIndexerPluginTestBase
     [Fact]
     public async Task HandleEventAsync_Test()
     {
-        
         await MockProjectRegistered();
 
         var invested = await MockInvested();
@@ -81,11 +80,25 @@ public class UnInvestedProcessorTest : EwellIndexerPluginTestBase
         //step4: save blockStateSet into es
         await BlockStateSetSaveDataAsync<LogEventInfo>(blockStateSetKey);
         await Task.Delay(0);
-
+        
+        var projectId = HashHelper.ComputeFrom(Id).ToHex();
+        var projectIndex = await _crowdfundingProjectRepository.GetFromBlockStateSetAsync(projectId, chainId);
+        projectIndex.ShouldNotBeNull();
+        projectIndex.Id.ShouldBe(projectId);
+        projectIndex.CurrentRaisedAmount.ShouldBe(0);
+        projectIndex.ReceivableLiquidatedDamageAmount.ShouldBe(invested.Amount - logEvent.UnInvestAmount);
+        
+        var userRecordId = IdGenerateHelper.GetId(chainId, projectId, BobAddress, 
+            BehaviorType.UnInvest, transactionId);
+        var userRecordIndex = await _userRecordRepository.GetFromBlockStateSetAsync(userRecordId, chainId);
+        userRecordIndex.ShouldNotBeNull();
+        userRecordIndex.Id.ShouldBe(userRecordId);
+        
         var userProjectId = IdGenerateHelper.GetUserProjectId(chainId, logEvent.ProjectId.ToHex(), BobAddress);
         var userProjectInfoIndex = await _userProjectInfoRepository.GetFromBlockStateSetAsync(userProjectId, chainId);
         userProjectInfoIndex.ShouldNotBeNull();
         //check Remain InvestAmount
-        userProjectInfoIndex.InvestAmount.ShouldBe(invested.Amount - logEvent.UnInvestAmount);
+        userProjectInfoIndex.InvestAmount.ShouldBe(0);
+        userProjectInfoIndex.ToClaimAmount.ShouldBe(0);
     }
 }

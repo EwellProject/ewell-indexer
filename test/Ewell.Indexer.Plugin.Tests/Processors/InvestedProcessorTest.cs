@@ -33,10 +33,16 @@ public class InvestedProcessorTest : EwellIndexerPluginTestBase
         var invested = await MockInvested();
 
         string chainId = Chain_AELF;
-        
-        var userProjectId = IdGenerateHelper.GetUserProjectId(chainId, invested.ProjectId.ToHex(), BobAddress);
+        var projectId = invested.ProjectId.ToHex();
+        var userProjectId = IdGenerateHelper.GetUserProjectId(chainId, projectId, BobAddress);
         var userProjectInfoIndex = await _userProjectInfoRepository.GetFromBlockStateSetAsync(userProjectId, chainId);
         userProjectInfoIndex.ShouldNotBeNull();
         userProjectInfoIndex.InvestAmount.ShouldBe(invested.Amount);
+        
+        var userRecordId = IdGenerateHelper.GetId(chainId, projectId, BobAddress, 
+            BehaviorType.Invest, transactionId);
+        var userRecordIndex = await _userRecordRepository.GetFromBlockStateSetAsync(userRecordId, chainId);
+        userRecordIndex.ShouldNotBeNull();
+        userRecordIndex.Id.ShouldBe(userRecordId);
     }
 }

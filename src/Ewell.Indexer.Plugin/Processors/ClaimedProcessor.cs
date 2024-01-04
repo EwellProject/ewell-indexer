@@ -9,58 +9,40 @@ using Volo.Abp.ObjectMapping;
 
 namespace Ewell.Indexer.Plugin.Processors;
 
-public class ClaimedProcessor : AElfLogEventProcessorBase<Claimed, LogEventInfo>
+public class ClaimedProcessor : UserProjectProcessorBase<Claimed>
 {
-    private readonly ILogger<AElfLogEventProcessorBase<Claimed, LogEventInfo>> _logger;
-    private readonly IObjectMapper _objectMapper;
-    private readonly ContractInfoOptions _contractInfoOptions;
-
-    private readonly IAElfIndexerClientEntityRepository<CrowdfundingProjectIndex, LogEventInfo>
-        _crowdfundingProjectRepository;
-
-    private readonly IAElfIndexerClientEntityRepository<UserProjectInfoIndex, LogEventInfo> _userProjectInfoRepository;
-    private readonly IAElfIndexerClientEntityRepository<UserRecordIndex, LogEventInfo> _userRecordRepository;
-
     public ClaimedProcessor(ILogger<AElfLogEventProcessorBase<Claimed, LogEventInfo>> logger,
         IObjectMapper objectMapper,
-        IOptionsSnapshot<ContractInfoOptions> contractInfoOptions,        
+        IOptionsSnapshot<ContractInfoOptions> contractInfoOptions,
         IAElfIndexerClientEntityRepository<CrowdfundingProjectIndex, LogEventInfo> crowdfundingProjectRepository,
         IAElfIndexerClientEntityRepository<UserProjectInfoIndex, LogEventInfo> userProjectInfoRepository,
-        IAElfIndexerClientEntityRepository<UserRecordIndex, LogEventInfo> userRecordRepository) : base(logger)
+        IAElfIndexerClientEntityRepository<UserRecordIndex, LogEventInfo> userRecordRepository) :
+        base(logger, objectMapper, contractInfoOptions, crowdfundingProjectRepository, userProjectInfoRepository,
+            userRecordRepository)
     {
-        _logger = logger;
-        _objectMapper = objectMapper;
-        _contractInfoOptions = contractInfoOptions.Value;
-        _crowdfundingProjectRepository = crowdfundingProjectRepository;
-        _userProjectInfoRepository = userProjectInfoRepository;
-        _userRecordRepository = userRecordRepository;
-    }
-
-    public override string GetContractAddress(string chainId)
-    {
-        return _contractInfoOptions.ContractInfos[chainId].EwellContractAddress;
     }
 
     protected override async Task HandleEventAsync(Claimed eventValue, LogEventContext context)
     {
         var projectId = eventValue.ProjectId.ToHex();
         var user = eventValue.User.ToBase58();
-        _logger.LogInformation("[Claimed] start projectId:{projectId} user:{user} ", projectId, user);
+        Logger.LogInformation("[Claimed] start projectId:{projectId} user:{user} ", projectId, user);
         var claimedAmount = eventValue.Amount;
         var crowdfundingProject = await UpdateProjectAsync(context, projectId, claimedAmount);
         await UpdateUserProjectInfoAsync(context, crowdfundingProject.Id, user, claimedAmount);
-        await AddUserRecordAsync(context, crowdfundingProject, user, claimedAmount);
-        _logger.LogInformation("[Claimed] end projectId:{projectId} user:{user} ", projectId, user);
+        await AddUserRecordAsync(context, crowdfundingProject, user, BehaviorType.Claim, 
+            0, claimedAmount);
+        Logger.LogInformation("[Claimed] end projectId:{projectId} user:{user} ", projectId, user);
     }
 
     private async Task<CrowdfundingProjectIndex> UpdateProjectAsync(LogEventContext context, string projectId,
         long claimAmount)
     {
         var crowdfundingProject =
-            await _crowdfundingProjectRepository.GetFromBlockStateSetAsync(projectId, context.ChainId);
+            await CrowdfundingProjectRepository.GetFromBlockStateSetAsync(projectId, context.ChainId);
         crowdfundingProject.CurrentCrowdFundingIssueAmount -= claimAmount;
-        _objectMapper.Map(context, crowdfundingProject);
-        await _crowdfundingProjectRepository.AddOrUpdateAsync(crowdfundingProject);
+        ObjectMapper.Map(context, crowdfundingProject);
+        await CrowdfundingProjectRepository.AddOrUpdateAsync(crowdfundingProject);
         return crowdfundingProject;
     }
 
@@ -68,31 +50,10 @@ public class ClaimedProcessor : AElfLogEventProcessorBase<Claimed, LogEventInfo>
     {
         var userProjectId = IdGenerateHelper.GetUserProjectId(context.ChainId, projectId, user);
         var userProjectInfo =
-            await _userProjectInfoRepository.GetFromBlockStateSetAsync(userProjectId, context.ChainId);
+            await UserProjectInfoRepository.GetFromBlockStateSetAsync(userProjectId, context.ChainId);
         userProjectInfo.ActualClaimAmount += claimAmount;
         userProjectInfo.ToClaimAmount -= claimAmount;
-        _objectMapper.Map(context, userProjectInfo);
-        await _userProjectInfoRepository.AddOrUpdateAsync(userProjectInfo);
-    }
-
-    private async Task AddUserRecordAsync(LogEventContext context, CrowdfundingProjectIndex crowdfundingProject,
-        string user, long claimAmount)
-    {
-        var userRecordId = IdGenerateHelper.GetId(context.ChainId, crowdfundingProject.Id, user, 
-            BehaviorType.Claim, context.TransactionId);
-        var userRecordIndex = new UserRecordIndex()
-        {
-            Id = userRecordId,
-            ChainId = context.ChainId,
-            User = user,
-            CrowdfundingProjectId = crowdfundingProject.Id,
-            BehaviorType = BehaviorType.Claim,
-            ToRaiseTokenAmount = 0,
-            CrowdFundingIssueAmount = claimAmount,
-            DateTime = context.BlockTime,
-            CrowdfundingProject = crowdfundingProject
-        };
-        _objectMapper.Map(context, userRecordIndex);
-        await _userRecordRepository.AddOrUpdateAsync(userRecordIndex);
+        ObjectMapper.Map(context, userProjectInfo);
+        await UserProjectInfoRepository.AddOrUpdateAsync(userProjectInfo);
     }
 }

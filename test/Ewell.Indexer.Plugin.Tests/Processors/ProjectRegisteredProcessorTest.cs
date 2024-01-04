@@ -23,9 +23,9 @@ public class ProjectRegisteredProcessorTest : EwellIndexerPluginTestBase
     public async Task HandleEventAsync_Test()
     {
         await MockProjectRegistered();
-        var userProjectId = HashHelper.ComputeFrom(Id).ToHex();
-        var projectIndex = await _crowdfundingProjectRepository.GetFromBlockStateSetAsync(userProjectId, Chain_AELF);
+        var projectId = HashHelper.ComputeFrom(Id).ToHex();
+        var projectIndex = await _crowdfundingProjectRepository.GetFromBlockStateSetAsync(projectId, Chain_AELF);
         projectIndex.ShouldNotBeNull();
-        projectIndex.Id.ShouldBe(userProjectId);
+        projectIndex.Id.ShouldBe(projectId);
     }
 }
