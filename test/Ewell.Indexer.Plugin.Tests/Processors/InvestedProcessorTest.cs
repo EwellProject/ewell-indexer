@@ -1,13 +1,6 @@
-using AElf;
-using AElf.Contracts.Ewell;
-using AElf.CSharp.Core.Extension;
-using AElf.Types;
 using AElfIndexer.Client;
-using AElfIndexer.Client.Handlers;
 using AElfIndexer.Grains.State.Client;
 using Ewell.Indexer.Plugin.Entities;
-using Ewell.Indexer.Plugin.Processors;
-using Ewell.Indexer.Plugin.Tests.Helper;
 using Shouldly;
 using Xunit;
 
@@ -37,52 +30,13 @@ public class InvestedProcessorTest : EwellIndexerPluginTestBase
     {
         await MockProjectRegistered();
         
-        string chainId = Chain_AELF; 
-        //step1: create blockStateSet
-        var blockStateSet = new BlockStateSet<LogEventInfo>
-        {
-            BlockHash = blockHash,
-            BlockHeight = blockHeight,
-            Confirmed = true,
-            PreviousBlockHash = previousBlockHash,
-        };
-        var blockStateSetKey = await InitializeBlockStateSetAsync(blockStateSet, chainId);
+        var invested = await MockInvested();
 
-        //step2: create logEventInfo
-        var logEvent = new Invested()
-        {
-            ProjectId = HashHelper.ComputeFrom(Id),
-            User = Address.FromBase58(BobAddress),
-            Amount = 1000,
-            TotalAmount = 1000,
-            ToClaimAmount = 2000
-        };
-
-        var logEventInfo = LogEventHelper.ConvertAElfLogEventToLogEventInfo(logEvent.ToLogEvent());
-        logEventInfo.BlockHeight = blockHeight;
-        logEventInfo.ChainId = chainId;
-        logEventInfo.BlockHash = blockHash;
-        logEventInfo.TransactionId = transactionId;
-
-        var logEventContext = new LogEventContext
-        {
-            ChainId = chainId,
-            BlockHeight = blockHeight,
-            BlockHash = blockHash,
-            PreviousBlockHash = previousBlockHash,
-            TransactionId = transactionId
-        };
+        string chainId = Chain_AELF;
         
-        var processor = GetRequiredService<InvestedProcessor>();
-        await processor.HandleEventAsync(logEventInfo, logEventContext);
-
-        //step4: save blockStateSet into es
-        await BlockStateSetSaveDataAsync<LogEventInfo>(blockStateSetKey);
-        await Task.Delay(0);
-        
-        var userProjectId = IdGenerateHelper.GetUserProjectId(chainId, logEvent.ProjectId.ToHex(), BobAddress);
+        var userProjectId = IdGenerateHelper.GetUserProjectId(chainId, invested.ProjectId.ToHex(), BobAddress);
         var userProjectInfoIndex = await _userProjectInfoRepository.GetFromBlockStateSetAsync(userProjectId, chainId);
         userProjectInfoIndex.ShouldNotBeNull();
-        userProjectInfoIndex.InvestAmount.ShouldBe(logEvent.Amount);
+        userProjectInfoIndex.InvestAmount.ShouldBe(invested.Amount);
     }
 }

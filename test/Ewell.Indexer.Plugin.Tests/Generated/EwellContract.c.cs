@@ -11,7 +11,7 @@ using aelf = global::AElf.CSharp.Core;
 namespace AElf.Contracts.Ewell {
 
   #region Events
-  internal partial class ProjectRegistered : aelf::IEvent<ProjectRegistered>
+  public partial class ProjectRegistered : aelf::IEvent<ProjectRegistered>
   {
     public global::System.Collections.Generic.IEnumerable<ProjectRegistered> GetIndexed()
     {
@@ -49,6 +49,7 @@ namespace AElf.Contracts.Ewell {
         RestDistributeProportion = RestDistributeProportion,
         PeriodDuration = PeriodDuration,
         VirtualAddress = VirtualAddress,
+        TokenReleaseTime = TokenReleaseTime,
       };
     }
   }
@@ -72,7 +73,7 @@ namespace AElf.Contracts.Ewell {
     }
   }
 
-  internal partial class AdditionalInfoUpdated : aelf::IEvent<AdditionalInfoUpdated>
+  public partial class AdditionalInfoUpdated : aelf::IEvent<AdditionalInfoUpdated>
   {
     public global::System.Collections.Generic.IEnumerable<AdditionalInfoUpdated> GetIndexed()
     {
@@ -91,7 +92,7 @@ namespace AElf.Contracts.Ewell {
     }
   }
 
-  internal partial class ProjectCanceled : aelf::IEvent<ProjectCanceled>
+  public partial class ProjectCanceled : aelf::IEvent<ProjectCanceled>
   {
     public global::System.Collections.Generic.IEnumerable<ProjectCanceled> GetIndexed()
     {
@@ -109,7 +110,7 @@ namespace AElf.Contracts.Ewell {
     }
   }
 
-  internal partial class PeriodUpdated : aelf::IEvent<PeriodUpdated>
+  public partial class PeriodUpdated : aelf::IEvent<PeriodUpdated>
   {
     public global::System.Collections.Generic.IEnumerable<PeriodUpdated> GetIndexed()
     {
@@ -128,7 +129,7 @@ namespace AElf.Contracts.Ewell {
     }
   }
 
-  internal partial class Invested : aelf::IEvent<Invested>
+  public partial class Invested : aelf::IEvent<Invested>
   {
     public global::System.Collections.Generic.IEnumerable<Invested> GetIndexed()
     {
@@ -152,7 +153,7 @@ namespace AElf.Contracts.Ewell {
     }
   }
 
-  internal partial class UnInvested : aelf::IEvent<UnInvested>
+  public partial class UnInvested : aelf::IEvent<UnInvested>
   {
     public global::System.Collections.Generic.IEnumerable<UnInvested> GetIndexed()
     {
@@ -216,7 +217,7 @@ namespace AElf.Contracts.Ewell {
     }
   }
 
-  internal partial class Claimed : aelf::IEvent<Claimed>
+  public partial class Claimed : aelf::IEvent<Claimed>
   {
     public global::System.Collections.Generic.IEnumerable<Claimed> GetIndexed()
     {
@@ -239,7 +240,7 @@ namespace AElf.Contracts.Ewell {
     }
   }
 
-  internal partial class ReFunded : aelf::IEvent<ReFunded>
+  public partial class ReFunded : aelf::IEvent<ReFunded>
   {
     public global::System.Collections.Generic.IEnumerable<ReFunded> GetIndexed()
     {

@@ -10,4 +10,5 @@ public class CrowdfundingProjectBase : AElfIndexerClientEntity<string>
     [Keyword] public string CrowdFundingType { get; set; }
     public DateTime StartTime { get; set; }
     public DateTime EndTime { get; set; }
+    public DateTime TokenReleaseTime { get; set; }
 }

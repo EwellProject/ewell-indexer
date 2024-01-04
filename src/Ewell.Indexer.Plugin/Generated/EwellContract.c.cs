@@ -11,7 +11,6 @@ using aelf = global::AElf.CSharp.Core;
 namespace AElf.Contracts.Ewell {
 
   #region Events
-
   public partial class ProjectRegistered : aelf::IEvent<ProjectRegistered>
   {
     public global::System.Collections.Generic.IEnumerable<ProjectRegistered> GetIndexed()
@@ -50,6 +49,7 @@ namespace AElf.Contracts.Ewell {
         RestDistributeProportion = RestDistributeProportion,
         PeriodDuration = PeriodDuration,
         VirtualAddress = VirtualAddress,
+        TokenReleaseTime = TokenReleaseTime,
       };
     }
   }

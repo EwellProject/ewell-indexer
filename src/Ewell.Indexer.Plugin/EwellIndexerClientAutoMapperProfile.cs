@@ -16,6 +16,8 @@ public class EwellIndexerClientAutoMapperProfile : Profile
                 => opt.MapFrom(source => source.StartTime.ToDateTime()
                 )).ForMember(des => des.EndTime, opt
                 => opt.MapFrom(source => source.EndTime.ToDateTime()
+                )).ForMember(des => des.TokenReleaseTime, opt
+                => opt.MapFrom(source => source.TokenReleaseTime.ToDateTime()
                 )).ForMember(des => des.UnlockTime, opt
                 => opt.MapFrom(source => source.UnlockTime == null ? (DateTime?)null : source.UnlockTime.ToDateTime()
                 )).ForMember(des => des.WhitelistId, opt
