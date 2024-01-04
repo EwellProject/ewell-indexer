@@ -11,7 +11,7 @@ using aelf = global::AElf.CSharp.Core;
 namespace AElf.Contracts.Whitelist {
 
   #region Events
-  internal partial class WhitelistCreated : aelf::IEvent<WhitelistCreated>
+  public partial class WhitelistCreated : aelf::IEvent<WhitelistCreated>
   {
     public global::System.Collections.Generic.IEnumerable<WhitelistCreated> GetIndexed()
     {
@@ -116,7 +116,7 @@ namespace AElf.Contracts.Whitelist {
     }
   }
 
-  internal partial class WhitelistDisabled : aelf::IEvent<WhitelistDisabled>
+  public partial class WhitelistDisabled : aelf::IEvent<WhitelistDisabled>
   {
     public global::System.Collections.Generic.IEnumerable<WhitelistDisabled> GetIndexed()
     {
@@ -135,7 +135,7 @@ namespace AElf.Contracts.Whitelist {
     }
   }
 
-  internal partial class WhitelistReenable : aelf::IEvent<WhitelistReenable>
+  public partial class WhitelistReenable : aelf::IEvent<WhitelistReenable>
   {
     public global::System.Collections.Generic.IEnumerable<WhitelistReenable> GetIndexed()
     {

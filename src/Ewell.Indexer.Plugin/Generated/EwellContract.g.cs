@@ -8960,7 +8960,7 @@ namespace AElf.Contracts.Ewell {
 
   }
 
-  internal sealed partial class NewWhitelistIdSet : pb::IMessage<NewWhitelistIdSet>
+  public sealed partial class NewWhitelistIdSet : pb::IMessage<NewWhitelistIdSet>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
@@ -10983,7 +10983,7 @@ namespace AElf.Contracts.Ewell {
 
   }
 
-  internal sealed partial class LiquidatedDamageClaimed : pb::IMessage<LiquidatedDamageClaimed>
+  public sealed partial class LiquidatedDamageClaimed : pb::IMessage<LiquidatedDamageClaimed>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif

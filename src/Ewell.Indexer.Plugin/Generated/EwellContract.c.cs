@@ -54,7 +54,7 @@ namespace AElf.Contracts.Ewell {
     }
   }
 
-  internal partial class NewWhitelistIdSet : aelf::IEvent<NewWhitelistIdSet>
+  public partial class NewWhitelistIdSet : aelf::IEvent<NewWhitelistIdSet>
   {
     public global::System.Collections.Generic.IEnumerable<NewWhitelistIdSet> GetIndexed()
     {
@@ -196,7 +196,7 @@ namespace AElf.Contracts.Ewell {
     }
   }
 
-  internal partial class LiquidatedDamageClaimed : aelf::IEvent<LiquidatedDamageClaimed>
+  public partial class LiquidatedDamageClaimed : aelf::IEvent<LiquidatedDamageClaimed>
   {
     public global::System.Collections.Generic.IEnumerable<LiquidatedDamageClaimed> GetIndexed()
     {

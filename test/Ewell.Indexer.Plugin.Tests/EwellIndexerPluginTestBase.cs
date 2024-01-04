@@ -15,11 +15,11 @@ namespace Ewell.Indexer.Plugin.Tests;
 
 public abstract class EwellIndexerPluginTestBase : EwellIndexerOrleansTestBase<EwellIndexerPluginTestModule>
 {
-    private readonly IAElfIndexerClientInfoProvider _indexerClientInfoProvider;
+    public readonly IAElfIndexerClientInfoProvider _indexerClientInfoProvider;
     public IBlockStateSetProvider<LogEventInfo> _blockStateSetLogEventInfoProvider;
-    private readonly IBlockStateSetProvider<TransactionInfo> _blockStateSetTransactionInfoProvider;
-    private readonly IDAppDataProvider _dAppDataProvider;
-    private readonly IDAppDataIndexManagerProvider _dAppDataIndexManagerProvider;
+    public readonly IBlockStateSetProvider<TransactionInfo> _blockStateSetTransactionInfoProvider;
+    public readonly IDAppDataProvider _dAppDataProvider;
+    public readonly IDAppDataIndexManagerProvider _dAppDataIndexManagerProvider;
 
 
     public static string AliceAddress = "2Pvmz2c57roQAJEtQ11fqavofdDtyD1Vehjxd7QRpQ7hwSqcF7";

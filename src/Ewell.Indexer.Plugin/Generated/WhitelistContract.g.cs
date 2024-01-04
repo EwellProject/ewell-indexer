@@ -292,7 +292,7 @@ namespace AElf.Contracts.Whitelist {
 
   }
   #region Enums
-  internal enum StrategyType {
+  public enum StrategyType {
     [pbr::OriginalName("Basic")] Basic = 0,
     [pbr::OriginalName("Price")] Price = 1,
     [pbr::OriginalName("Customize")] Customize = 2,
@@ -1121,7 +1121,7 @@ namespace AElf.Contracts.Whitelist {
 
   }
 
-  internal sealed partial class ExtraInfoIdList : pb::IMessage<ExtraInfoIdList>
+  public sealed partial class ExtraInfoIdList : pb::IMessage<ExtraInfoIdList>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
@@ -1299,7 +1299,7 @@ namespace AElf.Contracts.Whitelist {
 
   }
 
-  internal sealed partial class ExtraInfoId : pb::IMessage<ExtraInfoId>
+  public sealed partial class ExtraInfoId : pb::IMessage<ExtraInfoId>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
@@ -3145,7 +3145,7 @@ namespace AElf.Contracts.Whitelist {
 
   }
 
-  internal sealed partial class AddressList : pb::IMessage<AddressList>
+  public sealed partial class AddressList : pb::IMessage<AddressList>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
@@ -9681,7 +9681,7 @@ namespace AElf.Contracts.Whitelist {
 
   }
 
-  internal sealed partial class WhitelistCreated : pb::IMessage<WhitelistCreated>
+  public sealed partial class WhitelistCreated : pb::IMessage<WhitelistCreated>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
@@ -11343,7 +11343,7 @@ namespace AElf.Contracts.Whitelist {
 
   }
 
-  internal sealed partial class WhitelistDisabled : pb::IMessage<WhitelistDisabled>
+  public sealed partial class WhitelistDisabled : pb::IMessage<WhitelistDisabled>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
@@ -11578,7 +11578,7 @@ namespace AElf.Contracts.Whitelist {
 
   }
 
-  internal sealed partial class WhitelistReenable : pb::IMessage<WhitelistReenable>
+  public sealed partial class WhitelistReenable : pb::IMessage<WhitelistReenable>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif

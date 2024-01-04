@@ -73,6 +73,7 @@ public class EwellIndexerPluginTestModule : AbpModule
             options.IndexPrefix = "EwellIndexer";
         });
 
+                
         context.Services.Configure<ContractInfoOptions>(options =>
         {
             options.ContractInfos = new Dictionary<string, ContractInfo>()
@@ -80,13 +81,22 @@ public class EwellIndexerPluginTestModule : AbpModule
                 {
                     "AELF", new ContractInfo()
                     {
-                        EwellContractAddress = "ewellContractAddress"
+                        EwellContractAddress = "ewellContractAddress",
+                        WhitelistContractAddress = "whitelist",
                     }
                 },
                 {
                     "tDVV", new ContractInfo()
                     {
-                        EwellContractAddress = "ewellContractAddress"
+                        EwellContractAddress = "ewellContractAddress",
+                        WhitelistContractAddress = "whitelist",
+                    }
+                },
+                {
+                    "tDVW", new ContractInfo()
+                    {
+                        EwellContractAddress = "ewellContractAddress",
+                        WhitelistContractAddress = "whitelist",
                     }
                 },
             };
