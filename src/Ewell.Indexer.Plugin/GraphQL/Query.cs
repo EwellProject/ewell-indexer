@@ -12,7 +12,7 @@ using Volo.Abp.ObjectMapping;
 
 namespace Ewell.Indexer.Plugin.GraphQL;
 
-public class Query
+public partial class Query
 {
     [Name("syncState")]
     public static async Task<SyncStateDto> SyncStateAsync(
