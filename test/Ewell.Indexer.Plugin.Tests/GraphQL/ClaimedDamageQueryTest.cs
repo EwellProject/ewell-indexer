@@ -34,43 +34,5 @@ public class ClaimedDamageQueryTest : QueryTestBase
         var claimDamageLogEventProcessor = GetRequiredService<ClaimDamageLogEventProcessor>();
         await claimDamageLogEventProcessor.HandleEventAsync(logEventInfo, logEventContext);
         await BlockStateSetSaveDataAsync<LogEventInfo>(blockStateSetKey);
-        
-        var claimedDamagePageResult = await Query.ClaimedDamageAsync(_liquidatedDamageClaimedRepository, _objectMapper, 
-            new GetDamageClaimedDto
-            {
-                ChainId = "tDVW",
-                StartBlockHeight = 100
-            });
-        claimedDamagePageResult.ShouldNotBeNull();
-        claimedDamagePageResult.TotalCount.ShouldBe(1);
-        claimedDamagePageResult.Data.Count.ShouldBe(1);
-        var damageClaimedInfoIndexDto = claimedDamagePageResult.Data[0];
-        damageClaimedInfoIndexDto.Id.ShouldBe(id);
-        damageClaimedInfoIndexDto.BlockHeight.ShouldBe(100);
-        damageClaimedInfoIndexDto.ProjectId.ShouldBe(projectId.ToHex());
-        damageClaimedInfoIndexDto.InvestSymbol.ShouldBe(investSymbol);
-        damageClaimedInfoIndexDto.ChainId.ShouldBe(logEventContext.ChainId);
-        damageClaimedInfoIndexDto.User.ShouldBe(user.ToBase58());
-        damageClaimedInfoIndexDto.Amount.ShouldBe(5);
-        
-        claimedDamagePageResult = await Query.ClaimedDamageAsync(_liquidatedDamageClaimedRepository, _objectMapper, 
-            new GetDamageClaimedDto
-            {
-                ChainId = "tDVW",
-                StartBlockHeight = 101
-            });
-        claimedDamagePageResult.ShouldNotBeNull();
-        claimedDamagePageResult.TotalCount.ShouldBe(0);
-        
-        claimedDamagePageResult = await Query.ClaimedDamageAsync(_liquidatedDamageClaimedRepository, _objectMapper, 
-            new GetDamageClaimedDto
-            {
-                ChainId = "tDVW",
-                StartBlockHeight = 100,
-                SkipCount = 1
-            });
-        claimedDamagePageResult.ShouldNotBeNull();
-        claimedDamagePageResult.TotalCount.ShouldBe(1);
-        claimedDamagePageResult.Data.Count.ShouldBe(0);
     }
 }

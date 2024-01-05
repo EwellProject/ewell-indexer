@@ -30,21 +30,5 @@ public class EwellIndexerClientAutoMapperProfile : Profile
         CreateMap<LogEventContext, UserProjectInfoIndex>();
         CreateMap<LogEventContext, UserRecordIndex>();
         CreateMap<CrowdfundingProjectIndex, CrowdfundingProjectDto>();
-        
-        //whitelist
-        CreateMap<WhitelistIndex, WhitelistDto>();
-        CreateMap<LogEventContext, WhitelistIndex>();
-        CreateMap<WhitelistDisabled, WhitelistIndex>();
-        CreateMap<WhitelistReenable, WhitelistIndex>();
-        
-        //project
-        CreateMap<ProjectIndex, ProjectDto>();
-        CreateMap<LogEventContext, ProjectIndex>();
-        CreateMap<NewWhitelistIdSet, ProjectIndex>();
-        
-        //claimedDamage
-        CreateMap<LiquidatedDamageClaimedIndex, DamageClaimedDto>();
-        CreateMap<LogEventContext, LiquidatedDamageClaimedIndex>();
-        CreateMap<LiquidatedDamageClaimed, LiquidatedDamageClaimedIndex>();
     }
 }

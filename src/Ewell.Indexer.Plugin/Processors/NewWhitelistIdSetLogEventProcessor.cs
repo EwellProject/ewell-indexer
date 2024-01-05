@@ -13,18 +13,18 @@ namespace Ewell.Indexer.Plugin.Processors;
 public class NewWhitelistIdSetLogEventProcessor : AElfLogEventProcessorBase<NewWhitelistIdSet, LogEventInfo>
 {
     private readonly ContractInfoOptions _contractInfoOptions;
-    private readonly IAElfIndexerClientEntityRepository<ProjectIndex, LogEventInfo> _projectIndexRepository;
+    private readonly IAElfIndexerClientEntityRepository<CrowdfundingProjectIndex, LogEventInfo> _crowdfundingProjectRepository;
     private readonly ILogger<AElfLogEventProcessorBase<NewWhitelistIdSet, LogEventInfo>> _logger;
     private readonly IObjectMapper _objectMapper;
     
     public NewWhitelistIdSetLogEventProcessor(ILogger<AElfLogEventProcessorBase<NewWhitelistIdSet, LogEventInfo>> logger,
         IOptionsSnapshot<ContractInfoOptions> contractInfoOptions,
-        IAElfIndexerClientEntityRepository<ProjectIndex, LogEventInfo> projectIndexRepository,
+        IAElfIndexerClientEntityRepository<CrowdfundingProjectIndex, LogEventInfo> crowdfundingProjectRepository,
         IObjectMapper objectMapper) : base(logger)
     {
         _contractInfoOptions = contractInfoOptions.Value;
         _logger = logger;
-        _projectIndexRepository = projectIndexRepository;
+        _crowdfundingProjectRepository = crowdfundingProjectRepository;
         _objectMapper = objectMapper;
     }
 
@@ -36,26 +36,22 @@ public class NewWhitelistIdSetLogEventProcessor : AElfLogEventProcessorBase<NewW
     protected override async Task HandleEventAsync(NewWhitelistIdSet eventValue, LogEventContext context)
     {
         var projectId = eventValue.ProjectId.ToHex();
-        _logger.LogInformation("[NewWhitelistIdSet] START: Id={Id}, Event={Event}",
-            projectId, JsonConvert.SerializeObject(eventValue));
+        var chainId = context.ChainId;
+        _logger.LogInformation("[NewWhitelistIdSet] START: Id={Id}, Event={Event}, ChainId={ChainId}",
+            projectId, JsonConvert.SerializeObject(eventValue), chainId);
         try
         {
-            var project = await _projectIndexRepository.GetFromBlockStateSetAsync(projectId, context.ChainId);
-            if (project != null)
+            var crowdfundingProject = await _crowdfundingProjectRepository.GetFromBlockStateSetAsync(projectId, context.ChainId);
+            if (crowdfundingProject == null)
             {
-                project.WhitelistId = eventValue.WhitelistId.ToHex();
+                _logger.LogInformation("[NewWhitelistIdSet] crowdfundingProject not exist: Id={Id}, ChainId={ChainId}", projectId, chainId);
+                return;
             }
-            else
-            {
-                project = _objectMapper.Map<NewWhitelistIdSet, ProjectIndex>(eventValue);
-                project.WhitelistId = eventValue.WhitelistId.ToHex();
-                project.Id = projectId;
-            }
-            project.LastModifyTime = DateTimeHelper.GetTimeStampInMilliseconds();
-            _objectMapper.Map(context, project);
+            crowdfundingProject.WhitelistId = eventValue.WhitelistId.ToHex();
+            _objectMapper.Map(context, crowdfundingProject);
 
             _logger.LogInformation("[NewWhitelistIdSet] SAVE: Id={Id}", projectId);
-            await _projectIndexRepository.AddOrUpdateAsync(project);
+            await _crowdfundingProjectRepository.AddOrUpdateAsync(crowdfundingProject);
             _logger.LogInformation("[NewWhitelistIdSet] FINISH: Id={Id}", projectId);
         }
         catch (Exception e)

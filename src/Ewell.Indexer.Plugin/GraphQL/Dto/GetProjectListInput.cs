@@ -1,10 +1,6 @@
 namespace Ewell.Indexer.Plugin.GraphQL.Dto;
 
-public class GetProjectListInput
+public class GetProjectListInput : GetInputBase
 {
-    public string ChainId { get; set; }
-    public long StartBlockHeight { get; set; }
-    public long EndBlockHeight { get; set; }
-    public int SkipCount { get; set; }
-    public int MaxResultCount { get; set; }
+    
 }

@@ -11,53 +11,52 @@ using Volo.Abp.ObjectMapping;
 
 namespace Ewell.Indexer.Plugin.Processors;
 
-public class ClaimDamageLogEventProcessor : AElfLogEventProcessorBase<LiquidatedDamageClaimed, LogEventInfo>
+public class ClaimDamageLogEventProcessor : UserProjectProcessorBase<LiquidatedDamageClaimed>
 {
-    private readonly ContractInfoOptions _contractInfoOptions;
-    private readonly IAElfIndexerClientEntityRepository<LiquidatedDamageClaimedIndex, LogEventInfo> _damageIndexRepository;
-    private readonly ILogger<AElfLogEventProcessorBase<LiquidatedDamageClaimed, LogEventInfo>> _logger;
-    private readonly IObjectMapper _objectMapper;
-    
     public ClaimDamageLogEventProcessor(ILogger<AElfLogEventProcessorBase<LiquidatedDamageClaimed, LogEventInfo>> logger,
+        IObjectMapper objectMapper,
         IOptionsSnapshot<ContractInfoOptions> contractInfoOptions,
-        IAElfIndexerClientEntityRepository<LiquidatedDamageClaimedIndex, LogEventInfo> damageIndexRepository,
-        IObjectMapper objectMapper) : base(logger)
+        IAElfIndexerClientEntityRepository<CrowdfundingProjectIndex, LogEventInfo> crowdfundingProjectRepository,
+        IAElfIndexerClientEntityRepository<UserProjectInfoIndex, LogEventInfo> userProjectInfoRepository,
+        IAElfIndexerClientEntityRepository<UserRecordIndex, LogEventInfo> userRecordRepository) :
+        base(logger, objectMapper, contractInfoOptions, crowdfundingProjectRepository, userProjectInfoRepository,
+            userRecordRepository)
     {
-        _contractInfoOptions = contractInfoOptions.Value;
-        _logger = logger;
-        _damageIndexRepository = damageIndexRepository;
-        _objectMapper = objectMapper;
     }
 
     public override string GetContractAddress(string chainId)
     {
-        return _contractInfoOptions.ContractInfos[chainId].EwellContractAddress;
+        return ContractInfoOptions.ContractInfos[chainId].EwellContractAddress;
     }
 
     protected override async Task HandleEventAsync(LiquidatedDamageClaimed eventValue, LogEventContext context)
     {
-        var id = IdGenerateHelper.GetId(eventValue.ProjectId.ToHex(), eventValue.User.ToBase58());
-        _logger.LogInformation("[LiquidatedDamageClaimed] START: Id={Id}, Event={Event}", 
-            id, JsonConvert.SerializeObject(eventValue));
+        var projectId = eventValue.ProjectId.ToHex();
+        var chainId = context.ChainId;
+        Logger.LogInformation("[LiquidatedDamageClaimed] START: Id={Id}, Event={Event}", 
+            projectId, JsonConvert.SerializeObject(eventValue));
         try
         {
-            var liquidatedDamageClaimed = await _damageIndexRepository.GetFromBlockStateSetAsync(id, context.ChainId);
-            if (liquidatedDamageClaimed != null) throw new UserFriendlyException("liquidatedDamageClaimed exists");
+            var crowdfundingProject = await CrowdfundingProjectRepository.GetFromBlockStateSetAsync(projectId, context.ChainId);
+            if (crowdfundingProject == null)
+            {
+                Logger.LogInformation("[LiquidatedDamageClaimed] crowdfundingProject not exist: Id={Id}, ChainId={ChainId}", projectId, chainId);
+                return;
+            }
+
+            crowdfundingProject.ReceivableLiquidatedDamageAmount -= eventValue.Amount;
+            ObjectMapper.Map(context, crowdfundingProject);
             
-            liquidatedDamageClaimed = _objectMapper.Map<LiquidatedDamageClaimed, LiquidatedDamageClaimedIndex>(eventValue);
-            liquidatedDamageClaimed.Id = id;
-            liquidatedDamageClaimed.ProjectId = eventValue.ProjectId.ToHex();
-            liquidatedDamageClaimed.User = eventValue.User.ToBase58();
-            liquidatedDamageClaimed.LastModifyTime = DateTimeHelper.GetTimeStampInMilliseconds();
-            _objectMapper.Map(context, liquidatedDamageClaimed);
+            Logger.LogInformation("[LiquidatedDamageClaimed] SAVE: Id={Id}", projectId);
+            await CrowdfundingProjectRepository.AddOrUpdateAsync(crowdfundingProject);
+            Logger.LogInformation("[LiquidatedDamageClaimed] FINISH: Id={Id}", projectId);
             
-            _logger.LogInformation("[LiquidatedDamageClaimed] SAVE: Id={Id}", id);
-            await _damageIndexRepository.AddOrUpdateAsync(liquidatedDamageClaimed);
-            _logger.LogInformation("[LiquidatedDamageClaimed] FINISH: Id={Id}", id);
+            await AddUserRecordAsync(context, crowdfundingProject, eventValue.User.ToBase58(), BehaviorType.LiquidatedDamageClaimed,
+                eventValue.Amount, 0);
         }
         catch (Exception e)
         {
-            _logger.LogError(e, "[LiquidatedDamageClaimed] Exception Id={projectId}", id);
+            Logger.LogError(e, "[LiquidatedDamageClaimed] Exception Id={projectId}", projectId);
             throw;
         }
     }

@@ -1,4 +1,4 @@
-namespace Ewell.Indexer.Plugin.GraphQL;
+namespace Ewell.Indexer.Plugin.GraphQL.Dto;
 
 public abstract class PageResult<T>
 {
