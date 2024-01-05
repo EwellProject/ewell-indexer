@@ -36,7 +36,7 @@ public partial class Query
         QueryContainer Filter(QueryContainerDescriptor<UserProjectInfoIndex> f) =>
             f.Bool(b => b.Must(mustQuery));
 
-        var result = await repository.GetListAsync(Filter, 
+        var result = await repository.GetListAsync(Filter, skip: dto.SkipCount, 
             sortType: SortOrder.Ascending, sortExp: o => o.BlockHeight);
         return objectMapper.Map<List<UserProjectInfoIndex>, List<UserProjectInfoSyncDto>>(result.Item2);
     }

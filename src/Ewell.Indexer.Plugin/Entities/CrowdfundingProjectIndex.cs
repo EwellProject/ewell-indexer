@@ -1,5 +1,4 @@
 using AElf.Indexing.Elasticsearch;
-using Nest;
 
 namespace Ewell.Indexer.Plugin.Entities;
 
