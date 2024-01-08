@@ -28,29 +28,30 @@ public class RefundedProcessor : UserProjectProcessorBase<ReFunded>
         var user = eventValue.User.ToBase58();
         Logger.LogInformation("[ReFunded] start projectId:{projectId} user:{user} ", projectId, user);
         var refundAmount = eventValue.Amount;
-        var crowdfundingProject = await UpdateProjectAsync(context, projectId, refundAmount);
+        var crowdfundingProject =
+            await CrowdfundingProjectRepository.GetFromBlockStateSetAsync(projectId, context.ChainId);
+        if (crowdfundingProject == null)
+        {
+            Logger.LogInformation("[ReFunded] crowd funding  project with id {id} does not exist.", projectId);
+            return;
+        }
         await UpdateUserProjectInfoAsync(context, projectId, user, refundAmount);
         await AddUserRecordAsync(context, crowdfundingProject, user, BehaviorType.Refund,
             refundAmount, 0);
         Logger.LogInformation("[ReFunded] end projectId:{projectId} user:{user} ", projectId, user);
     }
-
-    private async Task<CrowdfundingProjectIndex> UpdateProjectAsync(LogEventContext context, string projectId,
-        long refundAmount)
-    {
-        var crowdfundingProject =
-            await CrowdfundingProjectRepository.GetFromBlockStateSetAsync(projectId, context.ChainId);
-        // crowdfundingProject.CurrentRaisedAmount -= refundAmount;
-        // return await _crowdfundingProjectsRepository.UpdateAsync(crowdfundingProject);
-        return crowdfundingProject;
-    }
-
+    
     private async Task UpdateUserProjectInfoAsync(LogEventContext context, string projectId, string user,
         long refundAmount)
     {
         var userProjectId = IdGenerateHelper.GetUserProjectId(context.ChainId, projectId, user);
         var userProjectInfo =
             await UserProjectInfoRepository.GetFromBlockStateSetAsync(userProjectId, context.ChainId);
+        if (userProjectInfo == null)
+        {
+            Logger.LogInformation("[ReFunded] user project info with id {id} does not exist.", userProjectId);
+            return;
+        }
         userProjectInfo.InvestAmount -= refundAmount;
         userProjectInfo.ToClaimAmount = 0;
         ObjectMapper.Map(context, userProjectInfo);

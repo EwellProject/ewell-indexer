@@ -27,23 +27,28 @@ public class ClaimedProcessor : UserProjectProcessorBase<Claimed>
         var projectId = eventValue.ProjectId.ToHex();
         var user = eventValue.User.ToBase58();
         Logger.LogInformation("[Claimed] start projectId:{projectId} user:{user} ", projectId, user);
+        var crowdfundingProject =
+            await CrowdfundingProjectRepository.GetFromBlockStateSetAsync(projectId, context.ChainId);
+        if (crowdfundingProject == null)
+        {
+            Logger.LogInformation("[Claimed] crowd funding  project with id {id} does not exist.", projectId);
+            return;
+        }
         var claimedAmount = eventValue.Amount;
-        var crowdfundingProject = await UpdateProjectAsync(context, projectId, claimedAmount);
+        await UpdateProjectAsync(context, crowdfundingProject, claimedAmount);
         await UpdateUserProjectInfoAsync(context, crowdfundingProject.Id, user, claimedAmount);
         await AddUserRecordAsync(context, crowdfundingProject, user, BehaviorType.Claim, 
             0, claimedAmount);
         Logger.LogInformation("[Claimed] end projectId:{projectId} user:{user} ", projectId, user);
     }
 
-    private async Task<CrowdfundingProjectIndex> UpdateProjectAsync(LogEventContext context, string projectId,
+    private async Task UpdateProjectAsync(LogEventContext context, 
+        CrowdfundingProjectIndex crowdfundingProject,
         long claimAmount)
     {
-        var crowdfundingProject =
-            await CrowdfundingProjectRepository.GetFromBlockStateSetAsync(projectId, context.ChainId);
         crowdfundingProject.CurrentCrowdFundingIssueAmount -= claimAmount;
         ObjectMapper.Map(context, crowdfundingProject);
         await CrowdfundingProjectRepository.AddOrUpdateAsync(crowdfundingProject);
-        return crowdfundingProject;
     }
 
     private async Task UpdateUserProjectInfoAsync(LogEventContext context, string projectId, string user, long claimAmount)
@@ -51,6 +56,11 @@ public class ClaimedProcessor : UserProjectProcessorBase<Claimed>
         var userProjectId = IdGenerateHelper.GetUserProjectId(context.ChainId, projectId, user);
         var userProjectInfo =
             await UserProjectInfoRepository.GetFromBlockStateSetAsync(userProjectId, context.ChainId);
+        if (userProjectInfo == null)
+        {
+            Logger.LogInformation("[Claimed] user project info with id {id} does not exist.", userProjectId);
+            return;
+        }
         userProjectInfo.ActualClaimAmount += claimAmount;
         userProjectInfo.ToClaimAmount -= claimAmount;
         ObjectMapper.Map(context, userProjectInfo);

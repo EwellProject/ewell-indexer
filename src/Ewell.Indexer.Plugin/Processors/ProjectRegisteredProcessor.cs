@@ -49,8 +49,6 @@ public class ProjectRegisteredProcessor : ProjectProcessorBase<ProjectRegistered
         var projectIndex = ObjectMapper.Map<ProjectRegistered, CrowdfundingProjectIndex>(eventValue);
         ObjectMapper.Map(context, projectIndex);
         projectIndex.Id = projectId;
-        projectIndex.IsEnableWhitelist = eventValue.IsEnableWhitelist;
-        projectIndex.WhitelistId = eventValue.WhitelistId.ToHex();
         projectIndex.ListMarketInfo = marketInformation;
         projectIndex.AdditionalInfo = additionalInformation;
         projectIndex.IsCanceled = false;

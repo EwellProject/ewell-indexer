@@ -70,7 +70,8 @@ public class InvestedProcessor : UserProjectProcessorBase<Invested>
                 CrowdfundingProjectId = crowdfundingProject.Id,
                 InvestAmount = investAmount,
                 ToClaimAmount = toClaimAmount,
-                CrowdfundingProject = crowdfundingProject
+                CrowdfundingProject = crowdfundingProject,
+                CreateTime = context.BlockTime
             };
             ObjectMapper.Map(context, userProjectInfo);
             await UserProjectInfoRepository.AddOrUpdateAsync(userProjectInfo);
