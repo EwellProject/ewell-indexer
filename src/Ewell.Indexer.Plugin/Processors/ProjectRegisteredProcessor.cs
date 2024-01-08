@@ -56,6 +56,7 @@ public class ProjectRegisteredProcessor : ProjectProcessorBase<ProjectRegistered
         projectIndex.IsCanceled = false;
         projectIndex.ToRaiseToken = new TokenBasicInfo { ChainId = chainId, Symbol = eventValue.AcceptedCurrency };
         projectIndex.CrowdFundingIssueToken = new TokenBasicInfo { ChainId = chainId, Symbol = eventValue.ProjectCurrency };
+        projectIndex.CreateTime = context.BlockTime;
         await CrowdfundingProjectRepository.AddOrUpdateAsync(projectIndex);
         Logger.LogInformation("[ProjectRegistered] end projectId:{projectId} chainId:{chainId} ", projectId, chainId);
     }
