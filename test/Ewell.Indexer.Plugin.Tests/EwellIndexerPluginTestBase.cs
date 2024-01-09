@@ -32,7 +32,7 @@ public abstract class EwellIndexerPluginTestBase : EwellIndexerOrleansTestBase<E
     public string transactionId = "c1e625d135171c766999274a00a7003abed24cfe59a7215aabf1472ef20a2da2";
     public long blockHeight = 120;
 
-    public static string Chain_AELF = "AELF";
+    public static string Chain_AELF = "tDVV";
     public static string TestSymbol = "Ewell_Test";
     public static string Id = "123456";
     public static string ProjectId = HashHelper.ComputeFrom(Id).ToHex();
@@ -190,7 +190,8 @@ public abstract class EwellIndexerPluginTestBase : EwellIndexerOrleansTestBase<E
             BlockHeight = blockHeight,
             BlockHash = blockHash,
             PreviousBlockHash = previousBlockHash,
-            TransactionId = transactionId
+            TransactionId = transactionId,
+            BlockTime = DateTime.UtcNow
         };
 
         var processor = GetRequiredService<ProjectRegisteredProcessor>();
@@ -236,7 +237,8 @@ public abstract class EwellIndexerPluginTestBase : EwellIndexerOrleansTestBase<E
             BlockHeight = blockHeight,
             BlockHash = blockHash,
             PreviousBlockHash = previousBlockHash,
-            TransactionId = transactionId
+            TransactionId = transactionId,
+            BlockTime = DateTime.UtcNow
         };
         
         var processor = GetRequiredService<InvestedProcessor>();

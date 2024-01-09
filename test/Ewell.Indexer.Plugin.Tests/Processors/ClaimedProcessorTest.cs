@@ -73,7 +73,8 @@ public class ClaimedProcessorTest : EwellIndexerPluginTestBase
             BlockHeight = blockHeight,
             BlockHash = blockHash,
             PreviousBlockHash = previousBlockHash,
-            TransactionId = transactionId
+            TransactionId = transactionId,
+            BlockTime = DateTime.UtcNow
         };
 
         var processor = GetRequiredService<ClaimedProcessor>();
