@@ -1,5 +1,3 @@
-using AElf;
-using AElf.Types;
 using AElfIndexer.Client;
 using AElfIndexer.Grains.State.Client;
 using Ewell.Indexer.Plugin.Entities;
@@ -10,10 +8,15 @@ namespace Ewell.Indexer.Plugin.Tests.GraphQL;
 public class QueryTestBase : EwellIndexerPluginTestBase
 {
     protected readonly IObjectMapper _objectMapper;
-    protected readonly Hash whitelistId = HashHelper.ComputeFrom("test1@gmail.com");
-    protected readonly Hash projectId = HashHelper.ComputeFrom("project");
-    public QueryTestBase()
+    protected readonly IAElfIndexerClientEntityRepository<UserRecordIndex, LogEventInfo> _userRecordRepository;
+    protected readonly IAElfIndexerClientEntityRepository<CrowdfundingProjectIndex, LogEventInfo> _crowdfundingProjectRepository;
+    protected readonly IAElfIndexerClientEntityRepository<WhitelistIndex, LogEventInfo> _whitelistRepository;
+
+    protected QueryTestBase()
     {
         _objectMapper = GetRequiredService<IObjectMapper>();
+        _userRecordRepository = GetRequiredService<IAElfIndexerClientEntityRepository<UserRecordIndex, LogEventInfo>>();
+        _crowdfundingProjectRepository = GetRequiredService<IAElfIndexerClientEntityRepository<CrowdfundingProjectIndex, LogEventInfo>>();
+        _whitelistRepository = GetRequiredService<IAElfIndexerClientEntityRepository<WhitelistIndex, LogEventInfo>>();
     }
 }

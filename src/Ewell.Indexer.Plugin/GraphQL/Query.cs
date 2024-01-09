@@ -127,4 +127,35 @@ public class Query
             sortType: SortOrder.Ascending, sortExp: o => o.BlockHeight);
         return objectMapper.Map<List<UserProjectInfoIndex>, List<UserProjectInfoSyncDto>>(result.Item2);
     }
+    
+    [Name("getWhitelistList")]
+    public static async Task<WhitelistResultDto> GetWhitelistListAsync(
+        [FromServices] IAElfIndexerClientEntityRepository<WhitelistIndex, LogEventInfo> repository,
+        [FromServices] IObjectMapper objectMapper,
+        GetInputBase input)
+    {
+        var mustQuery = new List<Func<QueryContainerDescriptor<WhitelistIndex>, QueryContainer>>();
+        if (!string.IsNullOrEmpty(input.ChainId))
+        {
+            mustQuery.Add(q => q.Term(i
+                => i.Field(f => f.ChainId).Value(input.ChainId)));
+        }
+        if (input.StartBlockHeight > 0)
+        {
+            mustQuery.Add(q => q.Range(i
+                => i.Field(f => f.BlockHeight).GreaterThanOrEquals(input.StartBlockHeight)));
+        }
+        if (input.EndBlockHeight > 0)
+        {
+            mustQuery.Add(q => q.Range(i
+                => i.Field(f => f.BlockHeight).LessThanOrEquals(input.EndBlockHeight)));
+        }
+        QueryContainer Filter(QueryContainerDescriptor<WhitelistIndex> f) =>
+            f.Bool(b => b.Must(mustQuery));
+
+        var result = await repository.GetListAsync(Filter, skip: input.SkipCount,
+            limit: input.MaxResultCount, sortType: SortOrder.Ascending, sortExp: o => o.BlockHeight);
+        var projectList = objectMapper.Map<List<WhitelistIndex>, List<WhitelistDto>>(result.Item2);
+        return new WhitelistResultDto(result.Item1, projectList);
+    }
 }

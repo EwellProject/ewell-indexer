@@ -1,4 +1,5 @@
 using AElf.Contracts.Ewell;
+using AElf.Contracts.Whitelist;
 using AElfIndexer.Client.Handlers;
 using AutoMapper;
 using Ewell.Indexer.Plugin.Entities;
@@ -27,7 +28,13 @@ public class EwellIndexerClientAutoMapperProfile : Profile
         CreateMap<LogEventContext, CrowdfundingProjectIndex>();
         CreateMap<LogEventContext, UserProjectInfoIndex>();
         CreateMap<LogEventContext, UserRecordIndex>();
+        CreateMap<TokenBasicInfo, TokenBasicInfoDto>();
         CreateMap<CrowdfundingProjectIndex, CrowdfundingProjectDto>();
         CreateMap<UserProjectInfoIndex, UserProjectInfoSyncDto>();
+        CreateMap<UserRecordIndex, UserRecordDto>();
+        CreateMap<LogEventContext, WhitelistIndex>();
+        CreateMap<WhitelistReenable, WhitelistIndex>();
+        CreateMap<WhitelistDisabled, WhitelistIndex>();
+        CreateMap<WhitelistIndex, WhitelistDto>();
     }
 }

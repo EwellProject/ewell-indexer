@@ -1,6 +1,8 @@
 using AElf;
 using AElf.Contracts.Ewell;
+using AElf.Contracts.Whitelist;
 using AElf.CSharp.Core.Extension;
+using AElf.Kernel;
 using AElf.Types;
 using AElfIndexer.Client.Handlers;
 using AElfIndexer.Client.Providers;
@@ -34,6 +36,7 @@ public abstract class EwellIndexerPluginTestBase : EwellIndexerOrleansTestBase<E
     public static string TestSymbol = "Ewell_Test";
     public static string Id = "123456";
     public static string ProjectId = HashHelper.ComputeFrom(Id).ToHex();
+    public static Hash WhitelistId = HashHelper.ComputeFrom("whitelistId");
 
     public EwellIndexerPluginTestBase()
     {
@@ -243,5 +246,89 @@ public abstract class EwellIndexerPluginTestBase : EwellIndexerOrleansTestBase<E
         await BlockStateSetSaveDataAsync<LogEventInfo>(blockStateSetKey);
         await Task.Delay(0);
         return logEvent;
+    }
+
+    protected async Task<UnInvested> MockUninvest()
+    {
+        var chainId = Chain_AELF;
+        
+        //step1: create blockStateSet
+        var blockStateSet = GetBlockStateSet();
+        var blockStateSetKey = await InitializeBlockStateSetAsync(blockStateSet, chainId);
+
+        //step2: create logEventInfo
+        var logEvent = new UnInvested()
+        {
+            ProjectId = HashHelper.ComputeFrom(Id),
+            User = Address.FromBase58(BobAddress),
+            UnInvestAmount = 800,
+            TotalAmount = 0
+        };
+
+        var logEventInfo = LogEventHelper.ConvertAElfLogEventToLogEventInfo(logEvent.ToLogEvent());
+        logEventInfo.BlockHeight = blockHeight;
+        logEventInfo.ChainId = chainId;
+        logEventInfo.BlockHash = blockHash;
+        logEventInfo.TransactionId = transactionId;
+
+        var logEventContext = GetLogEventContext();
+        var processor = GetRequiredService<UnInvestedProcessor>();
+        await processor.HandleEventAsync(logEventInfo, logEventContext);
+
+        //step4: save blockStateSet into es
+        await BlockStateSetSaveDataAsync<LogEventInfo>(blockStateSetKey);
+        return logEvent;
+    }
+
+    protected async Task MockWhitelistDisable()
+    {
+        var chainId = Chain_AELF;
+        
+        //step1: create blockStateSet
+        var blockStateSet = GetBlockStateSet();
+        var blockStateSetKey = await InitializeBlockStateSetAsync(blockStateSet, chainId);
+
+        //step2: create logEventInfo
+        var logEvent = new WhitelistDisabled()
+        {
+            WhitelistId = WhitelistId,
+            IsAvailable = false
+        };
+
+        var logEventInfo = LogEventHelper.ConvertAElfLogEventToLogEventInfo(logEvent.ToLogEvent());
+        logEventInfo.BlockHeight = blockHeight;
+        logEventInfo.ChainId = chainId;
+        logEventInfo.BlockHash = blockHash;
+        logEventInfo.TransactionId = transactionId;
+
+        var logEventContext = GetLogEventContext();
+        var processor = GetRequiredService<WhitelistDisabledLogEventProcessor>();
+        await processor.HandleEventAsync(logEventInfo, logEventContext);
+
+        //step4: save blockStateSet into es
+        await BlockStateSetSaveDataAsync<LogEventInfo>(blockStateSetKey);
+    }
+
+    private BlockStateSet<LogEventInfo> GetBlockStateSet()
+    {
+        return new BlockStateSet<LogEventInfo>
+        {
+            BlockHash = blockHash,
+            BlockHeight = blockHeight,
+            Confirmed = true,
+            PreviousBlockHash = previousBlockHash,
+        };
+    }
+
+    private LogEventContext GetLogEventContext()
+    {
+        return new LogEventContext
+        {
+            ChainId = Chain_AELF,
+            BlockHeight = blockHeight,
+            BlockHash = blockHash,
+            PreviousBlockHash = previousBlockHash,
+            TransactionId = transactionId
+        };
     }
 }

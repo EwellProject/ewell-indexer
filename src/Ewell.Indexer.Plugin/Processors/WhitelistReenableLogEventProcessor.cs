@@ -17,18 +17,18 @@ public class WhitelistReenableLogEventProcessor : AElfLogEventProcessorBase<Whit
 {
     private readonly ContractInfoOptions _contractInfoOptions;
     private readonly ILogger<AElfLogEventProcessorBase<WhitelistReenable, LogEventInfo>> _logger;
-    private readonly IAElfIndexerClientEntityRepository<CrowdfundingProjectIndex, LogEventInfo> _crowdfundingProjectRepository;
+    private readonly IAElfIndexerClientEntityRepository<WhitelistIndex, LogEventInfo> _whitelistRepository;
     private readonly IObjectMapper _objectMapper;
 
 
     public WhitelistReenableLogEventProcessor(
         ILogger<AElfLogEventProcessorBase<WhitelistReenable, LogEventInfo>> logger,
         IOptionsSnapshot<ContractInfoOptions> contractInfoOptions,
-        IAElfIndexerClientEntityRepository<CrowdfundingProjectIndex, LogEventInfo>  crowdfundingProjectRepository,
+        IAElfIndexerClientEntityRepository<WhitelistIndex, LogEventInfo> whitelistRepository,
         IObjectMapper objectMapper) : base(logger)
     {
         _logger = logger;
-        _crowdfundingProjectRepository = crowdfundingProjectRepository;
+        _whitelistRepository = whitelistRepository;
         _objectMapper = objectMapper;
         _contractInfoOptions = contractInfoOptions.Value;
     }
@@ -46,45 +46,21 @@ public class WhitelistReenableLogEventProcessor : AElfLogEventProcessorBase<Whit
             whitelistId, JsonConvert.SerializeObject(eventValue));
         try
         {
-            const int maxResultCount = 500;
-            var skipCount = 0;
-            var toUpdate = new List<CrowdfundingProjectIndex>();
-            while (true)
+            var whitelist = await _whitelistRepository.GetFromBlockStateSetAsync(whitelistId, chainId);
+            if (whitelist != null)
             {
-                var mustQuery = new List<Func<QueryContainerDescriptor<CrowdfundingProjectIndex>, QueryContainer>>
-                {
-                    q => q.Term(i
-                        => i.Field(f => f.ChainId).Value(chainId)),
-                    q => q.Term(i
-                        => i.Field(f => f.WhitelistId).Value(whitelistId))
-                };
-
-                QueryContainer Filter(QueryContainerDescriptor<CrowdfundingProjectIndex> f) =>
-                    f.Bool(b => b.Must(mustQuery));
-
-                var (_, dataList) = await _crowdfundingProjectRepository.GetListAsync(Filter, null,
-                    o => o.BlockHeight, sortType: SortOrder.Ascending, skipCount, maxResultCount);
-                if (dataList.Count < maxResultCount)
-                {
-                    break;
-                }
-
-                skipCount += dataList.Count;
-                toUpdate.AddRange(dataList);
+                whitelist.IsAvailable = eventValue.IsAvailable;
+                await _whitelistRepository.AddOrUpdateAsync(whitelist);
             }
-
-            if (!toUpdate.IsNullOrEmpty())
+            else
             {
-                _logger.LogInformation("[WhitelistDisabled] SAVE: Id={Id}", whitelistId);
-                foreach (var crowdfundingProjectIndex in toUpdate)
-                {
-                    crowdfundingProjectIndex.IsEnableWhitelist = eventValue.IsAvailable;
-                    _objectMapper.Map(context, crowdfundingProjectIndex);
-                    await _crowdfundingProjectRepository.AddOrUpdateAsync(crowdfundingProjectIndex);
-                }
-
-                _logger.LogInformation("[WhitelistDisabled] FINISH: Id={Id}", whitelistId);
+                whitelist = _objectMapper.Map<WhitelistReenable, WhitelistIndex>(eventValue);
+                whitelist.Id = whitelistId;
             }
+            _objectMapper.Map(context, whitelist);
+            await _whitelistRepository.AddOrUpdateAsync(whitelist);
+            _logger.LogInformation("[WhitelistReenable] FINISH: Id={Id}, ChainId={ChainId}",
+                whitelistId, chainId);
         }
         catch (Exception e)
         {

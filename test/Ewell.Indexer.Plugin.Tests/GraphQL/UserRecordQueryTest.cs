@@ -5,19 +5,21 @@ using Xunit;
 
 namespace Ewell.Indexer.Plugin.Tests.GraphQL;
 
-public class ProjectQueryTest : QueryTestBase
+public class UserRecordQueryTest : QueryTestBase
 {
     [Fact]
-    public async Task GetProjectListAsync_Test()
+    public async Task GetUserRecordListAsync_Test()
     {
         await MockProjectRegistered();
-
-        var userRecords = await Query.GetProjectListAsync(_crowdfundingProjectRepository, _objectMapper, new GetProjectListInput());
+        await MockInvested();
+        await MockUninvest();
+        
+        var userRecords = await Query.GetUserRecordListAsync(_userRecordRepository, _objectMapper, new GetInputBase());
         userRecords.ShouldNotBeNull();
-        userRecords.TotalCount.ShouldBe(1);
+        userRecords.TotalCount.ShouldBe(2);
         userRecords.Data.Count.ShouldBe(0);
         
-        userRecords = await Query.GetProjectListAsync(_crowdfundingProjectRepository, _objectMapper, new GetProjectListInput
+        userRecords = await Query.GetUserRecordListAsync(_userRecordRepository, _objectMapper, new GetInputBase
         {
             ChainId = Chain_AELF,
             StartBlockHeight = blockHeight,
@@ -25,10 +27,10 @@ public class ProjectQueryTest : QueryTestBase
             MaxResultCount = 10
         });
         userRecords.ShouldNotBeNull();
-        userRecords.TotalCount.ShouldBe(1);
-        userRecords.Data.Count.ShouldBe(1);
+        userRecords.TotalCount.ShouldBe(2);
+        userRecords.Data.Count.ShouldBe(2);
         
-        userRecords = await Query.GetProjectListAsync(_crowdfundingProjectRepository, _objectMapper, new GetProjectListInput
+        userRecords = await Query.GetUserRecordListAsync(_userRecordRepository, _objectMapper, new GetInputBase
         {
             ChainId = Chain_AELF,
             StartBlockHeight = blockHeight + 1,
@@ -38,15 +40,15 @@ public class ProjectQueryTest : QueryTestBase
         userRecords.TotalCount.ShouldBe(0);
         userRecords.Data.Count.ShouldBe(0);
         
-        userRecords = await Query.GetProjectListAsync(_crowdfundingProjectRepository, _objectMapper, new GetProjectListInput
+        userRecords = await Query.GetUserRecordListAsync(_userRecordRepository, _objectMapper, new GetInputBase
         {
             ChainId = Chain_AELF,
             StartBlockHeight = blockHeight,
             MaxResultCount = 10,
-            SkipCount = 1
+            SkipCount = 2
         });
         userRecords.ShouldNotBeNull();
-        userRecords.TotalCount.ShouldBe(1);
+        userRecords.TotalCount.ShouldBe(2);
         userRecords.Data.Count.ShouldBe(0);
     }
 }

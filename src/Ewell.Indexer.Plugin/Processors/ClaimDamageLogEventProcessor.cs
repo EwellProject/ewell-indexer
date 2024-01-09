@@ -33,8 +33,8 @@ public class ClaimDamageLogEventProcessor : UserProjectProcessorBase<LiquidatedD
     {
         var projectId = eventValue.ProjectId.ToHex();
         var chainId = context.ChainId;
-        Logger.LogInformation("[LiquidatedDamageClaimed] START: Id={Id}, Event={Event}", 
-            projectId, JsonConvert.SerializeObject(eventValue));
+        Logger.LogInformation("[LiquidatedDamageClaimed] START: Id={Id}, Event={Event}, ChainId={ChainId}", 
+            projectId, JsonConvert.SerializeObject(eventValue), chainId);
         try
         {
             var crowdfundingProject = await CrowdfundingProjectRepository.GetFromBlockStateSetAsync(projectId, context.ChainId);
@@ -47,9 +47,9 @@ public class ClaimDamageLogEventProcessor : UserProjectProcessorBase<LiquidatedD
             crowdfundingProject.ReceivableLiquidatedDamageAmount -= eventValue.Amount;
             ObjectMapper.Map(context, crowdfundingProject);
             
-            Logger.LogInformation("[LiquidatedDamageClaimed] SAVE: Id={Id}", projectId);
+            Logger.LogInformation("[LiquidatedDamageClaimed] SAVE: Id={Id}, ChainId={ChainId}", projectId, chainId);
             await CrowdfundingProjectRepository.AddOrUpdateAsync(crowdfundingProject);
-            Logger.LogInformation("[LiquidatedDamageClaimed] FINISH: Id={Id}", projectId);
+            Logger.LogInformation("[LiquidatedDamageClaimed] FINISH: Id={Id}, ChainId={ChainId}", projectId, chainId);
             
             await AddUserRecordAsync(context, crowdfundingProject, eventValue.User.ToBase58(), BehaviorType.LiquidatedDamageClaimed,
                 eventValue.Amount, 0);

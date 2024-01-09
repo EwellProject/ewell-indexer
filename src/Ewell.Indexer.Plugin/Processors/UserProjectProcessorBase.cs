@@ -48,17 +48,19 @@ public abstract class UserProjectProcessorBase<TEvent> : AElfLogEventProcessorBa
     {
         var userRecordId = IdGenerateHelper.GetId(context.ChainId, crowdfundingProject.Id, user,
             behaviorType, context.TransactionId);
-        var userRecordIndex = new UserRecordIndex()
+        var userRecordIndex = new UserRecordIndex
         {
             Id = userRecordId,
             ChainId = context.ChainId,
             User = user,
             CrowdfundingProjectId = crowdfundingProject.Id,
-            BehaviorType = BehaviorType.UnInvest,
+            BehaviorType = behaviorType,
             ToRaiseTokenAmount = toRaiseTokenAmount,
             CrowdFundingIssueAmount = crowdFundingIssueAmount,
             DateTime = context.BlockTime,
-            CrowdfundingProject = crowdfundingProject
+            CrowdfundingProject = crowdfundingProject,
+            ToRaiseToken = crowdfundingProject.ToRaiseToken,
+            CrowdFundingIssueToken = crowdfundingProject.CrowdFundingIssueToken
         };
         ObjectMapper.Map(context, userRecordIndex);
         await UserRecordRepository.AddOrUpdateAsync(userRecordIndex);
