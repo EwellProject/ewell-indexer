@@ -13,14 +13,18 @@ namespace Ewell.Indexer.Plugin.Processors;
 
 public class NewWhitelistIdSetLogEventProcessor : ProjectProcessorBase<NewWhitelistIdSet>
 {
+    protected readonly IAElfIndexerClientEntityRepository<WhitelistIndex, LogEventInfo> WhitelistRepository;
+    
     public NewWhitelistIdSetLogEventProcessor(
         ILogger<AElfLogEventProcessorBase<NewWhitelistIdSet, LogEventInfo>> logger,
         IObjectMapper objectMapper,
         IOptionsSnapshot<ContractInfoOptions> contractInfoOptions,
         IJsonSerializer jsonSerializer,
-        IAElfIndexerClientEntityRepository<CrowdfundingProjectIndex, LogEventInfo> crowdfundingProjectRepository) :
+        IAElfIndexerClientEntityRepository<CrowdfundingProjectIndex, LogEventInfo> crowdfundingProjectRepository,
+        IAElfIndexerClientEntityRepository<WhitelistIndex, LogEventInfo> whitelistRepository) :
         base(logger, objectMapper, contractInfoOptions, jsonSerializer, crowdfundingProjectRepository)
     {
+        WhitelistRepository = whitelistRepository;
     }
 
     public override string GetContractAddress(string chainId)
@@ -32,6 +36,7 @@ public class NewWhitelistIdSetLogEventProcessor : ProjectProcessorBase<NewWhitel
     {
         var projectId = eventValue.ProjectId.ToHex();
         var chainId = context.ChainId;
+        var whitelistId = eventValue.WhitelistId.ToHex();
         Logger.LogInformation("[NewWhitelistIdSet] START: Id={Id}, Event={Event}, ChainId={ChainId}",
             projectId, JsonConvert.SerializeObject(eventValue), chainId);
         try
@@ -42,6 +47,8 @@ public class NewWhitelistIdSetLogEventProcessor : ProjectProcessorBase<NewWhitel
                 Logger.LogInformation("[NewWhitelistIdSet] crowdfundingProject not exist: Id={Id}, ChainId={ChainId}", projectId, chainId);
                 return;
             }
+            var whitelist = await WhitelistRepository.GetFromBlockStateSetAsync(whitelistId, context.ChainId);
+            crowdfundingProject.IsEnableWhitelist = whitelist == null || whitelist.IsAvailable;
             crowdfundingProject.WhitelistId = eventValue.WhitelistId.ToHex();
             ObjectMapper.Map(context, crowdfundingProject);
 
