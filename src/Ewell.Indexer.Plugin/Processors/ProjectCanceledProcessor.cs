@@ -37,6 +37,7 @@ public class ProjectCanceledProcessor : ProjectProcessorBase<ProjectCanceled>
         }
 
         crowdfundingProject.IsCanceled = true;
+        crowdfundingProject.CancelTime = context.BlockTime;
         await CrowdfundingProjectRepository.AddOrUpdateAsync(crowdfundingProject);
         Logger.LogInformation("[ProjectCanceled] end projectId:{projectId} chainId:{chainId} ", projectId, chainId);
     }

@@ -49,13 +49,12 @@ public class ProjectRegisteredProcessor : ProjectProcessorBase<ProjectRegistered
         var projectIndex = ObjectMapper.Map<ProjectRegistered, CrowdfundingProjectIndex>(eventValue);
         ObjectMapper.Map(context, projectIndex);
         projectIndex.Id = projectId;
-        projectIndex.IsEnableWhitelist = eventValue.IsEnableWhitelist;
-        projectIndex.WhitelistId = eventValue.WhitelistId.ToHex();
         projectIndex.ListMarketInfo = marketInformation;
         projectIndex.AdditionalInfo = additionalInformation;
         projectIndex.IsCanceled = false;
         projectIndex.ToRaiseToken = new TokenBasicInfo { ChainId = chainId, Symbol = eventValue.AcceptedCurrency };
         projectIndex.CrowdFundingIssueToken = new TokenBasicInfo { ChainId = chainId, Symbol = eventValue.ProjectCurrency };
+        projectIndex.CreateTime = context.BlockTime;
         await CrowdfundingProjectRepository.AddOrUpdateAsync(projectIndex);
         Logger.LogInformation("[ProjectRegistered] end projectId:{projectId} chainId:{chainId} ", projectId, chainId);
     }

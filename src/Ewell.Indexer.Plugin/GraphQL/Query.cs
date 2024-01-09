@@ -97,4 +97,34 @@ public class Query
         var projectList = objectMapper.Map<List<UserRecordIndex>, List<UserRecordDto>>(result.Item2);
         return new UserRecordResultDto(result.Item1, projectList);
     }
+    
+    [Name("getSyncUserProjectInfos")]
+    public static async Task<List<UserProjectInfoSyncDto>> GetSyncUserProjectInfosAsync(
+        [FromServices] IAElfIndexerClientEntityRepository<UserProjectInfoIndex, LogEventInfo> repository,
+        [FromServices] IObjectMapper objectMapper,
+        GetChainBlockHeightDto input)
+    {
+        var mustQuery = new List<Func<QueryContainerDescriptor<UserProjectInfoIndex>, QueryContainer>>();
+        mustQuery.Add(q => q.Term(i
+            => i.Field(f => f.ChainId).Value(input.ChainId)));
+
+        if (input.StartBlockHeight > 0)
+        {
+            mustQuery.Add(q => q.Range(i
+                => i.Field(f => f.BlockHeight).GreaterThanOrEquals(input.StartBlockHeight)));
+        }
+
+        if (input.EndBlockHeight > 0)
+        {
+            mustQuery.Add(q => q.Range(i
+                => i.Field(f => f.BlockHeight).LessThanOrEquals(input.EndBlockHeight)));
+        }
+
+        QueryContainer Filter(QueryContainerDescriptor<UserProjectInfoIndex> f) =>
+            f.Bool(b => b.Must(mustQuery));
+
+        var result = await repository.GetListAsync(Filter, skip: input.SkipCount, 
+            sortType: SortOrder.Ascending, sortExp: o => o.BlockHeight);
+        return objectMapper.Map<List<UserProjectInfoIndex>, List<UserProjectInfoSyncDto>>(result.Item2);
+    }
 }

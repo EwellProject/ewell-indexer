@@ -1,4 +1,3 @@
-using AElf.Contracts.Ewell;
 using AElf.CSharp.Core;
 using AElfIndexer.Client;
 using AElfIndexer.Client.Handlers;
