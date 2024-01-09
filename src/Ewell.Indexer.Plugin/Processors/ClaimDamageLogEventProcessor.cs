@@ -6,7 +6,6 @@ using Ewell.Indexer.Plugin.Entities;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
-using Volo.Abp;
 using Volo.Abp.ObjectMapping;
 
 namespace Ewell.Indexer.Plugin.Processors;

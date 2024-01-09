@@ -5,10 +5,7 @@ using AElfIndexer.Grains.State.Client;
 using Ewell.Indexer.Plugin.Entities;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using Nest;
 using Newtonsoft.Json;
-using Orleans.Runtime;
-using Volo.Abp;
 using Volo.Abp.ObjectMapping;
 
 namespace Ewell.Indexer.Plugin.Processors;
@@ -19,7 +16,6 @@ public class WhitelistReenableLogEventProcessor : AElfLogEventProcessorBase<Whit
     private readonly ILogger<AElfLogEventProcessorBase<WhitelistReenable, LogEventInfo>> _logger;
     private readonly IAElfIndexerClientEntityRepository<WhitelistIndex, LogEventInfo> _whitelistRepository;
     private readonly IObjectMapper _objectMapper;
-
 
     public WhitelistReenableLogEventProcessor(
         ILogger<AElfLogEventProcessorBase<WhitelistReenable, LogEventInfo>> logger,

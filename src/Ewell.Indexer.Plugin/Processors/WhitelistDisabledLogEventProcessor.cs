@@ -1,4 +1,3 @@
-using System.Runtime.InteropServices.JavaScript;
 using AElf.Contracts.Whitelist;
 using AElfIndexer.Client;
 using AElfIndexer.Client.Handlers;
@@ -6,7 +5,6 @@ using AElfIndexer.Grains.State.Client;
 using Ewell.Indexer.Plugin.Entities;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using Nest;
 using Newtonsoft.Json;
 using Volo.Abp.ObjectMapping;
 
