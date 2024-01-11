@@ -1,8 +1,7 @@
 namespace Ewell.Indexer.Plugin.GraphQL.Dto;
 
-public class UserRecordResultDto : PageResult<UserRecordDto>
+public class UserRecordResultDto
 {
-    public UserRecordResultDto(long total, List<UserRecordDto> data) : base(total, data)
-    {
-    }
+    public long TotalCount { get; set; }
+    public List<UserRecordDto> Data { get; set; }
 }

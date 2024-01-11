@@ -1,8 +1,7 @@
 namespace Ewell.Indexer.Plugin.GraphQL.Dto;
 
-public class WhitelistResultDto : PageResult<WhitelistDto>
+public class WhitelistResultDto
 {
-    public WhitelistResultDto(long total, List<WhitelistDto> data) : base(total, data)
-    {
-    }
+    public long TotalCount { get; set; }
+    public List<WhitelistDto> Data { get; set; }
 }

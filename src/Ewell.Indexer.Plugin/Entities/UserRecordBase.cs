@@ -1,4 +1,5 @@
 using AElfIndexer.Client;
+using Ewell.Indexer.Plugin.GraphQL.Dto;
 using Nest;
 
 namespace Ewell.Indexer.Plugin.Entities;

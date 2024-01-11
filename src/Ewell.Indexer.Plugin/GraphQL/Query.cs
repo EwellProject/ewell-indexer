@@ -95,7 +95,11 @@ public class Query
         var result = await repository.GetListAsync(Filter, skip: input.SkipCount,
             limit: input.MaxResultCount, sortType: SortOrder.Ascending, sortExp: o => o.BlockHeight);
         var projectList = objectMapper.Map<List<UserRecordIndex>, List<UserRecordDto>>(result.Item2);
-        return new UserRecordResultDto(result.Item1, projectList);
+        return new UserRecordResultDto
+        {
+            TotalCount = result.Item1, 
+            Data = projectList
+        };
     }
     
     [Name("getSyncUserProjectInfos")]
@@ -155,7 +159,11 @@ public class Query
 
         var result = await repository.GetListAsync(Filter, skip: input.SkipCount,
             limit: input.MaxResultCount, sortType: SortOrder.Ascending, sortExp: o => o.BlockHeight);
-        var projectList = objectMapper.Map<List<WhitelistIndex>, List<WhitelistDto>>(result.Item2);
-        return new WhitelistResultDto(result.Item1, projectList);
+        var list = objectMapper.Map<List<WhitelistIndex>, List<WhitelistDto>>(result.Item2);
+        return new WhitelistResultDto
+        {
+            TotalCount = result.Item1,
+            Data = list
+        };
     }
 }

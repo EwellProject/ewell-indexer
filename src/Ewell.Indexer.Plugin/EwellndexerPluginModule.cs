@@ -32,6 +32,6 @@ public class EwellIndexerPluginModule : AElfIndexerClientPluginBaseModule<EwellI
         serviceCollection.AddSingleton<IAElfLogEventProcessor<LogEventInfo>, WhitelistDisabledLogEventProcessor>();
     }
 
-    protected override string ClientId => "AElfIndexer_ewell";
-    protected override string Version => "******";
+    protected override string ClientId => "AElfIndexer_Ewell";
+    protected override string Version => "df457fc2eb164453b301c5cf2c370655";
 }

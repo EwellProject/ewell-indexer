@@ -36,5 +36,6 @@ public class EwellIndexerClientAutoMapperProfile : Profile
         CreateMap<WhitelistReenable, WhitelistIndex>();
         CreateMap<WhitelistDisabled, WhitelistIndex>();
         CreateMap<WhitelistIndex, WhitelistDto>();
+        CreateMap<CrowdfundingProjectBase, CrowdfundingProjectBaseDto>();
     }
 }
