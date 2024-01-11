@@ -14,12 +14,12 @@ public class UserRecordQueryTest : QueryTestBase
         await MockInvested();
         await MockUninvest();
         
-        var userRecords = await Query.GetUserRecordListAsync(_userRecordRepository, _objectMapper, new GetInputBase());
+        var userRecords = await Query.GetUserRecordListAsync(_userRecordRepository, _objectMapper, new GetUserRecordInput());
         userRecords.ShouldNotBeNull();
         userRecords.TotalCount.ShouldBe(2);
         userRecords.Data.Count.ShouldBe(0);
         
-        userRecords = await Query.GetUserRecordListAsync(_userRecordRepository, _objectMapper, new GetInputBase
+        userRecords = await Query.GetUserRecordListAsync(_userRecordRepository, _objectMapper, new GetUserRecordInput
         {
             ChainId = Chain_AELF,
             StartBlockHeight = blockHeight,
@@ -30,7 +30,7 @@ public class UserRecordQueryTest : QueryTestBase
         userRecords.TotalCount.ShouldBe(2);
         userRecords.Data.Count.ShouldBe(2);
         
-        userRecords = await Query.GetUserRecordListAsync(_userRecordRepository, _objectMapper, new GetInputBase
+        userRecords = await Query.GetUserRecordListAsync(_userRecordRepository, _objectMapper, new GetUserRecordInput
         {
             ChainId = Chain_AELF,
             StartBlockHeight = blockHeight + 1,
@@ -40,7 +40,7 @@ public class UserRecordQueryTest : QueryTestBase
         userRecords.TotalCount.ShouldBe(0);
         userRecords.Data.Count.ShouldBe(0);
         
-        userRecords = await Query.GetUserRecordListAsync(_userRecordRepository, _objectMapper, new GetInputBase
+        userRecords = await Query.GetUserRecordListAsync(_userRecordRepository, _objectMapper, new GetUserRecordInput
         {
             ChainId = Chain_AELF,
             StartBlockHeight = blockHeight,

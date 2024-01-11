@@ -1,6 +1,6 @@
 namespace Ewell.Indexer.Plugin.GraphQL.Dto;
 
-public class GetInputBase
+public class GetUserRecordInput
 {
     public string ChainId { get; set; }
     public long StartBlockHeight { get; set; }

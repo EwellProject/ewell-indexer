@@ -12,12 +12,12 @@ public class WhitelistQueryTest : QueryTestBase
     {
         await MockWhitelistDisable();
         
-        var whitelists = await Query.GetWhitelistListAsync(_whitelistRepository, _objectMapper, new GetInputBase());
+        var whitelists = await Query.GetWhitelistListAsync(_whitelistRepository, _objectMapper, new GetWhitelistInput());
         whitelists.ShouldNotBeNull();
         whitelists.TotalCount.ShouldBe(1);
         whitelists.Data.Count.ShouldBe(0);
         
-        whitelists = await Query.GetWhitelistListAsync(_whitelistRepository, _objectMapper, new GetInputBase
+        whitelists = await Query.GetWhitelistListAsync(_whitelistRepository, _objectMapper, new GetWhitelistInput
         {
             ChainId = Chain_AELF,
             StartBlockHeight = blockHeight,
@@ -28,7 +28,7 @@ public class WhitelistQueryTest : QueryTestBase
         whitelists.TotalCount.ShouldBe(1);
         whitelists.Data.Count.ShouldBe(1);
         
-        whitelists = await Query.GetWhitelistListAsync(_whitelistRepository, _objectMapper, new GetInputBase
+        whitelists = await Query.GetWhitelistListAsync(_whitelistRepository, _objectMapper, new GetWhitelistInput
         {
             ChainId = Chain_AELF,
             StartBlockHeight = blockHeight + 1,
@@ -38,7 +38,7 @@ public class WhitelistQueryTest : QueryTestBase
         whitelists.TotalCount.ShouldBe(0);
         whitelists.Data.Count.ShouldBe(0);
         
-        whitelists = await Query.GetWhitelistListAsync(_whitelistRepository, _objectMapper, new GetInputBase
+        whitelists = await Query.GetWhitelistListAsync(_whitelistRepository, _objectMapper, new GetWhitelistInput
         {
             ChainId = Chain_AELF,
             StartBlockHeight = blockHeight,

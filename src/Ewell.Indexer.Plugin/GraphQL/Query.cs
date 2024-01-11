@@ -71,7 +71,7 @@ public class Query
     public static async Task<UserRecordResultDto> GetUserRecordListAsync(
         [FromServices] IAElfIndexerClientEntityRepository<UserRecordIndex, LogEventInfo> repository,
         [FromServices] IObjectMapper objectMapper,
-        GetInputBase input)
+        GetUserRecordInput input)
     {
         var mustQuery = new List<Func<QueryContainerDescriptor<UserRecordIndex>, QueryContainer>>();
         if (!string.IsNullOrEmpty(input.ChainId))
@@ -132,7 +132,7 @@ public class Query
     public static async Task<WhitelistResultDto> GetWhitelistListAsync(
         [FromServices] IAElfIndexerClientEntityRepository<WhitelistIndex, LogEventInfo> repository,
         [FromServices] IObjectMapper objectMapper,
-        GetInputBase input)
+        GetWhitelistInput input)
     {
         var mustQuery = new List<Func<QueryContainerDescriptor<WhitelistIndex>, QueryContainer>>();
         if (!string.IsNullOrEmpty(input.ChainId))
