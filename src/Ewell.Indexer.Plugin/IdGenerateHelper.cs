@@ -21,4 +21,14 @@ public class IdGenerateHelper
     {
         return GetId(chainId, projectId, userId);
     }
+    
+    public static string GetNFTInfoId(string chainId, string symbol)
+    {
+        return GetId(chainId, symbol);
+    }
+    
+    public static string GetUserBalanceId(string address, string chainId, string nftInfoId)
+    {
+        return GetId(address, chainId, nftInfoId);
+    }
 }
