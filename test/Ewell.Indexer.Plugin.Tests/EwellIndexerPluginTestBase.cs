@@ -1,5 +1,6 @@
 using AElf;
 using AElf.Contracts.Ewell;
+using AElf.Contracts.MultiToken;
 using AElf.Contracts.Whitelist;
 using AElf.CSharp.Core.Extension;
 using AElf.Kernel;
@@ -12,6 +13,7 @@ using Ewell.Indexer.Orleans.TestBase;
 using Ewell.Indexer.Plugin.Processors;
 using Ewell.Indexer.Plugin.Tests.Helper;
 using Google.Protobuf.WellKnownTypes;
+using Nethereum.Hex.HexConvertors.Extensions;
 
 namespace Ewell.Indexer.Plugin.Tests;
 
@@ -23,9 +25,11 @@ public abstract class EwellIndexerPluginTestBase : EwellIndexerOrleansTestBase<E
     public readonly IDAppDataProvider _dAppDataProvider;
     public readonly IDAppDataIndexManagerProvider _dAppDataIndexManagerProvider;
 
-
-    public static string AliceAddress = "2Pvmz2c57roQAJEtQ11fqavofdDtyD1Vehjxd7QRpQ7hwSqcF7";
-    public static string BobAddress = "Lmemfcp2nB8kAvQDLxsLtQuHWgpH5gUWVmmcEkpJ2kRY9Jv25";
+    //2N9DJYUUruS7bFqRyKMvafA75qTWgqpWcB78nNZzpmxHrMv4D
+    public static string AliceAddress = "2N9DJYUUruS7bFqRyKMvafA75qTWgqpWcB78nNZzpmxHrMv4D";
+    
+    //2fbCtXNLVD2SC4AD6b8nqAkHtjqxRCfwvciX4MyH6257n8Gf63
+    public static string BobAddress = "2fbCtXNLVD2SC4AD6b8nqAkHtjqxRCfwvciX4MyH6257n8Gf63";
 
     public string blockHash = "dac5cd67a2783d0a3d843426c2d45f1178f4d052235a907a0d796ae4659103b1";
     public string previousBlockHash = "e38c4fb1cf6af05878657cb3f7b5fc8a5fcfb2eec19cd76b73abb831973fbf4e";
@@ -34,7 +38,7 @@ public abstract class EwellIndexerPluginTestBase : EwellIndexerOrleansTestBase<E
 
     public static string Chain_AELF = "tDVV";
     public static string TestSymbol = "Ewell_Test";
-    public static string Id = "123456";
+    public static string Id = "123456555111";
     public static string ProjectId = HashHelper.ComputeFrom(Id).ToHex();
     public static Hash WhitelistId = HashHelper.ComputeFrom("whitelistId");
 
@@ -310,7 +314,71 @@ public abstract class EwellIndexerPluginTestBase : EwellIndexerOrleansTestBase<E
         //step4: save blockStateSet into es
         await BlockStateSetSaveDataAsync<LogEventInfo>(blockStateSetKey);
     }
+    
+    protected async Task MockTokenCreated(string chainId, string symbol)
+    {
+        const string tokenName = "Token for test";
+        const long totalSupply = 8;
+        const int decimals = 8;
+        const bool isBurnable = true;
+        const int issueChainId = 9992731;
 
+        var nftCreateLogEventProcessor = GetRequiredService<TokenCreatedLogEventProcessor>();
+        nftCreateLogEventProcessor.GetContractAddress(chainId);
+        var blockStateSet = new BlockStateSet<LogEventInfo>
+        {
+            BlockHash = blockHash,
+            BlockHeight = blockHeight,
+            Confirmed = true,
+            PreviousBlockHash = previousBlockHash,
+        };
+        var blockStateSetKey = await InitializeBlockStateSetAsync(blockStateSet, chainId);
+
+        var tokenCreated = new TokenCreated()
+        {
+            Symbol = symbol,
+            TokenName = tokenName,
+            TotalSupply = totalSupply,
+            Decimals = decimals,
+            Issuer = Address.FromPublicKey("AAA".HexToByteArray()),
+            IsBurnable = isBurnable,
+            IssueChainId = issueChainId,
+            ExternalInfo = new ExternalInfo
+            {
+                Value =
+                {
+                    {
+                        "__seed_owned_symbol",
+                        "WILLTESTHH"
+                    },
+                    {
+                        "__nft_image_url",
+                        "https://forest-dev.s3.amazonaws.com/SymbolMarket-test4/SEED-2377.svg"
+                    }
+                }
+            }
+        };
+
+        var logEventInfo = LogEventHelper.ConvertAElfLogEventToLogEventInfo(tokenCreated.ToLogEvent());
+        logEventInfo.BlockHeight = blockHeight;
+        logEventInfo.ChainId = chainId;
+        logEventInfo.BlockHash = blockHash;
+        logEventInfo.TransactionId = transactionId;
+        var logEventContext = new LogEventContext
+        {
+            ChainId = chainId,
+            BlockHeight = blockHeight,
+            BlockHash = blockHash,
+            PreviousBlockHash = previousBlockHash,
+            TransactionId = transactionId
+        };
+
+        await nftCreateLogEventProcessor.HandleEventAsync(logEventInfo, logEventContext);
+
+        await BlockStateSetSaveDataAsync<LogEventInfo>(blockStateSetKey);
+        await Task.Delay(0);
+    }
+    
     private BlockStateSet<LogEventInfo> GetBlockStateSet()
     {
         return new BlockStateSet<LogEventInfo>

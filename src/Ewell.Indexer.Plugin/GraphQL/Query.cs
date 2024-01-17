@@ -166,4 +166,68 @@ public class Query
             Data = list
         };
     }
+    
+    [Name("getUserTokenInfos")]
+    public static async Task<List<GetUserTokensDto>> GetUserTokenInfosAsync(
+        [FromServices] IAElfIndexerClientEntityRepository<TokenInfoIndex, LogEventInfo> tokenIndexRepository,
+        [FromServices] IAElfIndexerClientEntityRepository<UserBalanceIndex, LogEventInfo> userBalanceIndexRepository,
+        [FromServices] IObjectMapper objectMapper,
+        GetUserTokensInput input)
+    {
+        var mustQuery = new List<Func<QueryContainerDescriptor<UserBalanceIndex>, QueryContainer>>();
+      
+        mustQuery.Add(q => q.Term(i
+            => i.Field(f => f.ChainId).Value(input.ChainId)));
+        
+        mustQuery.Add(q => q.Term(i
+            => i.Field(f => f.Address).Value(input.Address)));
+
+        QueryContainer Filter(QueryContainerDescriptor<UserBalanceIndex> f) =>
+            f.Bool(b => b.Must(mustQuery));
+        
+        var result = await userBalanceIndexRepository.GetListAsync(Filter);
+
+        if (result.Item2.IsNullOrEmpty())
+        {
+            return new List<GetUserTokensDto>();
+        }
+
+        var tokenIds = result.Item2.Select(item => IdGenerateHelper.GetTokenInfoId(item.ChainId, item.Symbol))
+            .ToList();
+        
+        var tokenInfos = await GetTokenInfosAsync(tokenIndexRepository, tokenIds);
+
+        return result.Item2.Select(item =>
+            {
+                var id = IdGenerateHelper.GetTokenInfoId(item.ChainId, item.Symbol);
+                if (tokenInfos.TryGetValue(id, out var tokenInfo))
+                {
+                    var userTokensDto = objectMapper.Map<TokenInfoIndex, GetUserTokensDto>(tokenInfo);
+                    userTokensDto.Balance = item.Amount;
+                    userTokensDto.ImageUrl =  tokenInfo.ExternalInfoDictionary
+                        .FirstOrDefault(o => o.Key == "__nft_image_url")?.Value;
+                    return userTokensDto;
+                }
+                return null;
+            }
+        ).ToList();
+    }
+
+    private static async Task<Dictionary<string, TokenInfoIndex>> GetTokenInfosAsync(
+        [FromServices] IAElfIndexerClientEntityRepository<TokenInfoIndex, LogEventInfo> tokenIndexRepository,
+        List<string> tokenIds)
+    {
+        var mustQuery = new List<Func<QueryContainerDescriptor<TokenInfoIndex>, QueryContainer>>();
+
+        mustQuery.Add(q => q.Terms(i
+            => i.Field(f => f.Id).Terms(tokenIds)));
+
+        QueryContainer Filter(QueryContainerDescriptor<TokenInfoIndex> f) =>
+            f.Bool(b => b.Must(mustQuery));
+
+        var result = await tokenIndexRepository.GetListAsync(Filter);
+        return result.Item2.IsNullOrEmpty()
+            ? new Dictionary<string, TokenInfoIndex>()
+            : result.Item2.ToDictionary(item => item.Id, item => item);
+    }
 }
