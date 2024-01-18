@@ -34,7 +34,8 @@ public class Query
     
     [Name("getProjectList")]
     public static async Task<ProjectListPageResultDto> GetProjectListAsync(
-        [FromServices] IAElfIndexerClientEntityRepository<CrowdfundingProjectIndex, LogEventInfo> repository,
+        [FromServices] IAElfIndexerClientEntityRepository<CrowdfundingProjectIndex, LogEventInfo> projectRepository,
+        [FromServices] IAElfIndexerClientEntityRepository<WhitelistIndex, LogEventInfo> whitelistRepository,
         [FromServices] IObjectMapper objectMapper,
         GetProjectListInput input)
     {
@@ -57,9 +58,37 @@ public class Query
         QueryContainer Filter(QueryContainerDescriptor<CrowdfundingProjectIndex> f) =>
             f.Bool(b => b.Must(mustQuery));
 
-        var result = await repository.GetListAsync(Filter, skip: input.SkipCount,
+        var result = await projectRepository.GetListAsync(Filter, skip: input.SkipCount,
             limit: input.MaxResultCount, sortType: SortOrder.Ascending, sortExp: o => o.BlockHeight);
         var projectList = objectMapper.Map<List<CrowdfundingProjectIndex>, List<CrowdfundingProjectDto>>(result.Item2);
+        
+        //whitelist
+        var whitelistIds = projectList.Select(x => x.WhitelistId).ToList();
+        var whitelistMustQuery = new List<Func<QueryContainerDescriptor<WhitelistIndex>, QueryContainer>>();
+        if (!string.IsNullOrEmpty(input.ChainId))
+        {
+            whitelistMustQuery.Add(q => q.Term(i
+                => i.Field(f => f.ChainId).Value(input.ChainId)));
+        }
+        if (!whitelistIds.IsNullOrEmpty())
+        {
+            whitelistMustQuery.Add(q => q.Terms(i
+                => i.Field(f => f.Id).Terms(whitelistIds)));
+        }
+        QueryContainer WhitelistFilter(QueryContainerDescriptor<WhitelistIndex> f) =>
+            f.Bool(b => b.Must(whitelistMustQuery));
+        var whitelistList = (await whitelistRepository.GetListAsync(WhitelistFilter)).Item2;
+        foreach (var project in projectList)
+        {
+            foreach (var whitelist in whitelistList)
+            {
+                if (whitelist.Id == project.WhitelistId)
+                {
+                    project.IsEnableWhitelist = whitelist.IsAvailable;
+                }
+            }
+        }
+
         return new ProjectListPageResultDto
         {
             TotalCount = result.Item1,

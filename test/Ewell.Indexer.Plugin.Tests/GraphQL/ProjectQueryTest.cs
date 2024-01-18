@@ -11,13 +11,14 @@ public class ProjectQueryTest : QueryTestBase
     public async Task GetProjectListAsync_Test()
     {
         await MockProjectRegistered();
+        await MockWhitelistDisable();
 
-        var userRecords = await Query.GetProjectListAsync(_crowdfundingProjectRepository, _objectMapper, new GetProjectListInput());
+        var userRecords = await Query.GetProjectListAsync(_crowdfundingProjectRepository, _whitelistRepository, _objectMapper, new GetProjectListInput());
         userRecords.ShouldNotBeNull();
         userRecords.TotalCount.ShouldBe(1);
         userRecords.Data.Count.ShouldBe(0);
         
-        userRecords = await Query.GetProjectListAsync(_crowdfundingProjectRepository, _objectMapper, new GetProjectListInput
+        userRecords = await Query.GetProjectListAsync(_crowdfundingProjectRepository, _whitelistRepository, _objectMapper, new GetProjectListInput
         {
             ChainId = Chain_AELF,
             StartBlockHeight = blockHeight,
@@ -28,7 +29,7 @@ public class ProjectQueryTest : QueryTestBase
         userRecords.TotalCount.ShouldBe(1);
         userRecords.Data.Count.ShouldBe(1);
         
-        userRecords = await Query.GetProjectListAsync(_crowdfundingProjectRepository, _objectMapper, new GetProjectListInput
+        userRecords = await Query.GetProjectListAsync(_crowdfundingProjectRepository, _whitelistRepository, _objectMapper, new GetProjectListInput
         {
             ChainId = Chain_AELF,
             StartBlockHeight = blockHeight + 1,
@@ -38,7 +39,7 @@ public class ProjectQueryTest : QueryTestBase
         userRecords.TotalCount.ShouldBe(0);
         userRecords.Data.Count.ShouldBe(0);
         
-        userRecords = await Query.GetProjectListAsync(_crowdfundingProjectRepository, _objectMapper, new GetProjectListInput
+        userRecords = await Query.GetProjectListAsync(_crowdfundingProjectRepository, _whitelistRepository, _objectMapper, new GetProjectListInput
         {
             ChainId = Chain_AELF,
             StartBlockHeight = blockHeight,

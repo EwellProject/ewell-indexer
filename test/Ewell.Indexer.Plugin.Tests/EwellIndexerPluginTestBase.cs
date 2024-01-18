@@ -177,7 +177,8 @@ public abstract class EwellIndexerPluginTestBase : EwellIndexerOrleansTestBase<E
             FirstDistributeProportion = 50,
             RestDistributeProportion = 50,
             TotalPeriod = 10,
-            IsEnableWhitelist = false,
+            IsEnableWhitelist = true,
+            WhitelistId = WhitelistId,
             ProjectCurrency = TestSymbol,
             AcceptedCurrency = "ELF"
         };
