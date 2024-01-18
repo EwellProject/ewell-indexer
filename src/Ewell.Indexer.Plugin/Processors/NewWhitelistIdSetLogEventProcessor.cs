@@ -47,8 +47,6 @@ public class NewWhitelistIdSetLogEventProcessor : ProjectProcessorBase<NewWhitel
                 Logger.LogInformation("[NewWhitelistIdSet] crowdfundingProject not exist: Id={Id}, ChainId={ChainId}", projectId, chainId);
                 return;
             }
-            var whitelist = await WhitelistRepository.GetFromBlockStateSetAsync(whitelistId, context.ChainId);
-            crowdfundingProject.IsEnableWhitelist = whitelist == null || whitelist.IsAvailable;
             crowdfundingProject.WhitelistId = eventValue.WhitelistId.ToHex();
             ObjectMapper.Map(context, crowdfundingProject);
 
