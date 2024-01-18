@@ -29,7 +29,7 @@ public class NewWhitelistIdSetLogEventProcessor : ProjectProcessorBase<NewWhitel
 
     public override string GetContractAddress(string chainId)
     {
-        return ContractInfoOptions.ContractInfos[chainId].WhitelistContractAddress;
+        return ContractInfoOptions.ContractInfos[chainId].EwellContractAddress;
     }
 
     protected override async Task HandleEventAsync(NewWhitelistIdSet eventValue, LogEventContext context)
