@@ -78,15 +78,10 @@ public class Query
         QueryContainer WhitelistFilter(QueryContainerDescriptor<WhitelistIndex> f) =>
             f.Bool(b => b.Must(whitelistMustQuery));
         var whitelistList = (await whitelistRepository.GetListAsync(WhitelistFilter)).Item2;
-        foreach (var project in projectList)
+        var whitelistMap = whitelistList.ToDictionary(whitelist => whitelist.Id);
+        foreach (var project in projectList.Where(project => whitelistMap.ContainsKey(project.WhitelistId)))
         {
-            foreach (var whitelist in whitelistList)
-            {
-                if (whitelist.Id == project.WhitelistId)
-                {
-                    project.IsEnableWhitelist = whitelist.IsAvailable;
-                }
-            }
+            project.IsEnableWhitelist = whitelistMap.GetOrDefault(project.WhitelistId).IsAvailable;
         }
 
         return new ProjectListPageResultDto
