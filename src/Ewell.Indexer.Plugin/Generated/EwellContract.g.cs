@@ -12011,7 +12011,7 @@ namespace AElf.Contracts.Ewell {
 
   }
 
-  internal sealed partial class Withdrawn : pb::IMessage<Withdrawn>
+  public sealed partial class Withdrawn : pb::IMessage<Withdrawn>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif

@@ -9,5 +9,8 @@ public class UserProjectInfoBase : AElfIndexerClientEntity<string>
     public long InvestAmount { get; set; }
     public long ToClaimAmount { get; set; }
     public long ActualClaimAmount { get; set; }
+    public long LiquidatedDamageAmount { get; set; }
+    public bool ClaimedLiquidatedDamage { get; set; }
+    public DateTime? ClaimedLiquidatedDamageTime { get; set; }
     public DateTime CreateTime { get; set; }
 }

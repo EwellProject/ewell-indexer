@@ -12,7 +12,8 @@ namespace Ewell.Indexer.Plugin.Processors;
 
 public class ClaimDamageLogEventProcessor : UserProjectProcessorBase<LiquidatedDamageClaimed>
 {
-    public ClaimDamageLogEventProcessor(ILogger<AElfLogEventProcessorBase<LiquidatedDamageClaimed, LogEventInfo>> logger,
+    public ClaimDamageLogEventProcessor(
+        ILogger<AElfLogEventProcessorBase<LiquidatedDamageClaimed, LogEventInfo>> logger,
         IObjectMapper objectMapper,
         IOptionsSnapshot<ContractInfoOptions> contractInfoOptions,
         IAElfIndexerClientEntityRepository<CrowdfundingProjectIndex, LogEventInfo> crowdfundingProjectRepository,
@@ -31,26 +32,31 @@ public class ClaimDamageLogEventProcessor : UserProjectProcessorBase<LiquidatedD
     protected override async Task HandleEventAsync(LiquidatedDamageClaimed eventValue, LogEventContext context)
     {
         var projectId = eventValue.ProjectId.ToHex();
+        var user = eventValue.User.ToBase58();
         var chainId = context.ChainId;
-        Logger.LogInformation("[LiquidatedDamageClaimed] START: Id={Id}, Event={Event}, ChainId={ChainId}", 
+        Logger.LogInformation("[LiquidatedDamageClaimed] START: Id={Id}, Event={Event}, ChainId={ChainId}",
             projectId, JsonConvert.SerializeObject(eventValue), chainId);
         try
         {
-            var crowdfundingProject = await CrowdfundingProjectRepository.GetFromBlockStateSetAsync(projectId, context.ChainId);
+            var crowdfundingProject =
+                await CrowdfundingProjectRepository.GetFromBlockStateSetAsync(projectId, context.ChainId);
             if (crowdfundingProject == null)
             {
-                Logger.LogInformation("[LiquidatedDamageClaimed] crowdfundingProject not exist: Id={Id}, ChainId={ChainId}", projectId, chainId);
+                Logger.LogInformation(
+                    "[LiquidatedDamageClaimed] crowdfundingProject not exist: Id={Id}, ChainId={ChainId}", projectId,
+                    chainId);
                 return;
             }
-
+            
             crowdfundingProject.ReceivableLiquidatedDamageAmount -= eventValue.Amount;
             ObjectMapper.Map(context, crowdfundingProject);
-            
             Logger.LogInformation("[LiquidatedDamageClaimed] SAVE: Id={Id}, ChainId={ChainId}", projectId, chainId);
             await CrowdfundingProjectRepository.AddOrUpdateAsync(crowdfundingProject);
+            await UpdateUserProjectInfoAsync(context, projectId, user);
             Logger.LogInformation("[LiquidatedDamageClaimed] FINISH: Id={Id}, ChainId={ChainId}", projectId, chainId);
-            
-            await AddUserRecordAsync(context, crowdfundingProject, eventValue.User.ToBase58(), BehaviorType.LiquidatedDamageClaimed,
+
+            await AddUserRecordAsync(context, crowdfundingProject, eventValue.User.ToBase58(),
+                BehaviorType.LiquidatedDamageClaimed,
                 eventValue.Amount, 0);
         }
         catch (Exception e)
@@ -58,5 +64,23 @@ public class ClaimDamageLogEventProcessor : UserProjectProcessorBase<LiquidatedD
             Logger.LogError(e, "[LiquidatedDamageClaimed] Exception Id={projectId}", projectId);
             throw;
         }
+    }
+
+    private async Task UpdateUserProjectInfoAsync(LogEventContext context, string projectId, string user)
+    {
+        var userProjectId = IdGenerateHelper.GetUserProjectId(context.ChainId, projectId, user);
+        var userProjectInfo =
+            await UserProjectInfoRepository.GetFromBlockStateSetAsync(userProjectId, context.ChainId);
+        if (userProjectInfo == null)
+        {
+            Logger.LogInformation("[LiquidatedDamageClaimed] user project info with id {id} does not exist.",
+                userProjectId);
+            return;
+        }
+
+        userProjectInfo.ClaimedLiquidatedDamage = true;
+        userProjectInfo.ClaimedLiquidatedDamageTime = context.BlockTime;
+        ObjectMapper.Map(context, userProjectInfo);
+        await UserProjectInfoRepository.AddOrUpdateAsync(userProjectInfo);
     }
 }

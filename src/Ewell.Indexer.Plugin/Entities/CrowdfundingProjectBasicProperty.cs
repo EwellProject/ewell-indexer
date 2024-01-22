@@ -18,6 +18,9 @@ public class CrowdfundingProjectBasicProperty : CrowdfundingProjectBase
     public int TotalPeriod { get; set; }
     [Keyword] public string AdditionalInfo { get; set; }
     public bool IsCanceled { get; set; }
+    public bool IsWithdraw { get; set; }
+    public DateTime? CancelTime { get; set; }
+    public DateTime? WithdrawTime { get; set; }
     public bool IsEnableWhitelist { get; set; }
     [Keyword] public string WhitelistId { get; set; }
     public long CurrentRaisedAmount { get; set; }
@@ -28,5 +31,4 @@ public class CrowdfundingProjectBasicProperty : CrowdfundingProjectBase
     public bool IsBurnRestToken { get; set; }
     public long ReceivableLiquidatedDamageAmount { get; set; }
     public DateTime? LastModificationTime { get; set; }
-    public DateTime? CancelTime { get; set; }
 }

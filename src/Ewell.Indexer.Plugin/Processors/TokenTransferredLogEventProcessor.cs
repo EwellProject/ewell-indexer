@@ -24,5 +24,11 @@ public class TokenTransferredLogEventProcessor : TokenProcessorBase<Transferred>
             eventValue.From?.ToBase58(), eventValue.Amount);
         await UserBalanceProvider.SaveUserBalanceAsync(eventValue.Symbol, eventValue.From?.ToBase58(),
             -eventValue.Amount, context);
+        
+        Logger.LogInformation("[Transferred] handle chainId {chainId} to address {address} amount {amount}",
+            context.ChainId,
+            eventValue.To?.ToBase58(), eventValue.Amount);
+        await UserBalanceProvider.SaveUserBalanceAsync(eventValue.Symbol, eventValue.To?.ToBase58(),
+            eventValue.Amount, context);
     }
 }

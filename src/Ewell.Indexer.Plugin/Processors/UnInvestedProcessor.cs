@@ -50,6 +50,7 @@ public class UnInvestedProcessor : UserProjectProcessorBase<UnInvested>
         var projectReceivableLiquidatedDamage = userInvestedAmount - unInvestAmount;
         userProjectInfo.InvestAmount = 0;
         userProjectInfo.ToClaimAmount = 0;
+        userProjectInfo.LiquidatedDamageAmount = projectReceivableLiquidatedDamage;
         ObjectMapper.Map(context, userProjectInfo);
         await UserProjectInfoRepository.AddOrUpdateAsync(userProjectInfo);
 

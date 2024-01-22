@@ -261,7 +261,7 @@ namespace AElf.Contracts.Ewell {
     }
   }
 
-  internal partial class Withdrawn : aelf::IEvent<Withdrawn>
+  public partial class Withdrawn : aelf::IEvent<Withdrawn>
   {
     public global::System.Collections.Generic.IEnumerable<Withdrawn> GetIndexed()
     {

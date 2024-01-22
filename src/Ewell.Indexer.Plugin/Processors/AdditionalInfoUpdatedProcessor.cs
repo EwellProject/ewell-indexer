@@ -35,7 +35,7 @@ public class AdditionalInfoUpdatedProcessor : ProjectProcessorBase<AdditionalInf
                 chainId);
             return;
         }
-
+        ObjectMapper.Map(context, crowdfundingProject);
         crowdfundingProject.AdditionalInfo = JsonSerializer.Serialize(eventValue.AdditionalInfo.Data);
         ObjectMapper.Map(context, crowdfundingProject);
         await CrowdfundingProjectRepository.AddOrUpdateAsync(crowdfundingProject);

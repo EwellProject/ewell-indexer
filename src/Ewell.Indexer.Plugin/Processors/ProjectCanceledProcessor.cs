@@ -35,7 +35,7 @@ public class ProjectCanceledProcessor : ProjectProcessorBase<ProjectCanceled>
                 chainId);
             return;
         }
-
+        ObjectMapper.Map(context, crowdfundingProject);
         crowdfundingProject.IsCanceled = true;
         crowdfundingProject.CancelTime = context.BlockTime;
         await CrowdfundingProjectRepository.AddOrUpdateAsync(crowdfundingProject);

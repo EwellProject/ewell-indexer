@@ -234,7 +234,7 @@ public class Query
                 }
                 return null;
             }
-        ).ToList();
+        ).Where(dto => dto != null).ToList();
     }
 
     private static async Task<Dictionary<string, TokenInfoIndex>> GetTokenInfosAsync(

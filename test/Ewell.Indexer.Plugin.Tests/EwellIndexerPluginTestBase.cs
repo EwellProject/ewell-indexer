@@ -354,7 +354,7 @@ public abstract class EwellIndexerPluginTestBase : EwellIndexerOrleansTestBase<E
                     },
                     {
                         "__nft_image_url",
-                        "https://forest-dev.s3.amazonaws.com/SymbolMarket-test4/SEED-2377.svg"
+                        ""
                     }
                 }
             }

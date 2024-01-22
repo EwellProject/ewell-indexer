@@ -34,10 +34,12 @@ public class EwellIndexerPluginModule : AElfIndexerClientPluginBaseModule<EwellI
         serviceCollection.AddSingleton<IAElfLogEventProcessor<LogEventInfo>, ClaimDamageLogEventProcessor>();
         serviceCollection.AddSingleton<IAElfLogEventProcessor<LogEventInfo>, NewWhitelistIdSetLogEventProcessor>();
         serviceCollection.AddSingleton<IAElfLogEventProcessor<LogEventInfo>, PeriodUpdatedProcessor>();
+        serviceCollection.AddSingleton<IAElfLogEventProcessor<LogEventInfo>, ProjectCanceledProcessor>();
+        serviceCollection.AddSingleton<IAElfLogEventProcessor<LogEventInfo>, WithdrawnProcessor>();
         serviceCollection.AddSingleton<IAElfLogEventProcessor<LogEventInfo>, WhitelistReenableLogEventProcessor>();
         serviceCollection.AddSingleton<IAElfLogEventProcessor<LogEventInfo>, WhitelistDisabledLogEventProcessor>();
     }
 
     protected override string ClientId => "AElfIndexer_Ewell";
-    protected override string Version => "93dc90e12cc24c54bd726d1aa302d987";
+    protected override string Version => "a42882254662435a84169e411894f75e";
 }
