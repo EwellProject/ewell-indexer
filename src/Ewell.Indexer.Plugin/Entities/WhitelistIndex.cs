@@ -7,4 +7,5 @@ namespace Ewell.Indexer.Plugin.Entities;
 public class WhitelistIndex :  AElfIndexerClientEntity<string>, IIndexBuild
 {
     public bool IsAvailable { get; set; }
+    public string AddressTimeInfo { get; set; }
 }

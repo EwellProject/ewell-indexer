@@ -78,7 +78,7 @@ namespace AElf.Contracts.Whitelist {
     }
   }
 
-  internal partial class WhitelistAddressInfoAdded : aelf::IEvent<WhitelistAddressInfoAdded>
+  public partial class WhitelistAddressInfoAdded : aelf::IEvent<WhitelistAddressInfoAdded>
   {
     public global::System.Collections.Generic.IEnumerable<WhitelistAddressInfoAdded> GetIndexed()
     {
@@ -97,7 +97,7 @@ namespace AElf.Contracts.Whitelist {
     }
   }
 
-  internal partial class WhitelistAddressInfoRemoved : aelf::IEvent<WhitelistAddressInfoRemoved>
+  public partial class WhitelistAddressInfoRemoved : aelf::IEvent<WhitelistAddressInfoRemoved>
   {
     public global::System.Collections.Generic.IEnumerable<WhitelistAddressInfoRemoved> GetIndexed()
     {

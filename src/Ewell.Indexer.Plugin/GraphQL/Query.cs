@@ -82,6 +82,7 @@ public class Query
         foreach (var project in projectList.Where(project => whitelistMap.ContainsKey(project.WhitelistId)))
         {
             project.IsEnableWhitelist = whitelistMap.GetOrDefault(project.WhitelistId).IsAvailable;
+            project.WhitelistAddressTime = whitelistMap.GetOrDefault(project.WhitelistId).AddressTimeInfo;
         }
 
         return new ProjectListPageResultDto

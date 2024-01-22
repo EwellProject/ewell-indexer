@@ -3948,7 +3948,7 @@ namespace AElf.Contracts.Whitelist {
 
   }
 
-  internal sealed partial class AddAddressInfoListToWhitelistInput : pb::IMessage<AddAddressInfoListToWhitelistInput>
+  public partial class AddAddressInfoListToWhitelistInput : pb::IMessage<AddAddressInfoListToWhitelistInput>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
@@ -10855,7 +10855,7 @@ namespace AElf.Contracts.Whitelist {
 
   }
 
-  internal sealed partial class WhitelistAddressInfoAdded : pb::IMessage<WhitelistAddressInfoAdded>
+  public sealed partial class WhitelistAddressInfoAdded : pb::IMessage<WhitelistAddressInfoAdded>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
@@ -11099,7 +11099,7 @@ namespace AElf.Contracts.Whitelist {
 
   }
 
-  internal sealed partial class WhitelistAddressInfoRemoved : pb::IMessage<WhitelistAddressInfoRemoved>
+  public sealed partial class WhitelistAddressInfoRemoved : pb::IMessage<WhitelistAddressInfoRemoved>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif

@@ -17,6 +17,7 @@ public class CrowdfundingProjectBasicPropertyDto : CrowdfundingProjectBaseDto
     public string AdditionalInfo { get; set; }
     public bool IsCanceled { get; set; }
     public bool IsEnableWhitelist { get; set; }
+    public string WhitelistAddressTime { get; set; }
     public string WhitelistId { get; set; }
     public long CurrentRaisedAmount { get; set; }
     public long CurrentCrowdFundingIssueAmount { get; set; }

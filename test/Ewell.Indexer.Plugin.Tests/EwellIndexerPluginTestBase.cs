@@ -41,6 +41,7 @@ public abstract class EwellIndexerPluginTestBase : EwellIndexerOrleansTestBase<E
     public static string Id = "123456555111";
     public static string ProjectId = HashHelper.ComputeFrom(Id).ToHex();
     public static Hash WhitelistId = HashHelper.ComputeFrom("whitelistId");
+    public static DateTime BlockTime = DateTime.UtcNow.FromUnixTimeSeconds(1672502400);
 
     public EwellIndexerPluginTestBase()
     {
@@ -99,7 +100,7 @@ public abstract class EwellIndexerPluginTestBase : EwellIndexerOrleansTestBase<E
             BlockHash = blockHash,
             PreviousBlockHash = previousBlockHash,
             TransactionId = transactionId,
-            BlockTime = DateTime.UtcNow.FromUnixTimeSeconds(1672502400),
+            BlockTime = BlockTime,
             ExtraProperties = new Dictionary<string, string>
             {
                 { "TransactionFee", "{\"ELF\": 10, \"DECIMAL\": 8}" },
