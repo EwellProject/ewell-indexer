@@ -11,7 +11,7 @@ using Volo.Abp.ObjectMapping;
 
 namespace Ewell.Indexer.Plugin.Processors;
 
-public abstract class WhitelistReenableLogEventProcessor : WhitelistProcessorBase<WhitelistReenable>
+public class WhitelistReenableLogEventProcessor : WhitelistProcessorBase<WhitelistReenable>
 {
     public WhitelistReenableLogEventProcessor(
         ILogger<AElfLogEventProcessorBase<WhitelistReenable, LogEventInfo>> logger, 

@@ -10,7 +10,7 @@ using Volo.Abp.ObjectMapping;
 
 namespace Ewell.Indexer.Plugin.Processors;
 
-public class WhitelistProcessorBase<TEvent> : AElfLogEventProcessorBase<TEvent, LogEventInfo>
+public abstract class WhitelistProcessorBase<TEvent> : AElfLogEventProcessorBase<TEvent, LogEventInfo>
     where TEvent : IEvent<TEvent>,new()
 {
     protected readonly ILogger<AElfLogEventProcessorBase<TEvent, LogEventInfo>> Logger;
