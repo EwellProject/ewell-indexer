@@ -11,7 +11,7 @@ using Volo.Abp.ObjectMapping;
 
 namespace Ewell.Indexer.Plugin.Processors;
 
-public class NewWhitelistIdSetLogEventProcessor : ProjectProcessorBase<NewWhitelistIdSet>
+public abstract class NewWhitelistIdSetLogEventProcessor : ProjectProcessorBase<NewWhitelistIdSet>
 {
     protected readonly IAElfIndexerClientEntityRepository<WhitelistIndex, LogEventInfo> WhitelistRepository;
     
