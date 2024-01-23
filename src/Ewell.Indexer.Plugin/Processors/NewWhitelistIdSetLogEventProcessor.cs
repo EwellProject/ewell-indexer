@@ -27,11 +27,6 @@ public class NewWhitelistIdSetLogEventProcessor : ProjectProcessorBase<NewWhitel
         WhitelistRepository = whitelistRepository;
     }
 
-    public override string GetContractAddress(string chainId)
-    {
-        return ContractInfoOptions.ContractInfos[chainId].EwellContractAddress;
-    }
-
     protected override async Task HandleEventAsync(NewWhitelistIdSet eventValue, LogEventContext context)
     {
         var projectId = eventValue.ProjectId.ToHex();
