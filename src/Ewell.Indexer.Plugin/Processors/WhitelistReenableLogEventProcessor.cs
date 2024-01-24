@@ -46,7 +46,7 @@ public class WhitelistReenableLogEventProcessor : WhitelistProcessorBase<Whiteli
         }
         catch (Exception e)
         {
-            Logger.LogError(e, "[NewWhitelistIdSet] Exception Id={Id}", whitelistId);
+            Logger.LogError(e, "[WhitelistReenable] Exception Id={Id}", whitelistId);
             throw;
         }
     }
