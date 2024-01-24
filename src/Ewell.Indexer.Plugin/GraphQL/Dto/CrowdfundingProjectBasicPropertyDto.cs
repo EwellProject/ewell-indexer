@@ -29,4 +29,5 @@ public class CrowdfundingProjectBasicPropertyDto : CrowdfundingProjectBaseDto
     public bool IsBurnRestToken { get; set; }
     public long ReceivableLiquidatedDamageAmount { get; set; }
     public DateTime? LastModificationTime { get; set; }
+    public string VirtualAddress { get; set; }
 }

@@ -31,4 +31,5 @@ public class CrowdfundingProjectBasicProperty : CrowdfundingProjectBase
     public bool IsBurnRestToken { get; set; }
     public long ReceivableLiquidatedDamageAmount { get; set; }
     public DateTime? LastModificationTime { get; set; }
+    [Keyword] public string VirtualAddress { get; set; }
 }

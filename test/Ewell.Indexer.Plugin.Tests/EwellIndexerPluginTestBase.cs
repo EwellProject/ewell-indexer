@@ -3,7 +3,6 @@ using AElf.Contracts.Ewell;
 using AElf.Contracts.MultiToken;
 using AElf.Contracts.Whitelist;
 using AElf.CSharp.Core.Extension;
-using AElf.Kernel;
 using AElf.Types;
 using AElfIndexer.Client.Handlers;
 using AElfIndexer.Client.Providers;
@@ -30,6 +29,8 @@ public abstract class EwellIndexerPluginTestBase : EwellIndexerOrleansTestBase<E
     
     //2fbCtXNLVD2SC4AD6b8nqAkHtjqxRCfwvciX4MyH6257n8Gf63
     public static string BobAddress = "2fbCtXNLVD2SC4AD6b8nqAkHtjqxRCfwvciX4MyH6257n8Gf63";
+
+    public static string VirtualAddress = "aLyxCJvWMQH6UEykTyeWAcYss9baPyXkrMQ37BHnUicxD2LL3";
 
     public string blockHash = "dac5cd67a2783d0a3d843426c2d45f1178f4d052235a907a0d796ae4659103b1";
     public string previousBlockHash = "e38c4fb1cf6af05878657cb3f7b5fc8a5fcfb2eec19cd76b73abb831973fbf4e";
@@ -180,7 +181,8 @@ public abstract class EwellIndexerPluginTestBase : EwellIndexerOrleansTestBase<E
             IsEnableWhitelist = true,
             WhitelistId = WhitelistId,
             ProjectCurrency = TestSymbol,
-            AcceptedCurrency = "ELF"
+            AcceptedCurrency = "ELF",
+            VirtualAddress = Address.FromBase58(VirtualAddress),
         };
 
         var logEventInfo = LogEventHelper.ConvertAElfLogEventToLogEventInfo(logEvent.ToLogEvent());

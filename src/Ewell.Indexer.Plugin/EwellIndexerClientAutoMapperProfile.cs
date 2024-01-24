@@ -19,6 +19,8 @@ public class EwellIndexerClientAutoMapperProfile : Profile
         CreateMap<ProjectRegistered, CrowdfundingProjectIndex>()
             .ForMember(des => des.Creator, opt
                 => opt.MapFrom(source => source.Creator.ToBase58()
+                )).ForMember(des => des.VirtualAddress, opt
+                => opt.MapFrom(source => source.VirtualAddress.ToBase58()
                 )).ForMember(des => des.StartTime, opt
                 => opt.MapFrom(source => source.StartTime.ToDateTime()
                 )).ForMember(des => des.EndTime, opt
