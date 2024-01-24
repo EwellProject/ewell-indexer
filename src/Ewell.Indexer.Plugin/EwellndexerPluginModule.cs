@@ -1,4 +1,5 @@
-﻿using AElfIndexer.Client;
+﻿using AElf.Contracts.ProxyAccountContract;
+using AElfIndexer.Client;
 using AElfIndexer.Client.Handlers;
 using AElfIndexer.Grains.State.Client;
 using Ewell.Indexer.Plugin.GraphQL;
@@ -25,6 +26,10 @@ public class EwellIndexerPluginModule : AElfIndexerClientPluginBaseModule<EwellI
         serviceCollection.AddSingleton<IAElfLogEventProcessor<LogEventInfo>, TokenTransferredLogEventProcessor>();
         serviceCollection.AddSingleton<IAElfLogEventProcessor<LogEventInfo>, TokenCrossChainReceivedProcessor>();
         serviceCollection.AddSingleton<IAElfLogEventProcessor<LogEventInfo>, TokenCrossChainTransferredProcessor>();
+        serviceCollection.AddSingleton<IAElfLogEventProcessor<LogEventInfo>, ProxyAccountCreatedProcessor>();
+        serviceCollection.AddSingleton<IAElfLogEventProcessor<LogEventInfo>, ProxyAccountManagementAddressAddedProcessor>();
+        serviceCollection.AddSingleton<IAElfLogEventProcessor<LogEventInfo>, ProxyAccountManagementAddressRemovedProcessor>();
+        serviceCollection.AddSingleton<IAElfLogEventProcessor<LogEventInfo>, ProxyAccountManagementAddressResetProcessor>();
         serviceCollection.AddSingleton<IAElfLogEventProcessor<LogEventInfo>, ProjectRegisteredProcessor>();
         serviceCollection.AddSingleton<IAElfLogEventProcessor<LogEventInfo>, InvestedProcessor>();
         serviceCollection.AddSingleton<IAElfLogEventProcessor<LogEventInfo>, UnInvestedProcessor>();

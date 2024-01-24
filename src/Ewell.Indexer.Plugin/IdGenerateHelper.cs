@@ -31,4 +31,9 @@ public class IdGenerateHelper
     {
         return GetId(address, chainId, nftInfoId);
     }
+    
+    public static string GetProxyAccountIndexId(string proxyAccountAddress)
+    {
+        return GetId(proxyAccountAddress);
+    }
 }

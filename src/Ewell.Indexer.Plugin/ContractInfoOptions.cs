@@ -12,4 +12,5 @@ public class ContractInfo
     public string TokenContractAddress { get; set; }
     public string WhitelistContractAddress { get; set; }
     public string EwellContractAddress { get; set; }
+    public string ProxyAccountContractAddress { get; set; }
 }

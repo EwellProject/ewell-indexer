@@ -1,5 +1,6 @@
 using AElf.Contracts.Ewell;
 using AElf.Contracts.MultiToken;
+using AElf.Contracts.ProxyAccountContract;
 using AElf.Contracts.Whitelist;
 using AElfIndexer.Client.Handlers;
 using AutoMapper;
@@ -29,6 +30,23 @@ public class EwellIndexerClientAutoMapperProfile : Profile
                 )).ForMember(des => des.WhitelistId, opt
                 => opt.MapFrom(source => source.WhitelistId == null ? string.Empty : source.WhitelistId.ToHex()
                 ));
+        // agent
+        CreateMap<ProxyAccountCreated, ProxyAccountIndex>()
+            .ForMember(d => d.ProxyAccountAddress,
+                opt => opt.MapFrom(d =>
+                    d.ProxyAccountAddress.ToBase58()))
+            .ForMember(d => d.ManagersSet,
+                opt => opt.MapFrom(d =>
+                    new HashSet<string>(d.ManagementAddresses.Value.Select(item => item.Address.ToBase58()))));
+        CreateMap<ProxyAccountManagementAddressAdded, ProxyAccountIndex>();
+        CreateMap<ProxyAccountManagementAddressRemoved, ProxyAccountIndex>();
+        CreateMap<ProxyAccountManagementAddressReset, ProxyAccountIndex>().ForMember(d => d.ProxyAccountAddress,
+                opt => opt.MapFrom(d =>
+                    d.ProxyAccountAddress.ToBase58()))
+            .ForMember(d => d.ManagersSet,
+                opt => opt.MapFrom(d =>
+                    new HashSet<string>(d.ManagementAddresses.Value.Select(item => item.Address.ToBase58()))));
+        CreateMap<LogEventContext, ProxyAccountIndex>();
         CreateMap<LogEventContext, CrowdfundingProjectIndex>();
         CreateMap<LogEventContext, UserProjectInfoIndex>();
         CreateMap<LogEventContext, UserRecordIndex>();
