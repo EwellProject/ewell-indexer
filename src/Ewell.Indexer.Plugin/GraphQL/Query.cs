@@ -16,7 +16,7 @@ public class Query
 {
     [Name("syncState")]
     public static async Task<SyncStateDto> SyncStateAsync(
-        [FromServices] IClusterClient clusterClient, 
+        [FromServices] IClusterClient clusterClient,
         [FromServices] IAElfIndexerClientInfoProvider clientInfoProvider,
         GetSyncStateDto input)
     {
@@ -31,7 +31,7 @@ public class Query
             ConfirmedBlockHeight = confirmedHeight
         };
     }
-    
+
     [Name("getProjectList")]
     public static async Task<ProjectListPageResultDto> GetProjectListAsync(
         [FromServices] IAElfIndexerClientEntityRepository<CrowdfundingProjectIndex, LogEventInfo> projectRepository,
@@ -45,23 +45,26 @@ public class Query
             mustQuery.Add(q => q.Term(i
                 => i.Field(f => f.ChainId).Value(input.ChainId)));
         }
+
         if (input.StartBlockHeight > 0)
         {
             mustQuery.Add(q => q.Range(i
                 => i.Field(f => f.BlockHeight).GreaterThanOrEquals(input.StartBlockHeight)));
         }
+
         if (input.EndBlockHeight > 0)
         {
             mustQuery.Add(q => q.Range(i
                 => i.Field(f => f.BlockHeight).LessThanOrEquals(input.EndBlockHeight)));
         }
+
         QueryContainer Filter(QueryContainerDescriptor<CrowdfundingProjectIndex> f) =>
             f.Bool(b => b.Must(mustQuery));
 
         var result = await projectRepository.GetListAsync(Filter, skip: input.SkipCount,
             limit: input.MaxResultCount, sortType: SortOrder.Ascending, sortExp: o => o.BlockHeight);
         var projectList = objectMapper.Map<List<CrowdfundingProjectIndex>, List<CrowdfundingProjectDto>>(result.Item2);
-        
+
         //whitelist
         var whitelistIds = projectList.Select(x => x.WhitelistId).ToList();
         var whitelistMustQuery = new List<Func<QueryContainerDescriptor<WhitelistIndex>, QueryContainer>>();
@@ -70,13 +73,16 @@ public class Query
             whitelistMustQuery.Add(q => q.Term(i
                 => i.Field(f => f.ChainId).Value(input.ChainId)));
         }
+
         if (!whitelistIds.IsNullOrEmpty())
         {
             whitelistMustQuery.Add(q => q.Terms(i
                 => i.Field(f => f.Id).Terms(whitelistIds)));
         }
+
         QueryContainer WhitelistFilter(QueryContainerDescriptor<WhitelistIndex> f) =>
             f.Bool(b => b.Must(whitelistMustQuery));
+
         var whitelistList = (await whitelistRepository.GetListAsync(WhitelistFilter)).Item2;
         var whitelistMap = whitelistList.ToDictionary(whitelist => whitelist.Id);
         foreach (var project in projectList.Where(project => whitelistMap.ContainsKey(project.WhitelistId)))
@@ -90,7 +96,7 @@ public class Query
             Data = projectList,
         };
     }
-    
+
     [Name("getUserRecordList")]
     public static async Task<UserRecordResultDto> GetUserRecordListAsync(
         [FromServices] IAElfIndexerClientEntityRepository<UserRecordIndex, LogEventInfo> repository,
@@ -103,16 +109,19 @@ public class Query
             mustQuery.Add(q => q.Term(i
                 => i.Field(f => f.ChainId).Value(input.ChainId)));
         }
+
         if (input.StartBlockHeight > 0)
         {
             mustQuery.Add(q => q.Range(i
                 => i.Field(f => f.BlockHeight).GreaterThanOrEquals(input.StartBlockHeight)));
         }
+
         if (input.EndBlockHeight > 0)
         {
             mustQuery.Add(q => q.Range(i
                 => i.Field(f => f.BlockHeight).LessThanOrEquals(input.EndBlockHeight)));
         }
+
         QueryContainer Filter(QueryContainerDescriptor<UserRecordIndex> f) =>
             f.Bool(b => b.Must(mustQuery));
 
@@ -121,11 +130,11 @@ public class Query
         var projectList = objectMapper.Map<List<UserRecordIndex>, List<UserRecordDto>>(result.Item2);
         return new UserRecordResultDto
         {
-            TotalCount = result.Item1, 
+            TotalCount = result.Item1,
             Data = projectList
         };
     }
-    
+
     [Name("getSyncUserProjectInfos")]
     public static async Task<List<UserProjectInfoSyncDto>> GetSyncUserProjectInfosAsync(
         [FromServices] IAElfIndexerClientEntityRepository<UserProjectInfoIndex, LogEventInfo> repository,
@@ -151,11 +160,11 @@ public class Query
         QueryContainer Filter(QueryContainerDescriptor<UserProjectInfoIndex> f) =>
             f.Bool(b => b.Must(mustQuery));
 
-        var result = await repository.GetListAsync(Filter, skip: input.SkipCount, 
+        var result = await repository.GetListAsync(Filter, skip: input.SkipCount,
             sortType: SortOrder.Ascending, sortExp: o => o.BlockHeight);
         return objectMapper.Map<List<UserProjectInfoIndex>, List<UserProjectInfoSyncDto>>(result.Item2);
     }
-    
+
     [Name("getWhitelistList")]
     public static async Task<WhitelistResultDto> GetWhitelistListAsync(
         [FromServices] IAElfIndexerClientEntityRepository<WhitelistIndex, LogEventInfo> repository,
@@ -168,16 +177,19 @@ public class Query
             mustQuery.Add(q => q.Term(i
                 => i.Field(f => f.ChainId).Value(input.ChainId)));
         }
+
         if (input.StartBlockHeight > 0)
         {
             mustQuery.Add(q => q.Range(i
                 => i.Field(f => f.BlockHeight).GreaterThanOrEquals(input.StartBlockHeight)));
         }
+
         if (input.EndBlockHeight > 0)
         {
             mustQuery.Add(q => q.Range(i
                 => i.Field(f => f.BlockHeight).LessThanOrEquals(input.EndBlockHeight)));
         }
+
         QueryContainer Filter(QueryContainerDescriptor<WhitelistIndex> f) =>
             f.Bool(b => b.Must(mustQuery));
 
@@ -190,25 +202,26 @@ public class Query
             Data = list
         };
     }
-    
+
     [Name("getUserTokenInfos")]
     public static async Task<List<GetUserTokensDto>> GetUserTokenInfosAsync(
         [FromServices] IAElfIndexerClientEntityRepository<TokenInfoIndex, LogEventInfo> tokenIndexRepository,
         [FromServices] IAElfIndexerClientEntityRepository<UserBalanceIndex, LogEventInfo> userBalanceIndexRepository,
+        [FromServices] IAElfIndexerClientEntityRepository<ProxyAccountIndex, LogEventInfo> proxyAccountIndexRepository,
         [FromServices] IObjectMapper objectMapper,
         GetUserTokensInput input)
     {
         var mustQuery = new List<Func<QueryContainerDescriptor<UserBalanceIndex>, QueryContainer>>();
-      
+
         mustQuery.Add(q => q.Term(i
             => i.Field(f => f.ChainId).Value(input.ChainId)));
-        
+
         mustQuery.Add(q => q.Term(i
             => i.Field(f => f.Address).Value(input.Address)));
 
         QueryContainer Filter(QueryContainerDescriptor<UserBalanceIndex> f) =>
             f.Bool(b => b.Must(mustQuery));
-        
+
         var result = await userBalanceIndexRepository.GetListAsync(Filter);
 
         if (result.Item2.IsNullOrEmpty())
@@ -218,23 +231,30 @@ public class Query
 
         var tokenIds = result.Item2.Select(item => IdGenerateHelper.GetTokenInfoId(item.ChainId, item.Symbol))
             .ToList();
-        
+
         var tokenInfos = await GetTokenInfosAsync(tokenIndexRepository, tokenIds);
 
-        return result.Item2.Select(item =>
+        List<GetUserTokensDto> userTokensDtos = new List<GetUserTokensDto>();
+        foreach (var item in result.Item2)
+        {
+            var id = IdGenerateHelper.GetTokenInfoId(item.ChainId, item.Symbol);
+            if (tokenInfos.TryGetValue(id, out var tokenInfo))
             {
-                var id = IdGenerateHelper.GetTokenInfoId(item.ChainId, item.Symbol);
-                if (tokenInfos.TryGetValue(id, out var tokenInfo))
+                var isIssuer  = await CheckIsIssuer(proxyAccountIndexRepository, item.ChainId, tokenInfo.Issuer,
+                    item.Address);
+                if (!isIssuer)
                 {
-                    var userTokensDto = objectMapper.Map<TokenInfoIndex, GetUserTokensDto>(tokenInfo);
-                    userTokensDto.Balance = item.Amount;
-                    userTokensDto.ImageUrl =  tokenInfo.ExternalInfoDictionary
-                        .FirstOrDefault(o => o.Key == "__nft_image_url")?.Value;
-                    return userTokensDto;
+                    continue;
                 }
-                return null;
+                var userTokensDto = objectMapper.Map<TokenInfoIndex, GetUserTokensDto>(tokenInfo);
+                userTokensDto.Balance = item.Amount;
+                userTokensDto.ImageUrl = tokenInfo.ExternalInfoDictionary
+                    .FirstOrDefault(o => o.Key == "__nft_image_url")?.Value;
+                     
+                userTokensDtos.Add(userTokensDto);
             }
-        ).Where(dto => dto != null).ToList();
+        }
+        return userTokensDtos;
     }
 
     private static async Task<Dictionary<string, TokenInfoIndex>> GetTokenInfosAsync(
@@ -253,5 +273,23 @@ public class Query
         return result.Item2.IsNullOrEmpty()
             ? new Dictionary<string, TokenInfoIndex>()
             : result.Item2.ToDictionary(item => item.Id, item => item);
+    }
+
+
+    private static async Task<bool> CheckIsIssuer(
+        [FromServices] IAElfIndexerClientEntityRepository<ProxyAccountIndex, LogEventInfo> proxyAccountIndexRepository,
+        string chainId, string issuerAddress, string userAddress)
+    {
+        if (issuerAddress.Equals(userAddress))
+        {
+            return true;
+        }
+
+        var proxyAccountIndexId = IdGenerateHelper.GetProxyAccountIndexId(issuerAddress);
+
+        var proxyAccountIndex =
+            await proxyAccountIndexRepository.GetFromBlockStateSetAsync(proxyAccountIndexId, chainId);
+
+        return proxyAccountIndex?.ManagersSet?.Contains(userAddress) ?? false;
     }
 }
