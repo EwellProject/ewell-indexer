@@ -82,6 +82,7 @@ public class InvestedProcessor : UserProjectProcessorBase<Invested>
         userProjectInfo.InvestAmount = originInvestAmount + investAmount;
         var lastClaimAmount = userProjectInfo.ToClaimAmount;
         userProjectInfo.ToClaimAmount = toClaimAmount;
+        userProjectInfo.CreateTime = context.BlockTime;
         ObjectMapper.Map(context, userProjectInfo);
         await UserProjectInfoRepository.AddOrUpdateAsync(userProjectInfo);
         return (originInvestAmount == 0, lastClaimAmount);

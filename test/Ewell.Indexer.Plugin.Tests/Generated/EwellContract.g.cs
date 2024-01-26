@@ -2730,7 +2730,6 @@ namespace AElf.Contracts.Ewell {
     public const int ProjectIdFieldNumber = 1;
     private global::AElf.Types.Hash projectId_;
     /// <summary>
-    ///项目id
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -2977,7 +2976,6 @@ namespace AElf.Contracts.Ewell {
     public const int ProjectIdFieldNumber = 1;
     private global::AElf.Types.Hash projectId_;
     /// <summary>
-    ///项目id
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -3224,7 +3222,6 @@ namespace AElf.Contracts.Ewell {
     public const int ProjectIdFieldNumber = 1;
     private global::AElf.Types.Hash projectId_;
     /// <summary>
-    ///项目id
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -3462,7 +3459,6 @@ namespace AElf.Contracts.Ewell {
     public const int ProjectIdFieldNumber = 1;
     private global::AElf.Types.Hash projectId_;
     /// <summary>
-    ///项目id
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -4298,7 +4294,6 @@ namespace AElf.Contracts.Ewell {
     public const int CurrentRaisedAmountFieldNumber = 16;
     private long currentRaisedAmount_;
     /// <summary>
-    ///已募集金额
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -4313,7 +4308,6 @@ namespace AElf.Contracts.Ewell {
     public const int EnabledFieldNumber = 17;
     private bool enabled_;
     /// <summary>
-    ///是否取消众筹
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -6359,7 +6353,7 @@ namespace AElf.Contracts.Ewell {
     public const int ProjectIdFieldNumber = 1;
     private global::AElf.Types.Hash projectId_;
     /// <summary>
-    ///项目id
+    ///id
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -6374,7 +6368,6 @@ namespace AElf.Contracts.Ewell {
     public const int LatestPeriodFieldNumber = 2;
     private int latestPeriod_;
     /// <summary>
-    ///当前周期
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -6389,7 +6382,6 @@ namespace AElf.Contracts.Ewell {
     public const int SymbolFieldNumber = 3;
     private string symbol_ = "";
     /// <summary>
-    ///代币名称
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -6404,7 +6396,6 @@ namespace AElf.Contracts.Ewell {
     public const int AmountFieldNumber = 4;
     private long amount_;
     /// <summary>
-    ///金额
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -6895,7 +6886,6 @@ namespace AElf.Contracts.Ewell {
     public const int UserFieldNumber = 1;
     private global::AElf.Types.Address user_;
     /// <summary>
-    ///用户地址
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -6910,7 +6900,6 @@ namespace AElf.Contracts.Ewell {
     public const int SymbolFieldNumber = 2;
     private string symbol_ = "";
     /// <summary>
-    ///名称
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -6925,7 +6914,6 @@ namespace AElf.Contracts.Ewell {
     public const int AmountFieldNumber = 3;
     private long amount_;
     /// <summary>
-    ///违约金金额
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -7567,7 +7555,6 @@ namespace AElf.Contracts.Ewell {
     public const int MarketFieldNumber = 1;
     private global::AElf.Types.Address market_;
     /// <summary>
-    ///用户地址
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
