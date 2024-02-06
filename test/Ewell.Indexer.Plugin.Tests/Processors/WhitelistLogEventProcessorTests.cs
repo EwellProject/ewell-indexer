@@ -71,7 +71,7 @@ public sealed class WhitelistLogEventProcessorTests : EwellIndexerPluginTestBase
         
         // contract address
         var address = newWhitelistIdSetLogEventProcessor.GetContractAddress(Chain_AELF);
-        address.ShouldBe("whitelist");
+        address.ShouldBe("ewellContractAddress");
     }
     
     [Fact]
