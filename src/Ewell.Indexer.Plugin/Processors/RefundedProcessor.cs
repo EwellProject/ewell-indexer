@@ -36,23 +36,22 @@ public class RefundedProcessor : UserProjectProcessorBase<ReFunded>
             return;
         }
 
-        await UpdateProjectAsync(context, projectId, refundAmount);
+        await UpdateProjectAsync(context, crowdfundingProject, refundAmount);
         await UpdateUserProjectInfoAsync(context, projectId, user, refundAmount);
         await AddUserRecordAsync(context, crowdfundingProject, user, BehaviorType.Refund,
             refundAmount, 0);
         Logger.LogInformation("[ReFunded] end projectId:{projectId} user:{user} ", projectId, user);
     }
     
-    private async Task UpdateProjectAsync(LogEventContext context, string projectId,
+    private async Task UpdateProjectAsync(LogEventContext context, CrowdfundingProjectIndex crowdfundingProject,
         long refundAmount)
     {
-        var crowdfundingProject =
-            await CrowdfundingProjectRepository.GetFromBlockStateSetAsync(projectId, context.ChainId);
         crowdfundingProject.CurrentRaisedAmount -= refundAmount;
         if (crowdfundingProject.ParticipantCount > 0)
         {
             crowdfundingProject.ParticipantCount -= 1;
         }
+        ObjectMapper.Map(context, crowdfundingProject);
         await CrowdfundingProjectRepository.AddOrUpdateAsync(crowdfundingProject);
     }
     
