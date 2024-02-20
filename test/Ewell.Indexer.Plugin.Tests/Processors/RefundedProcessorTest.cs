@@ -83,6 +83,13 @@ public class RefundedProcessorTest : EwellIndexerPluginTestBase
         await Task.Delay(0);
 
         var projectId = HashHelper.ComputeFrom(Id).ToHex();
+        
+        var projectIndex = await _crowdfundingProjectRepository.GetFromBlockStateSetAsync(projectId, chainId);
+        projectIndex.ShouldNotBeNull();
+        projectIndex.Id.ShouldBe(projectId);
+        projectIndex.ParticipantCount.ShouldBe(0);
+        projectIndex.CurrentRaisedAmount.ShouldBe(invested.Amount - logEvent.Amount);
+        
         var userRecordId = IdGenerateHelper.GetId(chainId, projectId, BobAddress,
             BehaviorType.Refund, transactionId);
         var userRecordIndex = await _userRecordRepository.GetFromBlockStateSetAsync(userRecordId, chainId);

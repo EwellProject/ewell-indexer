@@ -35,10 +35,25 @@ public class RefundedProcessor : UserProjectProcessorBase<ReFunded>
             Logger.LogInformation("[ReFunded] crowd funding  project with id {id} does not exist.", projectId);
             return;
         }
+
+        await UpdateProjectAsync(context, projectId, refundAmount);
         await UpdateUserProjectInfoAsync(context, projectId, user, refundAmount);
         await AddUserRecordAsync(context, crowdfundingProject, user, BehaviorType.Refund,
             refundAmount, 0);
         Logger.LogInformation("[ReFunded] end projectId:{projectId} user:{user} ", projectId, user);
+    }
+    
+    private async Task UpdateProjectAsync(LogEventContext context, string projectId,
+        long refundAmount)
+    {
+        var crowdfundingProject =
+            await CrowdfundingProjectRepository.GetFromBlockStateSetAsync(projectId, context.ChainId);
+        crowdfundingProject.CurrentRaisedAmount -= refundAmount;
+        if (crowdfundingProject.ParticipantCount > 0)
+        {
+            crowdfundingProject.ParticipantCount -= 1;
+        }
+        await CrowdfundingProjectRepository.AddOrUpdateAsync(crowdfundingProject);
     }
     
     private async Task UpdateUserProjectInfoAsync(LogEventContext context, string projectId, string user,
