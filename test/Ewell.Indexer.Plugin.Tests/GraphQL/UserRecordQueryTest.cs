@@ -12,7 +12,7 @@ public class UserRecordQueryTest : QueryTestBase
     {
         await MockProjectRegistered();
         await MockInvested();
-        await MockUninvest();
+        await MockDisinvest();
         
         var userRecords = await Query.GetUserRecordListAsync(_userRecordRepository, _objectMapper, new GetUserRecordInput());
         userRecords.ShouldNotBeNull();

@@ -1,5 +1,4 @@
 using AElf;
-using AElf.Contracts.Ewell;
 using AElf.Contracts.MultiToken;
 using AElf.Contracts.Whitelist;
 using AElf.CSharp.Core.Extension;
@@ -8,6 +7,7 @@ using AElfIndexer.Client.Handlers;
 using AElfIndexer.Client.Providers;
 using AElfIndexer.Grains;
 using AElfIndexer.Grains.State.Client;
+using Ewell.Contracts.Ido;
 using Ewell.Indexer.Orleans.TestBase;
 using Ewell.Indexer.Plugin.Processors;
 using Ewell.Indexer.Plugin.Tests.Helper;
@@ -168,7 +168,7 @@ public abstract class EwellIndexerPluginTestBase : EwellIndexerOrleansTestBase<E
             EndTime = Timestamp.FromDateTime(DateTime.UtcNow.AddDays(1)),
             TokenReleaseTime = Timestamp.FromDateTime(DateTime.UtcNow.AddDays(2)),
             Creator = Address.FromBase58(AliceAddress),
-            ToRaisedAmount = 200000000,
+            TargetRaisedAmount = 200000000,
             CrowdFundingIssueAmount = 100000000,
             PreSalePrice = 100,
             PublicSalePrice = 500,
@@ -176,12 +176,12 @@ public abstract class EwellIndexerPluginTestBase : EwellIndexerOrleansTestBase<E
             MaxSubscription = 1000,
             LiquidityLockProportion = 20,
             FirstDistributeProportion = 50,
-            RestDistributeProportion = 50,
+            RestPeriodDistributeProportion = 50,
             TotalPeriod = 10,
             IsEnableWhitelist = true,
             WhitelistId = WhitelistId,
-            ProjectCurrency = TestSymbol,
-            AcceptedCurrency = "ELF",
+            ProjectSymbol = TestSymbol,
+            AcceptedSymbol = "ELF",
             VirtualAddress = Address.FromBase58(VirtualAddress),
         };
 
@@ -257,7 +257,7 @@ public abstract class EwellIndexerPluginTestBase : EwellIndexerOrleansTestBase<E
         return logEvent;
     }
 
-    protected async Task<UnInvested> MockUninvest()
+    protected async Task<DisInvested> MockDisinvest()
     {
         var chainId = Chain_AELF;
         
@@ -266,11 +266,11 @@ public abstract class EwellIndexerPluginTestBase : EwellIndexerOrleansTestBase<E
         var blockStateSetKey = await InitializeBlockStateSetAsync(blockStateSet, chainId);
 
         //step2: create logEventInfo
-        var logEvent = new UnInvested()
+        var logEvent = new DisInvested()
         {
             ProjectId = HashHelper.ComputeFrom(Id),
             User = Address.FromBase58(BobAddress),
-            UnInvestAmount = 800,
+            DisinvestAmount = 800,
             TotalAmount = 0
         };
 
@@ -281,7 +281,7 @@ public abstract class EwellIndexerPluginTestBase : EwellIndexerOrleansTestBase<E
         logEventInfo.TransactionId = transactionId;
 
         var logEventContext = GetLogEventContext();
-        var processor = GetRequiredService<UnInvestedProcessor>();
+        var processor = GetRequiredService<DisInvestedProcessor>();
         await processor.HandleEventAsync(logEventInfo, logEventContext);
 
         //step4: save blockStateSet into es

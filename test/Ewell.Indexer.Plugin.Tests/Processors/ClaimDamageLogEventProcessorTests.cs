@@ -1,9 +1,9 @@
 using AElf;
-using AElf.Contracts.Ewell;
 using AElf.CSharp.Core.Extension;
 using AElf.Types;
 using AElfIndexer.Client;
 using AElfIndexer.Grains.State.Client;
+using Ewell.Contracts.Ido;
 using Ewell.Indexer.Plugin.Entities;
 using Ewell.Indexer.Plugin.Processors;
 using Nethereum.Hex.HexConvertors.Extensions;
@@ -30,7 +30,7 @@ public sealed class ClaimDamageLogEventProcessorTests : EwellIndexerPluginTestBa
         var projectId = HashHelper.ComputeFrom(Id);
         await MockProjectRegistered();
         await MockInvested();
-        await MockUninvest();
+        await MockDisinvest();
         var projectIndex = await _crowdfundingProjectRepository.GetFromBlockStateSetAsync(projectId.ToHex(), Chain_AELF);
         var receivableLiquidatedDamageAmount = projectIndex.ReceivableLiquidatedDamageAmount;
         

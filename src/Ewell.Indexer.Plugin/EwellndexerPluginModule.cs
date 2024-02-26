@@ -32,7 +32,7 @@ public class EwellIndexerPluginModule : AElfIndexerClientPluginBaseModule<EwellI
         serviceCollection.AddSingleton<IAElfLogEventProcessor<LogEventInfo>, ProxyAccountManagementAddressResetProcessor>();
         serviceCollection.AddSingleton<IAElfLogEventProcessor<LogEventInfo>, ProjectRegisteredProcessor>();
         serviceCollection.AddSingleton<IAElfLogEventProcessor<LogEventInfo>, InvestedProcessor>();
-        serviceCollection.AddSingleton<IAElfLogEventProcessor<LogEventInfo>, UnInvestedProcessor>();
+        serviceCollection.AddSingleton<IAElfLogEventProcessor<LogEventInfo>, DisInvestedProcessor>();
         serviceCollection.AddSingleton<IAElfLogEventProcessor<LogEventInfo>, RefundedProcessor>();
         serviceCollection.AddSingleton<IAElfLogEventProcessor<LogEventInfo>, ClaimedProcessor>();
         serviceCollection.AddSingleton<IAElfLogEventProcessor<LogEventInfo>, AdditionalInfoUpdatedProcessor>();
@@ -46,5 +46,5 @@ public class EwellIndexerPluginModule : AElfIndexerClientPluginBaseModule<EwellI
     }
 
     protected override string ClientId => "AElfIndexer_Ewell";
-    protected override string Version => "bbc9850eade247418f117a8db8f731ec";
+    protected override string Version => "3d513d338c25423cb9e89cfe8bdc3b37";
 }

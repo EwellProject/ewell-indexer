@@ -1,7 +1,7 @@
-using AElf.Contracts.Ewell;
 using AElfIndexer.Client;
 using AElfIndexer.Client.Handlers;
 using AElfIndexer.Grains.State.Client;
+using Ewell.Contracts.Ido;
 using Ewell.Indexer.Plugin.Entities;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
@@ -52,8 +52,8 @@ public class ProjectRegisteredProcessor : ProjectProcessorBase<ProjectRegistered
         projectIndex.ListMarketInfo = marketInformation;
         projectIndex.AdditionalInfo = additionalInformation;
         projectIndex.IsCanceled = false;
-        projectIndex.ToRaiseToken = new TokenBasicInfo { ChainId = chainId, Symbol = eventValue.AcceptedCurrency };
-        projectIndex.CrowdFundingIssueToken = new TokenBasicInfo { ChainId = chainId, Symbol = eventValue.ProjectCurrency };
+        projectIndex.ToRaiseToken = new TokenBasicInfo { ChainId = chainId, Symbol = eventValue.AcceptedSymbol };
+        projectIndex.CrowdFundingIssueToken = new TokenBasicInfo { ChainId = chainId, Symbol = eventValue.ProjectSymbol };
         projectIndex.CreateTime = context.BlockTime;
         await CrowdfundingProjectRepository.AddOrUpdateAsync(projectIndex);
         Logger.LogInformation("[ProjectRegistered] end projectId:{projectId} chainId:{chainId} ", projectId, chainId);

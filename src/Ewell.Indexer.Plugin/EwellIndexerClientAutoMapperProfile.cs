@@ -1,9 +1,9 @@
-using AElf.Contracts.Ewell;
 using AElf.Contracts.MultiToken;
 using AElf.Contracts.ProxyAccountContract;
 using AElf.Contracts.Whitelist;
 using AElfIndexer.Client.Handlers;
 using AutoMapper;
+using Ewell.Contracts.Ido;
 using Ewell.Indexer.Plugin.Entities;
 using Ewell.Indexer.Plugin.GraphQL.Dto;
 

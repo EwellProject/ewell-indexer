@@ -4,7 +4,7 @@ namespace Ewell.Indexer.Plugin.Entities;
 
 public class CrowdfundingProjectBasicProperty : CrowdfundingProjectBase
 {
-    public long ToRaisedAmount { get; set; }
+    public long TargetRaisedAmount { get; set; }
     public long CrowdFundingIssueAmount { get; set; }
     public long PreSalePrice { get; set; }
     public long PublicSalePrice { get; set; }
@@ -14,7 +14,7 @@ public class CrowdfundingProjectBasicProperty : CrowdfundingProjectBase
     public int LiquidityLockProportion { get; set; }
     public DateTime? UnlockTime { get; set; }
     public int FirstDistributeProportion { get; set; }
-    public int RestDistributeProportion { get; set; }
+    public int RestPeriodDistributeProportion { get; set; }
     public int TotalPeriod { get; set; }
     [Keyword] public string AdditionalInfo { get; set; }
     public bool IsCanceled { get; set; }

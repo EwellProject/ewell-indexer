@@ -1,9 +1,9 @@
 using AElf;
-using AElf.Contracts.Ewell;
 using AElf.CSharp.Core.Extension;
 using AElfIndexer.Client;
 using AElfIndexer.Client.Handlers;
 using AElfIndexer.Grains.State.Client;
+using Ewell.Contracts.Ido;
 using Ewell.Indexer.Plugin.Entities;
 using Ewell.Indexer.Plugin.Processors;
 using Ewell.Indexer.Plugin.Tests.Helper;

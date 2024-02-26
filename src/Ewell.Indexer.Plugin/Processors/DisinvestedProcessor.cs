@@ -1,7 +1,7 @@
-using AElf.Contracts.Ewell;
 using AElfIndexer.Client;
 using AElfIndexer.Client.Handlers;
 using AElfIndexer.Grains.State.Client;
+using Ewell.Contracts.Ido;
 using Ewell.Indexer.Plugin.Entities;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
@@ -9,9 +9,9 @@ using Volo.Abp.ObjectMapping;
 
 namespace Ewell.Indexer.Plugin.Processors;
 
-public class UnInvestedProcessor : UserProjectProcessorBase<UnInvested>
+public class DisInvestedProcessor : UserProjectProcessorBase<DisInvested>
 {
-    public UnInvestedProcessor(ILogger<AElfLogEventProcessorBase<UnInvested, LogEventInfo>> logger,
+    public DisInvestedProcessor(ILogger<AElfLogEventProcessorBase<DisInvested, LogEventInfo>> logger,
         IObjectMapper objectMapper,
         IOptionsSnapshot<ContractInfoOptions> contractInfoOptions,
         IAElfIndexerClientEntityRepository<CrowdfundingProjectIndex, LogEventInfo> crowdfundingProjectRepository,
@@ -22,16 +22,16 @@ public class UnInvestedProcessor : UserProjectProcessorBase<UnInvested>
     {
     }
 
-    protected override async Task HandleEventAsync(UnInvested eventValue, LogEventContext context)
+    protected override async Task HandleEventAsync(DisInvested eventValue, LogEventContext context)
     {
         var projectId = eventValue.ProjectId.ToHex();
         var user = eventValue.User.ToBase58();
-        Logger.LogInformation("[UnInvested] start projectId:{projectId} user:{user} ", projectId, user);
+        Logger.LogInformation("[DisInvested] start projectId:{projectId} user:{user} ", projectId, user);
         var crowdfundingProject =
             await CrowdfundingProjectRepository.GetFromBlockStateSetAsync(projectId, context.ChainId);
         if (crowdfundingProject == null)
         {
-            Logger.LogInformation("[UnInvested] crowd funding  project with id {id} does not exist.", projectId);
+            Logger.LogInformation("[DisInvested] crowd funding  project with id {id} does not exist.", projectId);
             return;
         }
 
@@ -40,14 +40,14 @@ public class UnInvestedProcessor : UserProjectProcessorBase<UnInvested>
             await UserProjectInfoRepository.GetFromBlockStateSetAsync(userProjectId, context.ChainId);
         if (userProjectInfo == null)
         {
-            Logger.LogInformation("[UnInvested] user project info with id {id} does not exist.", userProjectId);
+            Logger.LogInformation("[DisInvested] user project info with id {id} does not exist.", userProjectId);
             return;
         }
 
-        var unInvestAmount = eventValue.UnInvestAmount;
+        var disinvestAmount = eventValue.DisinvestAmount;
         var userInvestedAmount = userProjectInfo.InvestAmount;
         var totalToClaimAmount = userProjectInfo.ToClaimAmount;
-        var projectReceivableLiquidatedDamage = userInvestedAmount - unInvestAmount;
+        var projectReceivableLiquidatedDamage = userInvestedAmount - disinvestAmount;
         //reset amount
         userProjectInfo.InvestAmount = 0;
         userProjectInfo.ToClaimAmount = 0;
@@ -66,8 +66,8 @@ public class UnInvestedProcessor : UserProjectProcessorBase<UnInvested>
 
         ObjectMapper.Map(context, crowdfundingProject);
         await CrowdfundingProjectRepository.AddOrUpdateAsync(crowdfundingProject);
-        await AddUserRecordAsync(context, crowdfundingProject, user, BehaviorType.UnInvest,
-            unInvestAmount, totalToClaimAmount);
-        Logger.LogInformation("[UnInvested] end projectId:{projectId} user:{user} ", projectId, user);
+        await AddUserRecordAsync(context, crowdfundingProject, user, BehaviorType.Disinvest,
+            disinvestAmount, totalToClaimAmount);
+        Logger.LogInformation("[DisInvested] end projectId:{projectId} user:{user} ", projectId, user);
     }
 }

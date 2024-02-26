@@ -9,10 +9,10 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-namespace AElf.Contracts.Ewell {
+namespace Ewell.Contracts.Ido {
 
   /// <summary>Holder for reflection information generated from ewell_contract.proto</summary>
-  internal static partial class EwellContractReflection {
+  public static partial class EwellContractReflection {
 
     #region Descriptor
     /// <summary>File descriptor for ewell_contract.proto</summary>
@@ -27,216 +27,223 @@ namespace AElf.Contracts.Ewell {
             "ChRld2VsbF9jb250cmFjdC5wcm90bxoPYWVsZi9jb3JlLnByb3RvGhJhZWxm",
             "L29wdGlvbnMucHJvdG8aG2dvb2dsZS9wcm90b2J1Zi9lbXB0eS5wcm90bxof",
             "Z29vZ2xlL3Byb3RvYnVmL3RpbWVzdGFtcC5wcm90bxoeZ29vZ2xlL3Byb3Rv",
-            "YnVmL3dyYXBwZXJzLnByb3RvIjwKD0luaXRpYWxpemVJbnB1dBIpChJ3aGl0",
-            "ZWxpc3RfY29udHJhY3QYASABKAsyDS5hZWxmLkFkZHJlc3Mi/QUKDVJlZ2lz",
-            "dGVySW5wdXQSGQoRYWNjZXB0ZWRfY3VycmVuY3kYASABKAkSGAoQcHJvamVj",
-            "dF9jdXJyZW5jeRgCIAEoCRIaChJjcm93ZF9mdW5kaW5nX3R5cGUYAyABKAkS",
-            "IgoaY3Jvd2RfZnVuZGluZ19pc3N1ZV9hbW91bnQYBCABKAMSFgoOcHJlX3Nh",
-            "bGVfcHJpY2UYBSABKAMSLgoKc3RhcnRfdGltZRgGIAEoCzIaLmdvb2dsZS5w",
-            "cm90b2J1Zi5UaW1lc3RhbXASLAoIZW5kX3RpbWUYByABKAsyGi5nb29nbGUu",
-            "cHJvdG9idWYuVGltZXN0YW1wEhgKEG1pbl9zdWJzY3JpcHRpb24YCCABKAMS",
-            "GAoQbWF4X3N1YnNjcmlwdGlvbhgJIAEoAxIZChFwdWJsaWNfc2FsZV9wcmlj",
-            "ZRgKIAEoAxIpChBsaXN0X21hcmtldF9pbmZvGAsgASgLMg8uTGlzdE1hcmtl",
-            "dEluZm8SIQoZbGlxdWlkaXR5X2xvY2tfcHJvcG9ydGlvbhgMIAEoBRIvCgt1",
-            "bmxvY2tfdGltZRgNIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXAS",
-            "GwoTaXNfZW5hYmxlX3doaXRlbGlzdBgOIAEoCBIgCgx3aGl0ZWxpc3RfaWQY",
-            "DyABKAsyCi5hZWxmLkhhc2gSGgoSaXNfYnVybl9yZXN0X3Rva2VuGBAgASgI",
-            "EhQKDHRvdGFsX3BlcmlvZBgRIAEoBRIoCg9hZGRpdGlvbmFsX2luZm8YEiAB",
-            "KAsyDy5BZGRpdGlvbmFsSW5mbxIjChtmaXJzdF9kaXN0cmlidXRlX3Byb3Bv",
-            "cnRpb24YEyABKAUSIgoacmVzdF9kaXN0cmlidXRlX3Byb3BvcnRpb24YFCAB",
-            "KAUSFwoPcGVyaW9kX2R1cmF0aW9uGBUgASgDEjYKEnRva2VuX3JlbGVhc2Vf",
-            "dGltZRgWIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXAiZQoZVXBk",
-            "YXRlQWRkaXRpb25hbEluZm9JbnB1dBIeCgpwcm9qZWN0X2lkGAEgASgLMgou",
-            "YWVsZi5IYXNoEigKD2FkZGl0aW9uYWxfaW5mbxgCIAEoCzIPLkFkZGl0aW9u",
-            "YWxJbmZvIlIKEkFkZFdoaXRlbGlzdHNJbnB1dBIeCgpwcm9qZWN0X2lkGAEg",
-            "ASgLMgouYWVsZi5IYXNoEhwKBXVzZXJzGAIgAygLMg0uYWVsZi5BZGRyZXNz",
-            "IlUKFVJlbW92ZVdoaXRlbGlzdHNJbnB1dBIeCgpwcm9qZWN0X2lkGAEgASgL",
-            "MgouYWVsZi5IYXNoEhwKBXVzZXJzGAIgAygLMg0uYWVsZi5BZGRyZXNzIlYK",
-            "C0ludmVzdElucHV0Eh4KCnByb2plY3RfaWQYASABKAsyCi5hZWxmLkhhc2gS",
-            "EAoIY3VycmVuY3kYAiABKAkSFQoNaW52ZXN0X2Ftb3VudBgDIAEoAyJJCgpD",
-            "bGFpbUlucHV0Eh4KCnByb2plY3RfaWQYASABKAsyCi5hZWxmLkhhc2gSGwoE",
-            "dXNlchgCIAEoCzINLmFlbGYuQWRkcmVzcyJTChRHZXRJbnZlc3REZXRhaWxJ",
-            "bnB1dBIeCgpwcm9qZWN0X2lkGAEgASgLMgouYWVsZi5IYXNoEhsKBHVzZXIY",
-            "AiABKAsyDS5hZWxmLkFkZHJlc3MiUwoUR2V0UHJvZml0RGV0YWlsSW5wdXQS",
+            "YnVmL3dyYXBwZXJzLnByb3RvGgthY3MxMi5wcm90byKpAQoPSW5pdGlhbGl6",
+            "ZUlucHV0EiwKFWFkbWluaXN0cmF0b3JfYWRkcmVzcxgBIAEoCzINLmFlbGYu",
+            "QWRkcmVzcxIxChp3aGl0ZWxpc3RfY29udHJhY3RfYWRkcmVzcxgCIAEoCzIN",
+            "LmFlbGYuQWRkcmVzcxI1Ch5wcm94eV9hY2NvdW50X2NvbnRyYWN0X2FkZHJl",
+            "c3MYAyABKAsyDS5hZWxmLkFkZHJlc3MilwYKDVJlZ2lzdGVySW5wdXQSFwoP",
+            "YWNjZXB0ZWRfc3ltYm9sGAEgASgJEhYKDnByb2plY3Rfc3ltYm9sGAIgASgJ",
+            "EhoKEmNyb3dkX2Z1bmRpbmdfdHlwZRgDIAEoCRIiChpjcm93ZF9mdW5kaW5n",
+            "X2lzc3VlX2Ftb3VudBgEIAEoAxIWCg5wcmVfc2FsZV9wcmljZRgFIAEoAxIu",
+            "CgpzdGFydF90aW1lGAYgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFt",
+            "cBIsCghlbmRfdGltZRgHIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3Rh",
+            "bXASGAoQbWluX3N1YnNjcmlwdGlvbhgIIAEoAxIYChBtYXhfc3Vic2NyaXB0",
+            "aW9uGAkgASgDEhkKEXB1YmxpY19zYWxlX3ByaWNlGAogASgDEikKEGxpc3Rf",
+            "bWFya2V0X2luZm8YCyABKAsyDy5MaXN0TWFya2V0SW5mbxIhChlsaXF1aWRp",
+            "dHlfbG9ja19wcm9wb3J0aW9uGAwgASgFEi8KC3VubG9ja190aW1lGA0gASgL",
+            "MhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcBIbChNpc19lbmFibGVfd2hp",
+            "dGVsaXN0GA4gASgIEiAKDHdoaXRlbGlzdF9pZBgPIAEoCzIKLmFlbGYuSGFz",
+            "aBIaChJpc19idXJuX3Jlc3RfdG9rZW4YECABKAgSFAoMdG90YWxfcGVyaW9k",
+            "GBEgASgFEigKD2FkZGl0aW9uYWxfaW5mbxgSIAEoCzIPLkFkZGl0aW9uYWxJ",
+            "bmZvEiMKG2ZpcnN0X2Rpc3RyaWJ1dGVfcHJvcG9ydGlvbhgTIAEoBRIpCiFy",
+            "ZXN0X3BlcmlvZF9kaXN0cmlidXRlX3Byb3BvcnRpb24YFCABKAUSFwoPcGVy",
+            "aW9kX2R1cmF0aW9uGBUgASgDEjYKEnRva2VuX3JlbGVhc2VfdGltZRgWIAEo",
+            "CzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXASFQoNd2hpdGVsaXN0X3Vy",
+            "bBgXIAEoCSJlChlVcGRhdGVBZGRpdGlvbmFsSW5mb0lucHV0Eh4KCnByb2pl",
+            "Y3RfaWQYASABKAsyCi5hZWxmLkhhc2gSKAoPYWRkaXRpb25hbF9pbmZvGAIg",
+            "ASgLMg8uQWRkaXRpb25hbEluZm8iUgoSQWRkV2hpdGVsaXN0c0lucHV0Eh4K",
+            "CnByb2plY3RfaWQYASABKAsyCi5hZWxmLkhhc2gSHAoFdXNlcnMYAiADKAsy",
+            "DS5hZWxmLkFkZHJlc3MiVQoVUmVtb3ZlV2hpdGVsaXN0c0lucHV0Eh4KCnBy",
+            "b2plY3RfaWQYASABKAsyCi5hZWxmLkhhc2gSHAoFdXNlcnMYAiADKAsyDS5h",
+            "ZWxmLkFkZHJlc3MiVAoLSW52ZXN0SW5wdXQSHgoKcHJvamVjdF9pZBgBIAEo",
+            "CzIKLmFlbGYuSGFzaBIOCgZzeW1ib2wYAiABKAkSFQoNaW52ZXN0X2Ftb3Vu",
+            "dBgDIAEoAyJJCgpDbGFpbUlucHV0Eh4KCnByb2plY3RfaWQYASABKAsyCi5h",
+            "ZWxmLkhhc2gSGwoEdXNlchgCIAEoCzINLmFlbGYuQWRkcmVzcyJTChRHZXRJ",
+            "bnZlc3REZXRhaWxJbnB1dBIeCgpwcm9qZWN0X2lkGAEgASgLMgouYWVsZi5I",
+            "YXNoEhsKBHVzZXIYAiABKAsyDS5hZWxmLkFkZHJlc3MiUwoUR2V0UHJvZml0",
+            "RGV0YWlsSW5wdXQSHgoKcHJvamVjdF9pZBgBIAEoCzIKLmFlbGYuSGFzaBIb",
+            "CgR1c2VyGAIgASgLMg0uYWVsZi5BZGRyZXNzIlIKE1NldFdoaXRlbGlzdElk",
+            "SW5wdXQSHgoKcHJvamVjdF9pZBgBIAEoCzIKLmFlbGYuSGFzaBIbChNpc19l",
+            "bmFibGVfd2hpdGVsaXN0GAIgASgIIk4KDlJlRnVuZEFsbElucHV0Eh4KCnBy",
+            "b2plY3RfaWQYASABKAsyCi5hZWxmLkhhc2gSHAoFdXNlcnMYAiADKAsyDS5h",
+            "ZWxmLkFkZHJlc3MiLgoPRXh0cmFJbmZvSWRMaXN0EhsKBXZhbHVlGAEgAygL",
+            "MgwuRXh0cmFJbmZvSWQiRQoLRXh0cmFJbmZvSWQSHgoHYWRkcmVzcxgBIAEo",
+            "CzINLmFlbGYuQWRkcmVzcxIWCgJpZBgCIAEoCzIKLmFlbGYuSGFzaCLeBAoL",
+            "UHJvamVjdEluZm8SHgoKcHJvamVjdF9pZBgBIAEoCzIKLmFlbGYuSGFzaBIX",
+            "Cg9hY2NlcHRlZF9zeW1ib2wYAiABKAkSFgoOcHJvamVjdF9zeW1ib2wYAyAB",
+            "KAkSGgoSY3Jvd2RfZnVuZGluZ190eXBlGAQgASgJEiIKGmNyb3dkX2Z1bmRp",
+            "bmdfaXNzdWVfYW1vdW50GAUgASgDEhYKDnByZV9zYWxlX3ByaWNlGAYgASgD",
+            "Ei4KCnN0YXJ0X3RpbWUYCCABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0",
+            "YW1wEiwKCGVuZF90aW1lGAkgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVz",
+            "dGFtcBIYChBtaW5fc3Vic2NyaXB0aW9uGAogASgDEhgKEG1heF9zdWJzY3Jp",
+            "cHRpb24YCyABKAMSGgoSaXNfYnVybl9yZXN0X3Rva2VuGAwgASgIEigKD2Fk",
+            "ZGl0aW9uYWxfaW5mbxgNIAEoCzIPLkFkZGl0aW9uYWxJbmZvEh4KB2NyZWF0",
+            "b3IYDiABKAsyDS5hZWxmLkFkZHJlc3MSHAoUdGFyZ2V0X3JhaXNlZF9hbW91",
+            "bnQYDyABKAMSHQoVY3VycmVudF9yYWlzZWRfYW1vdW50GBAgASgDEg8KB2Vu",
+            "YWJsZWQYESABKAgSKAoUdmlydHVhbF9hZGRyZXNzX2hhc2gYEiABKAsyCi5h",
+            "ZWxmLkhhc2gSNgoSdG9rZW5fcmVsZWFzZV90aW1lGBMgASgLMhouZ29vZ2xl",
+            "LnByb3RvYnVmLlRpbWVzdGFtcCKJAwoPUHJvamVjdExpc3RJbmZvEh4KCnBy",
+            "b2plY3RfaWQYASABKAsyCi5hZWxmLkhhc2gSGQoRcHVibGljX3NhbGVfcHJp",
+            "Y2UYAiABKAMSKQoQbGlzdF9tYXJrZXRfaW5mbxgDIAEoCzIPLkxpc3RNYXJr",
+            "ZXRJbmZvEiEKGWxpcXVpZGl0eV9sb2NrX3Byb3BvcnRpb24YBCABKAUSLwoL",
+            "dW5sb2NrX3RpbWUYBSABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1w",
+            "EhUKDWxhdGVzdF9wZXJpb2QYBiABKAUSFAoMdG90YWxfcGVyaW9kGAcgASgF",
+            "EiMKG2ZpcnN0X2Rpc3RyaWJ1dGVfcHJvcG9ydGlvbhgIIAEoBRIpCiFyZXN0",
+            "X3BlcmlvZF9kaXN0cmlidXRlX3Byb3BvcnRpb24YCSABKAUSFwoPcGVyaW9k",
+            "X2R1cmF0aW9uGAogASgDEhEKCWlzX2xpc3RlZBgLIAEoCBITCgtpc193aXRo",
+            "ZHJhdxgMIAEoCCJLCgxJbnZlc3REZXRhaWwSFQoNaW52ZXN0X3N5bWJvbBgB",
+            "IAEoCRIOCgZhbW91bnQYAiABKAMSFAoMaXNfZGlzaW52ZXN0GAMgASgIIrIB",
+            "CgxQcm9maXREZXRhaWwSFQoNbGF0ZXN0X3BlcmlvZBgBIAEoBRIOCgZzeW1i",
+            "b2wYAiABKAkSFAoMdG90YWxfcHJvZml0GAMgASgDEjIKC2Ftb3VudHNfbWFw",
+            "GAQgAygLMh0uUHJvZml0RGV0YWlsLkFtb3VudHNNYXBFbnRyeRoxCg9BbW91",
+            "bnRzTWFwRW50cnkSCwoDa2V5GAEgASgFEg0KBXZhbHVlGAIgASgDOgI4ASI1",
+            "ChJDbGFpbWVkUHJvZml0c0luZm8SHwoHZGV0YWlscxgBIAMoCzIOLkNsYWlt",
+            "ZWRQcm9maXQiZgoNQ2xhaW1lZFByb2ZpdBIeCgpwcm9qZWN0X2lkGAEgASgL",
+            "MgouYWVsZi5IYXNoEhUKDWxhdGVzdF9wZXJpb2QYAiABKAUSDgoGc3ltYm9s",
+            "GAMgASgJEg4KBmFtb3VudBgEIAEoAyJYChdMaXF1aWRhdGVkRGFtYWdlRGV0",
+            "YWlscxITCgt0b3RhbEFtb3VudBgBIAEoAxIoCgdkZXRhaWxzGAIgAygLMhcu",
+            "TGlxdWlkYXRlZERhbWFnZURldGFpbCJmChZMaXF1aWRhdGVkRGFtYWdlRGV0",
+            "YWlsEhsKBHVzZXIYASABKAsyDS5hZWxmLkFkZHJlc3MSDgoGc3ltYm9sGAIg",
+            "ASgJEg4KBmFtb3VudBgDIAEoAxIPCgdjbGFpbWVkGAQgASgIImYKDkFkZGl0",
+            "aW9uYWxJbmZvEicKBGRhdGEYASADKAsyGS5BZGRpdGlvbmFsSW5mby5EYXRh",
+            "RW50cnkaKwoJRGF0YUVudHJ5EgsKA2tleRgBIAEoCRINCgV2YWx1ZRgCIAEo",
+            "CToCOAEiKwoOTGlzdE1hcmtldEluZm8SGQoEZGF0YRgBIAMoCzILLkxpc3RN",
+            "YXJrZXQiOwoKTGlzdE1hcmtldBIdCgZtYXJrZXQYASABKAsyDS5hZWxmLkFk",
+            "ZHJlc3MSDgoGd2VpZ2h0GAIgASgFIpAHChFQcm9qZWN0UmVnaXN0ZXJlZBIe",
+            "Cgpwcm9qZWN0X2lkGAEgASgLMgouYWVsZi5IYXNoEhcKD2FjY2VwdGVkX3N5",
+            "bWJvbBgCIAEoCRIWCg5wcm9qZWN0X3N5bWJvbBgDIAEoCRIaChJjcm93ZF9m",
+            "dW5kaW5nX3R5cGUYBCABKAkSIgoaY3Jvd2RfZnVuZGluZ19pc3N1ZV9hbW91",
+            "bnQYBSABKAMSFgoOcHJlX3NhbGVfcHJpY2UYBiABKAMSLgoKc3RhcnRfdGlt",
+            "ZRgHIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXASLAoIZW5kX3Rp",
+            "bWUYCCABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wEhgKEG1pbl9z",
+            "dWJzY3JpcHRpb24YCSABKAMSGAoQbWF4X3N1YnNjcmlwdGlvbhgKIAEoAxIZ",
+            "ChFwdWJsaWNfc2FsZV9wcmljZRgLIAEoAxIpChBsaXN0X21hcmtldF9pbmZv",
+            "GAwgASgLMg8uTGlzdE1hcmtldEluZm8SIQoZbGlxdWlkaXR5X2xvY2tfcHJv",
+            "cG9ydGlvbhgNIAEoBRIvCgt1bmxvY2tfdGltZRgOIAEoCzIaLmdvb2dsZS5w",
+            "cm90b2J1Zi5UaW1lc3RhbXASGwoTaXNfZW5hYmxlX3doaXRlbGlzdBgPIAEo",
+            "CBIgCgx3aGl0ZWxpc3RfaWQYECABKAsyCi5hZWxmLkhhc2gSGgoSaXNfYnVy",
+            "bl9yZXN0X3Rva2VuGBEgASgIEhQKDHRvdGFsX3BlcmlvZBgSIAEoBRIoCg9h",
+            "ZGRpdGlvbmFsX2luZm8YEyABKAsyDy5BZGRpdGlvbmFsSW5mbxIcChR0YXJn",
+            "ZXRfcmFpc2VkX2Ftb3VudBgUIAEoAxIeCgdjcmVhdG9yGBUgASgLMg0uYWVs",
+            "Zi5BZGRyZXNzEiMKG2ZpcnN0X2Rpc3RyaWJ1dGVfcHJvcG9ydGlvbhgWIAEo",
+            "BRIpCiFyZXN0X3BlcmlvZF9kaXN0cmlidXRlX3Byb3BvcnRpb24YFyABKAUS",
+            "FwoPcGVyaW9kX2R1cmF0aW9uGBggASgDEiYKD3ZpcnR1YWxfYWRkcmVzcxgZ",
+            "IAEoCzINLmFlbGYuQWRkcmVzcxI2ChJ0b2tlbl9yZWxlYXNlX3RpbWUYGiAB",
+            "KAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wOgSguxgBIlsKEU5ld1do",
+            "aXRlbGlzdElkU2V0Eh4KCnByb2plY3RfaWQYASABKAsyCi5hZWxmLkhhc2gS",
+            "IAoMd2hpdGVsaXN0X2lkGAIgASgLMgouYWVsZi5IYXNoOgSguxgBImcKFUFk",
+            "ZGl0aW9uYWxJbmZvVXBkYXRlZBIeCgpwcm9qZWN0X2lkGAEgASgLMgouYWVs",
+            "Zi5IYXNoEigKD2FkZGl0aW9uYWxfaW5mbxgCIAEoCzIPLkFkZGl0aW9uYWxJ",
+            "bmZvOgSguxgBIjcKD1Byb2plY3RDYW5jZWxlZBIeCgpwcm9qZWN0X2lkGAEg",
+            "ASgLMgouYWVsZi5IYXNoOgSguxgBIkkKDVBlcmlvZFVwZGF0ZWQSHgoKcHJv",
+            "amVjdF9pZBgBIAEoCzIKLmFlbGYuSGFzaBISCgpuZXdfcGVyaW9kGAIgASgF",
+            "OgSguxgBIrsBCghJbnZlc3RlZBIeCgpwcm9qZWN0X2lkGAEgASgLMgouYWVs",
+            "Zi5IYXNoEhsKBHVzZXIYAiABKAsyDS5hZWxmLkFkZHJlc3MSFQoNaW52ZXN0",
+            "X3N5bWJvbBgDIAEoCRIOCgZhbW91bnQYBCABKAMSFAoMdG90YWxfYW1vdW50",
+            "GAUgASgDEhYKDnByb2plY3Rfc3ltYm9sGAYgASgJEhcKD3RvX2NsYWltX2Ft",
+            "b3VudBgHIAEoAzoEoLsYASKXAQoLRGlzSW52ZXN0ZWQSHgoKcHJvamVjdF9p",
+            "ZBgBIAEoCzIKLmFlbGYuSGFzaBIbCgR1c2VyGAIgASgLMg0uYWVsZi5BZGRy",
+            "ZXNzEhUKDWludmVzdF9zeW1ib2wYAyABKAkSGAoQZGlzaW52ZXN0X2Ftb3Vu",
+            "dBgEIAEoAxIUCgx0b3RhbF9hbW91bnQYBSABKAM6BKC7GAEiggEKFkxpcXVp",
+            "ZGF0ZWREYW1hZ2VSZWNvcmQSHgoKcHJvamVjdF9pZBgBIAEoCzIKLmFlbGYu",
+            "SGFzaBIbCgR1c2VyGAIgASgLMg0uYWVsZi5BZGRyZXNzEhUKDWludmVzdF9z",
+            "eW1ib2wYAyABKAkSDgoGYW1vdW50GAQgASgDOgSguxgBIoMBChdMaXF1aWRh",
+            "dGVkRGFtYWdlQ2xhaW1lZBIeCgpwcm9qZWN0X2lkGAEgASgLMgouYWVsZi5I",
+            "YXNoEhsKBHVzZXIYAiABKAsyDS5hZWxmLkFkZHJlc3MSFQoNaW52ZXN0X3N5",
+            "bWJvbBgDIAEoCRIOCgZhbW91bnQYBCABKAM6BKC7GAEioQEKB0NsYWltZWQS",
             "HgoKcHJvamVjdF9pZBgBIAEoCzIKLmFlbGYuSGFzaBIbCgR1c2VyGAIgASgL",
-            "Mg0uYWVsZi5BZGRyZXNzIlIKE1NldFdoaXRlbGlzdElkSW5wdXQSHgoKcHJv",
-            "amVjdF9pZBgBIAEoCzIKLmFlbGYuSGFzaBIbChNpc19lbmFibGVfd2hpdGVs",
-            "aXN0GAIgASgIIk4KDlJlRnVuZEFsbElucHV0Eh4KCnByb2plY3RfaWQYASAB",
-            "KAsyCi5hZWxmLkhhc2gSHAoFdXNlcnMYAiADKAsyDS5hZWxmLkFkZHJlc3Mi",
-            "LgoPRXh0cmFJbmZvSWRMaXN0EhsKBXZhbHVlGAEgAygLMgwuRXh0cmFJbmZv",
-            "SWQiRQoLRXh0cmFJbmZvSWQSHgoHYWRkcmVzcxgBIAEoCzINLmFlbGYuQWRk",
-            "cmVzcxIWCgJpZBgCIAEoCzIKLmFlbGYuSGFzaCLeBAoLUHJvamVjdEluZm8S",
-            "HgoKcHJvamVjdF9pZBgBIAEoCzIKLmFlbGYuSGFzaBIZChFhY2NlcHRlZF9j",
-            "dXJyZW5jeRgCIAEoCRIYChBwcm9qZWN0X2N1cnJlbmN5GAMgASgJEhoKEmNy",
-            "b3dkX2Z1bmRpbmdfdHlwZRgEIAEoCRIiChpjcm93ZF9mdW5kaW5nX2lzc3Vl",
-            "X2Ftb3VudBgFIAEoAxIWCg5wcmVfc2FsZV9wcmljZRgGIAEoAxIuCgpzdGFy",
-            "dF90aW1lGAggASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcBIsCghl",
-            "bmRfdGltZRgJIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXASGAoQ",
-            "bWluX3N1YnNjcmlwdGlvbhgKIAEoAxIYChBtYXhfc3Vic2NyaXB0aW9uGAsg",
-            "ASgDEhoKEmlzX2J1cm5fcmVzdF90b2tlbhgMIAEoCBIoCg9hZGRpdGlvbmFs",
-            "X2luZm8YDSABKAsyDy5BZGRpdGlvbmFsSW5mbxIeCgdjcmVhdG9yGA4gASgL",
-            "Mg0uYWVsZi5BZGRyZXNzEhgKEHRvX3JhaXNlZF9hbW91bnQYDyABKAMSHQoV",
-            "Y3VycmVudF9yYWlzZWRfYW1vdW50GBAgASgDEg8KB2VuYWJsZWQYESABKAgS",
-            "KAoUdmlydHVhbF9hZGRyZXNzX2hhc2gYEiABKAsyCi5hZWxmLkhhc2gSNgoS",
-            "dG9rZW5fcmVsZWFzZV90aW1lGBMgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRp",
-            "bWVzdGFtcCKCAwoPUHJvamVjdExpc3RJbmZvEh4KCnByb2plY3RfaWQYASAB",
-            "KAsyCi5hZWxmLkhhc2gSGQoRcHVibGljX3NhbGVfcHJpY2UYAiABKAMSKQoQ",
-            "bGlzdF9tYXJrZXRfaW5mbxgDIAEoCzIPLkxpc3RNYXJrZXRJbmZvEiEKGWxp",
-            "cXVpZGl0eV9sb2NrX3Byb3BvcnRpb24YBCABKAUSLwoLdW5sb2NrX3RpbWUY",
-            "BSABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wEhUKDWxhdGVzdF9w",
-            "ZXJpb2QYBiABKAUSFAoMdG90YWxfcGVyaW9kGAcgASgFEiMKG2ZpcnN0X2Rp",
-            "c3RyaWJ1dGVfcHJvcG9ydGlvbhgIIAEoBRIiChpyZXN0X2Rpc3RyaWJ1dGVf",
-            "cHJvcG9ydGlvbhgJIAEoBRIXCg9wZXJpb2RfZHVyYXRpb24YCiABKAMSEQoJ",
-            "aXNfbGlzdGVkGAsgASgIEhMKC2lzX3dpdGhkcmF3GAwgASgIIkoKDEludmVz",
-            "dERldGFpbBIVCg1pbnZlc3Rfc3ltYm9sGAEgASgJEg4KBmFtb3VudBgCIAEo",
-            "AxITCgtpc191bkludmVzdBgDIAEoCCKyAQoMUHJvZml0RGV0YWlsEhUKDWxh",
-            "dGVzdF9wZXJpb2QYASABKAUSDgoGc3ltYm9sGAIgASgJEhQKDHRvdGFsX3By",
-            "b2ZpdBgDIAEoAxIyCgthbW91bnRzX21hcBgEIAMoCzIdLlByb2ZpdERldGFp",
-            "bC5BbW91bnRzTWFwRW50cnkaMQoPQW1vdW50c01hcEVudHJ5EgsKA2tleRgB",
-            "IAEoBRINCgV2YWx1ZRgCIAEoAzoCOAEiNQoSQ2xhaW1lZFByb2ZpdHNJbmZv",
-            "Eh8KB2RldGFpbHMYASADKAsyDi5DbGFpbWVkUHJvZml0ImYKDUNsYWltZWRQ",
-            "cm9maXQSHgoKcHJvamVjdF9pZBgBIAEoCzIKLmFlbGYuSGFzaBIVCg1sYXRl",
-            "c3RfcGVyaW9kGAIgASgFEg4KBnN5bWJvbBgDIAEoCRIOCgZhbW91bnQYBCAB",
-            "KAMiWAoXTGlxdWlkYXRlZERhbWFnZURldGFpbHMSEwoLdG90YWxBbW91bnQY",
-            "ASABKAMSKAoHZGV0YWlscxgCIAMoCzIXLkxpcXVpZGF0ZWREYW1hZ2VEZXRh",
-            "aWwiZgoWTGlxdWlkYXRlZERhbWFnZURldGFpbBIbCgR1c2VyGAEgASgLMg0u",
-            "YWVsZi5BZGRyZXNzEg4KBnN5bWJvbBgCIAEoCRIOCgZhbW91bnQYAyABKAMS",
-            "DwoHY2xhaW1lZBgEIAEoCCJmCg5BZGRpdGlvbmFsSW5mbxInCgRkYXRhGAEg",
-            "AygLMhkuQWRkaXRpb25hbEluZm8uRGF0YUVudHJ5GisKCURhdGFFbnRyeRIL",
-            "CgNrZXkYASABKAkSDQoFdmFsdWUYAiABKAk6AjgBIisKDkxpc3RNYXJrZXRJ",
-            "bmZvEhkKBGRhdGEYASADKAsyCy5MaXN0TWFya2V0IjsKCkxpc3RNYXJrZXQS",
-            "HQoGbWFya2V0GAEgASgLMg0uYWVsZi5BZGRyZXNzEg4KBndlaWdodBgCIAEo",
-            "BSKJBwoRUHJvamVjdFJlZ2lzdGVyZWQSHgoKcHJvamVjdF9pZBgBIAEoCzIK",
-            "LmFlbGYuSGFzaBIZChFhY2NlcHRlZF9jdXJyZW5jeRgCIAEoCRIYChBwcm9q",
-            "ZWN0X2N1cnJlbmN5GAMgASgJEhoKEmNyb3dkX2Z1bmRpbmdfdHlwZRgEIAEo",
-            "CRIiChpjcm93ZF9mdW5kaW5nX2lzc3VlX2Ftb3VudBgFIAEoAxIWCg5wcmVf",
-            "c2FsZV9wcmljZRgGIAEoAxIuCgpzdGFydF90aW1lGAcgASgLMhouZ29vZ2xl",
-            "LnByb3RvYnVmLlRpbWVzdGFtcBIsCghlbmRfdGltZRgIIAEoCzIaLmdvb2ds",
-            "ZS5wcm90b2J1Zi5UaW1lc3RhbXASGAoQbWluX3N1YnNjcmlwdGlvbhgJIAEo",
-            "AxIYChBtYXhfc3Vic2NyaXB0aW9uGAogASgDEhkKEXB1YmxpY19zYWxlX3By",
-            "aWNlGAsgASgDEikKEGxpc3RfbWFya2V0X2luZm8YDCABKAsyDy5MaXN0TWFy",
-            "a2V0SW5mbxIhChlsaXF1aWRpdHlfbG9ja19wcm9wb3J0aW9uGA0gASgFEi8K",
-            "C3VubG9ja190aW1lGA4gASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFt",
-            "cBIbChNpc19lbmFibGVfd2hpdGVsaXN0GA8gASgIEiAKDHdoaXRlbGlzdF9p",
-            "ZBgQIAEoCzIKLmFlbGYuSGFzaBIaChJpc19idXJuX3Jlc3RfdG9rZW4YESAB",
-            "KAgSFAoMdG90YWxfcGVyaW9kGBIgASgFEigKD2FkZGl0aW9uYWxfaW5mbxgT",
-            "IAEoCzIPLkFkZGl0aW9uYWxJbmZvEhgKEHRvX3JhaXNlZF9hbW91bnQYFCAB",
-            "KAMSHgoHY3JlYXRvchgVIAEoCzINLmFlbGYuQWRkcmVzcxIjChtmaXJzdF9k",
-            "aXN0cmlidXRlX3Byb3BvcnRpb24YFiABKAUSIgoacmVzdF9kaXN0cmlidXRl",
-            "X3Byb3BvcnRpb24YFyABKAUSFwoPcGVyaW9kX2R1cmF0aW9uGBggASgDEiYK",
-            "D3ZpcnR1YWxfYWRkcmVzcxgZIAEoCzINLmFlbGYuQWRkcmVzcxI2ChJ0b2tl",
-            "bl9yZWxlYXNlX3RpbWUYGiABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0",
-            "YW1wOgSguxgBIlsKEU5ld1doaXRlbGlzdElkU2V0Eh4KCnByb2plY3RfaWQY",
-            "ASABKAsyCi5hZWxmLkhhc2gSIAoMd2hpdGVsaXN0X2lkGAIgASgLMgouYWVs",
-            "Zi5IYXNoOgSguxgBImcKFUFkZGl0aW9uYWxJbmZvVXBkYXRlZBIeCgpwcm9q",
-            "ZWN0X2lkGAEgASgLMgouYWVsZi5IYXNoEigKD2FkZGl0aW9uYWxfaW5mbxgC",
-            "IAEoCzIPLkFkZGl0aW9uYWxJbmZvOgSguxgBIjcKD1Byb2plY3RDYW5jZWxl",
-            "ZBIeCgpwcm9qZWN0X2lkGAEgASgLMgouYWVsZi5IYXNoOgSguxgBIkkKDVBl",
-            "cmlvZFVwZGF0ZWQSHgoKcHJvamVjdF9pZBgBIAEoCzIKLmFlbGYuSGFzaBIS",
-            "CgpuZXdfcGVyaW9kGAIgASgFOgSguxgBIr0BCghJbnZlc3RlZBIeCgpwcm9q",
-            "ZWN0X2lkGAEgASgLMgouYWVsZi5IYXNoEhsKBHVzZXIYAiABKAsyDS5hZWxm",
-            "LkFkZHJlc3MSFQoNaW52ZXN0X3N5bWJvbBgDIAEoCRIOCgZhbW91bnQYBCAB",
-            "KAMSFAoMdG90YWxfYW1vdW50GAUgASgDEhgKEHByb2plY3RfY3VycmVuY3kY",
-            "BiABKAkSFwoPdG9fY2xhaW1fYW1vdW50GAcgASgDOgSguxgBIpYBCgpVbklu",
-            "dmVzdGVkEh4KCnByb2plY3RfaWQYASABKAsyCi5hZWxmLkhhc2gSGwoEdXNl",
-            "chgCIAEoCzINLmFlbGYuQWRkcmVzcxIVCg1pbnZlc3Rfc3ltYm9sGAMgASgJ",
-            "EhgKEHVuX2ludmVzdF9hbW91bnQYBCABKAMSFAoMdG90YWxfYW1vdW50GAUg",
-            "ASgDOgSguxgBIoIBChZMaXF1aWRhdGVkRGFtYWdlUmVjb3JkEh4KCnByb2pl",
-            "Y3RfaWQYASABKAsyCi5hZWxmLkhhc2gSGwoEdXNlchgCIAEoCzINLmFlbGYu",
-            "QWRkcmVzcxIVCg1pbnZlc3Rfc3ltYm9sGAMgASgJEg4KBmFtb3VudBgEIAEo",
-            "AzoEoLsYASKDAQoXTGlxdWlkYXRlZERhbWFnZUNsYWltZWQSHgoKcHJvamVj",
-            "dF9pZBgBIAEoCzIKLmFlbGYuSGFzaBIbCgR1c2VyGAIgASgLMg0uYWVsZi5B",
-            "ZGRyZXNzEhUKDWludmVzdF9zeW1ib2wYAyABKAkSDgoGYW1vdW50GAQgASgD",
-            "OgSguxgBIqMBCgdDbGFpbWVkEh4KCnByb2plY3RfaWQYASABKAsyCi5hZWxm",
-            "Lkhhc2gSGwoEdXNlchgCIAEoCzINLmFlbGYuQWRkcmVzcxIYChBwcm9qZWN0",
-            "X2N1cnJlbmN5GAMgASgJEg4KBmFtb3VudBgEIAEoAxIVCg1sYXRlc3RfcGVy",
-            "aW9kGAUgASgFEhQKDHRvdGFsX3BlcmlvZBgGIAEoBToEoLsYASJ0CghSZUZ1",
-            "bmRlZBIeCgpwcm9qZWN0X2lkGAEgASgLMgouYWVsZi5IYXNoEhsKBHVzZXIY",
-            "AiABKAsyDS5hZWxmLkFkZHJlc3MSFQoNaW52ZXN0X3N5bWJvbBgDIAEoCRIO",
-            "CgZhbW91bnQYBCABKAM6BKC7GAEirgEKCVdpdGhkcmF3bhIeCgpwcm9qZWN0",
-            "X2lkGAEgASgLMgouYWVsZi5IYXNoEhcKD2FjY2VwdGVkX3N5bWJvbBgCIAEo",
-            "CRIXCg93aXRoZHJhd19hbW91bnQYAyABKAMSGAoQcHJvamVjdF9jdXJyZW5j",
-            "eRgEIAEoCRIaChJpc19idXJuX3Jlc3RfdG9rZW4YBSABKAgSEwoLYnVybl9h",
-            "bW91bnQYBiABKAM6BKC7GAEy+Q0KDUV3ZWxsQ29udHJhY3QSOAoKSW5pdGlh",
-            "bGl6ZRIQLkluaXRpYWxpemVJbnB1dBoWLmdvb2dsZS5wcm90b2J1Zi5FbXB0",
-            "eSIAEjQKCFJlZ2lzdGVyEg4uUmVnaXN0ZXJJbnB1dBoWLmdvb2dsZS5wcm90",
-            "b2J1Zi5FbXB0eSIAEkwKFFVwZGF0ZUFkZGl0aW9uYWxJbmZvEhouVXBkYXRl",
-            "QWRkaXRpb25hbEluZm9JbnB1dBoWLmdvb2dsZS5wcm90b2J1Zi5FbXB0eSIA",
-            "Ei4KBkNhbmNlbBIKLmFlbGYuSGFzaBoWLmdvb2dsZS5wcm90b2J1Zi5FbXB0",
-            "eSIAEjUKDUxvY2tMaXF1aWRpdHkSCi5hZWxmLkhhc2gaFi5nb29nbGUucHJv",
-            "dG9idWYuRW1wdHkiABIwCghXaXRoZHJhdxIKLmFlbGYuSGFzaBoWLmdvb2ds",
-            "ZS5wcm90b2J1Zi5FbXB0eSIAEj4KDUFkZFdoaXRlbGlzdHMSEy5BZGRXaGl0",
-            "ZWxpc3RzSW5wdXQaFi5nb29nbGUucHJvdG9idWYuRW1wdHkiABJEChBSZW1v",
-            "dmVXaGl0ZWxpc3RzEhYuUmVtb3ZlV2hpdGVsaXN0c0lucHV0GhYuZ29vZ2xl",
-            "LnByb3RvYnVmLkVtcHR5IgASMgoKTmV4dFBlcmlvZBIKLmFlbGYuSGFzaBoW",
-            "Lmdvb2dsZS5wcm90b2J1Zi5FbXB0eSIAEkAKDlNldFdoaXRlbGlzdElkEhQu",
-            "U2V0V2hpdGVsaXN0SWRJbnB1dBoWLmdvb2dsZS5wcm90b2J1Zi5FbXB0eSIA",
-            "EjAKBkludmVzdBIMLkludmVzdElucHV0GhYuZ29vZ2xlLnByb3RvYnVmLkVt",
-            "cHR5IgASMAoIVW5JbnZlc3QSCi5hZWxmLkhhc2gaFi5nb29nbGUucHJvdG9i",
-            "dWYuRW1wdHkiABIuCgZSZUZ1bmQSCi5hZWxmLkhhc2gaFi5nb29nbGUucHJv",
-            "dG9idWYuRW1wdHkiABI2CglSZUZ1bmRBbGwSDy5SZUZ1bmRBbGxJbnB1dBoW",
-            "Lmdvb2dsZS5wcm90b2J1Zi5FbXB0eSIAEi4KBUNsYWltEgsuQ2xhaW1JbnB1",
-            "dBoWLmdvb2dsZS5wcm90b2J1Zi5FbXB0eSIAEj0KFUNsYWltTGlxdWlkYXRl",
-            "ZERhbWFnZRIKLmFlbGYuSGFzaBoWLmdvb2dsZS5wcm90b2J1Zi5FbXB0eSIA",
-            "EkAKGENsYWltTGlxdWlkYXRlZERhbWFnZUFsbBIKLmFlbGYuSGFzaBoWLmdv",
-            "b2dsZS5wcm90b2J1Zi5FbXB0eSIAEksKG0dldFdoaXRlbGlzdENvbnRyYWN0",
-            "QWRkcmVzcxIWLmdvb2dsZS5wcm90b2J1Zi5FbXB0eRoNLmFlbGYuQWRkcmVz",
-            "cyIFiIn3AQESOAoIR2V0QWRtaW4SFi5nb29nbGUucHJvdG9idWYuRW1wdHka",
-            "DS5hZWxmLkFkZHJlc3MiBYiJ9wEBEj8KD0dldFRva2VuQWRkcmVzcxIWLmdv",
-            "b2dsZS5wcm90b2J1Zi5FbXB0eRoNLmFlbGYuQWRkcmVzcyIFiIn3AQESMQoO",
-            "R2V0UHJvamVjdEluZm8SCi5hZWxmLkhhc2gaDC5Qcm9qZWN0SW5mbyIFiIn3",
-            "AQESOQoSR2V0UHJvamVjdExpc3RJbmZvEgouYWVsZi5IYXNoGhAuUHJvamVj",
-            "dExpc3RJbmZvIgWIifcBARIzCgxHZXRXaGl0ZWxpc3QSCi5hZWxmLkhhc2ga",
-            "EC5FeHRyYUluZm9JZExpc3QiBYiJ9wEBEj4KD0dldEludmVzdERldGFpbBIV",
-            "LkdldEludmVzdERldGFpbElucHV0Gg0uSW52ZXN0RGV0YWlsIgWIifcBARI+",
-            "Cg9HZXRQcm9maXREZXRhaWwSFS5HZXRQcm9maXREZXRhaWxJbnB1dBoNLlBy",
-            "b2ZpdERldGFpbCIFiIn3AQESLwoOR2V0V2hpdGVsaXN0SWQSCi5hZWxmLkhh",
-            "c2gaCi5hZWxmLkhhc2giBYiJ9wEBEkkKGkdldExpcXVpZGF0ZWREYW1hZ2VE",
-            "ZXRhaWxzEgouYWVsZi5IYXNoGhguTGlxdWlkYXRlZERhbWFnZURldGFpbHMi",
-            "BYiJ9wEBEkIKHkdldFByb2plY3RBZGRyZXNzQnlQcm9qZWN0SGFzaBIKLmFl",
-            "bGYuSGFzaBoNLmFlbGYuQWRkcmVzcyIFiIn3AQESPwoYR2V0UGVuZGluZ1By",
-            "b2plY3RBZGRyZXNzEg0uYWVsZi5BZGRyZXNzGg0uYWVsZi5BZGRyZXNzIgWI",
-            "ifcBARosssz2ASdBRWxmLkNvbnRyYWN0cy5Fd2VsbC5Fd2VsbENvbnRyYWN0",
-            "U3RhdGVCF6oCFEFFbGYuQ29udHJhY3RzLkV3ZWxsYgZwcm90bzM="));
+            "Mg0uYWVsZi5BZGRyZXNzEhYKDnByb2plY3Rfc3ltYm9sGAMgASgJEg4KBmFt",
+            "b3VudBgEIAEoAxIVCg1sYXRlc3RfcGVyaW9kGAUgASgFEhQKDHRvdGFsX3Bl",
+            "cmlvZBgGIAEoBToEoLsYASJ0CghSZUZ1bmRlZBIeCgpwcm9qZWN0X2lkGAEg",
+            "ASgLMgouYWVsZi5IYXNoEhsKBHVzZXIYAiABKAsyDS5hZWxmLkFkZHJlc3MS",
+            "FQoNaW52ZXN0X3N5bWJvbBgDIAEoCRIOCgZhbW91bnQYBCABKAM6BKC7GAEi",
+            "rAEKCVdpdGhkcmF3bhIeCgpwcm9qZWN0X2lkGAEgASgLMgouYWVsZi5IYXNo",
+            "EhcKD2FjY2VwdGVkX3N5bWJvbBgCIAEoCRIXCg93aXRoZHJhd19hbW91bnQY",
+            "AyABKAMSFgoOcHJvamVjdF9zeW1ib2wYBCABKAkSGgoSaXNfYnVybl9yZXN0",
+            "X3Rva2VuGAUgASgIEhMKC2J1cm5fYW1vdW50GAYgASgDOgSguxgBMp4PCg1F",
+            "d2VsbENvbnRyYWN0EjgKCkluaXRpYWxpemUSEC5Jbml0aWFsaXplSW5wdXQa",
+            "Fi5nb29nbGUucHJvdG9idWYuRW1wdHkiABI0CghSZWdpc3RlchIOLlJlZ2lz",
+            "dGVySW5wdXQaFi5nb29nbGUucHJvdG9idWYuRW1wdHkiABJMChRVcGRhdGVB",
+            "ZGRpdGlvbmFsSW5mbxIaLlVwZGF0ZUFkZGl0aW9uYWxJbmZvSW5wdXQaFi5n",
+            "b29nbGUucHJvdG9idWYuRW1wdHkiABIuCgZDYW5jZWwSCi5hZWxmLkhhc2ga",
+            "Fi5nb29nbGUucHJvdG9idWYuRW1wdHkiABI1Cg1Mb2NrTGlxdWlkaXR5Egou",
+            "YWVsZi5IYXNoGhYuZ29vZ2xlLnByb3RvYnVmLkVtcHR5IgASMAoIV2l0aGRy",
+            "YXcSCi5hZWxmLkhhc2gaFi5nb29nbGUucHJvdG9idWYuRW1wdHkiABI+Cg1B",
+            "ZGRXaGl0ZWxpc3RzEhMuQWRkV2hpdGVsaXN0c0lucHV0GhYuZ29vZ2xlLnBy",
+            "b3RvYnVmLkVtcHR5IgASRAoQUmVtb3ZlV2hpdGVsaXN0cxIWLlJlbW92ZVdo",
+            "aXRlbGlzdHNJbnB1dBoWLmdvb2dsZS5wcm90b2J1Zi5FbXB0eSIAEjIKCk5l",
+            "eHRQZXJpb2QSCi5hZWxmLkhhc2gaFi5nb29nbGUucHJvdG9idWYuRW1wdHki",
+            "ABJACg5TZXRXaGl0ZWxpc3RJZBIULlNldFdoaXRlbGlzdElkSW5wdXQaFi5n",
+            "b29nbGUucHJvdG9idWYuRW1wdHkiABIwCgZJbnZlc3QSDC5JbnZlc3RJbnB1",
+            "dBoWLmdvb2dsZS5wcm90b2J1Zi5FbXB0eSIAEjEKCURpc2ludmVzdBIKLmFl",
+            "bGYuSGFzaBoWLmdvb2dsZS5wcm90b2J1Zi5FbXB0eSIAEi4KBlJlRnVuZBIK",
+            "LmFlbGYuSGFzaBoWLmdvb2dsZS5wcm90b2J1Zi5FbXB0eSIAEjYKCVJlRnVu",
+            "ZEFsbBIPLlJlRnVuZEFsbElucHV0GhYuZ29vZ2xlLnByb3RvYnVmLkVtcHR5",
+            "IgASLgoFQ2xhaW0SCy5DbGFpbUlucHV0GhYuZ29vZ2xlLnByb3RvYnVmLkVt",
+            "cHR5IgASPQoVQ2xhaW1MaXF1aWRhdGVkRGFtYWdlEgouYWVsZi5IYXNoGhYu",
+            "Z29vZ2xlLnByb3RvYnVmLkVtcHR5IgASQAoYQ2xhaW1MaXF1aWRhdGVkRGFt",
+            "YWdlQWxsEgouYWVsZi5IYXNoGhYuZ29vZ2xlLnByb3RvYnVmLkVtcHR5IgAS",
+            "QgoXU2V0UHJveHlBY2NvdW50Q29udHJhY3QSDS5hZWxmLkFkZHJlc3MaFi5n",
+            "b29nbGUucHJvdG9idWYuRW1wdHkiABJLChtHZXRXaGl0ZWxpc3RDb250cmFj",
+            "dEFkZHJlc3MSFi5nb29nbGUucHJvdG9idWYuRW1wdHkaDS5hZWxmLkFkZHJl",
+            "c3MiBYiJ9wEBEjgKCEdldEFkbWluEhYuZ29vZ2xlLnByb3RvYnVmLkVtcHR5",
+            "Gg0uYWVsZi5BZGRyZXNzIgWIifcBARJHChdHZXRUb2tlbkNvbnRyYWN0QWRk",
+            "cmVzcxIWLmdvb2dsZS5wcm90b2J1Zi5FbXB0eRoNLmFlbGYuQWRkcmVzcyIF",
+            "iIn3AQESMQoOR2V0UHJvamVjdEluZm8SCi5hZWxmLkhhc2gaDC5Qcm9qZWN0",
+            "SW5mbyIFiIn3AQESOQoSR2V0UHJvamVjdExpc3RJbmZvEgouYWVsZi5IYXNo",
+            "GhAuUHJvamVjdExpc3RJbmZvIgWIifcBARIzCgxHZXRXaGl0ZWxpc3QSCi5h",
+            "ZWxmLkhhc2gaEC5FeHRyYUluZm9JZExpc3QiBYiJ9wEBEj4KD0dldEludmVz",
+            "dERldGFpbBIVLkdldEludmVzdERldGFpbElucHV0Gg0uSW52ZXN0RGV0YWls",
+            "IgWIifcBARI+Cg9HZXRQcm9maXREZXRhaWwSFS5HZXRQcm9maXREZXRhaWxJ",
+            "bnB1dBoNLlByb2ZpdERldGFpbCIFiIn3AQESLwoOR2V0V2hpdGVsaXN0SWQS",
+            "Ci5hZWxmLkhhc2gaCi5hZWxmLkhhc2giBYiJ9wEBEkkKGkdldExpcXVpZGF0",
+            "ZWREYW1hZ2VEZXRhaWxzEgouYWVsZi5IYXNoGhguTGlxdWlkYXRlZERhbWFn",
+            "ZURldGFpbHMiBYiJ9wEBEkIKHkdldFByb2plY3RBZGRyZXNzQnlQcm9qZWN0",
+            "SGFzaBIKLmFlbGYuSGFzaBoNLmFlbGYuQWRkcmVzcyIFiIn3AQESPwoYR2V0",
+            "UGVuZGluZ1Byb2plY3RBZGRyZXNzEg0uYWVsZi5BZGRyZXNzGg0uYWVsZi5B",
+            "ZGRyZXNzIgWIifcBARJHChdHZXRQcm94eUFjY291bnRDb250cmFjdBIWLmdv",
+            "b2dsZS5wcm90b2J1Zi5FbXB0eRoNLmFlbGYuQWRkcmVzcyIFiIn3AQEaO7LM",
+            "9gEmRXdlbGwuQ29udHJhY3RzLklkby5Fd2VsbENvbnRyYWN0U3RhdGXKyvYB",
+            "C2FjczEyLnByb3RvQhaqAhNFd2VsbC5Db250cmFjdHMuSWRvYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::AElf.Types.CoreReflection.Descriptor, global::AElf.OptionsReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.EmptyReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.WrappersReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::AElf.Types.CoreReflection.Descriptor, global::AElf.OptionsReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.EmptyReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.WrappersReflection.Descriptor, global::AElf.Standards.ACS12.Acs12Reflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::AElf.Contracts.Ewell.InitializeInput), global::AElf.Contracts.Ewell.InitializeInput.Parser, new[]{ "WhitelistContract" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::AElf.Contracts.Ewell.RegisterInput), global::AElf.Contracts.Ewell.RegisterInput.Parser, new[]{ "AcceptedCurrency", "ProjectCurrency", "CrowdFundingType", "CrowdFundingIssueAmount", "PreSalePrice", "StartTime", "EndTime", "MinSubscription", "MaxSubscription", "PublicSalePrice", "ListMarketInfo", "LiquidityLockProportion", "UnlockTime", "IsEnableWhitelist", "WhitelistId", "IsBurnRestToken", "TotalPeriod", "AdditionalInfo", "FirstDistributeProportion", "RestDistributeProportion", "PeriodDuration", "TokenReleaseTime" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::AElf.Contracts.Ewell.UpdateAdditionalInfoInput), global::AElf.Contracts.Ewell.UpdateAdditionalInfoInput.Parser, new[]{ "ProjectId", "AdditionalInfo" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::AElf.Contracts.Ewell.AddWhitelistsInput), global::AElf.Contracts.Ewell.AddWhitelistsInput.Parser, new[]{ "ProjectId", "Users" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::AElf.Contracts.Ewell.RemoveWhitelistsInput), global::AElf.Contracts.Ewell.RemoveWhitelistsInput.Parser, new[]{ "ProjectId", "Users" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::AElf.Contracts.Ewell.InvestInput), global::AElf.Contracts.Ewell.InvestInput.Parser, new[]{ "ProjectId", "Currency", "InvestAmount" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::AElf.Contracts.Ewell.ClaimInput), global::AElf.Contracts.Ewell.ClaimInput.Parser, new[]{ "ProjectId", "User" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::AElf.Contracts.Ewell.GetInvestDetailInput), global::AElf.Contracts.Ewell.GetInvestDetailInput.Parser, new[]{ "ProjectId", "User" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::AElf.Contracts.Ewell.GetProfitDetailInput), global::AElf.Contracts.Ewell.GetProfitDetailInput.Parser, new[]{ "ProjectId", "User" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::AElf.Contracts.Ewell.SetWhitelistIdInput), global::AElf.Contracts.Ewell.SetWhitelistIdInput.Parser, new[]{ "ProjectId", "IsEnableWhitelist" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::AElf.Contracts.Ewell.ReFundAllInput), global::AElf.Contracts.Ewell.ReFundAllInput.Parser, new[]{ "ProjectId", "Users" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::AElf.Contracts.Ewell.ExtraInfoIdList), global::AElf.Contracts.Ewell.ExtraInfoIdList.Parser, new[]{ "Value" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::AElf.Contracts.Ewell.ExtraInfoId), global::AElf.Contracts.Ewell.ExtraInfoId.Parser, new[]{ "Address", "Id" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::AElf.Contracts.Ewell.ProjectInfo), global::AElf.Contracts.Ewell.ProjectInfo.Parser, new[]{ "ProjectId", "AcceptedCurrency", "ProjectCurrency", "CrowdFundingType", "CrowdFundingIssueAmount", "PreSalePrice", "StartTime", "EndTime", "MinSubscription", "MaxSubscription", "IsBurnRestToken", "AdditionalInfo", "Creator", "ToRaisedAmount", "CurrentRaisedAmount", "Enabled", "VirtualAddressHash", "TokenReleaseTime" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::AElf.Contracts.Ewell.ProjectListInfo), global::AElf.Contracts.Ewell.ProjectListInfo.Parser, new[]{ "ProjectId", "PublicSalePrice", "ListMarketInfo", "LiquidityLockProportion", "UnlockTime", "LatestPeriod", "TotalPeriod", "FirstDistributeProportion", "RestDistributeProportion", "PeriodDuration", "IsListed", "IsWithdraw" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::AElf.Contracts.Ewell.InvestDetail), global::AElf.Contracts.Ewell.InvestDetail.Parser, new[]{ "InvestSymbol", "Amount", "IsUnInvest" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::AElf.Contracts.Ewell.ProfitDetail), global::AElf.Contracts.Ewell.ProfitDetail.Parser, new[]{ "LatestPeriod", "Symbol", "TotalProfit", "AmountsMap" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
-            new pbr::GeneratedClrTypeInfo(typeof(global::AElf.Contracts.Ewell.ClaimedProfitsInfo), global::AElf.Contracts.Ewell.ClaimedProfitsInfo.Parser, new[]{ "Details" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::AElf.Contracts.Ewell.ClaimedProfit), global::AElf.Contracts.Ewell.ClaimedProfit.Parser, new[]{ "ProjectId", "LatestPeriod", "Symbol", "Amount" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::AElf.Contracts.Ewell.LiquidatedDamageDetails), global::AElf.Contracts.Ewell.LiquidatedDamageDetails.Parser, new[]{ "TotalAmount", "Details" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::AElf.Contracts.Ewell.LiquidatedDamageDetail), global::AElf.Contracts.Ewell.LiquidatedDamageDetail.Parser, new[]{ "User", "Symbol", "Amount", "Claimed" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::AElf.Contracts.Ewell.AdditionalInfo), global::AElf.Contracts.Ewell.AdditionalInfo.Parser, new[]{ "Data" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
-            new pbr::GeneratedClrTypeInfo(typeof(global::AElf.Contracts.Ewell.ListMarketInfo), global::AElf.Contracts.Ewell.ListMarketInfo.Parser, new[]{ "Data" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::AElf.Contracts.Ewell.ListMarket), global::AElf.Contracts.Ewell.ListMarket.Parser, new[]{ "Market", "Weight" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::AElf.Contracts.Ewell.ProjectRegistered), global::AElf.Contracts.Ewell.ProjectRegistered.Parser, new[]{ "ProjectId", "AcceptedCurrency", "ProjectCurrency", "CrowdFundingType", "CrowdFundingIssueAmount", "PreSalePrice", "StartTime", "EndTime", "MinSubscription", "MaxSubscription", "PublicSalePrice", "ListMarketInfo", "LiquidityLockProportion", "UnlockTime", "IsEnableWhitelist", "WhitelistId", "IsBurnRestToken", "TotalPeriod", "AdditionalInfo", "ToRaisedAmount", "Creator", "FirstDistributeProportion", "RestDistributeProportion", "PeriodDuration", "VirtualAddress", "TokenReleaseTime" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::AElf.Contracts.Ewell.NewWhitelistIdSet), global::AElf.Contracts.Ewell.NewWhitelistIdSet.Parser, new[]{ "ProjectId", "WhitelistId" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::AElf.Contracts.Ewell.AdditionalInfoUpdated), global::AElf.Contracts.Ewell.AdditionalInfoUpdated.Parser, new[]{ "ProjectId", "AdditionalInfo" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::AElf.Contracts.Ewell.ProjectCanceled), global::AElf.Contracts.Ewell.ProjectCanceled.Parser, new[]{ "ProjectId" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::AElf.Contracts.Ewell.PeriodUpdated), global::AElf.Contracts.Ewell.PeriodUpdated.Parser, new[]{ "ProjectId", "NewPeriod" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::AElf.Contracts.Ewell.Invested), global::AElf.Contracts.Ewell.Invested.Parser, new[]{ "ProjectId", "User", "InvestSymbol", "Amount", "TotalAmount", "ProjectCurrency", "ToClaimAmount" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::AElf.Contracts.Ewell.UnInvested), global::AElf.Contracts.Ewell.UnInvested.Parser, new[]{ "ProjectId", "User", "InvestSymbol", "UnInvestAmount", "TotalAmount" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::AElf.Contracts.Ewell.LiquidatedDamageRecord), global::AElf.Contracts.Ewell.LiquidatedDamageRecord.Parser, new[]{ "ProjectId", "User", "InvestSymbol", "Amount" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::AElf.Contracts.Ewell.LiquidatedDamageClaimed), global::AElf.Contracts.Ewell.LiquidatedDamageClaimed.Parser, new[]{ "ProjectId", "User", "InvestSymbol", "Amount" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::AElf.Contracts.Ewell.Claimed), global::AElf.Contracts.Ewell.Claimed.Parser, new[]{ "ProjectId", "User", "ProjectCurrency", "Amount", "LatestPeriod", "TotalPeriod" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::AElf.Contracts.Ewell.ReFunded), global::AElf.Contracts.Ewell.ReFunded.Parser, new[]{ "ProjectId", "User", "InvestSymbol", "Amount" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::AElf.Contracts.Ewell.Withdrawn), global::AElf.Contracts.Ewell.Withdrawn.Parser, new[]{ "ProjectId", "AcceptedSymbol", "WithdrawAmount", "ProjectCurrency", "IsBurnRestToken", "BurnAmount" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ewell.Contracts.Ido.InitializeInput), global::Ewell.Contracts.Ido.InitializeInput.Parser, new[]{ "AdministratorAddress", "WhitelistContractAddress", "ProxyAccountContractAddress" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ewell.Contracts.Ido.RegisterInput), global::Ewell.Contracts.Ido.RegisterInput.Parser, new[]{ "AcceptedSymbol", "ProjectSymbol", "CrowdFundingType", "CrowdFundingIssueAmount", "PreSalePrice", "StartTime", "EndTime", "MinSubscription", "MaxSubscription", "PublicSalePrice", "ListMarketInfo", "LiquidityLockProportion", "UnlockTime", "IsEnableWhitelist", "WhitelistId", "IsBurnRestToken", "TotalPeriod", "AdditionalInfo", "FirstDistributeProportion", "RestPeriodDistributeProportion", "PeriodDuration", "TokenReleaseTime", "WhitelistUrl" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ewell.Contracts.Ido.UpdateAdditionalInfoInput), global::Ewell.Contracts.Ido.UpdateAdditionalInfoInput.Parser, new[]{ "ProjectId", "AdditionalInfo" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ewell.Contracts.Ido.AddWhitelistsInput), global::Ewell.Contracts.Ido.AddWhitelistsInput.Parser, new[]{ "ProjectId", "Users" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ewell.Contracts.Ido.RemoveWhitelistsInput), global::Ewell.Contracts.Ido.RemoveWhitelistsInput.Parser, new[]{ "ProjectId", "Users" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ewell.Contracts.Ido.InvestInput), global::Ewell.Contracts.Ido.InvestInput.Parser, new[]{ "ProjectId", "Symbol", "InvestAmount" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ewell.Contracts.Ido.ClaimInput), global::Ewell.Contracts.Ido.ClaimInput.Parser, new[]{ "ProjectId", "User" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ewell.Contracts.Ido.GetInvestDetailInput), global::Ewell.Contracts.Ido.GetInvestDetailInput.Parser, new[]{ "ProjectId", "User" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ewell.Contracts.Ido.GetProfitDetailInput), global::Ewell.Contracts.Ido.GetProfitDetailInput.Parser, new[]{ "ProjectId", "User" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ewell.Contracts.Ido.SetWhitelistIdInput), global::Ewell.Contracts.Ido.SetWhitelistIdInput.Parser, new[]{ "ProjectId", "IsEnableWhitelist" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ewell.Contracts.Ido.ReFundAllInput), global::Ewell.Contracts.Ido.ReFundAllInput.Parser, new[]{ "ProjectId", "Users" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ewell.Contracts.Ido.ExtraInfoIdList), global::Ewell.Contracts.Ido.ExtraInfoIdList.Parser, new[]{ "Value" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ewell.Contracts.Ido.ExtraInfoId), global::Ewell.Contracts.Ido.ExtraInfoId.Parser, new[]{ "Address", "Id" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ewell.Contracts.Ido.ProjectInfo), global::Ewell.Contracts.Ido.ProjectInfo.Parser, new[]{ "ProjectId", "AcceptedSymbol", "ProjectSymbol", "CrowdFundingType", "CrowdFundingIssueAmount", "PreSalePrice", "StartTime", "EndTime", "MinSubscription", "MaxSubscription", "IsBurnRestToken", "AdditionalInfo", "Creator", "TargetRaisedAmount", "CurrentRaisedAmount", "Enabled", "VirtualAddressHash", "TokenReleaseTime" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ewell.Contracts.Ido.ProjectListInfo), global::Ewell.Contracts.Ido.ProjectListInfo.Parser, new[]{ "ProjectId", "PublicSalePrice", "ListMarketInfo", "LiquidityLockProportion", "UnlockTime", "LatestPeriod", "TotalPeriod", "FirstDistributeProportion", "RestPeriodDistributeProportion", "PeriodDuration", "IsListed", "IsWithdraw" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ewell.Contracts.Ido.InvestDetail), global::Ewell.Contracts.Ido.InvestDetail.Parser, new[]{ "InvestSymbol", "Amount", "IsDisinvest" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ewell.Contracts.Ido.ProfitDetail), global::Ewell.Contracts.Ido.ProfitDetail.Parser, new[]{ "LatestPeriod", "Symbol", "TotalProfit", "AmountsMap" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ewell.Contracts.Ido.ClaimedProfitsInfo), global::Ewell.Contracts.Ido.ClaimedProfitsInfo.Parser, new[]{ "Details" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ewell.Contracts.Ido.ClaimedProfit), global::Ewell.Contracts.Ido.ClaimedProfit.Parser, new[]{ "ProjectId", "LatestPeriod", "Symbol", "Amount" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ewell.Contracts.Ido.LiquidatedDamageDetails), global::Ewell.Contracts.Ido.LiquidatedDamageDetails.Parser, new[]{ "TotalAmount", "Details" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ewell.Contracts.Ido.LiquidatedDamageDetail), global::Ewell.Contracts.Ido.LiquidatedDamageDetail.Parser, new[]{ "User", "Symbol", "Amount", "Claimed" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ewell.Contracts.Ido.AdditionalInfo), global::Ewell.Contracts.Ido.AdditionalInfo.Parser, new[]{ "Data" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ewell.Contracts.Ido.ListMarketInfo), global::Ewell.Contracts.Ido.ListMarketInfo.Parser, new[]{ "Data" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ewell.Contracts.Ido.ListMarket), global::Ewell.Contracts.Ido.ListMarket.Parser, new[]{ "Market", "Weight" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ewell.Contracts.Ido.ProjectRegistered), global::Ewell.Contracts.Ido.ProjectRegistered.Parser, new[]{ "ProjectId", "AcceptedSymbol", "ProjectSymbol", "CrowdFundingType", "CrowdFundingIssueAmount", "PreSalePrice", "StartTime", "EndTime", "MinSubscription", "MaxSubscription", "PublicSalePrice", "ListMarketInfo", "LiquidityLockProportion", "UnlockTime", "IsEnableWhitelist", "WhitelistId", "IsBurnRestToken", "TotalPeriod", "AdditionalInfo", "TargetRaisedAmount", "Creator", "FirstDistributeProportion", "RestPeriodDistributeProportion", "PeriodDuration", "VirtualAddress", "TokenReleaseTime" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ewell.Contracts.Ido.NewWhitelistIdSet), global::Ewell.Contracts.Ido.NewWhitelistIdSet.Parser, new[]{ "ProjectId", "WhitelistId" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ewell.Contracts.Ido.AdditionalInfoUpdated), global::Ewell.Contracts.Ido.AdditionalInfoUpdated.Parser, new[]{ "ProjectId", "AdditionalInfo" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ewell.Contracts.Ido.ProjectCanceled), global::Ewell.Contracts.Ido.ProjectCanceled.Parser, new[]{ "ProjectId" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ewell.Contracts.Ido.PeriodUpdated), global::Ewell.Contracts.Ido.PeriodUpdated.Parser, new[]{ "ProjectId", "NewPeriod" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ewell.Contracts.Ido.Invested), global::Ewell.Contracts.Ido.Invested.Parser, new[]{ "ProjectId", "User", "InvestSymbol", "Amount", "TotalAmount", "ProjectSymbol", "ToClaimAmount" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ewell.Contracts.Ido.DisInvested), global::Ewell.Contracts.Ido.DisInvested.Parser, new[]{ "ProjectId", "User", "InvestSymbol", "DisinvestAmount", "TotalAmount" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ewell.Contracts.Ido.LiquidatedDamageRecord), global::Ewell.Contracts.Ido.LiquidatedDamageRecord.Parser, new[]{ "ProjectId", "User", "InvestSymbol", "Amount" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ewell.Contracts.Ido.LiquidatedDamageClaimed), global::Ewell.Contracts.Ido.LiquidatedDamageClaimed.Parser, new[]{ "ProjectId", "User", "InvestSymbol", "Amount" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ewell.Contracts.Ido.Claimed), global::Ewell.Contracts.Ido.Claimed.Parser, new[]{ "ProjectId", "User", "ProjectSymbol", "Amount", "LatestPeriod", "TotalPeriod" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ewell.Contracts.Ido.ReFunded), global::Ewell.Contracts.Ido.ReFunded.Parser, new[]{ "ProjectId", "User", "InvestSymbol", "Amount" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ewell.Contracts.Ido.Withdrawn), global::Ewell.Contracts.Ido.Withdrawn.Parser, new[]{ "ProjectId", "AcceptedSymbol", "WithdrawAmount", "ProjectSymbol", "IsBurnRestToken", "BurnAmount" }, null, null, null, null)
           }));
     }
     #endregion
@@ -246,7 +253,7 @@ namespace AElf.Contracts.Ewell {
   /// <summary>
   ///input
   /// </summary>
-  internal sealed partial class InitializeInput : pb::IMessage<InitializeInput>
+  public sealed partial class InitializeInput : pb::IMessage<InitializeInput>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
@@ -260,7 +267,7 @@ namespace AElf.Contracts.Ewell {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::AElf.Contracts.Ewell.EwellContractReflection.Descriptor.MessageTypes[0]; }
+      get { return global::Ewell.Contracts.Ido.EwellContractReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -280,7 +287,9 @@ namespace AElf.Contracts.Ewell {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public InitializeInput(InitializeInput other) : this() {
-      whitelistContract_ = other.whitelistContract_ != null ? other.whitelistContract_.Clone() : null;
+      administratorAddress_ = other.administratorAddress_ != null ? other.administratorAddress_.Clone() : null;
+      whitelistContractAddress_ = other.whitelistContractAddress_ != null ? other.whitelistContractAddress_.Clone() : null;
+      proxyAccountContractAddress_ = other.proxyAccountContractAddress_ != null ? other.proxyAccountContractAddress_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -290,15 +299,39 @@ namespace AElf.Contracts.Ewell {
       return new InitializeInput(this);
     }
 
-    /// <summary>Field number for the "whitelist_contract" field.</summary>
-    public const int WhitelistContractFieldNumber = 1;
-    private global::AElf.Types.Address whitelistContract_;
+    /// <summary>Field number for the "administrator_address" field.</summary>
+    public const int AdministratorAddressFieldNumber = 1;
+    private global::AElf.Types.Address administratorAddress_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::AElf.Types.Address WhitelistContract {
-      get { return whitelistContract_; }
+    public global::AElf.Types.Address AdministratorAddress {
+      get { return administratorAddress_; }
       set {
-        whitelistContract_ = value;
+        administratorAddress_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "whitelist_contract_address" field.</summary>
+    public const int WhitelistContractAddressFieldNumber = 2;
+    private global::AElf.Types.Address whitelistContractAddress_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::AElf.Types.Address WhitelistContractAddress {
+      get { return whitelistContractAddress_; }
+      set {
+        whitelistContractAddress_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "proxy_account_contract_address" field.</summary>
+    public const int ProxyAccountContractAddressFieldNumber = 3;
+    private global::AElf.Types.Address proxyAccountContractAddress_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::AElf.Types.Address ProxyAccountContractAddress {
+      get { return proxyAccountContractAddress_; }
+      set {
+        proxyAccountContractAddress_ = value;
       }
     }
 
@@ -317,7 +350,9 @@ namespace AElf.Contracts.Ewell {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (!object.Equals(WhitelistContract, other.WhitelistContract)) return false;
+      if (!object.Equals(AdministratorAddress, other.AdministratorAddress)) return false;
+      if (!object.Equals(WhitelistContractAddress, other.WhitelistContractAddress)) return false;
+      if (!object.Equals(ProxyAccountContractAddress, other.ProxyAccountContractAddress)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -325,7 +360,9 @@ namespace AElf.Contracts.Ewell {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (whitelistContract_ != null) hash ^= WhitelistContract.GetHashCode();
+      if (administratorAddress_ != null) hash ^= AdministratorAddress.GetHashCode();
+      if (whitelistContractAddress_ != null) hash ^= WhitelistContractAddress.GetHashCode();
+      if (proxyAccountContractAddress_ != null) hash ^= ProxyAccountContractAddress.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -344,9 +381,17 @@ namespace AElf.Contracts.Ewell {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (whitelistContract_ != null) {
+      if (administratorAddress_ != null) {
         output.WriteRawTag(10);
-        output.WriteMessage(WhitelistContract);
+        output.WriteMessage(AdministratorAddress);
+      }
+      if (whitelistContractAddress_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(WhitelistContractAddress);
+      }
+      if (proxyAccountContractAddress_ != null) {
+        output.WriteRawTag(26);
+        output.WriteMessage(ProxyAccountContractAddress);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -358,9 +403,17 @@ namespace AElf.Contracts.Ewell {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (whitelistContract_ != null) {
+      if (administratorAddress_ != null) {
         output.WriteRawTag(10);
-        output.WriteMessage(WhitelistContract);
+        output.WriteMessage(AdministratorAddress);
+      }
+      if (whitelistContractAddress_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(WhitelistContractAddress);
+      }
+      if (proxyAccountContractAddress_ != null) {
+        output.WriteRawTag(26);
+        output.WriteMessage(ProxyAccountContractAddress);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -372,8 +425,14 @@ namespace AElf.Contracts.Ewell {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (whitelistContract_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(WhitelistContract);
+      if (administratorAddress_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(AdministratorAddress);
+      }
+      if (whitelistContractAddress_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(WhitelistContractAddress);
+      }
+      if (proxyAccountContractAddress_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(ProxyAccountContractAddress);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -387,11 +446,23 @@ namespace AElf.Contracts.Ewell {
       if (other == null) {
         return;
       }
-      if (other.whitelistContract_ != null) {
-        if (whitelistContract_ == null) {
-          WhitelistContract = new global::AElf.Types.Address();
+      if (other.administratorAddress_ != null) {
+        if (administratorAddress_ == null) {
+          AdministratorAddress = new global::AElf.Types.Address();
         }
-        WhitelistContract.MergeFrom(other.WhitelistContract);
+        AdministratorAddress.MergeFrom(other.AdministratorAddress);
+      }
+      if (other.whitelistContractAddress_ != null) {
+        if (whitelistContractAddress_ == null) {
+          WhitelistContractAddress = new global::AElf.Types.Address();
+        }
+        WhitelistContractAddress.MergeFrom(other.WhitelistContractAddress);
+      }
+      if (other.proxyAccountContractAddress_ != null) {
+        if (proxyAccountContractAddress_ == null) {
+          ProxyAccountContractAddress = new global::AElf.Types.Address();
+        }
+        ProxyAccountContractAddress.MergeFrom(other.ProxyAccountContractAddress);
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -409,10 +480,24 @@ namespace AElf.Contracts.Ewell {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 10: {
-            if (whitelistContract_ == null) {
-              WhitelistContract = new global::AElf.Types.Address();
+            if (administratorAddress_ == null) {
+              AdministratorAddress = new global::AElf.Types.Address();
             }
-            input.ReadMessage(WhitelistContract);
+            input.ReadMessage(AdministratorAddress);
+            break;
+          }
+          case 18: {
+            if (whitelistContractAddress_ == null) {
+              WhitelistContractAddress = new global::AElf.Types.Address();
+            }
+            input.ReadMessage(WhitelistContractAddress);
+            break;
+          }
+          case 26: {
+            if (proxyAccountContractAddress_ == null) {
+              ProxyAccountContractAddress = new global::AElf.Types.Address();
+            }
+            input.ReadMessage(ProxyAccountContractAddress);
             break;
           }
         }
@@ -431,10 +516,24 @@ namespace AElf.Contracts.Ewell {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 10: {
-            if (whitelistContract_ == null) {
-              WhitelistContract = new global::AElf.Types.Address();
+            if (administratorAddress_ == null) {
+              AdministratorAddress = new global::AElf.Types.Address();
             }
-            input.ReadMessage(WhitelistContract);
+            input.ReadMessage(AdministratorAddress);
+            break;
+          }
+          case 18: {
+            if (whitelistContractAddress_ == null) {
+              WhitelistContractAddress = new global::AElf.Types.Address();
+            }
+            input.ReadMessage(WhitelistContractAddress);
+            break;
+          }
+          case 26: {
+            if (proxyAccountContractAddress_ == null) {
+              ProxyAccountContractAddress = new global::AElf.Types.Address();
+            }
+            input.ReadMessage(ProxyAccountContractAddress);
             break;
           }
         }
@@ -444,7 +543,7 @@ namespace AElf.Contracts.Ewell {
 
   }
 
-  internal sealed partial class RegisterInput : pb::IMessage<RegisterInput>
+  public sealed partial class RegisterInput : pb::IMessage<RegisterInput>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
@@ -458,7 +557,7 @@ namespace AElf.Contracts.Ewell {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::AElf.Contracts.Ewell.EwellContractReflection.Descriptor.MessageTypes[1]; }
+      get { return global::Ewell.Contracts.Ido.EwellContractReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -478,8 +577,8 @@ namespace AElf.Contracts.Ewell {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public RegisterInput(RegisterInput other) : this() {
-      acceptedCurrency_ = other.acceptedCurrency_;
-      projectCurrency_ = other.projectCurrency_;
+      acceptedSymbol_ = other.acceptedSymbol_;
+      projectSymbol_ = other.projectSymbol_;
       crowdFundingType_ = other.crowdFundingType_;
       crowdFundingIssueAmount_ = other.crowdFundingIssueAmount_;
       preSalePrice_ = other.preSalePrice_;
@@ -497,9 +596,10 @@ namespace AElf.Contracts.Ewell {
       totalPeriod_ = other.totalPeriod_;
       additionalInfo_ = other.additionalInfo_ != null ? other.additionalInfo_.Clone() : null;
       firstDistributeProportion_ = other.firstDistributeProportion_;
-      restDistributeProportion_ = other.restDistributeProportion_;
+      restPeriodDistributeProportion_ = other.restPeriodDistributeProportion_;
       periodDuration_ = other.periodDuration_;
       tokenReleaseTime_ = other.tokenReleaseTime_ != null ? other.tokenReleaseTime_.Clone() : null;
+      whitelistUrl_ = other.whitelistUrl_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -509,27 +609,27 @@ namespace AElf.Contracts.Ewell {
       return new RegisterInput(this);
     }
 
-    /// <summary>Field number for the "accepted_currency" field.</summary>
-    public const int AcceptedCurrencyFieldNumber = 1;
-    private string acceptedCurrency_ = "";
+    /// <summary>Field number for the "accepted_symbol" field.</summary>
+    public const int AcceptedSymbolFieldNumber = 1;
+    private string acceptedSymbol_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string AcceptedCurrency {
-      get { return acceptedCurrency_; }
+    public string AcceptedSymbol {
+      get { return acceptedSymbol_; }
       set {
-        acceptedCurrency_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        acceptedSymbol_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
-    /// <summary>Field number for the "project_currency" field.</summary>
-    public const int ProjectCurrencyFieldNumber = 2;
-    private string projectCurrency_ = "";
+    /// <summary>Field number for the "project_symbol" field.</summary>
+    public const int ProjectSymbolFieldNumber = 2;
+    private string projectSymbol_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string ProjectCurrency {
-      get { return projectCurrency_; }
+    public string ProjectSymbol {
+      get { return projectSymbol_; }
       set {
-        projectCurrency_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        projectSymbol_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -631,10 +731,10 @@ namespace AElf.Contracts.Ewell {
 
     /// <summary>Field number for the "list_market_info" field.</summary>
     public const int ListMarketInfoFieldNumber = 11;
-    private global::AElf.Contracts.Ewell.ListMarketInfo listMarketInfo_;
+    private global::Ewell.Contracts.Ido.ListMarketInfo listMarketInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::AElf.Contracts.Ewell.ListMarketInfo ListMarketInfo {
+    public global::Ewell.Contracts.Ido.ListMarketInfo ListMarketInfo {
       get { return listMarketInfo_; }
       set {
         listMarketInfo_ = value;
@@ -715,10 +815,10 @@ namespace AElf.Contracts.Ewell {
 
     /// <summary>Field number for the "additional_info" field.</summary>
     public const int AdditionalInfoFieldNumber = 18;
-    private global::AElf.Contracts.Ewell.AdditionalInfo additionalInfo_;
+    private global::Ewell.Contracts.Ido.AdditionalInfo additionalInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::AElf.Contracts.Ewell.AdditionalInfo AdditionalInfo {
+    public global::Ewell.Contracts.Ido.AdditionalInfo AdditionalInfo {
       get { return additionalInfo_; }
       set {
         additionalInfo_ = value;
@@ -737,15 +837,15 @@ namespace AElf.Contracts.Ewell {
       }
     }
 
-    /// <summary>Field number for the "rest_distribute_proportion" field.</summary>
-    public const int RestDistributeProportionFieldNumber = 20;
-    private int restDistributeProportion_;
+    /// <summary>Field number for the "rest_period_distribute_proportion" field.</summary>
+    public const int RestPeriodDistributeProportionFieldNumber = 20;
+    private int restPeriodDistributeProportion_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int RestDistributeProportion {
-      get { return restDistributeProportion_; }
+    public int RestPeriodDistributeProportion {
+      get { return restPeriodDistributeProportion_; }
       set {
-        restDistributeProportion_ = value;
+        restPeriodDistributeProportion_ = value;
       }
     }
 
@@ -773,6 +873,18 @@ namespace AElf.Contracts.Ewell {
       }
     }
 
+    /// <summary>Field number for the "whitelist_url" field.</summary>
+    public const int WhitelistUrlFieldNumber = 23;
+    private string whitelistUrl_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string WhitelistUrl {
+      get { return whitelistUrl_; }
+      set {
+        whitelistUrl_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -788,8 +900,8 @@ namespace AElf.Contracts.Ewell {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (AcceptedCurrency != other.AcceptedCurrency) return false;
-      if (ProjectCurrency != other.ProjectCurrency) return false;
+      if (AcceptedSymbol != other.AcceptedSymbol) return false;
+      if (ProjectSymbol != other.ProjectSymbol) return false;
       if (CrowdFundingType != other.CrowdFundingType) return false;
       if (CrowdFundingIssueAmount != other.CrowdFundingIssueAmount) return false;
       if (PreSalePrice != other.PreSalePrice) return false;
@@ -807,9 +919,10 @@ namespace AElf.Contracts.Ewell {
       if (TotalPeriod != other.TotalPeriod) return false;
       if (!object.Equals(AdditionalInfo, other.AdditionalInfo)) return false;
       if (FirstDistributeProportion != other.FirstDistributeProportion) return false;
-      if (RestDistributeProportion != other.RestDistributeProportion) return false;
+      if (RestPeriodDistributeProportion != other.RestPeriodDistributeProportion) return false;
       if (PeriodDuration != other.PeriodDuration) return false;
       if (!object.Equals(TokenReleaseTime, other.TokenReleaseTime)) return false;
+      if (WhitelistUrl != other.WhitelistUrl) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -817,8 +930,8 @@ namespace AElf.Contracts.Ewell {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (AcceptedCurrency.Length != 0) hash ^= AcceptedCurrency.GetHashCode();
-      if (ProjectCurrency.Length != 0) hash ^= ProjectCurrency.GetHashCode();
+      if (AcceptedSymbol.Length != 0) hash ^= AcceptedSymbol.GetHashCode();
+      if (ProjectSymbol.Length != 0) hash ^= ProjectSymbol.GetHashCode();
       if (CrowdFundingType.Length != 0) hash ^= CrowdFundingType.GetHashCode();
       if (CrowdFundingIssueAmount != 0L) hash ^= CrowdFundingIssueAmount.GetHashCode();
       if (PreSalePrice != 0L) hash ^= PreSalePrice.GetHashCode();
@@ -836,9 +949,10 @@ namespace AElf.Contracts.Ewell {
       if (TotalPeriod != 0) hash ^= TotalPeriod.GetHashCode();
       if (additionalInfo_ != null) hash ^= AdditionalInfo.GetHashCode();
       if (FirstDistributeProportion != 0) hash ^= FirstDistributeProportion.GetHashCode();
-      if (RestDistributeProportion != 0) hash ^= RestDistributeProportion.GetHashCode();
+      if (RestPeriodDistributeProportion != 0) hash ^= RestPeriodDistributeProportion.GetHashCode();
       if (PeriodDuration != 0L) hash ^= PeriodDuration.GetHashCode();
       if (tokenReleaseTime_ != null) hash ^= TokenReleaseTime.GetHashCode();
+      if (WhitelistUrl.Length != 0) hash ^= WhitelistUrl.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -857,13 +971,13 @@ namespace AElf.Contracts.Ewell {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (AcceptedCurrency.Length != 0) {
+      if (AcceptedSymbol.Length != 0) {
         output.WriteRawTag(10);
-        output.WriteString(AcceptedCurrency);
+        output.WriteString(AcceptedSymbol);
       }
-      if (ProjectCurrency.Length != 0) {
+      if (ProjectSymbol.Length != 0) {
         output.WriteRawTag(18);
-        output.WriteString(ProjectCurrency);
+        output.WriteString(ProjectSymbol);
       }
       if (CrowdFundingType.Length != 0) {
         output.WriteRawTag(26);
@@ -933,9 +1047,9 @@ namespace AElf.Contracts.Ewell {
         output.WriteRawTag(152, 1);
         output.WriteInt32(FirstDistributeProportion);
       }
-      if (RestDistributeProportion != 0) {
+      if (RestPeriodDistributeProportion != 0) {
         output.WriteRawTag(160, 1);
-        output.WriteInt32(RestDistributeProportion);
+        output.WriteInt32(RestPeriodDistributeProportion);
       }
       if (PeriodDuration != 0L) {
         output.WriteRawTag(168, 1);
@@ -944,6 +1058,10 @@ namespace AElf.Contracts.Ewell {
       if (tokenReleaseTime_ != null) {
         output.WriteRawTag(178, 1);
         output.WriteMessage(TokenReleaseTime);
+      }
+      if (WhitelistUrl.Length != 0) {
+        output.WriteRawTag(186, 1);
+        output.WriteString(WhitelistUrl);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -955,13 +1073,13 @@ namespace AElf.Contracts.Ewell {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (AcceptedCurrency.Length != 0) {
+      if (AcceptedSymbol.Length != 0) {
         output.WriteRawTag(10);
-        output.WriteString(AcceptedCurrency);
+        output.WriteString(AcceptedSymbol);
       }
-      if (ProjectCurrency.Length != 0) {
+      if (ProjectSymbol.Length != 0) {
         output.WriteRawTag(18);
-        output.WriteString(ProjectCurrency);
+        output.WriteString(ProjectSymbol);
       }
       if (CrowdFundingType.Length != 0) {
         output.WriteRawTag(26);
@@ -1031,9 +1149,9 @@ namespace AElf.Contracts.Ewell {
         output.WriteRawTag(152, 1);
         output.WriteInt32(FirstDistributeProportion);
       }
-      if (RestDistributeProportion != 0) {
+      if (RestPeriodDistributeProportion != 0) {
         output.WriteRawTag(160, 1);
-        output.WriteInt32(RestDistributeProportion);
+        output.WriteInt32(RestPeriodDistributeProportion);
       }
       if (PeriodDuration != 0L) {
         output.WriteRawTag(168, 1);
@@ -1042,6 +1160,10 @@ namespace AElf.Contracts.Ewell {
       if (tokenReleaseTime_ != null) {
         output.WriteRawTag(178, 1);
         output.WriteMessage(TokenReleaseTime);
+      }
+      if (WhitelistUrl.Length != 0) {
+        output.WriteRawTag(186, 1);
+        output.WriteString(WhitelistUrl);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -1053,11 +1175,11 @@ namespace AElf.Contracts.Ewell {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (AcceptedCurrency.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(AcceptedCurrency);
+      if (AcceptedSymbol.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(AcceptedSymbol);
       }
-      if (ProjectCurrency.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(ProjectCurrency);
+      if (ProjectSymbol.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(ProjectSymbol);
       }
       if (CrowdFundingType.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(CrowdFundingType);
@@ -1110,14 +1232,17 @@ namespace AElf.Contracts.Ewell {
       if (FirstDistributeProportion != 0) {
         size += 2 + pb::CodedOutputStream.ComputeInt32Size(FirstDistributeProportion);
       }
-      if (RestDistributeProportion != 0) {
-        size += 2 + pb::CodedOutputStream.ComputeInt32Size(RestDistributeProportion);
+      if (RestPeriodDistributeProportion != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(RestPeriodDistributeProportion);
       }
       if (PeriodDuration != 0L) {
         size += 2 + pb::CodedOutputStream.ComputeInt64Size(PeriodDuration);
       }
       if (tokenReleaseTime_ != null) {
         size += 2 + pb::CodedOutputStream.ComputeMessageSize(TokenReleaseTime);
+      }
+      if (WhitelistUrl.Length != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeStringSize(WhitelistUrl);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -1131,11 +1256,11 @@ namespace AElf.Contracts.Ewell {
       if (other == null) {
         return;
       }
-      if (other.AcceptedCurrency.Length != 0) {
-        AcceptedCurrency = other.AcceptedCurrency;
+      if (other.AcceptedSymbol.Length != 0) {
+        AcceptedSymbol = other.AcceptedSymbol;
       }
-      if (other.ProjectCurrency.Length != 0) {
-        ProjectCurrency = other.ProjectCurrency;
+      if (other.ProjectSymbol.Length != 0) {
+        ProjectSymbol = other.ProjectSymbol;
       }
       if (other.CrowdFundingType.Length != 0) {
         CrowdFundingType = other.CrowdFundingType;
@@ -1169,7 +1294,7 @@ namespace AElf.Contracts.Ewell {
       }
       if (other.listMarketInfo_ != null) {
         if (listMarketInfo_ == null) {
-          ListMarketInfo = new global::AElf.Contracts.Ewell.ListMarketInfo();
+          ListMarketInfo = new global::Ewell.Contracts.Ido.ListMarketInfo();
         }
         ListMarketInfo.MergeFrom(other.ListMarketInfo);
       }
@@ -1199,15 +1324,15 @@ namespace AElf.Contracts.Ewell {
       }
       if (other.additionalInfo_ != null) {
         if (additionalInfo_ == null) {
-          AdditionalInfo = new global::AElf.Contracts.Ewell.AdditionalInfo();
+          AdditionalInfo = new global::Ewell.Contracts.Ido.AdditionalInfo();
         }
         AdditionalInfo.MergeFrom(other.AdditionalInfo);
       }
       if (other.FirstDistributeProportion != 0) {
         FirstDistributeProportion = other.FirstDistributeProportion;
       }
-      if (other.RestDistributeProportion != 0) {
-        RestDistributeProportion = other.RestDistributeProportion;
+      if (other.RestPeriodDistributeProportion != 0) {
+        RestPeriodDistributeProportion = other.RestPeriodDistributeProportion;
       }
       if (other.PeriodDuration != 0L) {
         PeriodDuration = other.PeriodDuration;
@@ -1217,6 +1342,9 @@ namespace AElf.Contracts.Ewell {
           TokenReleaseTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
         }
         TokenReleaseTime.MergeFrom(other.TokenReleaseTime);
+      }
+      if (other.WhitelistUrl.Length != 0) {
+        WhitelistUrl = other.WhitelistUrl;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -1234,11 +1362,11 @@ namespace AElf.Contracts.Ewell {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 10: {
-            AcceptedCurrency = input.ReadString();
+            AcceptedSymbol = input.ReadString();
             break;
           }
           case 18: {
-            ProjectCurrency = input.ReadString();
+            ProjectSymbol = input.ReadString();
             break;
           }
           case 26: {
@@ -1281,7 +1409,7 @@ namespace AElf.Contracts.Ewell {
           }
           case 90: {
             if (listMarketInfo_ == null) {
-              ListMarketInfo = new global::AElf.Contracts.Ewell.ListMarketInfo();
+              ListMarketInfo = new global::Ewell.Contracts.Ido.ListMarketInfo();
             }
             input.ReadMessage(ListMarketInfo);
             break;
@@ -1318,7 +1446,7 @@ namespace AElf.Contracts.Ewell {
           }
           case 146: {
             if (additionalInfo_ == null) {
-              AdditionalInfo = new global::AElf.Contracts.Ewell.AdditionalInfo();
+              AdditionalInfo = new global::Ewell.Contracts.Ido.AdditionalInfo();
             }
             input.ReadMessage(AdditionalInfo);
             break;
@@ -1328,7 +1456,7 @@ namespace AElf.Contracts.Ewell {
             break;
           }
           case 160: {
-            RestDistributeProportion = input.ReadInt32();
+            RestPeriodDistributeProportion = input.ReadInt32();
             break;
           }
           case 168: {
@@ -1340,6 +1468,10 @@ namespace AElf.Contracts.Ewell {
               TokenReleaseTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
             }
             input.ReadMessage(TokenReleaseTime);
+            break;
+          }
+          case 186: {
+            WhitelistUrl = input.ReadString();
             break;
           }
         }
@@ -1358,11 +1490,11 @@ namespace AElf.Contracts.Ewell {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 10: {
-            AcceptedCurrency = input.ReadString();
+            AcceptedSymbol = input.ReadString();
             break;
           }
           case 18: {
-            ProjectCurrency = input.ReadString();
+            ProjectSymbol = input.ReadString();
             break;
           }
           case 26: {
@@ -1405,7 +1537,7 @@ namespace AElf.Contracts.Ewell {
           }
           case 90: {
             if (listMarketInfo_ == null) {
-              ListMarketInfo = new global::AElf.Contracts.Ewell.ListMarketInfo();
+              ListMarketInfo = new global::Ewell.Contracts.Ido.ListMarketInfo();
             }
             input.ReadMessage(ListMarketInfo);
             break;
@@ -1442,7 +1574,7 @@ namespace AElf.Contracts.Ewell {
           }
           case 146: {
             if (additionalInfo_ == null) {
-              AdditionalInfo = new global::AElf.Contracts.Ewell.AdditionalInfo();
+              AdditionalInfo = new global::Ewell.Contracts.Ido.AdditionalInfo();
             }
             input.ReadMessage(AdditionalInfo);
             break;
@@ -1452,7 +1584,7 @@ namespace AElf.Contracts.Ewell {
             break;
           }
           case 160: {
-            RestDistributeProportion = input.ReadInt32();
+            RestPeriodDistributeProportion = input.ReadInt32();
             break;
           }
           case 168: {
@@ -1466,6 +1598,10 @@ namespace AElf.Contracts.Ewell {
             input.ReadMessage(TokenReleaseTime);
             break;
           }
+          case 186: {
+            WhitelistUrl = input.ReadString();
+            break;
+          }
         }
       }
     }
@@ -1473,7 +1609,7 @@ namespace AElf.Contracts.Ewell {
 
   }
 
-  internal sealed partial class UpdateAdditionalInfoInput : pb::IMessage<UpdateAdditionalInfoInput>
+  public sealed partial class UpdateAdditionalInfoInput : pb::IMessage<UpdateAdditionalInfoInput>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
@@ -1487,7 +1623,7 @@ namespace AElf.Contracts.Ewell {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::AElf.Contracts.Ewell.EwellContractReflection.Descriptor.MessageTypes[2]; }
+      get { return global::Ewell.Contracts.Ido.EwellContractReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1532,10 +1668,10 @@ namespace AElf.Contracts.Ewell {
 
     /// <summary>Field number for the "additional_info" field.</summary>
     public const int AdditionalInfoFieldNumber = 2;
-    private global::AElf.Contracts.Ewell.AdditionalInfo additionalInfo_;
+    private global::Ewell.Contracts.Ido.AdditionalInfo additionalInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::AElf.Contracts.Ewell.AdditionalInfo AdditionalInfo {
+    public global::Ewell.Contracts.Ido.AdditionalInfo AdditionalInfo {
       get { return additionalInfo_; }
       set {
         additionalInfo_ = value;
@@ -1648,7 +1784,7 @@ namespace AElf.Contracts.Ewell {
       }
       if (other.additionalInfo_ != null) {
         if (additionalInfo_ == null) {
-          AdditionalInfo = new global::AElf.Contracts.Ewell.AdditionalInfo();
+          AdditionalInfo = new global::Ewell.Contracts.Ido.AdditionalInfo();
         }
         AdditionalInfo.MergeFrom(other.AdditionalInfo);
       }
@@ -1676,7 +1812,7 @@ namespace AElf.Contracts.Ewell {
           }
           case 18: {
             if (additionalInfo_ == null) {
-              AdditionalInfo = new global::AElf.Contracts.Ewell.AdditionalInfo();
+              AdditionalInfo = new global::Ewell.Contracts.Ido.AdditionalInfo();
             }
             input.ReadMessage(AdditionalInfo);
             break;
@@ -1705,7 +1841,7 @@ namespace AElf.Contracts.Ewell {
           }
           case 18: {
             if (additionalInfo_ == null) {
-              AdditionalInfo = new global::AElf.Contracts.Ewell.AdditionalInfo();
+              AdditionalInfo = new global::Ewell.Contracts.Ido.AdditionalInfo();
             }
             input.ReadMessage(AdditionalInfo);
             break;
@@ -1717,7 +1853,7 @@ namespace AElf.Contracts.Ewell {
 
   }
 
-  internal sealed partial class AddWhitelistsInput : pb::IMessage<AddWhitelistsInput>
+  public sealed partial class AddWhitelistsInput : pb::IMessage<AddWhitelistsInput>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
@@ -1731,7 +1867,7 @@ namespace AElf.Contracts.Ewell {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::AElf.Contracts.Ewell.EwellContractReflection.Descriptor.MessageTypes[3]; }
+      get { return global::Ewell.Contracts.Ido.EwellContractReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1941,7 +2077,7 @@ namespace AElf.Contracts.Ewell {
 
   }
 
-  internal sealed partial class RemoveWhitelistsInput : pb::IMessage<RemoveWhitelistsInput>
+  public sealed partial class RemoveWhitelistsInput : pb::IMessage<RemoveWhitelistsInput>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
@@ -1955,7 +2091,7 @@ namespace AElf.Contracts.Ewell {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::AElf.Contracts.Ewell.EwellContractReflection.Descriptor.MessageTypes[4]; }
+      get { return global::Ewell.Contracts.Ido.EwellContractReflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2165,7 +2301,7 @@ namespace AElf.Contracts.Ewell {
 
   }
 
-  internal sealed partial class InvestInput : pb::IMessage<InvestInput>
+  public sealed partial class InvestInput : pb::IMessage<InvestInput>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
@@ -2179,7 +2315,7 @@ namespace AElf.Contracts.Ewell {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::AElf.Contracts.Ewell.EwellContractReflection.Descriptor.MessageTypes[5]; }
+      get { return global::Ewell.Contracts.Ido.EwellContractReflection.Descriptor.MessageTypes[5]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2200,7 +2336,7 @@ namespace AElf.Contracts.Ewell {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public InvestInput(InvestInput other) : this() {
       projectId_ = other.projectId_ != null ? other.projectId_.Clone() : null;
-      currency_ = other.currency_;
+      symbol_ = other.symbol_;
       investAmount_ = other.investAmount_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -2223,15 +2359,15 @@ namespace AElf.Contracts.Ewell {
       }
     }
 
-    /// <summary>Field number for the "currency" field.</summary>
-    public const int CurrencyFieldNumber = 2;
-    private string currency_ = "";
+    /// <summary>Field number for the "symbol" field.</summary>
+    public const int SymbolFieldNumber = 2;
+    private string symbol_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string Currency {
-      get { return currency_; }
+    public string Symbol {
+      get { return symbol_; }
       set {
-        currency_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        symbol_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -2263,7 +2399,7 @@ namespace AElf.Contracts.Ewell {
         return true;
       }
       if (!object.Equals(ProjectId, other.ProjectId)) return false;
-      if (Currency != other.Currency) return false;
+      if (Symbol != other.Symbol) return false;
       if (InvestAmount != other.InvestAmount) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -2273,7 +2409,7 @@ namespace AElf.Contracts.Ewell {
     public override int GetHashCode() {
       int hash = 1;
       if (projectId_ != null) hash ^= ProjectId.GetHashCode();
-      if (Currency.Length != 0) hash ^= Currency.GetHashCode();
+      if (Symbol.Length != 0) hash ^= Symbol.GetHashCode();
       if (InvestAmount != 0L) hash ^= InvestAmount.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -2297,9 +2433,9 @@ namespace AElf.Contracts.Ewell {
         output.WriteRawTag(10);
         output.WriteMessage(ProjectId);
       }
-      if (Currency.Length != 0) {
+      if (Symbol.Length != 0) {
         output.WriteRawTag(18);
-        output.WriteString(Currency);
+        output.WriteString(Symbol);
       }
       if (InvestAmount != 0L) {
         output.WriteRawTag(24);
@@ -2319,9 +2455,9 @@ namespace AElf.Contracts.Ewell {
         output.WriteRawTag(10);
         output.WriteMessage(ProjectId);
       }
-      if (Currency.Length != 0) {
+      if (Symbol.Length != 0) {
         output.WriteRawTag(18);
-        output.WriteString(Currency);
+        output.WriteString(Symbol);
       }
       if (InvestAmount != 0L) {
         output.WriteRawTag(24);
@@ -2340,8 +2476,8 @@ namespace AElf.Contracts.Ewell {
       if (projectId_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(ProjectId);
       }
-      if (Currency.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Currency);
+      if (Symbol.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Symbol);
       }
       if (InvestAmount != 0L) {
         size += 1 + pb::CodedOutputStream.ComputeInt64Size(InvestAmount);
@@ -2364,8 +2500,8 @@ namespace AElf.Contracts.Ewell {
         }
         ProjectId.MergeFrom(other.ProjectId);
       }
-      if (other.Currency.Length != 0) {
-        Currency = other.Currency;
+      if (other.Symbol.Length != 0) {
+        Symbol = other.Symbol;
       }
       if (other.InvestAmount != 0L) {
         InvestAmount = other.InvestAmount;
@@ -2393,7 +2529,7 @@ namespace AElf.Contracts.Ewell {
             break;
           }
           case 18: {
-            Currency = input.ReadString();
+            Symbol = input.ReadString();
             break;
           }
           case 24: {
@@ -2423,7 +2559,7 @@ namespace AElf.Contracts.Ewell {
             break;
           }
           case 18: {
-            Currency = input.ReadString();
+            Symbol = input.ReadString();
             break;
           }
           case 24: {
@@ -2437,7 +2573,7 @@ namespace AElf.Contracts.Ewell {
 
   }
 
-  internal sealed partial class ClaimInput : pb::IMessage<ClaimInput>
+  public sealed partial class ClaimInput : pb::IMessage<ClaimInput>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
@@ -2451,7 +2587,7 @@ namespace AElf.Contracts.Ewell {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::AElf.Contracts.Ewell.EwellContractReflection.Descriptor.MessageTypes[6]; }
+      get { return global::Ewell.Contracts.Ido.EwellContractReflection.Descriptor.MessageTypes[6]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2681,7 +2817,7 @@ namespace AElf.Contracts.Ewell {
 
   }
 
-  internal sealed partial class GetInvestDetailInput : pb::IMessage<GetInvestDetailInput>
+  public sealed partial class GetInvestDetailInput : pb::IMessage<GetInvestDetailInput>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
@@ -2695,7 +2831,7 @@ namespace AElf.Contracts.Ewell {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::AElf.Contracts.Ewell.EwellContractReflection.Descriptor.MessageTypes[7]; }
+      get { return global::Ewell.Contracts.Ido.EwellContractReflection.Descriptor.MessageTypes[7]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2729,8 +2865,6 @@ namespace AElf.Contracts.Ewell {
     /// <summary>Field number for the "project_id" field.</summary>
     public const int ProjectIdFieldNumber = 1;
     private global::AElf.Types.Hash projectId_;
-    /// <summary>
-    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::AElf.Types.Hash ProjectId {
@@ -2927,7 +3061,7 @@ namespace AElf.Contracts.Ewell {
 
   }
 
-  internal sealed partial class GetProfitDetailInput : pb::IMessage<GetProfitDetailInput>
+  public sealed partial class GetProfitDetailInput : pb::IMessage<GetProfitDetailInput>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
@@ -2941,7 +3075,7 @@ namespace AElf.Contracts.Ewell {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::AElf.Contracts.Ewell.EwellContractReflection.Descriptor.MessageTypes[8]; }
+      get { return global::Ewell.Contracts.Ido.EwellContractReflection.Descriptor.MessageTypes[8]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2975,8 +3109,6 @@ namespace AElf.Contracts.Ewell {
     /// <summary>Field number for the "project_id" field.</summary>
     public const int ProjectIdFieldNumber = 1;
     private global::AElf.Types.Hash projectId_;
-    /// <summary>
-    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::AElf.Types.Hash ProjectId {
@@ -3173,7 +3305,7 @@ namespace AElf.Contracts.Ewell {
 
   }
 
-  internal sealed partial class SetWhitelistIdInput : pb::IMessage<SetWhitelistIdInput>
+  public sealed partial class SetWhitelistIdInput : pb::IMessage<SetWhitelistIdInput>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
@@ -3187,7 +3319,7 @@ namespace AElf.Contracts.Ewell {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::AElf.Contracts.Ewell.EwellContractReflection.Descriptor.MessageTypes[9]; }
+      get { return global::Ewell.Contracts.Ido.EwellContractReflection.Descriptor.MessageTypes[9]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3221,8 +3353,6 @@ namespace AElf.Contracts.Ewell {
     /// <summary>Field number for the "project_id" field.</summary>
     public const int ProjectIdFieldNumber = 1;
     private global::AElf.Types.Hash projectId_;
-    /// <summary>
-    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::AElf.Types.Hash ProjectId {
@@ -3410,7 +3540,7 @@ namespace AElf.Contracts.Ewell {
 
   }
 
-  internal sealed partial class ReFundAllInput : pb::IMessage<ReFundAllInput>
+  public sealed partial class ReFundAllInput : pb::IMessage<ReFundAllInput>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
@@ -3424,7 +3554,7 @@ namespace AElf.Contracts.Ewell {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::AElf.Contracts.Ewell.EwellContractReflection.Descriptor.MessageTypes[10]; }
+      get { return global::Ewell.Contracts.Ido.EwellContractReflection.Descriptor.MessageTypes[10]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3458,8 +3588,6 @@ namespace AElf.Contracts.Ewell {
     /// <summary>Field number for the "project_id" field.</summary>
     public const int ProjectIdFieldNumber = 1;
     private global::AElf.Types.Hash projectId_;
-    /// <summary>
-    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::AElf.Types.Hash ProjectId {
@@ -3639,7 +3767,7 @@ namespace AElf.Contracts.Ewell {
   /// <summary>
   ///Output
   /// </summary>
-  internal sealed partial class ExtraInfoIdList : pb::IMessage<ExtraInfoIdList>
+  public sealed partial class ExtraInfoIdList : pb::IMessage<ExtraInfoIdList>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
@@ -3653,7 +3781,7 @@ namespace AElf.Contracts.Ewell {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::AElf.Contracts.Ewell.EwellContractReflection.Descriptor.MessageTypes[11]; }
+      get { return global::Ewell.Contracts.Ido.EwellContractReflection.Descriptor.MessageTypes[11]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3685,12 +3813,12 @@ namespace AElf.Contracts.Ewell {
 
     /// <summary>Field number for the "value" field.</summary>
     public const int ValueFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::AElf.Contracts.Ewell.ExtraInfoId> _repeated_value_codec
-        = pb::FieldCodec.ForMessage(10, global::AElf.Contracts.Ewell.ExtraInfoId.Parser);
-    private readonly pbc::RepeatedField<global::AElf.Contracts.Ewell.ExtraInfoId> value_ = new pbc::RepeatedField<global::AElf.Contracts.Ewell.ExtraInfoId>();
+    private static readonly pb::FieldCodec<global::Ewell.Contracts.Ido.ExtraInfoId> _repeated_value_codec
+        = pb::FieldCodec.ForMessage(10, global::Ewell.Contracts.Ido.ExtraInfoId.Parser);
+    private readonly pbc::RepeatedField<global::Ewell.Contracts.Ido.ExtraInfoId> value_ = new pbc::RepeatedField<global::Ewell.Contracts.Ido.ExtraInfoId>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::AElf.Contracts.Ewell.ExtraInfoId> Value {
+    public pbc::RepeatedField<global::Ewell.Contracts.Ido.ExtraInfoId> Value {
       get { return value_; }
     }
 
@@ -3817,7 +3945,7 @@ namespace AElf.Contracts.Ewell {
 
   }
 
-  internal sealed partial class ExtraInfoId : pb::IMessage<ExtraInfoId>
+  public sealed partial class ExtraInfoId : pb::IMessage<ExtraInfoId>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
@@ -3831,7 +3959,7 @@ namespace AElf.Contracts.Ewell {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::AElf.Contracts.Ewell.EwellContractReflection.Descriptor.MessageTypes[12]; }
+      get { return global::Ewell.Contracts.Ido.EwellContractReflection.Descriptor.MessageTypes[12]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4061,7 +4189,7 @@ namespace AElf.Contracts.Ewell {
 
   }
 
-  internal sealed partial class ProjectInfo : pb::IMessage<ProjectInfo>
+  public sealed partial class ProjectInfo : pb::IMessage<ProjectInfo>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
@@ -4075,7 +4203,7 @@ namespace AElf.Contracts.Ewell {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::AElf.Contracts.Ewell.EwellContractReflection.Descriptor.MessageTypes[13]; }
+      get { return global::Ewell.Contracts.Ido.EwellContractReflection.Descriptor.MessageTypes[13]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4096,8 +4224,8 @@ namespace AElf.Contracts.Ewell {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ProjectInfo(ProjectInfo other) : this() {
       projectId_ = other.projectId_ != null ? other.projectId_.Clone() : null;
-      acceptedCurrency_ = other.acceptedCurrency_;
-      projectCurrency_ = other.projectCurrency_;
+      acceptedSymbol_ = other.acceptedSymbol_;
+      projectSymbol_ = other.projectSymbol_;
       crowdFundingType_ = other.crowdFundingType_;
       crowdFundingIssueAmount_ = other.crowdFundingIssueAmount_;
       preSalePrice_ = other.preSalePrice_;
@@ -4108,7 +4236,7 @@ namespace AElf.Contracts.Ewell {
       isBurnRestToken_ = other.isBurnRestToken_;
       additionalInfo_ = other.additionalInfo_ != null ? other.additionalInfo_.Clone() : null;
       creator_ = other.creator_ != null ? other.creator_.Clone() : null;
-      toRaisedAmount_ = other.toRaisedAmount_;
+      targetRaisedAmount_ = other.targetRaisedAmount_;
       currentRaisedAmount_ = other.currentRaisedAmount_;
       enabled_ = other.enabled_;
       virtualAddressHash_ = other.virtualAddressHash_ != null ? other.virtualAddressHash_.Clone() : null;
@@ -4134,27 +4262,27 @@ namespace AElf.Contracts.Ewell {
       }
     }
 
-    /// <summary>Field number for the "accepted_currency" field.</summary>
-    public const int AcceptedCurrencyFieldNumber = 2;
-    private string acceptedCurrency_ = "";
+    /// <summary>Field number for the "accepted_symbol" field.</summary>
+    public const int AcceptedSymbolFieldNumber = 2;
+    private string acceptedSymbol_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string AcceptedCurrency {
-      get { return acceptedCurrency_; }
+    public string AcceptedSymbol {
+      get { return acceptedSymbol_; }
       set {
-        acceptedCurrency_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        acceptedSymbol_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
-    /// <summary>Field number for the "project_currency" field.</summary>
-    public const int ProjectCurrencyFieldNumber = 3;
-    private string projectCurrency_ = "";
+    /// <summary>Field number for the "project_symbol" field.</summary>
+    public const int ProjectSymbolFieldNumber = 3;
+    private string projectSymbol_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string ProjectCurrency {
-      get { return projectCurrency_; }
+    public string ProjectSymbol {
+      get { return projectSymbol_; }
       set {
-        projectCurrency_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        projectSymbol_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -4256,10 +4384,10 @@ namespace AElf.Contracts.Ewell {
 
     /// <summary>Field number for the "additional_info" field.</summary>
     public const int AdditionalInfoFieldNumber = 13;
-    private global::AElf.Contracts.Ewell.AdditionalInfo additionalInfo_;
+    private global::Ewell.Contracts.Ido.AdditionalInfo additionalInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::AElf.Contracts.Ewell.AdditionalInfo AdditionalInfo {
+    public global::Ewell.Contracts.Ido.AdditionalInfo AdditionalInfo {
       get { return additionalInfo_; }
       set {
         additionalInfo_ = value;
@@ -4278,23 +4406,21 @@ namespace AElf.Contracts.Ewell {
       }
     }
 
-    /// <summary>Field number for the "to_raised_amount" field.</summary>
-    public const int ToRaisedAmountFieldNumber = 15;
-    private long toRaisedAmount_;
+    /// <summary>Field number for the "target_raised_amount" field.</summary>
+    public const int TargetRaisedAmountFieldNumber = 15;
+    private long targetRaisedAmount_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public long ToRaisedAmount {
-      get { return toRaisedAmount_; }
+    public long TargetRaisedAmount {
+      get { return targetRaisedAmount_; }
       set {
-        toRaisedAmount_ = value;
+        targetRaisedAmount_ = value;
       }
     }
 
     /// <summary>Field number for the "current_raised_amount" field.</summary>
     public const int CurrentRaisedAmountFieldNumber = 16;
     private long currentRaisedAmount_;
-    /// <summary>
-    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public long CurrentRaisedAmount {
@@ -4307,8 +4433,6 @@ namespace AElf.Contracts.Ewell {
     /// <summary>Field number for the "enabled" field.</summary>
     public const int EnabledFieldNumber = 17;
     private bool enabled_;
-    /// <summary>
-    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Enabled {
@@ -4358,8 +4482,8 @@ namespace AElf.Contracts.Ewell {
         return true;
       }
       if (!object.Equals(ProjectId, other.ProjectId)) return false;
-      if (AcceptedCurrency != other.AcceptedCurrency) return false;
-      if (ProjectCurrency != other.ProjectCurrency) return false;
+      if (AcceptedSymbol != other.AcceptedSymbol) return false;
+      if (ProjectSymbol != other.ProjectSymbol) return false;
       if (CrowdFundingType != other.CrowdFundingType) return false;
       if (CrowdFundingIssueAmount != other.CrowdFundingIssueAmount) return false;
       if (PreSalePrice != other.PreSalePrice) return false;
@@ -4370,7 +4494,7 @@ namespace AElf.Contracts.Ewell {
       if (IsBurnRestToken != other.IsBurnRestToken) return false;
       if (!object.Equals(AdditionalInfo, other.AdditionalInfo)) return false;
       if (!object.Equals(Creator, other.Creator)) return false;
-      if (ToRaisedAmount != other.ToRaisedAmount) return false;
+      if (TargetRaisedAmount != other.TargetRaisedAmount) return false;
       if (CurrentRaisedAmount != other.CurrentRaisedAmount) return false;
       if (Enabled != other.Enabled) return false;
       if (!object.Equals(VirtualAddressHash, other.VirtualAddressHash)) return false;
@@ -4383,8 +4507,8 @@ namespace AElf.Contracts.Ewell {
     public override int GetHashCode() {
       int hash = 1;
       if (projectId_ != null) hash ^= ProjectId.GetHashCode();
-      if (AcceptedCurrency.Length != 0) hash ^= AcceptedCurrency.GetHashCode();
-      if (ProjectCurrency.Length != 0) hash ^= ProjectCurrency.GetHashCode();
+      if (AcceptedSymbol.Length != 0) hash ^= AcceptedSymbol.GetHashCode();
+      if (ProjectSymbol.Length != 0) hash ^= ProjectSymbol.GetHashCode();
       if (CrowdFundingType.Length != 0) hash ^= CrowdFundingType.GetHashCode();
       if (CrowdFundingIssueAmount != 0L) hash ^= CrowdFundingIssueAmount.GetHashCode();
       if (PreSalePrice != 0L) hash ^= PreSalePrice.GetHashCode();
@@ -4395,7 +4519,7 @@ namespace AElf.Contracts.Ewell {
       if (IsBurnRestToken != false) hash ^= IsBurnRestToken.GetHashCode();
       if (additionalInfo_ != null) hash ^= AdditionalInfo.GetHashCode();
       if (creator_ != null) hash ^= Creator.GetHashCode();
-      if (ToRaisedAmount != 0L) hash ^= ToRaisedAmount.GetHashCode();
+      if (TargetRaisedAmount != 0L) hash ^= TargetRaisedAmount.GetHashCode();
       if (CurrentRaisedAmount != 0L) hash ^= CurrentRaisedAmount.GetHashCode();
       if (Enabled != false) hash ^= Enabled.GetHashCode();
       if (virtualAddressHash_ != null) hash ^= VirtualAddressHash.GetHashCode();
@@ -4422,13 +4546,13 @@ namespace AElf.Contracts.Ewell {
         output.WriteRawTag(10);
         output.WriteMessage(ProjectId);
       }
-      if (AcceptedCurrency.Length != 0) {
+      if (AcceptedSymbol.Length != 0) {
         output.WriteRawTag(18);
-        output.WriteString(AcceptedCurrency);
+        output.WriteString(AcceptedSymbol);
       }
-      if (ProjectCurrency.Length != 0) {
+      if (ProjectSymbol.Length != 0) {
         output.WriteRawTag(26);
-        output.WriteString(ProjectCurrency);
+        output.WriteString(ProjectSymbol);
       }
       if (CrowdFundingType.Length != 0) {
         output.WriteRawTag(34);
@@ -4470,9 +4594,9 @@ namespace AElf.Contracts.Ewell {
         output.WriteRawTag(114);
         output.WriteMessage(Creator);
       }
-      if (ToRaisedAmount != 0L) {
+      if (TargetRaisedAmount != 0L) {
         output.WriteRawTag(120);
-        output.WriteInt64(ToRaisedAmount);
+        output.WriteInt64(TargetRaisedAmount);
       }
       if (CurrentRaisedAmount != 0L) {
         output.WriteRawTag(128, 1);
@@ -4504,13 +4628,13 @@ namespace AElf.Contracts.Ewell {
         output.WriteRawTag(10);
         output.WriteMessage(ProjectId);
       }
-      if (AcceptedCurrency.Length != 0) {
+      if (AcceptedSymbol.Length != 0) {
         output.WriteRawTag(18);
-        output.WriteString(AcceptedCurrency);
+        output.WriteString(AcceptedSymbol);
       }
-      if (ProjectCurrency.Length != 0) {
+      if (ProjectSymbol.Length != 0) {
         output.WriteRawTag(26);
-        output.WriteString(ProjectCurrency);
+        output.WriteString(ProjectSymbol);
       }
       if (CrowdFundingType.Length != 0) {
         output.WriteRawTag(34);
@@ -4552,9 +4676,9 @@ namespace AElf.Contracts.Ewell {
         output.WriteRawTag(114);
         output.WriteMessage(Creator);
       }
-      if (ToRaisedAmount != 0L) {
+      if (TargetRaisedAmount != 0L) {
         output.WriteRawTag(120);
-        output.WriteInt64(ToRaisedAmount);
+        output.WriteInt64(TargetRaisedAmount);
       }
       if (CurrentRaisedAmount != 0L) {
         output.WriteRawTag(128, 1);
@@ -4585,11 +4709,11 @@ namespace AElf.Contracts.Ewell {
       if (projectId_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(ProjectId);
       }
-      if (AcceptedCurrency.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(AcceptedCurrency);
+      if (AcceptedSymbol.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(AcceptedSymbol);
       }
-      if (ProjectCurrency.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(ProjectCurrency);
+      if (ProjectSymbol.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(ProjectSymbol);
       }
       if (CrowdFundingType.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(CrowdFundingType);
@@ -4621,8 +4745,8 @@ namespace AElf.Contracts.Ewell {
       if (creator_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Creator);
       }
-      if (ToRaisedAmount != 0L) {
-        size += 1 + pb::CodedOutputStream.ComputeInt64Size(ToRaisedAmount);
+      if (TargetRaisedAmount != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(TargetRaisedAmount);
       }
       if (CurrentRaisedAmount != 0L) {
         size += 2 + pb::CodedOutputStream.ComputeInt64Size(CurrentRaisedAmount);
@@ -4654,11 +4778,11 @@ namespace AElf.Contracts.Ewell {
         }
         ProjectId.MergeFrom(other.ProjectId);
       }
-      if (other.AcceptedCurrency.Length != 0) {
-        AcceptedCurrency = other.AcceptedCurrency;
+      if (other.AcceptedSymbol.Length != 0) {
+        AcceptedSymbol = other.AcceptedSymbol;
       }
-      if (other.ProjectCurrency.Length != 0) {
-        ProjectCurrency = other.ProjectCurrency;
+      if (other.ProjectSymbol.Length != 0) {
+        ProjectSymbol = other.ProjectSymbol;
       }
       if (other.CrowdFundingType.Length != 0) {
         CrowdFundingType = other.CrowdFundingType;
@@ -4692,7 +4816,7 @@ namespace AElf.Contracts.Ewell {
       }
       if (other.additionalInfo_ != null) {
         if (additionalInfo_ == null) {
-          AdditionalInfo = new global::AElf.Contracts.Ewell.AdditionalInfo();
+          AdditionalInfo = new global::Ewell.Contracts.Ido.AdditionalInfo();
         }
         AdditionalInfo.MergeFrom(other.AdditionalInfo);
       }
@@ -4702,8 +4826,8 @@ namespace AElf.Contracts.Ewell {
         }
         Creator.MergeFrom(other.Creator);
       }
-      if (other.ToRaisedAmount != 0L) {
-        ToRaisedAmount = other.ToRaisedAmount;
+      if (other.TargetRaisedAmount != 0L) {
+        TargetRaisedAmount = other.TargetRaisedAmount;
       }
       if (other.CurrentRaisedAmount != 0L) {
         CurrentRaisedAmount = other.CurrentRaisedAmount;
@@ -4746,11 +4870,11 @@ namespace AElf.Contracts.Ewell {
             break;
           }
           case 18: {
-            AcceptedCurrency = input.ReadString();
+            AcceptedSymbol = input.ReadString();
             break;
           }
           case 26: {
-            ProjectCurrency = input.ReadString();
+            ProjectSymbol = input.ReadString();
             break;
           }
           case 34: {
@@ -4793,7 +4917,7 @@ namespace AElf.Contracts.Ewell {
           }
           case 106: {
             if (additionalInfo_ == null) {
-              AdditionalInfo = new global::AElf.Contracts.Ewell.AdditionalInfo();
+              AdditionalInfo = new global::Ewell.Contracts.Ido.AdditionalInfo();
             }
             input.ReadMessage(AdditionalInfo);
             break;
@@ -4806,7 +4930,7 @@ namespace AElf.Contracts.Ewell {
             break;
           }
           case 120: {
-            ToRaisedAmount = input.ReadInt64();
+            TargetRaisedAmount = input.ReadInt64();
             break;
           }
           case 128: {
@@ -4854,11 +4978,11 @@ namespace AElf.Contracts.Ewell {
             break;
           }
           case 18: {
-            AcceptedCurrency = input.ReadString();
+            AcceptedSymbol = input.ReadString();
             break;
           }
           case 26: {
-            ProjectCurrency = input.ReadString();
+            ProjectSymbol = input.ReadString();
             break;
           }
           case 34: {
@@ -4901,7 +5025,7 @@ namespace AElf.Contracts.Ewell {
           }
           case 106: {
             if (additionalInfo_ == null) {
-              AdditionalInfo = new global::AElf.Contracts.Ewell.AdditionalInfo();
+              AdditionalInfo = new global::Ewell.Contracts.Ido.AdditionalInfo();
             }
             input.ReadMessage(AdditionalInfo);
             break;
@@ -4914,7 +5038,7 @@ namespace AElf.Contracts.Ewell {
             break;
           }
           case 120: {
-            ToRaisedAmount = input.ReadInt64();
+            TargetRaisedAmount = input.ReadInt64();
             break;
           }
           case 128: {
@@ -4946,7 +5070,7 @@ namespace AElf.Contracts.Ewell {
 
   }
 
-  internal sealed partial class ProjectListInfo : pb::IMessage<ProjectListInfo>
+  public sealed partial class ProjectListInfo : pb::IMessage<ProjectListInfo>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
@@ -4960,7 +5084,7 @@ namespace AElf.Contracts.Ewell {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::AElf.Contracts.Ewell.EwellContractReflection.Descriptor.MessageTypes[14]; }
+      get { return global::Ewell.Contracts.Ido.EwellContractReflection.Descriptor.MessageTypes[14]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4988,7 +5112,7 @@ namespace AElf.Contracts.Ewell {
       latestPeriod_ = other.latestPeriod_;
       totalPeriod_ = other.totalPeriod_;
       firstDistributeProportion_ = other.firstDistributeProportion_;
-      restDistributeProportion_ = other.restDistributeProportion_;
+      restPeriodDistributeProportion_ = other.restPeriodDistributeProportion_;
       periodDuration_ = other.periodDuration_;
       isListed_ = other.isListed_;
       isWithdraw_ = other.isWithdraw_;
@@ -5027,10 +5151,10 @@ namespace AElf.Contracts.Ewell {
 
     /// <summary>Field number for the "list_market_info" field.</summary>
     public const int ListMarketInfoFieldNumber = 3;
-    private global::AElf.Contracts.Ewell.ListMarketInfo listMarketInfo_;
+    private global::Ewell.Contracts.Ido.ListMarketInfo listMarketInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::AElf.Contracts.Ewell.ListMarketInfo ListMarketInfo {
+    public global::Ewell.Contracts.Ido.ListMarketInfo ListMarketInfo {
       get { return listMarketInfo_; }
       set {
         listMarketInfo_ = value;
@@ -5097,15 +5221,15 @@ namespace AElf.Contracts.Ewell {
       }
     }
 
-    /// <summary>Field number for the "rest_distribute_proportion" field.</summary>
-    public const int RestDistributeProportionFieldNumber = 9;
-    private int restDistributeProportion_;
+    /// <summary>Field number for the "rest_period_distribute_proportion" field.</summary>
+    public const int RestPeriodDistributeProportionFieldNumber = 9;
+    private int restPeriodDistributeProportion_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int RestDistributeProportion {
-      get { return restDistributeProportion_; }
+    public int RestPeriodDistributeProportion {
+      get { return restPeriodDistributeProportion_; }
       set {
-        restDistributeProportion_ = value;
+        restPeriodDistributeProportion_ = value;
       }
     }
 
@@ -5168,7 +5292,7 @@ namespace AElf.Contracts.Ewell {
       if (LatestPeriod != other.LatestPeriod) return false;
       if (TotalPeriod != other.TotalPeriod) return false;
       if (FirstDistributeProportion != other.FirstDistributeProportion) return false;
-      if (RestDistributeProportion != other.RestDistributeProportion) return false;
+      if (RestPeriodDistributeProportion != other.RestPeriodDistributeProportion) return false;
       if (PeriodDuration != other.PeriodDuration) return false;
       if (IsListed != other.IsListed) return false;
       if (IsWithdraw != other.IsWithdraw) return false;
@@ -5187,7 +5311,7 @@ namespace AElf.Contracts.Ewell {
       if (LatestPeriod != 0) hash ^= LatestPeriod.GetHashCode();
       if (TotalPeriod != 0) hash ^= TotalPeriod.GetHashCode();
       if (FirstDistributeProportion != 0) hash ^= FirstDistributeProportion.GetHashCode();
-      if (RestDistributeProportion != 0) hash ^= RestDistributeProportion.GetHashCode();
+      if (RestPeriodDistributeProportion != 0) hash ^= RestPeriodDistributeProportion.GetHashCode();
       if (PeriodDuration != 0L) hash ^= PeriodDuration.GetHashCode();
       if (IsListed != false) hash ^= IsListed.GetHashCode();
       if (IsWithdraw != false) hash ^= IsWithdraw.GetHashCode();
@@ -5241,9 +5365,9 @@ namespace AElf.Contracts.Ewell {
         output.WriteRawTag(64);
         output.WriteInt32(FirstDistributeProportion);
       }
-      if (RestDistributeProportion != 0) {
+      if (RestPeriodDistributeProportion != 0) {
         output.WriteRawTag(72);
-        output.WriteInt32(RestDistributeProportion);
+        output.WriteInt32(RestPeriodDistributeProportion);
       }
       if (PeriodDuration != 0L) {
         output.WriteRawTag(80);
@@ -5299,9 +5423,9 @@ namespace AElf.Contracts.Ewell {
         output.WriteRawTag(64);
         output.WriteInt32(FirstDistributeProportion);
       }
-      if (RestDistributeProportion != 0) {
+      if (RestPeriodDistributeProportion != 0) {
         output.WriteRawTag(72);
-        output.WriteInt32(RestDistributeProportion);
+        output.WriteInt32(RestPeriodDistributeProportion);
       }
       if (PeriodDuration != 0L) {
         output.WriteRawTag(80);
@@ -5349,8 +5473,8 @@ namespace AElf.Contracts.Ewell {
       if (FirstDistributeProportion != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(FirstDistributeProportion);
       }
-      if (RestDistributeProportion != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(RestDistributeProportion);
+      if (RestPeriodDistributeProportion != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(RestPeriodDistributeProportion);
       }
       if (PeriodDuration != 0L) {
         size += 1 + pb::CodedOutputStream.ComputeInt64Size(PeriodDuration);
@@ -5384,7 +5508,7 @@ namespace AElf.Contracts.Ewell {
       }
       if (other.listMarketInfo_ != null) {
         if (listMarketInfo_ == null) {
-          ListMarketInfo = new global::AElf.Contracts.Ewell.ListMarketInfo();
+          ListMarketInfo = new global::Ewell.Contracts.Ido.ListMarketInfo();
         }
         ListMarketInfo.MergeFrom(other.ListMarketInfo);
       }
@@ -5406,8 +5530,8 @@ namespace AElf.Contracts.Ewell {
       if (other.FirstDistributeProportion != 0) {
         FirstDistributeProportion = other.FirstDistributeProportion;
       }
-      if (other.RestDistributeProportion != 0) {
-        RestDistributeProportion = other.RestDistributeProportion;
+      if (other.RestPeriodDistributeProportion != 0) {
+        RestPeriodDistributeProportion = other.RestPeriodDistributeProportion;
       }
       if (other.PeriodDuration != 0L) {
         PeriodDuration = other.PeriodDuration;
@@ -5446,7 +5570,7 @@ namespace AElf.Contracts.Ewell {
           }
           case 26: {
             if (listMarketInfo_ == null) {
-              ListMarketInfo = new global::AElf.Contracts.Ewell.ListMarketInfo();
+              ListMarketInfo = new global::Ewell.Contracts.Ido.ListMarketInfo();
             }
             input.ReadMessage(ListMarketInfo);
             break;
@@ -5475,7 +5599,7 @@ namespace AElf.Contracts.Ewell {
             break;
           }
           case 72: {
-            RestDistributeProportion = input.ReadInt32();
+            RestPeriodDistributeProportion = input.ReadInt32();
             break;
           }
           case 80: {
@@ -5518,7 +5642,7 @@ namespace AElf.Contracts.Ewell {
           }
           case 26: {
             if (listMarketInfo_ == null) {
-              ListMarketInfo = new global::AElf.Contracts.Ewell.ListMarketInfo();
+              ListMarketInfo = new global::Ewell.Contracts.Ido.ListMarketInfo();
             }
             input.ReadMessage(ListMarketInfo);
             break;
@@ -5547,7 +5671,7 @@ namespace AElf.Contracts.Ewell {
             break;
           }
           case 72: {
-            RestDistributeProportion = input.ReadInt32();
+            RestPeriodDistributeProportion = input.ReadInt32();
             break;
           }
           case 80: {
@@ -5569,7 +5693,7 @@ namespace AElf.Contracts.Ewell {
 
   }
 
-  internal sealed partial class InvestDetail : pb::IMessage<InvestDetail>
+  public sealed partial class InvestDetail : pb::IMessage<InvestDetail>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
@@ -5583,7 +5707,7 @@ namespace AElf.Contracts.Ewell {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::AElf.Contracts.Ewell.EwellContractReflection.Descriptor.MessageTypes[15]; }
+      get { return global::Ewell.Contracts.Ido.EwellContractReflection.Descriptor.MessageTypes[15]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5605,7 +5729,7 @@ namespace AElf.Contracts.Ewell {
     public InvestDetail(InvestDetail other) : this() {
       investSymbol_ = other.investSymbol_;
       amount_ = other.amount_;
-      isUnInvest_ = other.isUnInvest_;
+      isDisinvest_ = other.isDisinvest_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -5639,15 +5763,15 @@ namespace AElf.Contracts.Ewell {
       }
     }
 
-    /// <summary>Field number for the "is_unInvest" field.</summary>
-    public const int IsUnInvestFieldNumber = 3;
-    private bool isUnInvest_;
+    /// <summary>Field number for the "is_disinvest" field.</summary>
+    public const int IsDisinvestFieldNumber = 3;
+    private bool isDisinvest_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsUnInvest {
-      get { return isUnInvest_; }
+    public bool IsDisinvest {
+      get { return isDisinvest_; }
       set {
-        isUnInvest_ = value;
+        isDisinvest_ = value;
       }
     }
 
@@ -5668,7 +5792,7 @@ namespace AElf.Contracts.Ewell {
       }
       if (InvestSymbol != other.InvestSymbol) return false;
       if (Amount != other.Amount) return false;
-      if (IsUnInvest != other.IsUnInvest) return false;
+      if (IsDisinvest != other.IsDisinvest) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -5678,7 +5802,7 @@ namespace AElf.Contracts.Ewell {
       int hash = 1;
       if (InvestSymbol.Length != 0) hash ^= InvestSymbol.GetHashCode();
       if (Amount != 0L) hash ^= Amount.GetHashCode();
-      if (IsUnInvest != false) hash ^= IsUnInvest.GetHashCode();
+      if (IsDisinvest != false) hash ^= IsDisinvest.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -5705,9 +5829,9 @@ namespace AElf.Contracts.Ewell {
         output.WriteRawTag(16);
         output.WriteInt64(Amount);
       }
-      if (IsUnInvest != false) {
+      if (IsDisinvest != false) {
         output.WriteRawTag(24);
-        output.WriteBool(IsUnInvest);
+        output.WriteBool(IsDisinvest);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -5727,9 +5851,9 @@ namespace AElf.Contracts.Ewell {
         output.WriteRawTag(16);
         output.WriteInt64(Amount);
       }
-      if (IsUnInvest != false) {
+      if (IsDisinvest != false) {
         output.WriteRawTag(24);
-        output.WriteBool(IsUnInvest);
+        output.WriteBool(IsDisinvest);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -5747,7 +5871,7 @@ namespace AElf.Contracts.Ewell {
       if (Amount != 0L) {
         size += 1 + pb::CodedOutputStream.ComputeInt64Size(Amount);
       }
-      if (IsUnInvest != false) {
+      if (IsDisinvest != false) {
         size += 1 + 1;
       }
       if (_unknownFields != null) {
@@ -5768,8 +5892,8 @@ namespace AElf.Contracts.Ewell {
       if (other.Amount != 0L) {
         Amount = other.Amount;
       }
-      if (other.IsUnInvest != false) {
-        IsUnInvest = other.IsUnInvest;
+      if (other.IsDisinvest != false) {
+        IsDisinvest = other.IsDisinvest;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -5795,7 +5919,7 @@ namespace AElf.Contracts.Ewell {
             break;
           }
           case 24: {
-            IsUnInvest = input.ReadBool();
+            IsDisinvest = input.ReadBool();
             break;
           }
         }
@@ -5822,7 +5946,7 @@ namespace AElf.Contracts.Ewell {
             break;
           }
           case 24: {
-            IsUnInvest = input.ReadBool();
+            IsDisinvest = input.ReadBool();
             break;
           }
         }
@@ -5832,7 +5956,7 @@ namespace AElf.Contracts.Ewell {
 
   }
 
-  internal sealed partial class ProfitDetail : pb::IMessage<ProfitDetail>
+  public sealed partial class ProfitDetail : pb::IMessage<ProfitDetail>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
@@ -5846,7 +5970,7 @@ namespace AElf.Contracts.Ewell {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::AElf.Contracts.Ewell.EwellContractReflection.Descriptor.MessageTypes[16]; }
+      get { return global::Ewell.Contracts.Ido.EwellContractReflection.Descriptor.MessageTypes[16]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -6124,7 +6248,7 @@ namespace AElf.Contracts.Ewell {
 
   }
 
-  internal sealed partial class ClaimedProfitsInfo : pb::IMessage<ClaimedProfitsInfo>
+  public sealed partial class ClaimedProfitsInfo : pb::IMessage<ClaimedProfitsInfo>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
@@ -6138,7 +6262,7 @@ namespace AElf.Contracts.Ewell {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::AElf.Contracts.Ewell.EwellContractReflection.Descriptor.MessageTypes[17]; }
+      get { return global::Ewell.Contracts.Ido.EwellContractReflection.Descriptor.MessageTypes[17]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -6170,12 +6294,12 @@ namespace AElf.Contracts.Ewell {
 
     /// <summary>Field number for the "details" field.</summary>
     public const int DetailsFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::AElf.Contracts.Ewell.ClaimedProfit> _repeated_details_codec
-        = pb::FieldCodec.ForMessage(10, global::AElf.Contracts.Ewell.ClaimedProfit.Parser);
-    private readonly pbc::RepeatedField<global::AElf.Contracts.Ewell.ClaimedProfit> details_ = new pbc::RepeatedField<global::AElf.Contracts.Ewell.ClaimedProfit>();
+    private static readonly pb::FieldCodec<global::Ewell.Contracts.Ido.ClaimedProfit> _repeated_details_codec
+        = pb::FieldCodec.ForMessage(10, global::Ewell.Contracts.Ido.ClaimedProfit.Parser);
+    private readonly pbc::RepeatedField<global::Ewell.Contracts.Ido.ClaimedProfit> details_ = new pbc::RepeatedField<global::Ewell.Contracts.Ido.ClaimedProfit>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::AElf.Contracts.Ewell.ClaimedProfit> Details {
+    public pbc::RepeatedField<global::Ewell.Contracts.Ido.ClaimedProfit> Details {
       get { return details_; }
     }
 
@@ -6302,7 +6426,7 @@ namespace AElf.Contracts.Ewell {
 
   }
 
-  internal sealed partial class ClaimedProfit : pb::IMessage<ClaimedProfit>
+  public sealed partial class ClaimedProfit : pb::IMessage<ClaimedProfit>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
@@ -6316,7 +6440,7 @@ namespace AElf.Contracts.Ewell {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::AElf.Contracts.Ewell.EwellContractReflection.Descriptor.MessageTypes[18]; }
+      get { return global::Ewell.Contracts.Ido.EwellContractReflection.Descriptor.MessageTypes[18]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -6352,9 +6476,6 @@ namespace AElf.Contracts.Ewell {
     /// <summary>Field number for the "project_id" field.</summary>
     public const int ProjectIdFieldNumber = 1;
     private global::AElf.Types.Hash projectId_;
-    /// <summary>
-    ///id
-    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::AElf.Types.Hash ProjectId {
@@ -6367,8 +6488,6 @@ namespace AElf.Contracts.Ewell {
     /// <summary>Field number for the "latest_period" field.</summary>
     public const int LatestPeriodFieldNumber = 2;
     private int latestPeriod_;
-    /// <summary>
-    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int LatestPeriod {
@@ -6381,8 +6500,6 @@ namespace AElf.Contracts.Ewell {
     /// <summary>Field number for the "symbol" field.</summary>
     public const int SymbolFieldNumber = 3;
     private string symbol_ = "";
-    /// <summary>
-    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Symbol {
@@ -6395,8 +6512,6 @@ namespace AElf.Contracts.Ewell {
     /// <summary>Field number for the "amount" field.</summary>
     public const int AmountFieldNumber = 4;
     private long amount_;
-    /// <summary>
-    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public long Amount {
@@ -6620,7 +6735,7 @@ namespace AElf.Contracts.Ewell {
 
   }
 
-  internal sealed partial class LiquidatedDamageDetails : pb::IMessage<LiquidatedDamageDetails>
+  public sealed partial class LiquidatedDamageDetails : pb::IMessage<LiquidatedDamageDetails>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
@@ -6634,7 +6749,7 @@ namespace AElf.Contracts.Ewell {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::AElf.Contracts.Ewell.EwellContractReflection.Descriptor.MessageTypes[19]; }
+      get { return global::Ewell.Contracts.Ido.EwellContractReflection.Descriptor.MessageTypes[19]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -6679,12 +6794,12 @@ namespace AElf.Contracts.Ewell {
 
     /// <summary>Field number for the "details" field.</summary>
     public const int DetailsFieldNumber = 2;
-    private static readonly pb::FieldCodec<global::AElf.Contracts.Ewell.LiquidatedDamageDetail> _repeated_details_codec
-        = pb::FieldCodec.ForMessage(18, global::AElf.Contracts.Ewell.LiquidatedDamageDetail.Parser);
-    private readonly pbc::RepeatedField<global::AElf.Contracts.Ewell.LiquidatedDamageDetail> details_ = new pbc::RepeatedField<global::AElf.Contracts.Ewell.LiquidatedDamageDetail>();
+    private static readonly pb::FieldCodec<global::Ewell.Contracts.Ido.LiquidatedDamageDetail> _repeated_details_codec
+        = pb::FieldCodec.ForMessage(18, global::Ewell.Contracts.Ido.LiquidatedDamageDetail.Parser);
+    private readonly pbc::RepeatedField<global::Ewell.Contracts.Ido.LiquidatedDamageDetail> details_ = new pbc::RepeatedField<global::Ewell.Contracts.Ido.LiquidatedDamageDetail>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::AElf.Contracts.Ewell.LiquidatedDamageDetail> Details {
+    public pbc::RepeatedField<global::Ewell.Contracts.Ido.LiquidatedDamageDetail> Details {
       get { return details_; }
     }
 
@@ -6835,7 +6950,7 @@ namespace AElf.Contracts.Ewell {
 
   }
 
-  internal sealed partial class LiquidatedDamageDetail : pb::IMessage<LiquidatedDamageDetail>
+  public sealed partial class LiquidatedDamageDetail : pb::IMessage<LiquidatedDamageDetail>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
@@ -6849,7 +6964,7 @@ namespace AElf.Contracts.Ewell {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::AElf.Contracts.Ewell.EwellContractReflection.Descriptor.MessageTypes[20]; }
+      get { return global::Ewell.Contracts.Ido.EwellContractReflection.Descriptor.MessageTypes[20]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -6885,8 +7000,6 @@ namespace AElf.Contracts.Ewell {
     /// <summary>Field number for the "user" field.</summary>
     public const int UserFieldNumber = 1;
     private global::AElf.Types.Address user_;
-    /// <summary>
-    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::AElf.Types.Address User {
@@ -6899,8 +7012,6 @@ namespace AElf.Contracts.Ewell {
     /// <summary>Field number for the "symbol" field.</summary>
     public const int SymbolFieldNumber = 2;
     private string symbol_ = "";
-    /// <summary>
-    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Symbol {
@@ -6913,8 +7024,6 @@ namespace AElf.Contracts.Ewell {
     /// <summary>Field number for the "amount" field.</summary>
     public const int AmountFieldNumber = 3;
     private long amount_;
-    /// <summary>
-    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public long Amount {
@@ -7164,7 +7273,7 @@ namespace AElf.Contracts.Ewell {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::AElf.Contracts.Ewell.EwellContractReflection.Descriptor.MessageTypes[21]; }
+      get { return global::Ewell.Contracts.Ido.EwellContractReflection.Descriptor.MessageTypes[21]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -7342,7 +7451,7 @@ namespace AElf.Contracts.Ewell {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::AElf.Contracts.Ewell.EwellContractReflection.Descriptor.MessageTypes[22]; }
+      get { return global::Ewell.Contracts.Ido.EwellContractReflection.Descriptor.MessageTypes[22]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -7374,12 +7483,12 @@ namespace AElf.Contracts.Ewell {
 
     /// <summary>Field number for the "data" field.</summary>
     public const int DataFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::AElf.Contracts.Ewell.ListMarket> _repeated_data_codec
-        = pb::FieldCodec.ForMessage(10, global::AElf.Contracts.Ewell.ListMarket.Parser);
-    private readonly pbc::RepeatedField<global::AElf.Contracts.Ewell.ListMarket> data_ = new pbc::RepeatedField<global::AElf.Contracts.Ewell.ListMarket>();
+    private static readonly pb::FieldCodec<global::Ewell.Contracts.Ido.ListMarket> _repeated_data_codec
+        = pb::FieldCodec.ForMessage(10, global::Ewell.Contracts.Ido.ListMarket.Parser);
+    private readonly pbc::RepeatedField<global::Ewell.Contracts.Ido.ListMarket> data_ = new pbc::RepeatedField<global::Ewell.Contracts.Ido.ListMarket>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::AElf.Contracts.Ewell.ListMarket> Data {
+    public pbc::RepeatedField<global::Ewell.Contracts.Ido.ListMarket> Data {
       get { return data_; }
     }
 
@@ -7520,7 +7629,7 @@ namespace AElf.Contracts.Ewell {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::AElf.Contracts.Ewell.EwellContractReflection.Descriptor.MessageTypes[23]; }
+      get { return global::Ewell.Contracts.Ido.EwellContractReflection.Descriptor.MessageTypes[23]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -7554,8 +7663,6 @@ namespace AElf.Contracts.Ewell {
     /// <summary>Field number for the "market" field.</summary>
     public const int MarketFieldNumber = 1;
     private global::AElf.Types.Address market_;
-    /// <summary>
-    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::AElf.Types.Address Market {
@@ -7757,7 +7864,7 @@ namespace AElf.Contracts.Ewell {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::AElf.Contracts.Ewell.EwellContractReflection.Descriptor.MessageTypes[24]; }
+      get { return global::Ewell.Contracts.Ido.EwellContractReflection.Descriptor.MessageTypes[24]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -7778,8 +7885,8 @@ namespace AElf.Contracts.Ewell {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ProjectRegistered(ProjectRegistered other) : this() {
       projectId_ = other.projectId_ != null ? other.projectId_.Clone() : null;
-      acceptedCurrency_ = other.acceptedCurrency_;
-      projectCurrency_ = other.projectCurrency_;
+      acceptedSymbol_ = other.acceptedSymbol_;
+      projectSymbol_ = other.projectSymbol_;
       crowdFundingType_ = other.crowdFundingType_;
       crowdFundingIssueAmount_ = other.crowdFundingIssueAmount_;
       preSalePrice_ = other.preSalePrice_;
@@ -7796,10 +7903,10 @@ namespace AElf.Contracts.Ewell {
       isBurnRestToken_ = other.isBurnRestToken_;
       totalPeriod_ = other.totalPeriod_;
       additionalInfo_ = other.additionalInfo_ != null ? other.additionalInfo_.Clone() : null;
-      toRaisedAmount_ = other.toRaisedAmount_;
+      targetRaisedAmount_ = other.targetRaisedAmount_;
       creator_ = other.creator_ != null ? other.creator_.Clone() : null;
       firstDistributeProportion_ = other.firstDistributeProportion_;
-      restDistributeProportion_ = other.restDistributeProportion_;
+      restPeriodDistributeProportion_ = other.restPeriodDistributeProportion_;
       periodDuration_ = other.periodDuration_;
       virtualAddress_ = other.virtualAddress_ != null ? other.virtualAddress_.Clone() : null;
       tokenReleaseTime_ = other.tokenReleaseTime_ != null ? other.tokenReleaseTime_.Clone() : null;
@@ -7824,27 +7931,27 @@ namespace AElf.Contracts.Ewell {
       }
     }
 
-    /// <summary>Field number for the "accepted_currency" field.</summary>
-    public const int AcceptedCurrencyFieldNumber = 2;
-    private string acceptedCurrency_ = "";
+    /// <summary>Field number for the "accepted_symbol" field.</summary>
+    public const int AcceptedSymbolFieldNumber = 2;
+    private string acceptedSymbol_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string AcceptedCurrency {
-      get { return acceptedCurrency_; }
+    public string AcceptedSymbol {
+      get { return acceptedSymbol_; }
       set {
-        acceptedCurrency_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        acceptedSymbol_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
-    /// <summary>Field number for the "project_currency" field.</summary>
-    public const int ProjectCurrencyFieldNumber = 3;
-    private string projectCurrency_ = "";
+    /// <summary>Field number for the "project_symbol" field.</summary>
+    public const int ProjectSymbolFieldNumber = 3;
+    private string projectSymbol_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string ProjectCurrency {
-      get { return projectCurrency_; }
+    public string ProjectSymbol {
+      get { return projectSymbol_; }
       set {
-        projectCurrency_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        projectSymbol_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -7946,10 +8053,10 @@ namespace AElf.Contracts.Ewell {
 
     /// <summary>Field number for the "list_market_info" field.</summary>
     public const int ListMarketInfoFieldNumber = 12;
-    private global::AElf.Contracts.Ewell.ListMarketInfo listMarketInfo_;
+    private global::Ewell.Contracts.Ido.ListMarketInfo listMarketInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::AElf.Contracts.Ewell.ListMarketInfo ListMarketInfo {
+    public global::Ewell.Contracts.Ido.ListMarketInfo ListMarketInfo {
       get { return listMarketInfo_; }
       set {
         listMarketInfo_ = value;
@@ -8030,25 +8137,25 @@ namespace AElf.Contracts.Ewell {
 
     /// <summary>Field number for the "additional_info" field.</summary>
     public const int AdditionalInfoFieldNumber = 19;
-    private global::AElf.Contracts.Ewell.AdditionalInfo additionalInfo_;
+    private global::Ewell.Contracts.Ido.AdditionalInfo additionalInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::AElf.Contracts.Ewell.AdditionalInfo AdditionalInfo {
+    public global::Ewell.Contracts.Ido.AdditionalInfo AdditionalInfo {
       get { return additionalInfo_; }
       set {
         additionalInfo_ = value;
       }
     }
 
-    /// <summary>Field number for the "to_raised_amount" field.</summary>
-    public const int ToRaisedAmountFieldNumber = 20;
-    private long toRaisedAmount_;
+    /// <summary>Field number for the "target_raised_amount" field.</summary>
+    public const int TargetRaisedAmountFieldNumber = 20;
+    private long targetRaisedAmount_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public long ToRaisedAmount {
-      get { return toRaisedAmount_; }
+    public long TargetRaisedAmount {
+      get { return targetRaisedAmount_; }
       set {
-        toRaisedAmount_ = value;
+        targetRaisedAmount_ = value;
       }
     }
 
@@ -8076,15 +8183,15 @@ namespace AElf.Contracts.Ewell {
       }
     }
 
-    /// <summary>Field number for the "rest_distribute_proportion" field.</summary>
-    public const int RestDistributeProportionFieldNumber = 23;
-    private int restDistributeProportion_;
+    /// <summary>Field number for the "rest_period_distribute_proportion" field.</summary>
+    public const int RestPeriodDistributeProportionFieldNumber = 23;
+    private int restPeriodDistributeProportion_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int RestDistributeProportion {
-      get { return restDistributeProportion_; }
+    public int RestPeriodDistributeProportion {
+      get { return restPeriodDistributeProportion_; }
       set {
-        restDistributeProportion_ = value;
+        restPeriodDistributeProportion_ = value;
       }
     }
 
@@ -8140,8 +8247,8 @@ namespace AElf.Contracts.Ewell {
         return true;
       }
       if (!object.Equals(ProjectId, other.ProjectId)) return false;
-      if (AcceptedCurrency != other.AcceptedCurrency) return false;
-      if (ProjectCurrency != other.ProjectCurrency) return false;
+      if (AcceptedSymbol != other.AcceptedSymbol) return false;
+      if (ProjectSymbol != other.ProjectSymbol) return false;
       if (CrowdFundingType != other.CrowdFundingType) return false;
       if (CrowdFundingIssueAmount != other.CrowdFundingIssueAmount) return false;
       if (PreSalePrice != other.PreSalePrice) return false;
@@ -8158,10 +8265,10 @@ namespace AElf.Contracts.Ewell {
       if (IsBurnRestToken != other.IsBurnRestToken) return false;
       if (TotalPeriod != other.TotalPeriod) return false;
       if (!object.Equals(AdditionalInfo, other.AdditionalInfo)) return false;
-      if (ToRaisedAmount != other.ToRaisedAmount) return false;
+      if (TargetRaisedAmount != other.TargetRaisedAmount) return false;
       if (!object.Equals(Creator, other.Creator)) return false;
       if (FirstDistributeProportion != other.FirstDistributeProportion) return false;
-      if (RestDistributeProportion != other.RestDistributeProportion) return false;
+      if (RestPeriodDistributeProportion != other.RestPeriodDistributeProportion) return false;
       if (PeriodDuration != other.PeriodDuration) return false;
       if (!object.Equals(VirtualAddress, other.VirtualAddress)) return false;
       if (!object.Equals(TokenReleaseTime, other.TokenReleaseTime)) return false;
@@ -8173,8 +8280,8 @@ namespace AElf.Contracts.Ewell {
     public override int GetHashCode() {
       int hash = 1;
       if (projectId_ != null) hash ^= ProjectId.GetHashCode();
-      if (AcceptedCurrency.Length != 0) hash ^= AcceptedCurrency.GetHashCode();
-      if (ProjectCurrency.Length != 0) hash ^= ProjectCurrency.GetHashCode();
+      if (AcceptedSymbol.Length != 0) hash ^= AcceptedSymbol.GetHashCode();
+      if (ProjectSymbol.Length != 0) hash ^= ProjectSymbol.GetHashCode();
       if (CrowdFundingType.Length != 0) hash ^= CrowdFundingType.GetHashCode();
       if (CrowdFundingIssueAmount != 0L) hash ^= CrowdFundingIssueAmount.GetHashCode();
       if (PreSalePrice != 0L) hash ^= PreSalePrice.GetHashCode();
@@ -8191,10 +8298,10 @@ namespace AElf.Contracts.Ewell {
       if (IsBurnRestToken != false) hash ^= IsBurnRestToken.GetHashCode();
       if (TotalPeriod != 0) hash ^= TotalPeriod.GetHashCode();
       if (additionalInfo_ != null) hash ^= AdditionalInfo.GetHashCode();
-      if (ToRaisedAmount != 0L) hash ^= ToRaisedAmount.GetHashCode();
+      if (TargetRaisedAmount != 0L) hash ^= TargetRaisedAmount.GetHashCode();
       if (creator_ != null) hash ^= Creator.GetHashCode();
       if (FirstDistributeProportion != 0) hash ^= FirstDistributeProportion.GetHashCode();
-      if (RestDistributeProportion != 0) hash ^= RestDistributeProportion.GetHashCode();
+      if (RestPeriodDistributeProportion != 0) hash ^= RestPeriodDistributeProportion.GetHashCode();
       if (PeriodDuration != 0L) hash ^= PeriodDuration.GetHashCode();
       if (virtualAddress_ != null) hash ^= VirtualAddress.GetHashCode();
       if (tokenReleaseTime_ != null) hash ^= TokenReleaseTime.GetHashCode();
@@ -8220,13 +8327,13 @@ namespace AElf.Contracts.Ewell {
         output.WriteRawTag(10);
         output.WriteMessage(ProjectId);
       }
-      if (AcceptedCurrency.Length != 0) {
+      if (AcceptedSymbol.Length != 0) {
         output.WriteRawTag(18);
-        output.WriteString(AcceptedCurrency);
+        output.WriteString(AcceptedSymbol);
       }
-      if (ProjectCurrency.Length != 0) {
+      if (ProjectSymbol.Length != 0) {
         output.WriteRawTag(26);
-        output.WriteString(ProjectCurrency);
+        output.WriteString(ProjectSymbol);
       }
       if (CrowdFundingType.Length != 0) {
         output.WriteRawTag(34);
@@ -8292,9 +8399,9 @@ namespace AElf.Contracts.Ewell {
         output.WriteRawTag(154, 1);
         output.WriteMessage(AdditionalInfo);
       }
-      if (ToRaisedAmount != 0L) {
+      if (TargetRaisedAmount != 0L) {
         output.WriteRawTag(160, 1);
-        output.WriteInt64(ToRaisedAmount);
+        output.WriteInt64(TargetRaisedAmount);
       }
       if (creator_ != null) {
         output.WriteRawTag(170, 1);
@@ -8304,9 +8411,9 @@ namespace AElf.Contracts.Ewell {
         output.WriteRawTag(176, 1);
         output.WriteInt32(FirstDistributeProportion);
       }
-      if (RestDistributeProportion != 0) {
+      if (RestPeriodDistributeProportion != 0) {
         output.WriteRawTag(184, 1);
-        output.WriteInt32(RestDistributeProportion);
+        output.WriteInt32(RestPeriodDistributeProportion);
       }
       if (PeriodDuration != 0L) {
         output.WriteRawTag(192, 1);
@@ -8334,13 +8441,13 @@ namespace AElf.Contracts.Ewell {
         output.WriteRawTag(10);
         output.WriteMessage(ProjectId);
       }
-      if (AcceptedCurrency.Length != 0) {
+      if (AcceptedSymbol.Length != 0) {
         output.WriteRawTag(18);
-        output.WriteString(AcceptedCurrency);
+        output.WriteString(AcceptedSymbol);
       }
-      if (ProjectCurrency.Length != 0) {
+      if (ProjectSymbol.Length != 0) {
         output.WriteRawTag(26);
-        output.WriteString(ProjectCurrency);
+        output.WriteString(ProjectSymbol);
       }
       if (CrowdFundingType.Length != 0) {
         output.WriteRawTag(34);
@@ -8406,9 +8513,9 @@ namespace AElf.Contracts.Ewell {
         output.WriteRawTag(154, 1);
         output.WriteMessage(AdditionalInfo);
       }
-      if (ToRaisedAmount != 0L) {
+      if (TargetRaisedAmount != 0L) {
         output.WriteRawTag(160, 1);
-        output.WriteInt64(ToRaisedAmount);
+        output.WriteInt64(TargetRaisedAmount);
       }
       if (creator_ != null) {
         output.WriteRawTag(170, 1);
@@ -8418,9 +8525,9 @@ namespace AElf.Contracts.Ewell {
         output.WriteRawTag(176, 1);
         output.WriteInt32(FirstDistributeProportion);
       }
-      if (RestDistributeProportion != 0) {
+      if (RestPeriodDistributeProportion != 0) {
         output.WriteRawTag(184, 1);
-        output.WriteInt32(RestDistributeProportion);
+        output.WriteInt32(RestPeriodDistributeProportion);
       }
       if (PeriodDuration != 0L) {
         output.WriteRawTag(192, 1);
@@ -8447,11 +8554,11 @@ namespace AElf.Contracts.Ewell {
       if (projectId_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(ProjectId);
       }
-      if (AcceptedCurrency.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(AcceptedCurrency);
+      if (AcceptedSymbol.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(AcceptedSymbol);
       }
-      if (ProjectCurrency.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(ProjectCurrency);
+      if (ProjectSymbol.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(ProjectSymbol);
       }
       if (CrowdFundingType.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(CrowdFundingType);
@@ -8501,8 +8608,8 @@ namespace AElf.Contracts.Ewell {
       if (additionalInfo_ != null) {
         size += 2 + pb::CodedOutputStream.ComputeMessageSize(AdditionalInfo);
       }
-      if (ToRaisedAmount != 0L) {
-        size += 2 + pb::CodedOutputStream.ComputeInt64Size(ToRaisedAmount);
+      if (TargetRaisedAmount != 0L) {
+        size += 2 + pb::CodedOutputStream.ComputeInt64Size(TargetRaisedAmount);
       }
       if (creator_ != null) {
         size += 2 + pb::CodedOutputStream.ComputeMessageSize(Creator);
@@ -8510,8 +8617,8 @@ namespace AElf.Contracts.Ewell {
       if (FirstDistributeProportion != 0) {
         size += 2 + pb::CodedOutputStream.ComputeInt32Size(FirstDistributeProportion);
       }
-      if (RestDistributeProportion != 0) {
-        size += 2 + pb::CodedOutputStream.ComputeInt32Size(RestDistributeProportion);
+      if (RestPeriodDistributeProportion != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(RestPeriodDistributeProportion);
       }
       if (PeriodDuration != 0L) {
         size += 2 + pb::CodedOutputStream.ComputeInt64Size(PeriodDuration);
@@ -8540,11 +8647,11 @@ namespace AElf.Contracts.Ewell {
         }
         ProjectId.MergeFrom(other.ProjectId);
       }
-      if (other.AcceptedCurrency.Length != 0) {
-        AcceptedCurrency = other.AcceptedCurrency;
+      if (other.AcceptedSymbol.Length != 0) {
+        AcceptedSymbol = other.AcceptedSymbol;
       }
-      if (other.ProjectCurrency.Length != 0) {
-        ProjectCurrency = other.ProjectCurrency;
+      if (other.ProjectSymbol.Length != 0) {
+        ProjectSymbol = other.ProjectSymbol;
       }
       if (other.CrowdFundingType.Length != 0) {
         CrowdFundingType = other.CrowdFundingType;
@@ -8578,7 +8685,7 @@ namespace AElf.Contracts.Ewell {
       }
       if (other.listMarketInfo_ != null) {
         if (listMarketInfo_ == null) {
-          ListMarketInfo = new global::AElf.Contracts.Ewell.ListMarketInfo();
+          ListMarketInfo = new global::Ewell.Contracts.Ido.ListMarketInfo();
         }
         ListMarketInfo.MergeFrom(other.ListMarketInfo);
       }
@@ -8608,12 +8715,12 @@ namespace AElf.Contracts.Ewell {
       }
       if (other.additionalInfo_ != null) {
         if (additionalInfo_ == null) {
-          AdditionalInfo = new global::AElf.Contracts.Ewell.AdditionalInfo();
+          AdditionalInfo = new global::Ewell.Contracts.Ido.AdditionalInfo();
         }
         AdditionalInfo.MergeFrom(other.AdditionalInfo);
       }
-      if (other.ToRaisedAmount != 0L) {
-        ToRaisedAmount = other.ToRaisedAmount;
+      if (other.TargetRaisedAmount != 0L) {
+        TargetRaisedAmount = other.TargetRaisedAmount;
       }
       if (other.creator_ != null) {
         if (creator_ == null) {
@@ -8624,8 +8731,8 @@ namespace AElf.Contracts.Ewell {
       if (other.FirstDistributeProportion != 0) {
         FirstDistributeProportion = other.FirstDistributeProportion;
       }
-      if (other.RestDistributeProportion != 0) {
-        RestDistributeProportion = other.RestDistributeProportion;
+      if (other.RestPeriodDistributeProportion != 0) {
+        RestPeriodDistributeProportion = other.RestPeriodDistributeProportion;
       }
       if (other.PeriodDuration != 0L) {
         PeriodDuration = other.PeriodDuration;
@@ -8665,11 +8772,11 @@ namespace AElf.Contracts.Ewell {
             break;
           }
           case 18: {
-            AcceptedCurrency = input.ReadString();
+            AcceptedSymbol = input.ReadString();
             break;
           }
           case 26: {
-            ProjectCurrency = input.ReadString();
+            ProjectSymbol = input.ReadString();
             break;
           }
           case 34: {
@@ -8712,7 +8819,7 @@ namespace AElf.Contracts.Ewell {
           }
           case 98: {
             if (listMarketInfo_ == null) {
-              ListMarketInfo = new global::AElf.Contracts.Ewell.ListMarketInfo();
+              ListMarketInfo = new global::Ewell.Contracts.Ido.ListMarketInfo();
             }
             input.ReadMessage(ListMarketInfo);
             break;
@@ -8749,13 +8856,13 @@ namespace AElf.Contracts.Ewell {
           }
           case 154: {
             if (additionalInfo_ == null) {
-              AdditionalInfo = new global::AElf.Contracts.Ewell.AdditionalInfo();
+              AdditionalInfo = new global::Ewell.Contracts.Ido.AdditionalInfo();
             }
             input.ReadMessage(AdditionalInfo);
             break;
           }
           case 160: {
-            ToRaisedAmount = input.ReadInt64();
+            TargetRaisedAmount = input.ReadInt64();
             break;
           }
           case 170: {
@@ -8770,7 +8877,7 @@ namespace AElf.Contracts.Ewell {
             break;
           }
           case 184: {
-            RestDistributeProportion = input.ReadInt32();
+            RestPeriodDistributeProportion = input.ReadInt32();
             break;
           }
           case 192: {
@@ -8814,11 +8921,11 @@ namespace AElf.Contracts.Ewell {
             break;
           }
           case 18: {
-            AcceptedCurrency = input.ReadString();
+            AcceptedSymbol = input.ReadString();
             break;
           }
           case 26: {
-            ProjectCurrency = input.ReadString();
+            ProjectSymbol = input.ReadString();
             break;
           }
           case 34: {
@@ -8861,7 +8968,7 @@ namespace AElf.Contracts.Ewell {
           }
           case 98: {
             if (listMarketInfo_ == null) {
-              ListMarketInfo = new global::AElf.Contracts.Ewell.ListMarketInfo();
+              ListMarketInfo = new global::Ewell.Contracts.Ido.ListMarketInfo();
             }
             input.ReadMessage(ListMarketInfo);
             break;
@@ -8898,13 +9005,13 @@ namespace AElf.Contracts.Ewell {
           }
           case 154: {
             if (additionalInfo_ == null) {
-              AdditionalInfo = new global::AElf.Contracts.Ewell.AdditionalInfo();
+              AdditionalInfo = new global::Ewell.Contracts.Ido.AdditionalInfo();
             }
             input.ReadMessage(AdditionalInfo);
             break;
           }
           case 160: {
-            ToRaisedAmount = input.ReadInt64();
+            TargetRaisedAmount = input.ReadInt64();
             break;
           }
           case 170: {
@@ -8919,7 +9026,7 @@ namespace AElf.Contracts.Ewell {
             break;
           }
           case 184: {
-            RestDistributeProportion = input.ReadInt32();
+            RestPeriodDistributeProportion = input.ReadInt32();
             break;
           }
           case 192: {
@@ -8947,7 +9054,7 @@ namespace AElf.Contracts.Ewell {
 
   }
 
-  internal sealed partial class NewWhitelistIdSet : pb::IMessage<NewWhitelistIdSet>
+  public sealed partial class NewWhitelistIdSet : pb::IMessage<NewWhitelistIdSet>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
@@ -8961,7 +9068,7 @@ namespace AElf.Contracts.Ewell {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::AElf.Contracts.Ewell.EwellContractReflection.Descriptor.MessageTypes[25]; }
+      get { return global::Ewell.Contracts.Ido.EwellContractReflection.Descriptor.MessageTypes[25]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -9205,7 +9312,7 @@ namespace AElf.Contracts.Ewell {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::AElf.Contracts.Ewell.EwellContractReflection.Descriptor.MessageTypes[26]; }
+      get { return global::Ewell.Contracts.Ido.EwellContractReflection.Descriptor.MessageTypes[26]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -9250,10 +9357,10 @@ namespace AElf.Contracts.Ewell {
 
     /// <summary>Field number for the "additional_info" field.</summary>
     public const int AdditionalInfoFieldNumber = 2;
-    private global::AElf.Contracts.Ewell.AdditionalInfo additionalInfo_;
+    private global::Ewell.Contracts.Ido.AdditionalInfo additionalInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::AElf.Contracts.Ewell.AdditionalInfo AdditionalInfo {
+    public global::Ewell.Contracts.Ido.AdditionalInfo AdditionalInfo {
       get { return additionalInfo_; }
       set {
         additionalInfo_ = value;
@@ -9366,7 +9473,7 @@ namespace AElf.Contracts.Ewell {
       }
       if (other.additionalInfo_ != null) {
         if (additionalInfo_ == null) {
-          AdditionalInfo = new global::AElf.Contracts.Ewell.AdditionalInfo();
+          AdditionalInfo = new global::Ewell.Contracts.Ido.AdditionalInfo();
         }
         AdditionalInfo.MergeFrom(other.AdditionalInfo);
       }
@@ -9394,7 +9501,7 @@ namespace AElf.Contracts.Ewell {
           }
           case 18: {
             if (additionalInfo_ == null) {
-              AdditionalInfo = new global::AElf.Contracts.Ewell.AdditionalInfo();
+              AdditionalInfo = new global::Ewell.Contracts.Ido.AdditionalInfo();
             }
             input.ReadMessage(AdditionalInfo);
             break;
@@ -9423,7 +9530,7 @@ namespace AElf.Contracts.Ewell {
           }
           case 18: {
             if (additionalInfo_ == null) {
-              AdditionalInfo = new global::AElf.Contracts.Ewell.AdditionalInfo();
+              AdditionalInfo = new global::Ewell.Contracts.Ido.AdditionalInfo();
             }
             input.ReadMessage(AdditionalInfo);
             break;
@@ -9449,7 +9556,7 @@ namespace AElf.Contracts.Ewell {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::AElf.Contracts.Ewell.EwellContractReflection.Descriptor.MessageTypes[27]; }
+      get { return global::Ewell.Contracts.Ido.EwellContractReflection.Descriptor.MessageTypes[27]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -9647,7 +9754,7 @@ namespace AElf.Contracts.Ewell {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::AElf.Contracts.Ewell.EwellContractReflection.Descriptor.MessageTypes[28]; }
+      get { return global::Ewell.Contracts.Ido.EwellContractReflection.Descriptor.MessageTypes[28]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -9882,7 +9989,7 @@ namespace AElf.Contracts.Ewell {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::AElf.Contracts.Ewell.EwellContractReflection.Descriptor.MessageTypes[29]; }
+      get { return global::Ewell.Contracts.Ido.EwellContractReflection.Descriptor.MessageTypes[29]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -9907,7 +10014,7 @@ namespace AElf.Contracts.Ewell {
       investSymbol_ = other.investSymbol_;
       amount_ = other.amount_;
       totalAmount_ = other.totalAmount_;
-      projectCurrency_ = other.projectCurrency_;
+      projectSymbol_ = other.projectSymbol_;
       toClaimAmount_ = other.toClaimAmount_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -9978,15 +10085,15 @@ namespace AElf.Contracts.Ewell {
       }
     }
 
-    /// <summary>Field number for the "project_currency" field.</summary>
-    public const int ProjectCurrencyFieldNumber = 6;
-    private string projectCurrency_ = "";
+    /// <summary>Field number for the "project_symbol" field.</summary>
+    public const int ProjectSymbolFieldNumber = 6;
+    private string projectSymbol_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string ProjectCurrency {
-      get { return projectCurrency_; }
+    public string ProjectSymbol {
+      get { return projectSymbol_; }
       set {
-        projectCurrency_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        projectSymbol_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -10022,7 +10129,7 @@ namespace AElf.Contracts.Ewell {
       if (InvestSymbol != other.InvestSymbol) return false;
       if (Amount != other.Amount) return false;
       if (TotalAmount != other.TotalAmount) return false;
-      if (ProjectCurrency != other.ProjectCurrency) return false;
+      if (ProjectSymbol != other.ProjectSymbol) return false;
       if (ToClaimAmount != other.ToClaimAmount) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -10036,7 +10143,7 @@ namespace AElf.Contracts.Ewell {
       if (InvestSymbol.Length != 0) hash ^= InvestSymbol.GetHashCode();
       if (Amount != 0L) hash ^= Amount.GetHashCode();
       if (TotalAmount != 0L) hash ^= TotalAmount.GetHashCode();
-      if (ProjectCurrency.Length != 0) hash ^= ProjectCurrency.GetHashCode();
+      if (ProjectSymbol.Length != 0) hash ^= ProjectSymbol.GetHashCode();
       if (ToClaimAmount != 0L) hash ^= ToClaimAmount.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -10076,9 +10183,9 @@ namespace AElf.Contracts.Ewell {
         output.WriteRawTag(40);
         output.WriteInt64(TotalAmount);
       }
-      if (ProjectCurrency.Length != 0) {
+      if (ProjectSymbol.Length != 0) {
         output.WriteRawTag(50);
-        output.WriteString(ProjectCurrency);
+        output.WriteString(ProjectSymbol);
       }
       if (ToClaimAmount != 0L) {
         output.WriteRawTag(56);
@@ -10114,9 +10221,9 @@ namespace AElf.Contracts.Ewell {
         output.WriteRawTag(40);
         output.WriteInt64(TotalAmount);
       }
-      if (ProjectCurrency.Length != 0) {
+      if (ProjectSymbol.Length != 0) {
         output.WriteRawTag(50);
-        output.WriteString(ProjectCurrency);
+        output.WriteString(ProjectSymbol);
       }
       if (ToClaimAmount != 0L) {
         output.WriteRawTag(56);
@@ -10147,8 +10254,8 @@ namespace AElf.Contracts.Ewell {
       if (TotalAmount != 0L) {
         size += 1 + pb::CodedOutputStream.ComputeInt64Size(TotalAmount);
       }
-      if (ProjectCurrency.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(ProjectCurrency);
+      if (ProjectSymbol.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(ProjectSymbol);
       }
       if (ToClaimAmount != 0L) {
         size += 1 + pb::CodedOutputStream.ComputeInt64Size(ToClaimAmount);
@@ -10186,8 +10293,8 @@ namespace AElf.Contracts.Ewell {
       if (other.TotalAmount != 0L) {
         TotalAmount = other.TotalAmount;
       }
-      if (other.ProjectCurrency.Length != 0) {
-        ProjectCurrency = other.ProjectCurrency;
+      if (other.ProjectSymbol.Length != 0) {
+        ProjectSymbol = other.ProjectSymbol;
       }
       if (other.ToClaimAmount != 0L) {
         ToClaimAmount = other.ToClaimAmount;
@@ -10234,7 +10341,7 @@ namespace AElf.Contracts.Ewell {
             break;
           }
           case 50: {
-            ProjectCurrency = input.ReadString();
+            ProjectSymbol = input.ReadString();
             break;
           }
           case 56: {
@@ -10283,7 +10390,7 @@ namespace AElf.Contracts.Ewell {
             break;
           }
           case 50: {
-            ProjectCurrency = input.ReadString();
+            ProjectSymbol = input.ReadString();
             break;
           }
           case 56: {
@@ -10297,21 +10404,21 @@ namespace AElf.Contracts.Ewell {
 
   }
 
-  public sealed partial class UnInvested : pb::IMessage<UnInvested>
+  public sealed partial class DisInvested : pb::IMessage<DisInvested>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
-    private static readonly pb::MessageParser<UnInvested> _parser = new pb::MessageParser<UnInvested>(() => new UnInvested());
+    private static readonly pb::MessageParser<DisInvested> _parser = new pb::MessageParser<DisInvested>(() => new DisInvested());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pb::MessageParser<UnInvested> Parser { get { return _parser; } }
+    public static pb::MessageParser<DisInvested> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::AElf.Contracts.Ewell.EwellContractReflection.Descriptor.MessageTypes[30]; }
+      get { return global::Ewell.Contracts.Ido.EwellContractReflection.Descriptor.MessageTypes[30]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -10322,7 +10429,7 @@ namespace AElf.Contracts.Ewell {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public UnInvested() {
+    public DisInvested() {
       OnConstruction();
     }
 
@@ -10330,19 +10437,19 @@ namespace AElf.Contracts.Ewell {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public UnInvested(UnInvested other) : this() {
+    public DisInvested(DisInvested other) : this() {
       projectId_ = other.projectId_ != null ? other.projectId_.Clone() : null;
       user_ = other.user_ != null ? other.user_.Clone() : null;
       investSymbol_ = other.investSymbol_;
-      unInvestAmount_ = other.unInvestAmount_;
+      disinvestAmount_ = other.disinvestAmount_;
       totalAmount_ = other.totalAmount_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public UnInvested Clone() {
-      return new UnInvested(this);
+    public DisInvested Clone() {
+      return new DisInvested(this);
     }
 
     /// <summary>Field number for the "project_id" field.</summary>
@@ -10381,15 +10488,15 @@ namespace AElf.Contracts.Ewell {
       }
     }
 
-    /// <summary>Field number for the "un_invest_amount" field.</summary>
-    public const int UnInvestAmountFieldNumber = 4;
-    private long unInvestAmount_;
+    /// <summary>Field number for the "disinvest_amount" field.</summary>
+    public const int DisinvestAmountFieldNumber = 4;
+    private long disinvestAmount_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public long UnInvestAmount {
-      get { return unInvestAmount_; }
+    public long DisinvestAmount {
+      get { return disinvestAmount_; }
       set {
-        unInvestAmount_ = value;
+        disinvestAmount_ = value;
       }
     }
 
@@ -10408,12 +10515,12 @@ namespace AElf.Contracts.Ewell {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
-      return Equals(other as UnInvested);
+      return Equals(other as DisInvested);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool Equals(UnInvested other) {
+    public bool Equals(DisInvested other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -10423,7 +10530,7 @@ namespace AElf.Contracts.Ewell {
       if (!object.Equals(ProjectId, other.ProjectId)) return false;
       if (!object.Equals(User, other.User)) return false;
       if (InvestSymbol != other.InvestSymbol) return false;
-      if (UnInvestAmount != other.UnInvestAmount) return false;
+      if (DisinvestAmount != other.DisinvestAmount) return false;
       if (TotalAmount != other.TotalAmount) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -10435,7 +10542,7 @@ namespace AElf.Contracts.Ewell {
       if (projectId_ != null) hash ^= ProjectId.GetHashCode();
       if (user_ != null) hash ^= User.GetHashCode();
       if (InvestSymbol.Length != 0) hash ^= InvestSymbol.GetHashCode();
-      if (UnInvestAmount != 0L) hash ^= UnInvestAmount.GetHashCode();
+      if (DisinvestAmount != 0L) hash ^= DisinvestAmount.GetHashCode();
       if (TotalAmount != 0L) hash ^= TotalAmount.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -10467,9 +10574,9 @@ namespace AElf.Contracts.Ewell {
         output.WriteRawTag(26);
         output.WriteString(InvestSymbol);
       }
-      if (UnInvestAmount != 0L) {
+      if (DisinvestAmount != 0L) {
         output.WriteRawTag(32);
-        output.WriteInt64(UnInvestAmount);
+        output.WriteInt64(DisinvestAmount);
       }
       if (TotalAmount != 0L) {
         output.WriteRawTag(40);
@@ -10497,9 +10604,9 @@ namespace AElf.Contracts.Ewell {
         output.WriteRawTag(26);
         output.WriteString(InvestSymbol);
       }
-      if (UnInvestAmount != 0L) {
+      if (DisinvestAmount != 0L) {
         output.WriteRawTag(32);
-        output.WriteInt64(UnInvestAmount);
+        output.WriteInt64(DisinvestAmount);
       }
       if (TotalAmount != 0L) {
         output.WriteRawTag(40);
@@ -10524,8 +10631,8 @@ namespace AElf.Contracts.Ewell {
       if (InvestSymbol.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(InvestSymbol);
       }
-      if (UnInvestAmount != 0L) {
-        size += 1 + pb::CodedOutputStream.ComputeInt64Size(UnInvestAmount);
+      if (DisinvestAmount != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(DisinvestAmount);
       }
       if (TotalAmount != 0L) {
         size += 1 + pb::CodedOutputStream.ComputeInt64Size(TotalAmount);
@@ -10538,7 +10645,7 @@ namespace AElf.Contracts.Ewell {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(UnInvested other) {
+    public void MergeFrom(DisInvested other) {
       if (other == null) {
         return;
       }
@@ -10557,8 +10664,8 @@ namespace AElf.Contracts.Ewell {
       if (other.InvestSymbol.Length != 0) {
         InvestSymbol = other.InvestSymbol;
       }
-      if (other.UnInvestAmount != 0L) {
-        UnInvestAmount = other.UnInvestAmount;
+      if (other.DisinvestAmount != 0L) {
+        DisinvestAmount = other.DisinvestAmount;
       }
       if (other.TotalAmount != 0L) {
         TotalAmount = other.TotalAmount;
@@ -10597,7 +10704,7 @@ namespace AElf.Contracts.Ewell {
             break;
           }
           case 32: {
-            UnInvestAmount = input.ReadInt64();
+            DisinvestAmount = input.ReadInt64();
             break;
           }
           case 40: {
@@ -10638,7 +10745,7 @@ namespace AElf.Contracts.Ewell {
             break;
           }
           case 32: {
-            UnInvestAmount = input.ReadInt64();
+            DisinvestAmount = input.ReadInt64();
             break;
           }
           case 40: {
@@ -10652,7 +10759,7 @@ namespace AElf.Contracts.Ewell {
 
   }
 
-  internal sealed partial class LiquidatedDamageRecord : pb::IMessage<LiquidatedDamageRecord>
+  public sealed partial class LiquidatedDamageRecord : pb::IMessage<LiquidatedDamageRecord>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
@@ -10666,7 +10773,7 @@ namespace AElf.Contracts.Ewell {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::AElf.Contracts.Ewell.EwellContractReflection.Descriptor.MessageTypes[31]; }
+      get { return global::Ewell.Contracts.Ido.EwellContractReflection.Descriptor.MessageTypes[31]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -10970,7 +11077,7 @@ namespace AElf.Contracts.Ewell {
 
   }
 
-  internal sealed partial class LiquidatedDamageClaimed : pb::IMessage<LiquidatedDamageClaimed>
+  public sealed partial class LiquidatedDamageClaimed : pb::IMessage<LiquidatedDamageClaimed>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
@@ -10984,7 +11091,7 @@ namespace AElf.Contracts.Ewell {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::AElf.Contracts.Ewell.EwellContractReflection.Descriptor.MessageTypes[32]; }
+      get { return global::Ewell.Contracts.Ido.EwellContractReflection.Descriptor.MessageTypes[32]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -11302,7 +11409,7 @@ namespace AElf.Contracts.Ewell {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::AElf.Contracts.Ewell.EwellContractReflection.Descriptor.MessageTypes[33]; }
+      get { return global::Ewell.Contracts.Ido.EwellContractReflection.Descriptor.MessageTypes[33]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -11324,7 +11431,7 @@ namespace AElf.Contracts.Ewell {
     public Claimed(Claimed other) : this() {
       projectId_ = other.projectId_ != null ? other.projectId_.Clone() : null;
       user_ = other.user_ != null ? other.user_.Clone() : null;
-      projectCurrency_ = other.projectCurrency_;
+      projectSymbol_ = other.projectSymbol_;
       amount_ = other.amount_;
       latestPeriod_ = other.latestPeriod_;
       totalPeriod_ = other.totalPeriod_;
@@ -11361,15 +11468,15 @@ namespace AElf.Contracts.Ewell {
       }
     }
 
-    /// <summary>Field number for the "project_currency" field.</summary>
-    public const int ProjectCurrencyFieldNumber = 3;
-    private string projectCurrency_ = "";
+    /// <summary>Field number for the "project_symbol" field.</summary>
+    public const int ProjectSymbolFieldNumber = 3;
+    private string projectSymbol_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string ProjectCurrency {
-      get { return projectCurrency_; }
+    public string ProjectSymbol {
+      get { return projectSymbol_; }
       set {
-        projectCurrency_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        projectSymbol_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -11426,7 +11533,7 @@ namespace AElf.Contracts.Ewell {
       }
       if (!object.Equals(ProjectId, other.ProjectId)) return false;
       if (!object.Equals(User, other.User)) return false;
-      if (ProjectCurrency != other.ProjectCurrency) return false;
+      if (ProjectSymbol != other.ProjectSymbol) return false;
       if (Amount != other.Amount) return false;
       if (LatestPeriod != other.LatestPeriod) return false;
       if (TotalPeriod != other.TotalPeriod) return false;
@@ -11439,7 +11546,7 @@ namespace AElf.Contracts.Ewell {
       int hash = 1;
       if (projectId_ != null) hash ^= ProjectId.GetHashCode();
       if (user_ != null) hash ^= User.GetHashCode();
-      if (ProjectCurrency.Length != 0) hash ^= ProjectCurrency.GetHashCode();
+      if (ProjectSymbol.Length != 0) hash ^= ProjectSymbol.GetHashCode();
       if (Amount != 0L) hash ^= Amount.GetHashCode();
       if (LatestPeriod != 0) hash ^= LatestPeriod.GetHashCode();
       if (TotalPeriod != 0) hash ^= TotalPeriod.GetHashCode();
@@ -11469,9 +11576,9 @@ namespace AElf.Contracts.Ewell {
         output.WriteRawTag(18);
         output.WriteMessage(User);
       }
-      if (ProjectCurrency.Length != 0) {
+      if (ProjectSymbol.Length != 0) {
         output.WriteRawTag(26);
-        output.WriteString(ProjectCurrency);
+        output.WriteString(ProjectSymbol);
       }
       if (Amount != 0L) {
         output.WriteRawTag(32);
@@ -11503,9 +11610,9 @@ namespace AElf.Contracts.Ewell {
         output.WriteRawTag(18);
         output.WriteMessage(User);
       }
-      if (ProjectCurrency.Length != 0) {
+      if (ProjectSymbol.Length != 0) {
         output.WriteRawTag(26);
-        output.WriteString(ProjectCurrency);
+        output.WriteString(ProjectSymbol);
       }
       if (Amount != 0L) {
         output.WriteRawTag(32);
@@ -11535,8 +11642,8 @@ namespace AElf.Contracts.Ewell {
       if (user_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(User);
       }
-      if (ProjectCurrency.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(ProjectCurrency);
+      if (ProjectSymbol.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(ProjectSymbol);
       }
       if (Amount != 0L) {
         size += 1 + pb::CodedOutputStream.ComputeInt64Size(Amount);
@@ -11571,8 +11678,8 @@ namespace AElf.Contracts.Ewell {
         }
         User.MergeFrom(other.User);
       }
-      if (other.ProjectCurrency.Length != 0) {
-        ProjectCurrency = other.ProjectCurrency;
+      if (other.ProjectSymbol.Length != 0) {
+        ProjectSymbol = other.ProjectSymbol;
       }
       if (other.Amount != 0L) {
         Amount = other.Amount;
@@ -11613,7 +11720,7 @@ namespace AElf.Contracts.Ewell {
             break;
           }
           case 26: {
-            ProjectCurrency = input.ReadString();
+            ProjectSymbol = input.ReadString();
             break;
           }
           case 32: {
@@ -11658,7 +11765,7 @@ namespace AElf.Contracts.Ewell {
             break;
           }
           case 26: {
-            ProjectCurrency = input.ReadString();
+            ProjectSymbol = input.ReadString();
             break;
           }
           case 32: {
@@ -11694,7 +11801,7 @@ namespace AElf.Contracts.Ewell {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::AElf.Contracts.Ewell.EwellContractReflection.Descriptor.MessageTypes[34]; }
+      get { return global::Ewell.Contracts.Ido.EwellContractReflection.Descriptor.MessageTypes[34]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -11998,7 +12105,7 @@ namespace AElf.Contracts.Ewell {
 
   }
 
-  internal sealed partial class Withdrawn : pb::IMessage<Withdrawn>
+  public sealed partial class Withdrawn : pb::IMessage<Withdrawn>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
@@ -12012,7 +12119,7 @@ namespace AElf.Contracts.Ewell {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::AElf.Contracts.Ewell.EwellContractReflection.Descriptor.MessageTypes[35]; }
+      get { return global::Ewell.Contracts.Ido.EwellContractReflection.Descriptor.MessageTypes[35]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -12035,7 +12142,7 @@ namespace AElf.Contracts.Ewell {
       projectId_ = other.projectId_ != null ? other.projectId_.Clone() : null;
       acceptedSymbol_ = other.acceptedSymbol_;
       withdrawAmount_ = other.withdrawAmount_;
-      projectCurrency_ = other.projectCurrency_;
+      projectSymbol_ = other.projectSymbol_;
       isBurnRestToken_ = other.isBurnRestToken_;
       burnAmount_ = other.burnAmount_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
@@ -12083,15 +12190,15 @@ namespace AElf.Contracts.Ewell {
       }
     }
 
-    /// <summary>Field number for the "project_currency" field.</summary>
-    public const int ProjectCurrencyFieldNumber = 4;
-    private string projectCurrency_ = "";
+    /// <summary>Field number for the "project_symbol" field.</summary>
+    public const int ProjectSymbolFieldNumber = 4;
+    private string projectSymbol_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string ProjectCurrency {
-      get { return projectCurrency_; }
+    public string ProjectSymbol {
+      get { return projectSymbol_; }
       set {
-        projectCurrency_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        projectSymbol_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -12137,7 +12244,7 @@ namespace AElf.Contracts.Ewell {
       if (!object.Equals(ProjectId, other.ProjectId)) return false;
       if (AcceptedSymbol != other.AcceptedSymbol) return false;
       if (WithdrawAmount != other.WithdrawAmount) return false;
-      if (ProjectCurrency != other.ProjectCurrency) return false;
+      if (ProjectSymbol != other.ProjectSymbol) return false;
       if (IsBurnRestToken != other.IsBurnRestToken) return false;
       if (BurnAmount != other.BurnAmount) return false;
       return Equals(_unknownFields, other._unknownFields);
@@ -12150,7 +12257,7 @@ namespace AElf.Contracts.Ewell {
       if (projectId_ != null) hash ^= ProjectId.GetHashCode();
       if (AcceptedSymbol.Length != 0) hash ^= AcceptedSymbol.GetHashCode();
       if (WithdrawAmount != 0L) hash ^= WithdrawAmount.GetHashCode();
-      if (ProjectCurrency.Length != 0) hash ^= ProjectCurrency.GetHashCode();
+      if (ProjectSymbol.Length != 0) hash ^= ProjectSymbol.GetHashCode();
       if (IsBurnRestToken != false) hash ^= IsBurnRestToken.GetHashCode();
       if (BurnAmount != 0L) hash ^= BurnAmount.GetHashCode();
       if (_unknownFields != null) {
@@ -12183,9 +12290,9 @@ namespace AElf.Contracts.Ewell {
         output.WriteRawTag(24);
         output.WriteInt64(WithdrawAmount);
       }
-      if (ProjectCurrency.Length != 0) {
+      if (ProjectSymbol.Length != 0) {
         output.WriteRawTag(34);
-        output.WriteString(ProjectCurrency);
+        output.WriteString(ProjectSymbol);
       }
       if (IsBurnRestToken != false) {
         output.WriteRawTag(40);
@@ -12217,9 +12324,9 @@ namespace AElf.Contracts.Ewell {
         output.WriteRawTag(24);
         output.WriteInt64(WithdrawAmount);
       }
-      if (ProjectCurrency.Length != 0) {
+      if (ProjectSymbol.Length != 0) {
         output.WriteRawTag(34);
-        output.WriteString(ProjectCurrency);
+        output.WriteString(ProjectSymbol);
       }
       if (IsBurnRestToken != false) {
         output.WriteRawTag(40);
@@ -12248,8 +12355,8 @@ namespace AElf.Contracts.Ewell {
       if (WithdrawAmount != 0L) {
         size += 1 + pb::CodedOutputStream.ComputeInt64Size(WithdrawAmount);
       }
-      if (ProjectCurrency.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(ProjectCurrency);
+      if (ProjectSymbol.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(ProjectSymbol);
       }
       if (IsBurnRestToken != false) {
         size += 1 + 1;
@@ -12281,8 +12388,8 @@ namespace AElf.Contracts.Ewell {
       if (other.WithdrawAmount != 0L) {
         WithdrawAmount = other.WithdrawAmount;
       }
-      if (other.ProjectCurrency.Length != 0) {
-        ProjectCurrency = other.ProjectCurrency;
+      if (other.ProjectSymbol.Length != 0) {
+        ProjectSymbol = other.ProjectSymbol;
       }
       if (other.IsBurnRestToken != false) {
         IsBurnRestToken = other.IsBurnRestToken;
@@ -12321,7 +12428,7 @@ namespace AElf.Contracts.Ewell {
             break;
           }
           case 34: {
-            ProjectCurrency = input.ReadString();
+            ProjectSymbol = input.ReadString();
             break;
           }
           case 40: {
@@ -12363,7 +12470,7 @@ namespace AElf.Contracts.Ewell {
             break;
           }
           case 34: {
-            ProjectCurrency = input.ReadString();
+            ProjectSymbol = input.ReadString();
             break;
           }
           case 40: {

@@ -1,10 +1,10 @@
 using AElf;
-using AElf.Contracts.Ewell;
 using AElf.CSharp.Core.Extension;
 using AElf.Types;
 using AElfIndexer.Client;
 using AElfIndexer.Client.Handlers;
 using AElfIndexer.Grains.State.Client;
+using Ewell.Contracts.Ido;
 using Ewell.Indexer.Plugin.Entities;
 using Ewell.Indexer.Plugin.Processors;
 using Ewell.Indexer.Plugin.Tests.Helper;
@@ -13,7 +13,7 @@ using Xunit;
 
 namespace Ewell.Indexer.Plugin.Tests.Processors;
 
-public class UnInvestedProcessorTest : EwellIndexerPluginTestBase
+public class DisInvestedProcessorTest : EwellIndexerPluginTestBase
 {
     private readonly IAElfIndexerClientEntityRepository<CrowdfundingProjectIndex, LogEventInfo>
         _crowdfundingProjectRepository;
@@ -22,7 +22,7 @@ public class UnInvestedProcessorTest : EwellIndexerPluginTestBase
     
     private readonly IAElfIndexerClientEntityRepository<UserRecordIndex, LogEventInfo> _userRecordRepository;
     
-    public UnInvestedProcessorTest()
+    public DisInvestedProcessorTest()
     {
         _crowdfundingProjectRepository =
             GetRequiredService<IAElfIndexerClientEntityRepository<CrowdfundingProjectIndex, LogEventInfo>>();
@@ -51,11 +51,11 @@ public class UnInvestedProcessorTest : EwellIndexerPluginTestBase
         var blockStateSetKey = await InitializeBlockStateSetAsync(blockStateSet, chainId);
 
         //step2: create logEventInfo
-        var logEvent = new UnInvested()
+        var logEvent = new DisInvested()
         {
             ProjectId = HashHelper.ComputeFrom(Id),
             User = Address.FromBase58(BobAddress),
-            UnInvestAmount = 800,
+            DisinvestAmount = 800,
             TotalAmount = 0
         };
 
@@ -75,7 +75,7 @@ public class UnInvestedProcessorTest : EwellIndexerPluginTestBase
             BlockTime = DateTime.UtcNow
         };
 
-        var processor = GetRequiredService<UnInvestedProcessor>();
+        var processor = GetRequiredService<DisInvestedProcessor>();
         await processor.HandleEventAsync(logEventInfo, logEventContext);
 
         //step4: save blockStateSet into es
@@ -87,10 +87,10 @@ public class UnInvestedProcessorTest : EwellIndexerPluginTestBase
         projectIndex.ShouldNotBeNull();
         projectIndex.Id.ShouldBe(projectId);
         projectIndex.CurrentRaisedAmount.ShouldBe(0);
-        projectIndex.ReceivableLiquidatedDamageAmount.ShouldBe(invested.Amount - logEvent.UnInvestAmount);
+        projectIndex.ReceivableLiquidatedDamageAmount.ShouldBe(invested.Amount - logEvent.DisinvestAmount);
         
         var userRecordId = IdGenerateHelper.GetId(chainId, projectId, BobAddress, 
-            BehaviorType.UnInvest, transactionId);
+            BehaviorType.Disinvest, transactionId);
         var userRecordIndex = await _userRecordRepository.GetFromBlockStateSetAsync(userRecordId, chainId);
         userRecordIndex.ShouldNotBeNull();
         userRecordIndex.Id.ShouldBe(userRecordId);

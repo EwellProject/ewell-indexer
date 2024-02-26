@@ -27,5 +27,7 @@ public class ProjectRegisteredProcessorTest : EwellIndexerPluginTestBase
         var projectIndex = await _crowdfundingProjectRepository.GetFromBlockStateSetAsync(projectId, Chain_AELF);
         projectIndex.ShouldNotBeNull();
         projectIndex.Id.ShouldBe(projectId);
+        projectIndex.TargetRaisedAmount.ShouldBe(200000000);
+        projectIndex.RestPeriodDistributeProportion.ShouldBe(50);
     }
 }

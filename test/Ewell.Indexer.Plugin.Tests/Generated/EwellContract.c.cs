@@ -8,7 +8,7 @@
 using System.Collections.Generic;
 using aelf = global::AElf.CSharp.Core;
 
-namespace AElf.Contracts.Ewell {
+namespace Ewell.Contracts.Ido {
 
   #region Events
   public partial class ProjectRegistered : aelf::IEvent<ProjectRegistered>
@@ -25,8 +25,8 @@ namespace AElf.Contracts.Ewell {
       return new ProjectRegistered
       {
         ProjectId = ProjectId,
-        AcceptedCurrency = AcceptedCurrency,
-        ProjectCurrency = ProjectCurrency,
+        AcceptedSymbol = AcceptedSymbol,
+        ProjectSymbol = ProjectSymbol,
         CrowdFundingType = CrowdFundingType,
         CrowdFundingIssueAmount = CrowdFundingIssueAmount,
         PreSalePrice = PreSalePrice,
@@ -43,10 +43,10 @@ namespace AElf.Contracts.Ewell {
         IsBurnRestToken = IsBurnRestToken,
         TotalPeriod = TotalPeriod,
         AdditionalInfo = AdditionalInfo,
-        ToRaisedAmount = ToRaisedAmount,
+        TargetRaisedAmount = TargetRaisedAmount,
         Creator = Creator,
         FirstDistributeProportion = FirstDistributeProportion,
-        RestDistributeProportion = RestDistributeProportion,
+        RestPeriodDistributeProportion = RestPeriodDistributeProportion,
         PeriodDuration = PeriodDuration,
         VirtualAddress = VirtualAddress,
         TokenReleaseTime = TokenReleaseTime,
@@ -54,7 +54,7 @@ namespace AElf.Contracts.Ewell {
     }
   }
 
-  internal partial class NewWhitelistIdSet : aelf::IEvent<NewWhitelistIdSet>
+  public partial class NewWhitelistIdSet : aelf::IEvent<NewWhitelistIdSet>
   {
     public global::System.Collections.Generic.IEnumerable<NewWhitelistIdSet> GetIndexed()
     {
@@ -147,35 +147,35 @@ namespace AElf.Contracts.Ewell {
         InvestSymbol = InvestSymbol,
         Amount = Amount,
         TotalAmount = TotalAmount,
-        ProjectCurrency = ProjectCurrency,
+        ProjectSymbol = ProjectSymbol,
         ToClaimAmount = ToClaimAmount,
       };
     }
   }
 
-  public partial class UnInvested : aelf::IEvent<UnInvested>
+  public partial class DisInvested : aelf::IEvent<DisInvested>
   {
-    public global::System.Collections.Generic.IEnumerable<UnInvested> GetIndexed()
+    public global::System.Collections.Generic.IEnumerable<DisInvested> GetIndexed()
     {
-      return new List<UnInvested>
+      return new List<DisInvested>
       {
       };
     }
 
-    public UnInvested GetNonIndexed()
+    public DisInvested GetNonIndexed()
     {
-      return new UnInvested
+      return new DisInvested
       {
         ProjectId = ProjectId,
         User = User,
         InvestSymbol = InvestSymbol,
-        UnInvestAmount = UnInvestAmount,
+        DisinvestAmount = DisinvestAmount,
         TotalAmount = TotalAmount,
       };
     }
   }
 
-  internal partial class LiquidatedDamageRecord : aelf::IEvent<LiquidatedDamageRecord>
+  public partial class LiquidatedDamageRecord : aelf::IEvent<LiquidatedDamageRecord>
   {
     public global::System.Collections.Generic.IEnumerable<LiquidatedDamageRecord> GetIndexed()
     {
@@ -196,7 +196,7 @@ namespace AElf.Contracts.Ewell {
     }
   }
 
-  internal partial class LiquidatedDamageClaimed : aelf::IEvent<LiquidatedDamageClaimed>
+  public partial class LiquidatedDamageClaimed : aelf::IEvent<LiquidatedDamageClaimed>
   {
     public global::System.Collections.Generic.IEnumerable<LiquidatedDamageClaimed> GetIndexed()
     {
@@ -232,7 +232,7 @@ namespace AElf.Contracts.Ewell {
       {
         ProjectId = ProjectId,
         User = User,
-        ProjectCurrency = ProjectCurrency,
+        ProjectSymbol = ProjectSymbol,
         Amount = Amount,
         LatestPeriod = LatestPeriod,
         TotalPeriod = TotalPeriod,
@@ -261,7 +261,7 @@ namespace AElf.Contracts.Ewell {
     }
   }
 
-  internal partial class Withdrawn : aelf::IEvent<Withdrawn>
+  public partial class Withdrawn : aelf::IEvent<Withdrawn>
   {
     public global::System.Collections.Generic.IEnumerable<Withdrawn> GetIndexed()
     {
@@ -277,7 +277,7 @@ namespace AElf.Contracts.Ewell {
         ProjectId = ProjectId,
         AcceptedSymbol = AcceptedSymbol,
         WithdrawAmount = WithdrawAmount,
-        ProjectCurrency = ProjectCurrency,
+        ProjectSymbol = ProjectSymbol,
         IsBurnRestToken = IsBurnRestToken,
         BurnAmount = BurnAmount,
       };
@@ -285,49 +285,49 @@ namespace AElf.Contracts.Ewell {
   }
 
   #endregion
-  internal static partial class EwellContractContainer
+  public static partial class EwellContractContainer
   {
     static readonly string __ServiceName = "EwellContract";
 
     #region Marshallers
-    static readonly aelf::Marshaller<global::AElf.Contracts.Ewell.InitializeInput> __Marshaller_InitializeInput = aelf::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::AElf.Contracts.Ewell.InitializeInput.Parser.ParseFrom);
+    static readonly aelf::Marshaller<global::Ewell.Contracts.Ido.InitializeInput> __Marshaller_InitializeInput = aelf::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Ewell.Contracts.Ido.InitializeInput.Parser.ParseFrom);
     static readonly aelf::Marshaller<global::Google.Protobuf.WellKnownTypes.Empty> __Marshaller_google_protobuf_Empty = aelf::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Google.Protobuf.WellKnownTypes.Empty.Parser.ParseFrom);
-    static readonly aelf::Marshaller<global::AElf.Contracts.Ewell.RegisterInput> __Marshaller_RegisterInput = aelf::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::AElf.Contracts.Ewell.RegisterInput.Parser.ParseFrom);
-    static readonly aelf::Marshaller<global::AElf.Contracts.Ewell.UpdateAdditionalInfoInput> __Marshaller_UpdateAdditionalInfoInput = aelf::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::AElf.Contracts.Ewell.UpdateAdditionalInfoInput.Parser.ParseFrom);
+    static readonly aelf::Marshaller<global::Ewell.Contracts.Ido.RegisterInput> __Marshaller_RegisterInput = aelf::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Ewell.Contracts.Ido.RegisterInput.Parser.ParseFrom);
+    static readonly aelf::Marshaller<global::Ewell.Contracts.Ido.UpdateAdditionalInfoInput> __Marshaller_UpdateAdditionalInfoInput = aelf::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Ewell.Contracts.Ido.UpdateAdditionalInfoInput.Parser.ParseFrom);
     static readonly aelf::Marshaller<global::AElf.Types.Hash> __Marshaller_aelf_Hash = aelf::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::AElf.Types.Hash.Parser.ParseFrom);
-    static readonly aelf::Marshaller<global::AElf.Contracts.Ewell.AddWhitelistsInput> __Marshaller_AddWhitelistsInput = aelf::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::AElf.Contracts.Ewell.AddWhitelistsInput.Parser.ParseFrom);
-    static readonly aelf::Marshaller<global::AElf.Contracts.Ewell.RemoveWhitelistsInput> __Marshaller_RemoveWhitelistsInput = aelf::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::AElf.Contracts.Ewell.RemoveWhitelistsInput.Parser.ParseFrom);
-    static readonly aelf::Marshaller<global::AElf.Contracts.Ewell.SetWhitelistIdInput> __Marshaller_SetWhitelistIdInput = aelf::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::AElf.Contracts.Ewell.SetWhitelistIdInput.Parser.ParseFrom);
-    static readonly aelf::Marshaller<global::AElf.Contracts.Ewell.InvestInput> __Marshaller_InvestInput = aelf::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::AElf.Contracts.Ewell.InvestInput.Parser.ParseFrom);
-    static readonly aelf::Marshaller<global::AElf.Contracts.Ewell.ReFundAllInput> __Marshaller_ReFundAllInput = aelf::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::AElf.Contracts.Ewell.ReFundAllInput.Parser.ParseFrom);
-    static readonly aelf::Marshaller<global::AElf.Contracts.Ewell.ClaimInput> __Marshaller_ClaimInput = aelf::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::AElf.Contracts.Ewell.ClaimInput.Parser.ParseFrom);
+    static readonly aelf::Marshaller<global::Ewell.Contracts.Ido.AddWhitelistsInput> __Marshaller_AddWhitelistsInput = aelf::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Ewell.Contracts.Ido.AddWhitelistsInput.Parser.ParseFrom);
+    static readonly aelf::Marshaller<global::Ewell.Contracts.Ido.RemoveWhitelistsInput> __Marshaller_RemoveWhitelistsInput = aelf::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Ewell.Contracts.Ido.RemoveWhitelistsInput.Parser.ParseFrom);
+    static readonly aelf::Marshaller<global::Ewell.Contracts.Ido.SetWhitelistIdInput> __Marshaller_SetWhitelistIdInput = aelf::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Ewell.Contracts.Ido.SetWhitelistIdInput.Parser.ParseFrom);
+    static readonly aelf::Marshaller<global::Ewell.Contracts.Ido.InvestInput> __Marshaller_InvestInput = aelf::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Ewell.Contracts.Ido.InvestInput.Parser.ParseFrom);
+    static readonly aelf::Marshaller<global::Ewell.Contracts.Ido.ReFundAllInput> __Marshaller_ReFundAllInput = aelf::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Ewell.Contracts.Ido.ReFundAllInput.Parser.ParseFrom);
+    static readonly aelf::Marshaller<global::Ewell.Contracts.Ido.ClaimInput> __Marshaller_ClaimInput = aelf::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Ewell.Contracts.Ido.ClaimInput.Parser.ParseFrom);
     static readonly aelf::Marshaller<global::AElf.Types.Address> __Marshaller_aelf_Address = aelf::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::AElf.Types.Address.Parser.ParseFrom);
-    static readonly aelf::Marshaller<global::AElf.Contracts.Ewell.ProjectInfo> __Marshaller_ProjectInfo = aelf::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::AElf.Contracts.Ewell.ProjectInfo.Parser.ParseFrom);
-    static readonly aelf::Marshaller<global::AElf.Contracts.Ewell.ProjectListInfo> __Marshaller_ProjectListInfo = aelf::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::AElf.Contracts.Ewell.ProjectListInfo.Parser.ParseFrom);
-    static readonly aelf::Marshaller<global::AElf.Contracts.Ewell.ExtraInfoIdList> __Marshaller_ExtraInfoIdList = aelf::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::AElf.Contracts.Ewell.ExtraInfoIdList.Parser.ParseFrom);
-    static readonly aelf::Marshaller<global::AElf.Contracts.Ewell.GetInvestDetailInput> __Marshaller_GetInvestDetailInput = aelf::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::AElf.Contracts.Ewell.GetInvestDetailInput.Parser.ParseFrom);
-    static readonly aelf::Marshaller<global::AElf.Contracts.Ewell.InvestDetail> __Marshaller_InvestDetail = aelf::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::AElf.Contracts.Ewell.InvestDetail.Parser.ParseFrom);
-    static readonly aelf::Marshaller<global::AElf.Contracts.Ewell.GetProfitDetailInput> __Marshaller_GetProfitDetailInput = aelf::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::AElf.Contracts.Ewell.GetProfitDetailInput.Parser.ParseFrom);
-    static readonly aelf::Marshaller<global::AElf.Contracts.Ewell.ProfitDetail> __Marshaller_ProfitDetail = aelf::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::AElf.Contracts.Ewell.ProfitDetail.Parser.ParseFrom);
-    static readonly aelf::Marshaller<global::AElf.Contracts.Ewell.LiquidatedDamageDetails> __Marshaller_LiquidatedDamageDetails = aelf::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::AElf.Contracts.Ewell.LiquidatedDamageDetails.Parser.ParseFrom);
+    static readonly aelf::Marshaller<global::Ewell.Contracts.Ido.ProjectInfo> __Marshaller_ProjectInfo = aelf::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Ewell.Contracts.Ido.ProjectInfo.Parser.ParseFrom);
+    static readonly aelf::Marshaller<global::Ewell.Contracts.Ido.ProjectListInfo> __Marshaller_ProjectListInfo = aelf::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Ewell.Contracts.Ido.ProjectListInfo.Parser.ParseFrom);
+    static readonly aelf::Marshaller<global::Ewell.Contracts.Ido.ExtraInfoIdList> __Marshaller_ExtraInfoIdList = aelf::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Ewell.Contracts.Ido.ExtraInfoIdList.Parser.ParseFrom);
+    static readonly aelf::Marshaller<global::Ewell.Contracts.Ido.GetInvestDetailInput> __Marshaller_GetInvestDetailInput = aelf::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Ewell.Contracts.Ido.GetInvestDetailInput.Parser.ParseFrom);
+    static readonly aelf::Marshaller<global::Ewell.Contracts.Ido.InvestDetail> __Marshaller_InvestDetail = aelf::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Ewell.Contracts.Ido.InvestDetail.Parser.ParseFrom);
+    static readonly aelf::Marshaller<global::Ewell.Contracts.Ido.GetProfitDetailInput> __Marshaller_GetProfitDetailInput = aelf::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Ewell.Contracts.Ido.GetProfitDetailInput.Parser.ParseFrom);
+    static readonly aelf::Marshaller<global::Ewell.Contracts.Ido.ProfitDetail> __Marshaller_ProfitDetail = aelf::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Ewell.Contracts.Ido.ProfitDetail.Parser.ParseFrom);
+    static readonly aelf::Marshaller<global::Ewell.Contracts.Ido.LiquidatedDamageDetails> __Marshaller_LiquidatedDamageDetails = aelf::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Ewell.Contracts.Ido.LiquidatedDamageDetails.Parser.ParseFrom);
     #endregion
 
     #region Methods
-    static readonly aelf::Method<global::AElf.Contracts.Ewell.InitializeInput, global::Google.Protobuf.WellKnownTypes.Empty> __Method_Initialize = new aelf::Method<global::AElf.Contracts.Ewell.InitializeInput, global::Google.Protobuf.WellKnownTypes.Empty>(
+    static readonly aelf::Method<global::Ewell.Contracts.Ido.InitializeInput, global::Google.Protobuf.WellKnownTypes.Empty> __Method_Initialize = new aelf::Method<global::Ewell.Contracts.Ido.InitializeInput, global::Google.Protobuf.WellKnownTypes.Empty>(
         aelf::MethodType.Action,
         __ServiceName,
         "Initialize",
         __Marshaller_InitializeInput,
         __Marshaller_google_protobuf_Empty);
 
-    static readonly aelf::Method<global::AElf.Contracts.Ewell.RegisterInput, global::Google.Protobuf.WellKnownTypes.Empty> __Method_Register = new aelf::Method<global::AElf.Contracts.Ewell.RegisterInput, global::Google.Protobuf.WellKnownTypes.Empty>(
+    static readonly aelf::Method<global::Ewell.Contracts.Ido.RegisterInput, global::Google.Protobuf.WellKnownTypes.Empty> __Method_Register = new aelf::Method<global::Ewell.Contracts.Ido.RegisterInput, global::Google.Protobuf.WellKnownTypes.Empty>(
         aelf::MethodType.Action,
         __ServiceName,
         "Register",
         __Marshaller_RegisterInput,
         __Marshaller_google_protobuf_Empty);
 
-    static readonly aelf::Method<global::AElf.Contracts.Ewell.UpdateAdditionalInfoInput, global::Google.Protobuf.WellKnownTypes.Empty> __Method_UpdateAdditionalInfo = new aelf::Method<global::AElf.Contracts.Ewell.UpdateAdditionalInfoInput, global::Google.Protobuf.WellKnownTypes.Empty>(
+    static readonly aelf::Method<global::Ewell.Contracts.Ido.UpdateAdditionalInfoInput, global::Google.Protobuf.WellKnownTypes.Empty> __Method_UpdateAdditionalInfo = new aelf::Method<global::Ewell.Contracts.Ido.UpdateAdditionalInfoInput, global::Google.Protobuf.WellKnownTypes.Empty>(
         aelf::MethodType.Action,
         __ServiceName,
         "UpdateAdditionalInfo",
@@ -355,14 +355,14 @@ namespace AElf.Contracts.Ewell {
         __Marshaller_aelf_Hash,
         __Marshaller_google_protobuf_Empty);
 
-    static readonly aelf::Method<global::AElf.Contracts.Ewell.AddWhitelistsInput, global::Google.Protobuf.WellKnownTypes.Empty> __Method_AddWhitelists = new aelf::Method<global::AElf.Contracts.Ewell.AddWhitelistsInput, global::Google.Protobuf.WellKnownTypes.Empty>(
+    static readonly aelf::Method<global::Ewell.Contracts.Ido.AddWhitelistsInput, global::Google.Protobuf.WellKnownTypes.Empty> __Method_AddWhitelists = new aelf::Method<global::Ewell.Contracts.Ido.AddWhitelistsInput, global::Google.Protobuf.WellKnownTypes.Empty>(
         aelf::MethodType.Action,
         __ServiceName,
         "AddWhitelists",
         __Marshaller_AddWhitelistsInput,
         __Marshaller_google_protobuf_Empty);
 
-    static readonly aelf::Method<global::AElf.Contracts.Ewell.RemoveWhitelistsInput, global::Google.Protobuf.WellKnownTypes.Empty> __Method_RemoveWhitelists = new aelf::Method<global::AElf.Contracts.Ewell.RemoveWhitelistsInput, global::Google.Protobuf.WellKnownTypes.Empty>(
+    static readonly aelf::Method<global::Ewell.Contracts.Ido.RemoveWhitelistsInput, global::Google.Protobuf.WellKnownTypes.Empty> __Method_RemoveWhitelists = new aelf::Method<global::Ewell.Contracts.Ido.RemoveWhitelistsInput, global::Google.Protobuf.WellKnownTypes.Empty>(
         aelf::MethodType.Action,
         __ServiceName,
         "RemoveWhitelists",
@@ -376,24 +376,24 @@ namespace AElf.Contracts.Ewell {
         __Marshaller_aelf_Hash,
         __Marshaller_google_protobuf_Empty);
 
-    static readonly aelf::Method<global::AElf.Contracts.Ewell.SetWhitelistIdInput, global::Google.Protobuf.WellKnownTypes.Empty> __Method_SetWhitelistId = new aelf::Method<global::AElf.Contracts.Ewell.SetWhitelistIdInput, global::Google.Protobuf.WellKnownTypes.Empty>(
+    static readonly aelf::Method<global::Ewell.Contracts.Ido.SetWhitelistIdInput, global::Google.Protobuf.WellKnownTypes.Empty> __Method_SetWhitelistId = new aelf::Method<global::Ewell.Contracts.Ido.SetWhitelistIdInput, global::Google.Protobuf.WellKnownTypes.Empty>(
         aelf::MethodType.Action,
         __ServiceName,
         "SetWhitelistId",
         __Marshaller_SetWhitelistIdInput,
         __Marshaller_google_protobuf_Empty);
 
-    static readonly aelf::Method<global::AElf.Contracts.Ewell.InvestInput, global::Google.Protobuf.WellKnownTypes.Empty> __Method_Invest = new aelf::Method<global::AElf.Contracts.Ewell.InvestInput, global::Google.Protobuf.WellKnownTypes.Empty>(
+    static readonly aelf::Method<global::Ewell.Contracts.Ido.InvestInput, global::Google.Protobuf.WellKnownTypes.Empty> __Method_Invest = new aelf::Method<global::Ewell.Contracts.Ido.InvestInput, global::Google.Protobuf.WellKnownTypes.Empty>(
         aelf::MethodType.Action,
         __ServiceName,
         "Invest",
         __Marshaller_InvestInput,
         __Marshaller_google_protobuf_Empty);
 
-    static readonly aelf::Method<global::AElf.Types.Hash, global::Google.Protobuf.WellKnownTypes.Empty> __Method_UnInvest = new aelf::Method<global::AElf.Types.Hash, global::Google.Protobuf.WellKnownTypes.Empty>(
+    static readonly aelf::Method<global::AElf.Types.Hash, global::Google.Protobuf.WellKnownTypes.Empty> __Method_Disinvest = new aelf::Method<global::AElf.Types.Hash, global::Google.Protobuf.WellKnownTypes.Empty>(
         aelf::MethodType.Action,
         __ServiceName,
-        "UnInvest",
+        "Disinvest",
         __Marshaller_aelf_Hash,
         __Marshaller_google_protobuf_Empty);
 
@@ -404,14 +404,14 @@ namespace AElf.Contracts.Ewell {
         __Marshaller_aelf_Hash,
         __Marshaller_google_protobuf_Empty);
 
-    static readonly aelf::Method<global::AElf.Contracts.Ewell.ReFundAllInput, global::Google.Protobuf.WellKnownTypes.Empty> __Method_ReFundAll = new aelf::Method<global::AElf.Contracts.Ewell.ReFundAllInput, global::Google.Protobuf.WellKnownTypes.Empty>(
+    static readonly aelf::Method<global::Ewell.Contracts.Ido.ReFundAllInput, global::Google.Protobuf.WellKnownTypes.Empty> __Method_ReFundAll = new aelf::Method<global::Ewell.Contracts.Ido.ReFundAllInput, global::Google.Protobuf.WellKnownTypes.Empty>(
         aelf::MethodType.Action,
         __ServiceName,
         "ReFundAll",
         __Marshaller_ReFundAllInput,
         __Marshaller_google_protobuf_Empty);
 
-    static readonly aelf::Method<global::AElf.Contracts.Ewell.ClaimInput, global::Google.Protobuf.WellKnownTypes.Empty> __Method_Claim = new aelf::Method<global::AElf.Contracts.Ewell.ClaimInput, global::Google.Protobuf.WellKnownTypes.Empty>(
+    static readonly aelf::Method<global::Ewell.Contracts.Ido.ClaimInput, global::Google.Protobuf.WellKnownTypes.Empty> __Method_Claim = new aelf::Method<global::Ewell.Contracts.Ido.ClaimInput, global::Google.Protobuf.WellKnownTypes.Empty>(
         aelf::MethodType.Action,
         __ServiceName,
         "Claim",
@@ -432,6 +432,13 @@ namespace AElf.Contracts.Ewell {
         __Marshaller_aelf_Hash,
         __Marshaller_google_protobuf_Empty);
 
+    static readonly aelf::Method<global::AElf.Types.Address, global::Google.Protobuf.WellKnownTypes.Empty> __Method_SetProxyAccountContract = new aelf::Method<global::AElf.Types.Address, global::Google.Protobuf.WellKnownTypes.Empty>(
+        aelf::MethodType.Action,
+        __ServiceName,
+        "SetProxyAccountContract",
+        __Marshaller_aelf_Address,
+        __Marshaller_google_protobuf_Empty);
+
     static readonly aelf::Method<global::Google.Protobuf.WellKnownTypes.Empty, global::AElf.Types.Address> __Method_GetWhitelistContractAddress = new aelf::Method<global::Google.Protobuf.WellKnownTypes.Empty, global::AElf.Types.Address>(
         aelf::MethodType.View,
         __ServiceName,
@@ -446,42 +453,42 @@ namespace AElf.Contracts.Ewell {
         __Marshaller_google_protobuf_Empty,
         __Marshaller_aelf_Address);
 
-    static readonly aelf::Method<global::Google.Protobuf.WellKnownTypes.Empty, global::AElf.Types.Address> __Method_GetTokenAddress = new aelf::Method<global::Google.Protobuf.WellKnownTypes.Empty, global::AElf.Types.Address>(
+    static readonly aelf::Method<global::Google.Protobuf.WellKnownTypes.Empty, global::AElf.Types.Address> __Method_GetTokenContractAddress = new aelf::Method<global::Google.Protobuf.WellKnownTypes.Empty, global::AElf.Types.Address>(
         aelf::MethodType.View,
         __ServiceName,
-        "GetTokenAddress",
+        "GetTokenContractAddress",
         __Marshaller_google_protobuf_Empty,
         __Marshaller_aelf_Address);
 
-    static readonly aelf::Method<global::AElf.Types.Hash, global::AElf.Contracts.Ewell.ProjectInfo> __Method_GetProjectInfo = new aelf::Method<global::AElf.Types.Hash, global::AElf.Contracts.Ewell.ProjectInfo>(
+    static readonly aelf::Method<global::AElf.Types.Hash, global::Ewell.Contracts.Ido.ProjectInfo> __Method_GetProjectInfo = new aelf::Method<global::AElf.Types.Hash, global::Ewell.Contracts.Ido.ProjectInfo>(
         aelf::MethodType.View,
         __ServiceName,
         "GetProjectInfo",
         __Marshaller_aelf_Hash,
         __Marshaller_ProjectInfo);
 
-    static readonly aelf::Method<global::AElf.Types.Hash, global::AElf.Contracts.Ewell.ProjectListInfo> __Method_GetProjectListInfo = new aelf::Method<global::AElf.Types.Hash, global::AElf.Contracts.Ewell.ProjectListInfo>(
+    static readonly aelf::Method<global::AElf.Types.Hash, global::Ewell.Contracts.Ido.ProjectListInfo> __Method_GetProjectListInfo = new aelf::Method<global::AElf.Types.Hash, global::Ewell.Contracts.Ido.ProjectListInfo>(
         aelf::MethodType.View,
         __ServiceName,
         "GetProjectListInfo",
         __Marshaller_aelf_Hash,
         __Marshaller_ProjectListInfo);
 
-    static readonly aelf::Method<global::AElf.Types.Hash, global::AElf.Contracts.Ewell.ExtraInfoIdList> __Method_GetWhitelist = new aelf::Method<global::AElf.Types.Hash, global::AElf.Contracts.Ewell.ExtraInfoIdList>(
+    static readonly aelf::Method<global::AElf.Types.Hash, global::Ewell.Contracts.Ido.ExtraInfoIdList> __Method_GetWhitelist = new aelf::Method<global::AElf.Types.Hash, global::Ewell.Contracts.Ido.ExtraInfoIdList>(
         aelf::MethodType.View,
         __ServiceName,
         "GetWhitelist",
         __Marshaller_aelf_Hash,
         __Marshaller_ExtraInfoIdList);
 
-    static readonly aelf::Method<global::AElf.Contracts.Ewell.GetInvestDetailInput, global::AElf.Contracts.Ewell.InvestDetail> __Method_GetInvestDetail = new aelf::Method<global::AElf.Contracts.Ewell.GetInvestDetailInput, global::AElf.Contracts.Ewell.InvestDetail>(
+    static readonly aelf::Method<global::Ewell.Contracts.Ido.GetInvestDetailInput, global::Ewell.Contracts.Ido.InvestDetail> __Method_GetInvestDetail = new aelf::Method<global::Ewell.Contracts.Ido.GetInvestDetailInput, global::Ewell.Contracts.Ido.InvestDetail>(
         aelf::MethodType.View,
         __ServiceName,
         "GetInvestDetail",
         __Marshaller_GetInvestDetailInput,
         __Marshaller_InvestDetail);
 
-    static readonly aelf::Method<global::AElf.Contracts.Ewell.GetProfitDetailInput, global::AElf.Contracts.Ewell.ProfitDetail> __Method_GetProfitDetail = new aelf::Method<global::AElf.Contracts.Ewell.GetProfitDetailInput, global::AElf.Contracts.Ewell.ProfitDetail>(
+    static readonly aelf::Method<global::Ewell.Contracts.Ido.GetProfitDetailInput, global::Ewell.Contracts.Ido.ProfitDetail> __Method_GetProfitDetail = new aelf::Method<global::Ewell.Contracts.Ido.GetProfitDetailInput, global::Ewell.Contracts.Ido.ProfitDetail>(
         aelf::MethodType.View,
         __ServiceName,
         "GetProfitDetail",
@@ -495,7 +502,7 @@ namespace AElf.Contracts.Ewell {
         __Marshaller_aelf_Hash,
         __Marshaller_aelf_Hash);
 
-    static readonly aelf::Method<global::AElf.Types.Hash, global::AElf.Contracts.Ewell.LiquidatedDamageDetails> __Method_GetLiquidatedDamageDetails = new aelf::Method<global::AElf.Types.Hash, global::AElf.Contracts.Ewell.LiquidatedDamageDetails>(
+    static readonly aelf::Method<global::AElf.Types.Hash, global::Ewell.Contracts.Ido.LiquidatedDamageDetails> __Method_GetLiquidatedDamageDetails = new aelf::Method<global::AElf.Types.Hash, global::Ewell.Contracts.Ido.LiquidatedDamageDetails>(
         aelf::MethodType.View,
         __ServiceName,
         "GetLiquidatedDamageDetails",
@@ -516,12 +523,19 @@ namespace AElf.Contracts.Ewell {
         __Marshaller_aelf_Address,
         __Marshaller_aelf_Address);
 
+    static readonly aelf::Method<global::Google.Protobuf.WellKnownTypes.Empty, global::AElf.Types.Address> __Method_GetProxyAccountContract = new aelf::Method<global::Google.Protobuf.WellKnownTypes.Empty, global::AElf.Types.Address>(
+        aelf::MethodType.View,
+        __ServiceName,
+        "GetProxyAccountContract",
+        __Marshaller_google_protobuf_Empty,
+        __Marshaller_aelf_Address);
+
     #endregion
 
     #region Descriptors
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
     {
-      get { return global::AElf.Contracts.Ewell.EwellContractReflection.Descriptor.Services[0]; }
+      get { return global::Ewell.Contracts.Ido.EwellContractReflection.Descriptor.Services[0]; }
     }
 
     public static global::System.Collections.Generic.IReadOnlyList<global::Google.Protobuf.Reflection.ServiceDescriptor> Descriptors
@@ -530,160 +544,12 @@ namespace AElf.Contracts.Ewell {
       {
         return new global::System.Collections.Generic.List<global::Google.Protobuf.Reflection.ServiceDescriptor>()
         {
-          global::AElf.Contracts.Ewell.EwellContractReflection.Descriptor.Services[0],
+          global::AElf.Standards.ACS12.Acs12Reflection.Descriptor.Services[0],
+          global::Ewell.Contracts.Ido.EwellContractReflection.Descriptor.Services[0],
         };
       }
     }
     #endregion
-
-    public class EwellContractStub : aelf::ContractStubBase
-    {
-      public aelf::IMethodStub<global::AElf.Contracts.Ewell.InitializeInput, global::Google.Protobuf.WellKnownTypes.Empty> Initialize
-      {
-        get { return __factory.Create(__Method_Initialize); }
-      }
-
-      public aelf::IMethodStub<global::AElf.Contracts.Ewell.RegisterInput, global::Google.Protobuf.WellKnownTypes.Empty> Register
-      {
-        get { return __factory.Create(__Method_Register); }
-      }
-
-      public aelf::IMethodStub<global::AElf.Contracts.Ewell.UpdateAdditionalInfoInput, global::Google.Protobuf.WellKnownTypes.Empty> UpdateAdditionalInfo
-      {
-        get { return __factory.Create(__Method_UpdateAdditionalInfo); }
-      }
-
-      public aelf::IMethodStub<global::AElf.Types.Hash, global::Google.Protobuf.WellKnownTypes.Empty> Cancel
-      {
-        get { return __factory.Create(__Method_Cancel); }
-      }
-
-      public aelf::IMethodStub<global::AElf.Types.Hash, global::Google.Protobuf.WellKnownTypes.Empty> LockLiquidity
-      {
-        get { return __factory.Create(__Method_LockLiquidity); }
-      }
-
-      public aelf::IMethodStub<global::AElf.Types.Hash, global::Google.Protobuf.WellKnownTypes.Empty> Withdraw
-      {
-        get { return __factory.Create(__Method_Withdraw); }
-      }
-
-      public aelf::IMethodStub<global::AElf.Contracts.Ewell.AddWhitelistsInput, global::Google.Protobuf.WellKnownTypes.Empty> AddWhitelists
-      {
-        get { return __factory.Create(__Method_AddWhitelists); }
-      }
-
-      public aelf::IMethodStub<global::AElf.Contracts.Ewell.RemoveWhitelistsInput, global::Google.Protobuf.WellKnownTypes.Empty> RemoveWhitelists
-      {
-        get { return __factory.Create(__Method_RemoveWhitelists); }
-      }
-
-      public aelf::IMethodStub<global::AElf.Types.Hash, global::Google.Protobuf.WellKnownTypes.Empty> NextPeriod
-      {
-        get { return __factory.Create(__Method_NextPeriod); }
-      }
-
-      public aelf::IMethodStub<global::AElf.Contracts.Ewell.SetWhitelistIdInput, global::Google.Protobuf.WellKnownTypes.Empty> SetWhitelistId
-      {
-        get { return __factory.Create(__Method_SetWhitelistId); }
-      }
-
-      public aelf::IMethodStub<global::AElf.Contracts.Ewell.InvestInput, global::Google.Protobuf.WellKnownTypes.Empty> Invest
-      {
-        get { return __factory.Create(__Method_Invest); }
-      }
-
-      public aelf::IMethodStub<global::AElf.Types.Hash, global::Google.Protobuf.WellKnownTypes.Empty> UnInvest
-      {
-        get { return __factory.Create(__Method_UnInvest); }
-      }
-
-      public aelf::IMethodStub<global::AElf.Types.Hash, global::Google.Protobuf.WellKnownTypes.Empty> ReFund
-      {
-        get { return __factory.Create(__Method_ReFund); }
-      }
-
-      public aelf::IMethodStub<global::AElf.Contracts.Ewell.ReFundAllInput, global::Google.Protobuf.WellKnownTypes.Empty> ReFundAll
-      {
-        get { return __factory.Create(__Method_ReFundAll); }
-      }
-
-      public aelf::IMethodStub<global::AElf.Contracts.Ewell.ClaimInput, global::Google.Protobuf.WellKnownTypes.Empty> Claim
-      {
-        get { return __factory.Create(__Method_Claim); }
-      }
-
-      public aelf::IMethodStub<global::AElf.Types.Hash, global::Google.Protobuf.WellKnownTypes.Empty> ClaimLiquidatedDamage
-      {
-        get { return __factory.Create(__Method_ClaimLiquidatedDamage); }
-      }
-
-      public aelf::IMethodStub<global::AElf.Types.Hash, global::Google.Protobuf.WellKnownTypes.Empty> ClaimLiquidatedDamageAll
-      {
-        get { return __factory.Create(__Method_ClaimLiquidatedDamageAll); }
-      }
-
-      public aelf::IMethodStub<global::Google.Protobuf.WellKnownTypes.Empty, global::AElf.Types.Address> GetWhitelistContractAddress
-      {
-        get { return __factory.Create(__Method_GetWhitelistContractAddress); }
-      }
-
-      public aelf::IMethodStub<global::Google.Protobuf.WellKnownTypes.Empty, global::AElf.Types.Address> GetAdmin
-      {
-        get { return __factory.Create(__Method_GetAdmin); }
-      }
-
-      public aelf::IMethodStub<global::Google.Protobuf.WellKnownTypes.Empty, global::AElf.Types.Address> GetTokenAddress
-      {
-        get { return __factory.Create(__Method_GetTokenAddress); }
-      }
-
-      public aelf::IMethodStub<global::AElf.Types.Hash, global::AElf.Contracts.Ewell.ProjectInfo> GetProjectInfo
-      {
-        get { return __factory.Create(__Method_GetProjectInfo); }
-      }
-
-      public aelf::IMethodStub<global::AElf.Types.Hash, global::AElf.Contracts.Ewell.ProjectListInfo> GetProjectListInfo
-      {
-        get { return __factory.Create(__Method_GetProjectListInfo); }
-      }
-
-      public aelf::IMethodStub<global::AElf.Types.Hash, global::AElf.Contracts.Ewell.ExtraInfoIdList> GetWhitelist
-      {
-        get { return __factory.Create(__Method_GetWhitelist); }
-      }
-
-      public aelf::IMethodStub<global::AElf.Contracts.Ewell.GetInvestDetailInput, global::AElf.Contracts.Ewell.InvestDetail> GetInvestDetail
-      {
-        get { return __factory.Create(__Method_GetInvestDetail); }
-      }
-
-      public aelf::IMethodStub<global::AElf.Contracts.Ewell.GetProfitDetailInput, global::AElf.Contracts.Ewell.ProfitDetail> GetProfitDetail
-      {
-        get { return __factory.Create(__Method_GetProfitDetail); }
-      }
-
-      public aelf::IMethodStub<global::AElf.Types.Hash, global::AElf.Types.Hash> GetWhitelistId
-      {
-        get { return __factory.Create(__Method_GetWhitelistId); }
-      }
-
-      public aelf::IMethodStub<global::AElf.Types.Hash, global::AElf.Contracts.Ewell.LiquidatedDamageDetails> GetLiquidatedDamageDetails
-      {
-        get { return __factory.Create(__Method_GetLiquidatedDamageDetails); }
-      }
-
-      public aelf::IMethodStub<global::AElf.Types.Hash, global::AElf.Types.Address> GetProjectAddressByProjectHash
-      {
-        get { return __factory.Create(__Method_GetProjectAddressByProjectHash); }
-      }
-
-      public aelf::IMethodStub<global::AElf.Types.Address, global::AElf.Types.Address> GetPendingProjectAddress
-      {
-        get { return __factory.Create(__Method_GetPendingProjectAddress); }
-      }
-
-    }
   }
 }
 #endregion

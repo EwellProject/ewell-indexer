@@ -1,7 +1,7 @@
-using AElf.Contracts.Ewell;
 using AElfIndexer.Client;
 using AElfIndexer.Client.Handlers;
 using AElfIndexer.Grains.State.Client;
+using Ewell.Contracts.Ido;
 using Ewell.Indexer.Plugin.Entities;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
