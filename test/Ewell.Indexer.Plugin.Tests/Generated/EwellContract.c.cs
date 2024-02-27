@@ -169,7 +169,7 @@ namespace Ewell.Contracts.Ido {
         ProjectId = ProjectId,
         User = User,
         InvestSymbol = InvestSymbol,
-        DisinvestAmount = DisinvestAmount,
+        DisinvestedAmount = DisinvestedAmount,
         TotalAmount = TotalAmount,
       };
     }
@@ -550,6 +550,7 @@ namespace Ewell.Contracts.Ido {
       }
     }
     #endregion
+    
   }
 }
 #endregion
