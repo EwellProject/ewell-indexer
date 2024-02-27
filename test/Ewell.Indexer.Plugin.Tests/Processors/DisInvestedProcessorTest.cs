@@ -55,7 +55,7 @@ public class DisInvestedProcessorTest : EwellIndexerPluginTestBase
         {
             ProjectId = HashHelper.ComputeFrom(Id),
             User = Address.FromBase58(BobAddress),
-            DisinvestAmount = 800,
+            DisinvestedAmount = 800,
             TotalAmount = 0
         };
 
@@ -87,7 +87,7 @@ public class DisInvestedProcessorTest : EwellIndexerPluginTestBase
         projectIndex.ShouldNotBeNull();
         projectIndex.Id.ShouldBe(projectId);
         projectIndex.CurrentRaisedAmount.ShouldBe(0);
-        projectIndex.ReceivableLiquidatedDamageAmount.ShouldBe(invested.Amount - logEvent.DisinvestAmount);
+        projectIndex.ReceivableLiquidatedDamageAmount.ShouldBe(invested.Amount - logEvent.DisinvestedAmount);
         
         var userRecordId = IdGenerateHelper.GetId(chainId, projectId, BobAddress, 
             BehaviorType.Disinvest, transactionId);

@@ -44,10 +44,10 @@ public class DisInvestedProcessor : UserProjectProcessorBase<DisInvested>
             return;
         }
 
-        var disinvestAmount = eventValue.DisinvestAmount;
+        var disinvestedAmount = eventValue.DisinvestedAmount;
         var userInvestedAmount = userProjectInfo.InvestAmount;
         var totalToClaimAmount = userProjectInfo.ToClaimAmount;
-        var projectReceivableLiquidatedDamage = userInvestedAmount - disinvestAmount;
+        var projectReceivableLiquidatedDamage = userInvestedAmount - disinvestedAmount;
         //reset amount
         userProjectInfo.InvestAmount = 0;
         userProjectInfo.ToClaimAmount = 0;
@@ -67,7 +67,7 @@ public class DisInvestedProcessor : UserProjectProcessorBase<DisInvested>
         ObjectMapper.Map(context, crowdfundingProject);
         await CrowdfundingProjectRepository.AddOrUpdateAsync(crowdfundingProject);
         await AddUserRecordAsync(context, crowdfundingProject, user, BehaviorType.Disinvest,
-            disinvestAmount, totalToClaimAmount);
+            disinvestedAmount, totalToClaimAmount);
         Logger.LogInformation("[DisInvested] end projectId:{projectId} user:{user} ", projectId, user);
     }
 }

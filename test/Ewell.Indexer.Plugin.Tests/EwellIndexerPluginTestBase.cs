@@ -270,7 +270,7 @@ public abstract class EwellIndexerPluginTestBase : EwellIndexerOrleansTestBase<E
         {
             ProjectId = HashHelper.ComputeFrom(Id),
             User = Address.FromBase58(BobAddress),
-            DisinvestAmount = 800,
+            DisinvestedAmount = 800,
             TotalAmount = 0
         };
 
