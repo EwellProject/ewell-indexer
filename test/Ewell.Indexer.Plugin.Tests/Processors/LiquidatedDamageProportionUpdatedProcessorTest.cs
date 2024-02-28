@@ -7,28 +7,21 @@ using Xunit;
 
 namespace Ewell.Indexer.Plugin.Tests.Processors;
 
-public class ProjectRegisteredProcessorTest : EwellIndexerPluginTestBase
+public class LiquidatedDamageProportionUpdatedProcessorTest : EwellIndexerPluginTestBase
 {
-    
     private readonly IAElfIndexerClientEntityRepository<CrowdfundingProjectIndex, LogEventInfo>
         _crowdfundingProjectRepository;
-    
-    public ProjectRegisteredProcessorTest()
+
+    public LiquidatedDamageProportionUpdatedProcessorTest()
     {
         _crowdfundingProjectRepository =
             GetRequiredService<IAElfIndexerClientEntityRepository<CrowdfundingProjectIndex, LogEventInfo>>();
     }
-
+    
     [Fact]
     public async Task HandleEventAsync_Test()
     {
         await MockProjectRegistered();
-        var projectId = HashHelper.ComputeFrom(Id).ToHex();
-        var projectIndex = await _crowdfundingProjectRepository.GetFromBlockStateSetAsync(projectId, Chain_AELF);
-        projectIndex.ShouldNotBeNull();
-        projectIndex.Id.ShouldBe(projectId);
-        projectIndex.TargetRaisedAmount.ShouldBe(200000000);
-        projectIndex.RestPeriodDistributeProportion.ShouldBe(50);
-        projectIndex.LiquidatedDamageProportion.ShouldBe(20_000000);
+        
     }
 }

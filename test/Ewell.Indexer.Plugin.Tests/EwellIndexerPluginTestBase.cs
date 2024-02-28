@@ -183,6 +183,7 @@ public abstract class EwellIndexerPluginTestBase : EwellIndexerOrleansTestBase<E
             ProjectSymbol = TestSymbol,
             AcceptedSymbol = "ELF",
             VirtualAddress = Address.FromBase58(VirtualAddress),
+            LiquidatedDamageProportion = 20_000000
         };
 
         var logEventInfo = LogEventHelper.ConvertAElfLogEventToLogEventInfo(logEvent.ToLogEvent());

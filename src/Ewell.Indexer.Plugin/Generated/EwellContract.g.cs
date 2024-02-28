@@ -31,7 +31,7 @@ namespace Ewell.Contracts.Ido {
             "ZUlucHV0EiwKFWFkbWluaXN0cmF0b3JfYWRkcmVzcxgBIAEoCzINLmFlbGYu",
             "QWRkcmVzcxIxChp3aGl0ZWxpc3RfY29udHJhY3RfYWRkcmVzcxgCIAEoCzIN",
             "LmFlbGYuQWRkcmVzcxI1Ch5wcm94eV9hY2NvdW50X2NvbnRyYWN0X2FkZHJl",
-            "c3MYAyABKAsyDS5hZWxmLkFkZHJlc3MilwYKDVJlZ2lzdGVySW5wdXQSFwoP",
+            "c3MYAyABKAsyDS5hZWxmLkFkZHJlc3MivQYKDVJlZ2lzdGVySW5wdXQSFwoP",
             "YWNjZXB0ZWRfc3ltYm9sGAEgASgJEhYKDnByb2plY3Rfc3ltYm9sGAIgASgJ",
             "EhoKEmNyb3dkX2Z1bmRpbmdfdHlwZRgDIAEoCRIiChpjcm93ZF9mdW5kaW5n",
             "X2lzc3VlX2Ftb3VudBgEIAEoAxIWCg5wcmVfc2FsZV9wcmljZRgFIAEoAxIu",
@@ -49,168 +49,183 @@ namespace Ewell.Contracts.Ido {
             "ZXN0X3BlcmlvZF9kaXN0cmlidXRlX3Byb3BvcnRpb24YFCABKAUSFwoPcGVy",
             "aW9kX2R1cmF0aW9uGBUgASgDEjYKEnRva2VuX3JlbGVhc2VfdGltZRgWIAEo",
             "CzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXASFQoNd2hpdGVsaXN0X3Vy",
-            "bBgXIAEoCSJlChlVcGRhdGVBZGRpdGlvbmFsSW5mb0lucHV0Eh4KCnByb2pl",
-            "Y3RfaWQYASABKAsyCi5hZWxmLkhhc2gSKAoPYWRkaXRpb25hbF9pbmZvGAIg",
-            "ASgLMg8uQWRkaXRpb25hbEluZm8iUgoSQWRkV2hpdGVsaXN0c0lucHV0Eh4K",
-            "CnByb2plY3RfaWQYASABKAsyCi5hZWxmLkhhc2gSHAoFdXNlcnMYAiADKAsy",
-            "DS5hZWxmLkFkZHJlc3MiVQoVUmVtb3ZlV2hpdGVsaXN0c0lucHV0Eh4KCnBy",
-            "b2plY3RfaWQYASABKAsyCi5hZWxmLkhhc2gSHAoFdXNlcnMYAiADKAsyDS5h",
-            "ZWxmLkFkZHJlc3MiVAoLSW52ZXN0SW5wdXQSHgoKcHJvamVjdF9pZBgBIAEo",
-            "CzIKLmFlbGYuSGFzaBIOCgZzeW1ib2wYAiABKAkSFQoNaW52ZXN0X2Ftb3Vu",
-            "dBgDIAEoAyJJCgpDbGFpbUlucHV0Eh4KCnByb2plY3RfaWQYASABKAsyCi5h",
-            "ZWxmLkhhc2gSGwoEdXNlchgCIAEoCzINLmFlbGYuQWRkcmVzcyJTChRHZXRJ",
-            "bnZlc3REZXRhaWxJbnB1dBIeCgpwcm9qZWN0X2lkGAEgASgLMgouYWVsZi5I",
-            "YXNoEhsKBHVzZXIYAiABKAsyDS5hZWxmLkFkZHJlc3MiUwoUR2V0UHJvZml0",
-            "RGV0YWlsSW5wdXQSHgoKcHJvamVjdF9pZBgBIAEoCzIKLmFlbGYuSGFzaBIb",
-            "CgR1c2VyGAIgASgLMg0uYWVsZi5BZGRyZXNzIlIKE1NldFdoaXRlbGlzdElk",
-            "SW5wdXQSHgoKcHJvamVjdF9pZBgBIAEoCzIKLmFlbGYuSGFzaBIbChNpc19l",
-            "bmFibGVfd2hpdGVsaXN0GAIgASgIIk4KDlJlRnVuZEFsbElucHV0Eh4KCnBy",
-            "b2plY3RfaWQYASABKAsyCi5hZWxmLkhhc2gSHAoFdXNlcnMYAiADKAsyDS5h",
-            "ZWxmLkFkZHJlc3MiLgoPRXh0cmFJbmZvSWRMaXN0EhsKBXZhbHVlGAEgAygL",
-            "MgwuRXh0cmFJbmZvSWQiRQoLRXh0cmFJbmZvSWQSHgoHYWRkcmVzcxgBIAEo",
-            "CzINLmFlbGYuQWRkcmVzcxIWCgJpZBgCIAEoCzIKLmFlbGYuSGFzaCLeBAoL",
-            "UHJvamVjdEluZm8SHgoKcHJvamVjdF9pZBgBIAEoCzIKLmFlbGYuSGFzaBIX",
-            "Cg9hY2NlcHRlZF9zeW1ib2wYAiABKAkSFgoOcHJvamVjdF9zeW1ib2wYAyAB",
-            "KAkSGgoSY3Jvd2RfZnVuZGluZ190eXBlGAQgASgJEiIKGmNyb3dkX2Z1bmRp",
-            "bmdfaXNzdWVfYW1vdW50GAUgASgDEhYKDnByZV9zYWxlX3ByaWNlGAYgASgD",
-            "Ei4KCnN0YXJ0X3RpbWUYCCABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0",
-            "YW1wEiwKCGVuZF90aW1lGAkgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVz",
-            "dGFtcBIYChBtaW5fc3Vic2NyaXB0aW9uGAogASgDEhgKEG1heF9zdWJzY3Jp",
-            "cHRpb24YCyABKAMSGgoSaXNfYnVybl9yZXN0X3Rva2VuGAwgASgIEigKD2Fk",
-            "ZGl0aW9uYWxfaW5mbxgNIAEoCzIPLkFkZGl0aW9uYWxJbmZvEh4KB2NyZWF0",
-            "b3IYDiABKAsyDS5hZWxmLkFkZHJlc3MSHAoUdGFyZ2V0X3JhaXNlZF9hbW91",
-            "bnQYDyABKAMSHQoVY3VycmVudF9yYWlzZWRfYW1vdW50GBAgASgDEg8KB2Vu",
-            "YWJsZWQYESABKAgSKAoUdmlydHVhbF9hZGRyZXNzX2hhc2gYEiABKAsyCi5h",
-            "ZWxmLkhhc2gSNgoSdG9rZW5fcmVsZWFzZV90aW1lGBMgASgLMhouZ29vZ2xl",
-            "LnByb3RvYnVmLlRpbWVzdGFtcCKJAwoPUHJvamVjdExpc3RJbmZvEh4KCnBy",
-            "b2plY3RfaWQYASABKAsyCi5hZWxmLkhhc2gSGQoRcHVibGljX3NhbGVfcHJp",
-            "Y2UYAiABKAMSKQoQbGlzdF9tYXJrZXRfaW5mbxgDIAEoCzIPLkxpc3RNYXJr",
-            "ZXRJbmZvEiEKGWxpcXVpZGl0eV9sb2NrX3Byb3BvcnRpb24YBCABKAUSLwoL",
-            "dW5sb2NrX3RpbWUYBSABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1w",
-            "EhUKDWxhdGVzdF9wZXJpb2QYBiABKAUSFAoMdG90YWxfcGVyaW9kGAcgASgF",
-            "EiMKG2ZpcnN0X2Rpc3RyaWJ1dGVfcHJvcG9ydGlvbhgIIAEoBRIpCiFyZXN0",
-            "X3BlcmlvZF9kaXN0cmlidXRlX3Byb3BvcnRpb24YCSABKAUSFwoPcGVyaW9k",
-            "X2R1cmF0aW9uGAogASgDEhEKCWlzX2xpc3RlZBgLIAEoCBITCgtpc193aXRo",
-            "ZHJhdxgMIAEoCCJNCgxJbnZlc3REZXRhaWwSFQoNaW52ZXN0X3N5bWJvbBgB",
-            "IAEoCRIOCgZhbW91bnQYAiABKAMSFgoOaXNfZGlzaW52ZXN0ZWQYAyABKAgi",
-            "sgEKDFByb2ZpdERldGFpbBIVCg1sYXRlc3RfcGVyaW9kGAEgASgFEg4KBnN5",
-            "bWJvbBgCIAEoCRIUCgx0b3RhbF9wcm9maXQYAyABKAMSMgoLYW1vdW50c19t",
-            "YXAYBCADKAsyHS5Qcm9maXREZXRhaWwuQW1vdW50c01hcEVudHJ5GjEKD0Ft",
-            "b3VudHNNYXBFbnRyeRILCgNrZXkYASABKAUSDQoFdmFsdWUYAiABKAM6AjgB",
-            "IjUKEkNsYWltZWRQcm9maXRzSW5mbxIfCgdkZXRhaWxzGAEgAygLMg4uQ2xh",
-            "aW1lZFByb2ZpdCJmCg1DbGFpbWVkUHJvZml0Eh4KCnByb2plY3RfaWQYASAB",
-            "KAsyCi5hZWxmLkhhc2gSFQoNbGF0ZXN0X3BlcmlvZBgCIAEoBRIOCgZzeW1i",
-            "b2wYAyABKAkSDgoGYW1vdW50GAQgASgDIlgKF0xpcXVpZGF0ZWREYW1hZ2VE",
-            "ZXRhaWxzEhMKC3RvdGFsQW1vdW50GAEgASgDEigKB2RldGFpbHMYAiADKAsy",
-            "Fy5MaXF1aWRhdGVkRGFtYWdlRGV0YWlsImYKFkxpcXVpZGF0ZWREYW1hZ2VE",
-            "ZXRhaWwSGwoEdXNlchgBIAEoCzINLmFlbGYuQWRkcmVzcxIOCgZzeW1ib2wY",
-            "AiABKAkSDgoGYW1vdW50GAMgASgDEg8KB2NsYWltZWQYBCABKAgiZgoOQWRk",
-            "aXRpb25hbEluZm8SJwoEZGF0YRgBIAMoCzIZLkFkZGl0aW9uYWxJbmZvLkRh",
-            "dGFFbnRyeRorCglEYXRhRW50cnkSCwoDa2V5GAEgASgJEg0KBXZhbHVlGAIg",
-            "ASgJOgI4ASIrCg5MaXN0TWFya2V0SW5mbxIZCgRkYXRhGAEgAygLMgsuTGlz",
-            "dE1hcmtldCI7CgpMaXN0TWFya2V0Eh0KBm1hcmtldBgBIAEoCzINLmFlbGYu",
-            "QWRkcmVzcxIOCgZ3ZWlnaHQYAiABKAUikAcKEVByb2plY3RSZWdpc3RlcmVk",
-            "Eh4KCnByb2plY3RfaWQYASABKAsyCi5hZWxmLkhhc2gSFwoPYWNjZXB0ZWRf",
-            "c3ltYm9sGAIgASgJEhYKDnByb2plY3Rfc3ltYm9sGAMgASgJEhoKEmNyb3dk",
-            "X2Z1bmRpbmdfdHlwZRgEIAEoCRIiChpjcm93ZF9mdW5kaW5nX2lzc3VlX2Ft",
-            "b3VudBgFIAEoAxIWCg5wcmVfc2FsZV9wcmljZRgGIAEoAxIuCgpzdGFydF90",
-            "aW1lGAcgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcBIsCghlbmRf",
-            "dGltZRgIIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXASGAoQbWlu",
-            "X3N1YnNjcmlwdGlvbhgJIAEoAxIYChBtYXhfc3Vic2NyaXB0aW9uGAogASgD",
-            "EhkKEXB1YmxpY19zYWxlX3ByaWNlGAsgASgDEikKEGxpc3RfbWFya2V0X2lu",
-            "Zm8YDCABKAsyDy5MaXN0TWFya2V0SW5mbxIhChlsaXF1aWRpdHlfbG9ja19w",
-            "cm9wb3J0aW9uGA0gASgFEi8KC3VubG9ja190aW1lGA4gASgLMhouZ29vZ2xl",
-            "LnByb3RvYnVmLlRpbWVzdGFtcBIbChNpc19lbmFibGVfd2hpdGVsaXN0GA8g",
-            "ASgIEiAKDHdoaXRlbGlzdF9pZBgQIAEoCzIKLmFlbGYuSGFzaBIaChJpc19i",
-            "dXJuX3Jlc3RfdG9rZW4YESABKAgSFAoMdG90YWxfcGVyaW9kGBIgASgFEigK",
-            "D2FkZGl0aW9uYWxfaW5mbxgTIAEoCzIPLkFkZGl0aW9uYWxJbmZvEhwKFHRh",
-            "cmdldF9yYWlzZWRfYW1vdW50GBQgASgDEh4KB2NyZWF0b3IYFSABKAsyDS5h",
-            "ZWxmLkFkZHJlc3MSIwobZmlyc3RfZGlzdHJpYnV0ZV9wcm9wb3J0aW9uGBYg",
-            "ASgFEikKIXJlc3RfcGVyaW9kX2Rpc3RyaWJ1dGVfcHJvcG9ydGlvbhgXIAEo",
-            "BRIXCg9wZXJpb2RfZHVyYXRpb24YGCABKAMSJgoPdmlydHVhbF9hZGRyZXNz",
-            "GBkgASgLMg0uYWVsZi5BZGRyZXNzEjYKEnRva2VuX3JlbGVhc2VfdGltZRga",
-            "IAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXA6BKC7GAEiWwoRTmV3",
-            "V2hpdGVsaXN0SWRTZXQSHgoKcHJvamVjdF9pZBgBIAEoCzIKLmFlbGYuSGFz",
-            "aBIgCgx3aGl0ZWxpc3RfaWQYAiABKAsyCi5hZWxmLkhhc2g6BKC7GAEiZwoV",
-            "QWRkaXRpb25hbEluZm9VcGRhdGVkEh4KCnByb2plY3RfaWQYASABKAsyCi5h",
-            "ZWxmLkhhc2gSKAoPYWRkaXRpb25hbF9pbmZvGAIgASgLMg8uQWRkaXRpb25h",
-            "bEluZm86BKC7GAEiNwoPUHJvamVjdENhbmNlbGVkEh4KCnByb2plY3RfaWQY",
-            "ASABKAsyCi5hZWxmLkhhc2g6BKC7GAEiSQoNUGVyaW9kVXBkYXRlZBIeCgpw",
-            "cm9qZWN0X2lkGAEgASgLMgouYWVsZi5IYXNoEhIKCm5ld19wZXJpb2QYAiAB",
-            "KAU6BKC7GAEiuwEKCEludmVzdGVkEh4KCnByb2plY3RfaWQYASABKAsyCi5h",
-            "ZWxmLkhhc2gSGwoEdXNlchgCIAEoCzINLmFlbGYuQWRkcmVzcxIVCg1pbnZl",
-            "c3Rfc3ltYm9sGAMgASgJEg4KBmFtb3VudBgEIAEoAxIUCgx0b3RhbF9hbW91",
-            "bnQYBSABKAMSFgoOcHJvamVjdF9zeW1ib2wYBiABKAkSFwoPdG9fY2xhaW1f",
-            "YW1vdW50GAcgASgDOgSguxgBIpkBCgtEaXNJbnZlc3RlZBIeCgpwcm9qZWN0",
-            "X2lkGAEgASgLMgouYWVsZi5IYXNoEhsKBHVzZXIYAiABKAsyDS5hZWxmLkFk",
-            "ZHJlc3MSFQoNaW52ZXN0X3N5bWJvbBgDIAEoCRIaChJkaXNpbnZlc3RlZF9h",
-            "bW91bnQYBCABKAMSFAoMdG90YWxfYW1vdW50GAUgASgDOgSguxgBIoIBChZM",
-            "aXF1aWRhdGVkRGFtYWdlUmVjb3JkEh4KCnByb2plY3RfaWQYASABKAsyCi5h",
-            "ZWxmLkhhc2gSGwoEdXNlchgCIAEoCzINLmFlbGYuQWRkcmVzcxIVCg1pbnZl",
-            "c3Rfc3ltYm9sGAMgASgJEg4KBmFtb3VudBgEIAEoAzoEoLsYASKDAQoXTGlx",
-            "dWlkYXRlZERhbWFnZUNsYWltZWQSHgoKcHJvamVjdF9pZBgBIAEoCzIKLmFl",
-            "bGYuSGFzaBIbCgR1c2VyGAIgASgLMg0uYWVsZi5BZGRyZXNzEhUKDWludmVz",
-            "dF9zeW1ib2wYAyABKAkSDgoGYW1vdW50GAQgASgDOgSguxgBIqEBCgdDbGFp",
-            "bWVkEh4KCnByb2plY3RfaWQYASABKAsyCi5hZWxmLkhhc2gSGwoEdXNlchgC",
-            "IAEoCzINLmFlbGYuQWRkcmVzcxIWCg5wcm9qZWN0X3N5bWJvbBgDIAEoCRIO",
-            "CgZhbW91bnQYBCABKAMSFQoNbGF0ZXN0X3BlcmlvZBgFIAEoBRIUCgx0b3Rh",
-            "bF9wZXJpb2QYBiABKAU6BKC7GAEidAoIUmVGdW5kZWQSHgoKcHJvamVjdF9p",
-            "ZBgBIAEoCzIKLmFlbGYuSGFzaBIbCgR1c2VyGAIgASgLMg0uYWVsZi5BZGRy",
-            "ZXNzEhUKDWludmVzdF9zeW1ib2wYAyABKAkSDgoGYW1vdW50GAQgASgDOgSg",
-            "uxgBIqwBCglXaXRoZHJhd24SHgoKcHJvamVjdF9pZBgBIAEoCzIKLmFlbGYu",
-            "SGFzaBIXCg9hY2NlcHRlZF9zeW1ib2wYAiABKAkSFwoPd2l0aGRyYXdfYW1v",
-            "dW50GAMgASgDEhYKDnByb2plY3Rfc3ltYm9sGAQgASgJEhoKEmlzX2J1cm5f",
-            "cmVzdF90b2tlbhgFIAEoCBITCgtidXJuX2Ftb3VudBgGIAEoAzoEoLsYATKe",
-            "DwoNRXdlbGxDb250cmFjdBI4CgpJbml0aWFsaXplEhAuSW5pdGlhbGl6ZUlu",
-            "cHV0GhYuZ29vZ2xlLnByb3RvYnVmLkVtcHR5IgASNAoIUmVnaXN0ZXISDi5S",
-            "ZWdpc3RlcklucHV0GhYuZ29vZ2xlLnByb3RvYnVmLkVtcHR5IgASTAoUVXBk",
-            "YXRlQWRkaXRpb25hbEluZm8SGi5VcGRhdGVBZGRpdGlvbmFsSW5mb0lucHV0",
-            "GhYuZ29vZ2xlLnByb3RvYnVmLkVtcHR5IgASLgoGQ2FuY2VsEgouYWVsZi5I",
-            "YXNoGhYuZ29vZ2xlLnByb3RvYnVmLkVtcHR5IgASNQoNTG9ja0xpcXVpZGl0",
-            "eRIKLmFlbGYuSGFzaBoWLmdvb2dsZS5wcm90b2J1Zi5FbXB0eSIAEjAKCFdp",
-            "dGhkcmF3EgouYWVsZi5IYXNoGhYuZ29vZ2xlLnByb3RvYnVmLkVtcHR5IgAS",
-            "PgoNQWRkV2hpdGVsaXN0cxITLkFkZFdoaXRlbGlzdHNJbnB1dBoWLmdvb2ds",
-            "ZS5wcm90b2J1Zi5FbXB0eSIAEkQKEFJlbW92ZVdoaXRlbGlzdHMSFi5SZW1v",
-            "dmVXaGl0ZWxpc3RzSW5wdXQaFi5nb29nbGUucHJvdG9idWYuRW1wdHkiABIy",
-            "CgpOZXh0UGVyaW9kEgouYWVsZi5IYXNoGhYuZ29vZ2xlLnByb3RvYnVmLkVt",
-            "cHR5IgASQAoOU2V0V2hpdGVsaXN0SWQSFC5TZXRXaGl0ZWxpc3RJZElucHV0",
-            "GhYuZ29vZ2xlLnByb3RvYnVmLkVtcHR5IgASMAoGSW52ZXN0EgwuSW52ZXN0",
-            "SW5wdXQaFi5nb29nbGUucHJvdG9idWYuRW1wdHkiABIxCglEaXNpbnZlc3QS",
-            "Ci5hZWxmLkhhc2gaFi5nb29nbGUucHJvdG9idWYuRW1wdHkiABIuCgZSZUZ1",
-            "bmQSCi5hZWxmLkhhc2gaFi5nb29nbGUucHJvdG9idWYuRW1wdHkiABI2CglS",
-            "ZUZ1bmRBbGwSDy5SZUZ1bmRBbGxJbnB1dBoWLmdvb2dsZS5wcm90b2J1Zi5F",
-            "bXB0eSIAEi4KBUNsYWltEgsuQ2xhaW1JbnB1dBoWLmdvb2dsZS5wcm90b2J1",
-            "Zi5FbXB0eSIAEj0KFUNsYWltTGlxdWlkYXRlZERhbWFnZRIKLmFlbGYuSGFz",
-            "aBoWLmdvb2dsZS5wcm90b2J1Zi5FbXB0eSIAEkAKGENsYWltTGlxdWlkYXRl",
-            "ZERhbWFnZUFsbBIKLmFlbGYuSGFzaBoWLmdvb2dsZS5wcm90b2J1Zi5FbXB0",
-            "eSIAEkIKF1NldFByb3h5QWNjb3VudENvbnRyYWN0Eg0uYWVsZi5BZGRyZXNz",
-            "GhYuZ29vZ2xlLnByb3RvYnVmLkVtcHR5IgASSwobR2V0V2hpdGVsaXN0Q29u",
-            "dHJhY3RBZGRyZXNzEhYuZ29vZ2xlLnByb3RvYnVmLkVtcHR5Gg0uYWVsZi5B",
-            "ZGRyZXNzIgWIifcBARI4CghHZXRBZG1pbhIWLmdvb2dsZS5wcm90b2J1Zi5F",
-            "bXB0eRoNLmFlbGYuQWRkcmVzcyIFiIn3AQESRwoXR2V0VG9rZW5Db250cmFj",
-            "dEFkZHJlc3MSFi5nb29nbGUucHJvdG9idWYuRW1wdHkaDS5hZWxmLkFkZHJl",
-            "c3MiBYiJ9wEBEjEKDkdldFByb2plY3RJbmZvEgouYWVsZi5IYXNoGgwuUHJv",
-            "amVjdEluZm8iBYiJ9wEBEjkKEkdldFByb2plY3RMaXN0SW5mbxIKLmFlbGYu",
-            "SGFzaBoQLlByb2plY3RMaXN0SW5mbyIFiIn3AQESMwoMR2V0V2hpdGVsaXN0",
-            "EgouYWVsZi5IYXNoGhAuRXh0cmFJbmZvSWRMaXN0IgWIifcBARI+Cg9HZXRJ",
-            "bnZlc3REZXRhaWwSFS5HZXRJbnZlc3REZXRhaWxJbnB1dBoNLkludmVzdERl",
-            "dGFpbCIFiIn3AQESPgoPR2V0UHJvZml0RGV0YWlsEhUuR2V0UHJvZml0RGV0",
-            "YWlsSW5wdXQaDS5Qcm9maXREZXRhaWwiBYiJ9wEBEi8KDkdldFdoaXRlbGlz",
-            "dElkEgouYWVsZi5IYXNoGgouYWVsZi5IYXNoIgWIifcBARJJChpHZXRMaXF1",
-            "aWRhdGVkRGFtYWdlRGV0YWlscxIKLmFlbGYuSGFzaBoYLkxpcXVpZGF0ZWRE",
-            "YW1hZ2VEZXRhaWxzIgWIifcBARJCCh5HZXRQcm9qZWN0QWRkcmVzc0J5UHJv",
-            "amVjdEhhc2gSCi5hZWxmLkhhc2gaDS5hZWxmLkFkZHJlc3MiBYiJ9wEBEj8K",
-            "GEdldFBlbmRpbmdQcm9qZWN0QWRkcmVzcxINLmFlbGYuQWRkcmVzcxoNLmFl",
-            "bGYuQWRkcmVzcyIFiIn3AQESRwoXR2V0UHJveHlBY2NvdW50Q29udHJhY3QS",
-            "Fi5nb29nbGUucHJvdG9idWYuRW1wdHkaDS5hZWxmLkFkZHJlc3MiBYiJ9wEB",
-            "GjuyzPYBJkV3ZWxsLkNvbnRyYWN0cy5JZG8uRXdlbGxDb250cmFjdFN0YXRl",
-            "ysr2AQthY3MxMi5wcm90b0IWqgITRXdlbGwuQ29udHJhY3RzLklkb2IGcHJv",
-            "dG8z"));
+            "bBgXIAEoCRIkChxsaXF1aWRhdGVkX2RhbWFnZV9wcm9wb3J0aW9uGBggASgF",
+            "ImUKGVVwZGF0ZUFkZGl0aW9uYWxJbmZvSW5wdXQSHgoKcHJvamVjdF9pZBgB",
+            "IAEoCzIKLmFlbGYuSGFzaBIoCg9hZGRpdGlvbmFsX2luZm8YAiABKAsyDy5B",
+            "ZGRpdGlvbmFsSW5mbyJSChJBZGRXaGl0ZWxpc3RzSW5wdXQSHgoKcHJvamVj",
+            "dF9pZBgBIAEoCzIKLmFlbGYuSGFzaBIcCgV1c2VycxgCIAMoCzINLmFlbGYu",
+            "QWRkcmVzcyJVChVSZW1vdmVXaGl0ZWxpc3RzSW5wdXQSHgoKcHJvamVjdF9p",
+            "ZBgBIAEoCzIKLmFlbGYuSGFzaBIcCgV1c2VycxgCIAMoCzINLmFlbGYuQWRk",
+            "cmVzcyJUCgtJbnZlc3RJbnB1dBIeCgpwcm9qZWN0X2lkGAEgASgLMgouYWVs",
+            "Zi5IYXNoEg4KBnN5bWJvbBgCIAEoCRIVCg1pbnZlc3RfYW1vdW50GAMgASgD",
+            "IkkKCkNsYWltSW5wdXQSHgoKcHJvamVjdF9pZBgBIAEoCzIKLmFlbGYuSGFz",
+            "aBIbCgR1c2VyGAIgASgLMg0uYWVsZi5BZGRyZXNzIlMKFEdldEludmVzdERl",
+            "dGFpbElucHV0Eh4KCnByb2plY3RfaWQYASABKAsyCi5hZWxmLkhhc2gSGwoE",
+            "dXNlchgCIAEoCzINLmFlbGYuQWRkcmVzcyJTChRHZXRQcm9maXREZXRhaWxJ",
+            "bnB1dBIeCgpwcm9qZWN0X2lkGAEgASgLMgouYWVsZi5IYXNoEhsKBHVzZXIY",
+            "AiABKAsyDS5hZWxmLkFkZHJlc3MiUgoTU2V0V2hpdGVsaXN0SWRJbnB1dBIe",
+            "Cgpwcm9qZWN0X2lkGAEgASgLMgouYWVsZi5IYXNoEhsKE2lzX2VuYWJsZV93",
+            "aGl0ZWxpc3QYAiABKAgiTgoOUmVGdW5kQWxsSW5wdXQSHgoKcHJvamVjdF9p",
+            "ZBgBIAEoCzIKLmFlbGYuSGFzaBIcCgV1c2VycxgCIAMoCzINLmFlbGYuQWRk",
+            "cmVzcyJtCiVVcGRhdGVMaXF1aWRhdGVkRGFtYWdlUHJvcG9ydGlvbklucHV0",
+            "Eh4KCnByb2plY3RfaWQYASABKAsyCi5hZWxmLkhhc2gSJAocbGlxdWlkYXRl",
+            "ZF9kYW1hZ2VfcHJvcG9ydGlvbhgCIAEoBSIuCg9FeHRyYUluZm9JZExpc3QS",
+            "GwoFdmFsdWUYASADKAsyDC5FeHRyYUluZm9JZCJFCgtFeHRyYUluZm9JZBIe",
+            "CgdhZGRyZXNzGAEgASgLMg0uYWVsZi5BZGRyZXNzEhYKAmlkGAIgASgLMgou",
+            "YWVsZi5IYXNoIoQFCgtQcm9qZWN0SW5mbxIeCgpwcm9qZWN0X2lkGAEgASgL",
+            "MgouYWVsZi5IYXNoEhcKD2FjY2VwdGVkX3N5bWJvbBgCIAEoCRIWCg5wcm9q",
+            "ZWN0X3N5bWJvbBgDIAEoCRIaChJjcm93ZF9mdW5kaW5nX3R5cGUYBCABKAkS",
+            "IgoaY3Jvd2RfZnVuZGluZ19pc3N1ZV9hbW91bnQYBSABKAMSFgoOcHJlX3Nh",
+            "bGVfcHJpY2UYBiABKAMSLgoKc3RhcnRfdGltZRgIIAEoCzIaLmdvb2dsZS5w",
+            "cm90b2J1Zi5UaW1lc3RhbXASLAoIZW5kX3RpbWUYCSABKAsyGi5nb29nbGUu",
+            "cHJvdG9idWYuVGltZXN0YW1wEhgKEG1pbl9zdWJzY3JpcHRpb24YCiABKAMS",
+            "GAoQbWF4X3N1YnNjcmlwdGlvbhgLIAEoAxIaChJpc19idXJuX3Jlc3RfdG9r",
+            "ZW4YDCABKAgSKAoPYWRkaXRpb25hbF9pbmZvGA0gASgLMg8uQWRkaXRpb25h",
+            "bEluZm8SHgoHY3JlYXRvchgOIAEoCzINLmFlbGYuQWRkcmVzcxIcChR0YXJn",
+            "ZXRfcmFpc2VkX2Ftb3VudBgPIAEoAxIdChVjdXJyZW50X3JhaXNlZF9hbW91",
+            "bnQYECABKAMSDwoHZW5hYmxlZBgRIAEoCBIoChR2aXJ0dWFsX2FkZHJlc3Nf",
+            "aGFzaBgSIAEoCzIKLmFlbGYuSGFzaBI2ChJ0b2tlbl9yZWxlYXNlX3RpbWUY",
+            "EyABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wEiQKHGxpcXVpZGF0",
+            "ZWRfZGFtYWdlX3Byb3BvcnRpb24YFCABKAUiiQMKD1Byb2plY3RMaXN0SW5m",
+            "bxIeCgpwcm9qZWN0X2lkGAEgASgLMgouYWVsZi5IYXNoEhkKEXB1YmxpY19z",
+            "YWxlX3ByaWNlGAIgASgDEikKEGxpc3RfbWFya2V0X2luZm8YAyABKAsyDy5M",
+            "aXN0TWFya2V0SW5mbxIhChlsaXF1aWRpdHlfbG9ja19wcm9wb3J0aW9uGAQg",
+            "ASgFEi8KC3VubG9ja190aW1lGAUgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRp",
+            "bWVzdGFtcBIVCg1sYXRlc3RfcGVyaW9kGAYgASgFEhQKDHRvdGFsX3Blcmlv",
+            "ZBgHIAEoBRIjChtmaXJzdF9kaXN0cmlidXRlX3Byb3BvcnRpb24YCCABKAUS",
+            "KQohcmVzdF9wZXJpb2RfZGlzdHJpYnV0ZV9wcm9wb3J0aW9uGAkgASgFEhcK",
+            "D3BlcmlvZF9kdXJhdGlvbhgKIAEoAxIRCglpc19saXN0ZWQYCyABKAgSEwoL",
+            "aXNfd2l0aGRyYXcYDCABKAgiTQoMSW52ZXN0RGV0YWlsEhUKDWludmVzdF9z",
+            "eW1ib2wYASABKAkSDgoGYW1vdW50GAIgASgDEhYKDmlzX2Rpc2ludmVzdGVk",
+            "GAMgASgIIrIBCgxQcm9maXREZXRhaWwSFQoNbGF0ZXN0X3BlcmlvZBgBIAEo",
+            "BRIOCgZzeW1ib2wYAiABKAkSFAoMdG90YWxfcHJvZml0GAMgASgDEjIKC2Ft",
+            "b3VudHNfbWFwGAQgAygLMh0uUHJvZml0RGV0YWlsLkFtb3VudHNNYXBFbnRy",
+            "eRoxCg9BbW91bnRzTWFwRW50cnkSCwoDa2V5GAEgASgFEg0KBXZhbHVlGAIg",
+            "ASgDOgI4ASI1ChJDbGFpbWVkUHJvZml0c0luZm8SHwoHZGV0YWlscxgBIAMo",
+            "CzIOLkNsYWltZWRQcm9maXQiZgoNQ2xhaW1lZFByb2ZpdBIeCgpwcm9qZWN0",
+            "X2lkGAEgASgLMgouYWVsZi5IYXNoEhUKDWxhdGVzdF9wZXJpb2QYAiABKAUS",
+            "DgoGc3ltYm9sGAMgASgJEg4KBmFtb3VudBgEIAEoAyJYChdMaXF1aWRhdGVk",
+            "RGFtYWdlRGV0YWlscxITCgt0b3RhbEFtb3VudBgBIAEoAxIoCgdkZXRhaWxz",
+            "GAIgAygLMhcuTGlxdWlkYXRlZERhbWFnZURldGFpbCJmChZMaXF1aWRhdGVk",
+            "RGFtYWdlRGV0YWlsEhsKBHVzZXIYASABKAsyDS5hZWxmLkFkZHJlc3MSDgoG",
+            "c3ltYm9sGAIgASgJEg4KBmFtb3VudBgDIAEoAxIPCgdjbGFpbWVkGAQgASgI",
+            "ImYKDkFkZGl0aW9uYWxJbmZvEicKBGRhdGEYASADKAsyGS5BZGRpdGlvbmFs",
+            "SW5mby5EYXRhRW50cnkaKwoJRGF0YUVudHJ5EgsKA2tleRgBIAEoCRINCgV2",
+            "YWx1ZRgCIAEoCToCOAEiKwoOTGlzdE1hcmtldEluZm8SGQoEZGF0YRgBIAMo",
+            "CzILLkxpc3RNYXJrZXQiOwoKTGlzdE1hcmtldBIdCgZtYXJrZXQYASABKAsy",
+            "DS5hZWxmLkFkZHJlc3MSDgoGd2VpZ2h0GAIgASgFIkYKFkxpcXVpZGF0ZWRE",
+            "YW1hZ2VDb25maWcSLAokZGVmYXVsdF9saXF1aWRhdGVkX2RhbWFnZV9wcm9w",
+            "b3J0aW9uGAEgASgFIrYHChFQcm9qZWN0UmVnaXN0ZXJlZBIeCgpwcm9qZWN0",
+            "X2lkGAEgASgLMgouYWVsZi5IYXNoEhcKD2FjY2VwdGVkX3N5bWJvbBgCIAEo",
+            "CRIWCg5wcm9qZWN0X3N5bWJvbBgDIAEoCRIaChJjcm93ZF9mdW5kaW5nX3R5",
+            "cGUYBCABKAkSIgoaY3Jvd2RfZnVuZGluZ19pc3N1ZV9hbW91bnQYBSABKAMS",
+            "FgoOcHJlX3NhbGVfcHJpY2UYBiABKAMSLgoKc3RhcnRfdGltZRgHIAEoCzIa",
+            "Lmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXASLAoIZW5kX3RpbWUYCCABKAsy",
+            "Gi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wEhgKEG1pbl9zdWJzY3JpcHRp",
+            "b24YCSABKAMSGAoQbWF4X3N1YnNjcmlwdGlvbhgKIAEoAxIZChFwdWJsaWNf",
+            "c2FsZV9wcmljZRgLIAEoAxIpChBsaXN0X21hcmtldF9pbmZvGAwgASgLMg8u",
+            "TGlzdE1hcmtldEluZm8SIQoZbGlxdWlkaXR5X2xvY2tfcHJvcG9ydGlvbhgN",
+            "IAEoBRIvCgt1bmxvY2tfdGltZRgOIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5U",
+            "aW1lc3RhbXASGwoTaXNfZW5hYmxlX3doaXRlbGlzdBgPIAEoCBIgCgx3aGl0",
+            "ZWxpc3RfaWQYECABKAsyCi5hZWxmLkhhc2gSGgoSaXNfYnVybl9yZXN0X3Rv",
+            "a2VuGBEgASgIEhQKDHRvdGFsX3BlcmlvZBgSIAEoBRIoCg9hZGRpdGlvbmFs",
+            "X2luZm8YEyABKAsyDy5BZGRpdGlvbmFsSW5mbxIcChR0YXJnZXRfcmFpc2Vk",
+            "X2Ftb3VudBgUIAEoAxIeCgdjcmVhdG9yGBUgASgLMg0uYWVsZi5BZGRyZXNz",
+            "EiMKG2ZpcnN0X2Rpc3RyaWJ1dGVfcHJvcG9ydGlvbhgWIAEoBRIpCiFyZXN0",
+            "X3BlcmlvZF9kaXN0cmlidXRlX3Byb3BvcnRpb24YFyABKAUSFwoPcGVyaW9k",
+            "X2R1cmF0aW9uGBggASgDEiYKD3ZpcnR1YWxfYWRkcmVzcxgZIAEoCzINLmFl",
+            "bGYuQWRkcmVzcxI2ChJ0b2tlbl9yZWxlYXNlX3RpbWUYGiABKAsyGi5nb29n",
+            "bGUucHJvdG9idWYuVGltZXN0YW1wEiQKHGxpcXVpZGF0ZWRfZGFtYWdlX3By",
+            "b3BvcnRpb24YGyABKAU6BKC7GAEiWwoRTmV3V2hpdGVsaXN0SWRTZXQSHgoK",
+            "cHJvamVjdF9pZBgBIAEoCzIKLmFlbGYuSGFzaBIgCgx3aGl0ZWxpc3RfaWQY",
+            "AiABKAsyCi5hZWxmLkhhc2g6BKC7GAEiZwoVQWRkaXRpb25hbEluZm9VcGRh",
+            "dGVkEh4KCnByb2plY3RfaWQYASABKAsyCi5hZWxmLkhhc2gSKAoPYWRkaXRp",
+            "b25hbF9pbmZvGAIgASgLMg8uQWRkaXRpb25hbEluZm86BKC7GAEiNwoPUHJv",
+            "amVjdENhbmNlbGVkEh4KCnByb2plY3RfaWQYASABKAsyCi5hZWxmLkhhc2g6",
+            "BKC7GAEiSQoNUGVyaW9kVXBkYXRlZBIeCgpwcm9qZWN0X2lkGAEgASgLMgou",
+            "YWVsZi5IYXNoEhIKCm5ld19wZXJpb2QYAiABKAU6BKC7GAEiuwEKCEludmVz",
+            "dGVkEh4KCnByb2plY3RfaWQYASABKAsyCi5hZWxmLkhhc2gSGwoEdXNlchgC",
+            "IAEoCzINLmFlbGYuQWRkcmVzcxIVCg1pbnZlc3Rfc3ltYm9sGAMgASgJEg4K",
+            "BmFtb3VudBgEIAEoAxIUCgx0b3RhbF9hbW91bnQYBSABKAMSFgoOcHJvamVj",
+            "dF9zeW1ib2wYBiABKAkSFwoPdG9fY2xhaW1fYW1vdW50GAcgASgDOgSguxgB",
+            "IpkBCgtEaXNJbnZlc3RlZBIeCgpwcm9qZWN0X2lkGAEgASgLMgouYWVsZi5I",
+            "YXNoEhsKBHVzZXIYAiABKAsyDS5hZWxmLkFkZHJlc3MSFQoNaW52ZXN0X3N5",
+            "bWJvbBgDIAEoCRIaChJkaXNpbnZlc3RlZF9hbW91bnQYBCABKAMSFAoMdG90",
+            "YWxfYW1vdW50GAUgASgDOgSguxgBIoIBChZMaXF1aWRhdGVkRGFtYWdlUmVj",
+            "b3JkEh4KCnByb2plY3RfaWQYASABKAsyCi5hZWxmLkhhc2gSGwoEdXNlchgC",
+            "IAEoCzINLmFlbGYuQWRkcmVzcxIVCg1pbnZlc3Rfc3ltYm9sGAMgASgJEg4K",
+            "BmFtb3VudBgEIAEoAzoEoLsYASKDAQoXTGlxdWlkYXRlZERhbWFnZUNsYWlt",
+            "ZWQSHgoKcHJvamVjdF9pZBgBIAEoCzIKLmFlbGYuSGFzaBIbCgR1c2VyGAIg",
+            "ASgLMg0uYWVsZi5BZGRyZXNzEhUKDWludmVzdF9zeW1ib2wYAyABKAkSDgoG",
+            "YW1vdW50GAQgASgDOgSguxgBIqEBCgdDbGFpbWVkEh4KCnByb2plY3RfaWQY",
+            "ASABKAsyCi5hZWxmLkhhc2gSGwoEdXNlchgCIAEoCzINLmFlbGYuQWRkcmVz",
+            "cxIWCg5wcm9qZWN0X3N5bWJvbBgDIAEoCRIOCgZhbW91bnQYBCABKAMSFQoN",
+            "bGF0ZXN0X3BlcmlvZBgFIAEoBRIUCgx0b3RhbF9wZXJpb2QYBiABKAU6BKC7",
+            "GAEidAoIUmVGdW5kZWQSHgoKcHJvamVjdF9pZBgBIAEoCzIKLmFlbGYuSGFz",
+            "aBIbCgR1c2VyGAIgASgLMg0uYWVsZi5BZGRyZXNzEhUKDWludmVzdF9zeW1i",
+            "b2wYAyABKAkSDgoGYW1vdW50GAQgASgDOgSguxgBIqwBCglXaXRoZHJhd24S",
+            "HgoKcHJvamVjdF9pZBgBIAEoCzIKLmFlbGYuSGFzaBIXCg9hY2NlcHRlZF9z",
+            "eW1ib2wYAiABKAkSFwoPd2l0aGRyYXdfYW1vdW50GAMgASgDEhYKDnByb2pl",
+            "Y3Rfc3ltYm9sGAQgASgJEhoKEmlzX2J1cm5fcmVzdF90b2tlbhgFIAEoCBIT",
+            "CgtidXJuX2Ftb3VudBgGIAEoAzoEoLsYASJvCiFMaXF1aWRhdGVkRGFtYWdl",
+            "UHJvcG9ydGlvblVwZGF0ZWQSHgoKcHJvamVjdF9pZBgBIAEoCzIKLmFlbGYu",
+            "SGFzaBIkChxsaXF1aWRhdGVkX2RhbWFnZV9wcm9wb3J0aW9uGAIgASgFOgSg",
+            "uxgBMqkRCg1Fd2VsbENvbnRyYWN0EjgKCkluaXRpYWxpemUSEC5Jbml0aWFs",
+            "aXplSW5wdXQaFi5nb29nbGUucHJvdG9idWYuRW1wdHkiABI0CghSZWdpc3Rl",
+            "chIOLlJlZ2lzdGVySW5wdXQaFi5nb29nbGUucHJvdG9idWYuRW1wdHkiABJM",
+            "ChRVcGRhdGVBZGRpdGlvbmFsSW5mbxIaLlVwZGF0ZUFkZGl0aW9uYWxJbmZv",
+            "SW5wdXQaFi5nb29nbGUucHJvdG9idWYuRW1wdHkiABIuCgZDYW5jZWwSCi5h",
+            "ZWxmLkhhc2gaFi5nb29nbGUucHJvdG9idWYuRW1wdHkiABI1Cg1Mb2NrTGlx",
+            "dWlkaXR5EgouYWVsZi5IYXNoGhYuZ29vZ2xlLnByb3RvYnVmLkVtcHR5IgAS",
+            "MAoIV2l0aGRyYXcSCi5hZWxmLkhhc2gaFi5nb29nbGUucHJvdG9idWYuRW1w",
+            "dHkiABI+Cg1BZGRXaGl0ZWxpc3RzEhMuQWRkV2hpdGVsaXN0c0lucHV0GhYu",
+            "Z29vZ2xlLnByb3RvYnVmLkVtcHR5IgASRAoQUmVtb3ZlV2hpdGVsaXN0cxIW",
+            "LlJlbW92ZVdoaXRlbGlzdHNJbnB1dBoWLmdvb2dsZS5wcm90b2J1Zi5FbXB0",
+            "eSIAEjIKCk5leHRQZXJpb2QSCi5hZWxmLkhhc2gaFi5nb29nbGUucHJvdG9i",
+            "dWYuRW1wdHkiABJACg5TZXRXaGl0ZWxpc3RJZBIULlNldFdoaXRlbGlzdElk",
+            "SW5wdXQaFi5nb29nbGUucHJvdG9idWYuRW1wdHkiABIwCgZJbnZlc3QSDC5J",
+            "bnZlc3RJbnB1dBoWLmdvb2dsZS5wcm90b2J1Zi5FbXB0eSIAEjEKCURpc2lu",
+            "dmVzdBIKLmFlbGYuSGFzaBoWLmdvb2dsZS5wcm90b2J1Zi5FbXB0eSIAEi4K",
+            "BlJlRnVuZBIKLmFlbGYuSGFzaBoWLmdvb2dsZS5wcm90b2J1Zi5FbXB0eSIA",
+            "EjYKCVJlRnVuZEFsbBIPLlJlRnVuZEFsbElucHV0GhYuZ29vZ2xlLnByb3Rv",
+            "YnVmLkVtcHR5IgASLgoFQ2xhaW0SCy5DbGFpbUlucHV0GhYuZ29vZ2xlLnBy",
+            "b3RvYnVmLkVtcHR5IgASPQoVQ2xhaW1MaXF1aWRhdGVkRGFtYWdlEgouYWVs",
+            "Zi5IYXNoGhYuZ29vZ2xlLnByb3RvYnVmLkVtcHR5IgASQAoYQ2xhaW1MaXF1",
+            "aWRhdGVkRGFtYWdlQWxsEgouYWVsZi5IYXNoGhYuZ29vZ2xlLnByb3RvYnVm",
+            "LkVtcHR5IgASZAogVXBkYXRlTGlxdWlkYXRlZERhbWFnZVByb3BvcnRpb24S",
+            "Ji5VcGRhdGVMaXF1aWRhdGVkRGFtYWdlUHJvcG9ydGlvbklucHV0GhYuZ29v",
+            "Z2xlLnByb3RvYnVmLkVtcHR5IgASQgoXU2V0UHJveHlBY2NvdW50Q29udHJh",
+            "Y3QSDS5hZWxmLkFkZHJlc3MaFi5nb29nbGUucHJvdG9idWYuRW1wdHkiABJO",
+            "ChlTZXRMaXF1aWRhdGVkRGFtYWdlQ29uZmlnEhcuTGlxdWlkYXRlZERhbWFn",
+            "ZUNvbmZpZxoWLmdvb2dsZS5wcm90b2J1Zi5FbXB0eSIAEksKG0dldFdoaXRl",
+            "bGlzdENvbnRyYWN0QWRkcmVzcxIWLmdvb2dsZS5wcm90b2J1Zi5FbXB0eRoN",
+            "LmFlbGYuQWRkcmVzcyIFiIn3AQESOAoIR2V0QWRtaW4SFi5nb29nbGUucHJv",
+            "dG9idWYuRW1wdHkaDS5hZWxmLkFkZHJlc3MiBYiJ9wEBEkcKF0dldFRva2Vu",
+            "Q29udHJhY3RBZGRyZXNzEhYuZ29vZ2xlLnByb3RvYnVmLkVtcHR5Gg0uYWVs",
+            "Zi5BZGRyZXNzIgWIifcBARIxCg5HZXRQcm9qZWN0SW5mbxIKLmFlbGYuSGFz",
+            "aBoMLlByb2plY3RJbmZvIgWIifcBARI5ChJHZXRQcm9qZWN0TGlzdEluZm8S",
+            "Ci5hZWxmLkhhc2gaEC5Qcm9qZWN0TGlzdEluZm8iBYiJ9wEBEjMKDEdldFdo",
+            "aXRlbGlzdBIKLmFlbGYuSGFzaBoQLkV4dHJhSW5mb0lkTGlzdCIFiIn3AQES",
+            "PgoPR2V0SW52ZXN0RGV0YWlsEhUuR2V0SW52ZXN0RGV0YWlsSW5wdXQaDS5J",
+            "bnZlc3REZXRhaWwiBYiJ9wEBEj4KD0dldFByb2ZpdERldGFpbBIVLkdldFBy",
+            "b2ZpdERldGFpbElucHV0Gg0uUHJvZml0RGV0YWlsIgWIifcBARIvCg5HZXRX",
+            "aGl0ZWxpc3RJZBIKLmFlbGYuSGFzaBoKLmFlbGYuSGFzaCIFiIn3AQESSQoa",
+            "R2V0TGlxdWlkYXRlZERhbWFnZURldGFpbHMSCi5hZWxmLkhhc2gaGC5MaXF1",
+            "aWRhdGVkRGFtYWdlRGV0YWlscyIFiIn3AQESQgoeR2V0UHJvamVjdEFkZHJl",
+            "c3NCeVByb2plY3RIYXNoEgouYWVsZi5IYXNoGg0uYWVsZi5BZGRyZXNzIgWI",
+            "ifcBARI/ChhHZXRQZW5kaW5nUHJvamVjdEFkZHJlc3MSDS5hZWxmLkFkZHJl",
+            "c3MaDS5hZWxmLkFkZHJlc3MiBYiJ9wEBEkcKF0dldFByb3h5QWNjb3VudENv",
+            "bnRyYWN0EhYuZ29vZ2xlLnByb3RvYnVmLkVtcHR5Gg0uYWVsZi5BZGRyZXNz",
+            "IgWIifcBARJTChlHZXRMaXF1aWRhdGVkRGFtYWdlQ29uZmlnEhYuZ29vZ2xl",
+            "LnByb3RvYnVmLkVtcHR5GhcuTGlxdWlkYXRlZERhbWFnZUNvbmZpZyIFiIn3",
+            "AQEaO7LM9gEmRXdlbGwuQ29udHJhY3RzLklkby5Fd2VsbENvbnRyYWN0U3Rh",
+            "dGXKyvYBC2FjczEyLnByb3RvQhaqAhNFd2VsbC5Db250cmFjdHMuSWRvYgZw",
+            "cm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::AElf.Types.CoreReflection.Descriptor, global::AElf.OptionsReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.EmptyReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.WrappersReflection.Descriptor, global::AElf.Standards.ACS12.Acs12Reflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Ewell.Contracts.Ido.InitializeInput), global::Ewell.Contracts.Ido.InitializeInput.Parser, new[]{ "AdministratorAddress", "WhitelistContractAddress", "ProxyAccountContractAddress" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ewell.Contracts.Ido.RegisterInput), global::Ewell.Contracts.Ido.RegisterInput.Parser, new[]{ "AcceptedSymbol", "ProjectSymbol", "CrowdFundingType", "CrowdFundingIssueAmount", "PreSalePrice", "StartTime", "EndTime", "MinSubscription", "MaxSubscription", "PublicSalePrice", "ListMarketInfo", "LiquidityLockProportion", "UnlockTime", "IsEnableWhitelist", "WhitelistId", "IsBurnRestToken", "TotalPeriod", "AdditionalInfo", "FirstDistributeProportion", "RestPeriodDistributeProportion", "PeriodDuration", "TokenReleaseTime", "WhitelistUrl" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ewell.Contracts.Ido.RegisterInput), global::Ewell.Contracts.Ido.RegisterInput.Parser, new[]{ "AcceptedSymbol", "ProjectSymbol", "CrowdFundingType", "CrowdFundingIssueAmount", "PreSalePrice", "StartTime", "EndTime", "MinSubscription", "MaxSubscription", "PublicSalePrice", "ListMarketInfo", "LiquidityLockProportion", "UnlockTime", "IsEnableWhitelist", "WhitelistId", "IsBurnRestToken", "TotalPeriod", "AdditionalInfo", "FirstDistributeProportion", "RestPeriodDistributeProportion", "PeriodDuration", "TokenReleaseTime", "WhitelistUrl", "LiquidatedDamageProportion" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Ewell.Contracts.Ido.UpdateAdditionalInfoInput), global::Ewell.Contracts.Ido.UpdateAdditionalInfoInput.Parser, new[]{ "ProjectId", "AdditionalInfo" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Ewell.Contracts.Ido.AddWhitelistsInput), global::Ewell.Contracts.Ido.AddWhitelistsInput.Parser, new[]{ "ProjectId", "Users" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Ewell.Contracts.Ido.RemoveWhitelistsInput), global::Ewell.Contracts.Ido.RemoveWhitelistsInput.Parser, new[]{ "ProjectId", "Users" }, null, null, null, null),
@@ -220,9 +235,10 @@ namespace Ewell.Contracts.Ido {
             new pbr::GeneratedClrTypeInfo(typeof(global::Ewell.Contracts.Ido.GetProfitDetailInput), global::Ewell.Contracts.Ido.GetProfitDetailInput.Parser, new[]{ "ProjectId", "User" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Ewell.Contracts.Ido.SetWhitelistIdInput), global::Ewell.Contracts.Ido.SetWhitelistIdInput.Parser, new[]{ "ProjectId", "IsEnableWhitelist" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Ewell.Contracts.Ido.ReFundAllInput), global::Ewell.Contracts.Ido.ReFundAllInput.Parser, new[]{ "ProjectId", "Users" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ewell.Contracts.Ido.UpdateLiquidatedDamageProportionInput), global::Ewell.Contracts.Ido.UpdateLiquidatedDamageProportionInput.Parser, new[]{ "ProjectId", "LiquidatedDamageProportion" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Ewell.Contracts.Ido.ExtraInfoIdList), global::Ewell.Contracts.Ido.ExtraInfoIdList.Parser, new[]{ "Value" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Ewell.Contracts.Ido.ExtraInfoId), global::Ewell.Contracts.Ido.ExtraInfoId.Parser, new[]{ "Address", "Id" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ewell.Contracts.Ido.ProjectInfo), global::Ewell.Contracts.Ido.ProjectInfo.Parser, new[]{ "ProjectId", "AcceptedSymbol", "ProjectSymbol", "CrowdFundingType", "CrowdFundingIssueAmount", "PreSalePrice", "StartTime", "EndTime", "MinSubscription", "MaxSubscription", "IsBurnRestToken", "AdditionalInfo", "Creator", "TargetRaisedAmount", "CurrentRaisedAmount", "Enabled", "VirtualAddressHash", "TokenReleaseTime" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ewell.Contracts.Ido.ProjectInfo), global::Ewell.Contracts.Ido.ProjectInfo.Parser, new[]{ "ProjectId", "AcceptedSymbol", "ProjectSymbol", "CrowdFundingType", "CrowdFundingIssueAmount", "PreSalePrice", "StartTime", "EndTime", "MinSubscription", "MaxSubscription", "IsBurnRestToken", "AdditionalInfo", "Creator", "TargetRaisedAmount", "CurrentRaisedAmount", "Enabled", "VirtualAddressHash", "TokenReleaseTime", "LiquidatedDamageProportion" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Ewell.Contracts.Ido.ProjectListInfo), global::Ewell.Contracts.Ido.ProjectListInfo.Parser, new[]{ "ProjectId", "PublicSalePrice", "ListMarketInfo", "LiquidityLockProportion", "UnlockTime", "LatestPeriod", "TotalPeriod", "FirstDistributeProportion", "RestPeriodDistributeProportion", "PeriodDuration", "IsListed", "IsWithdraw" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Ewell.Contracts.Ido.InvestDetail), global::Ewell.Contracts.Ido.InvestDetail.Parser, new[]{ "InvestSymbol", "Amount", "IsDisinvested" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Ewell.Contracts.Ido.ProfitDetail), global::Ewell.Contracts.Ido.ProfitDetail.Parser, new[]{ "LatestPeriod", "Symbol", "TotalProfit", "AmountsMap" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
@@ -233,7 +249,8 @@ namespace Ewell.Contracts.Ido {
             new pbr::GeneratedClrTypeInfo(typeof(global::Ewell.Contracts.Ido.AdditionalInfo), global::Ewell.Contracts.Ido.AdditionalInfo.Parser, new[]{ "Data" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
             new pbr::GeneratedClrTypeInfo(typeof(global::Ewell.Contracts.Ido.ListMarketInfo), global::Ewell.Contracts.Ido.ListMarketInfo.Parser, new[]{ "Data" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Ewell.Contracts.Ido.ListMarket), global::Ewell.Contracts.Ido.ListMarket.Parser, new[]{ "Market", "Weight" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ewell.Contracts.Ido.ProjectRegistered), global::Ewell.Contracts.Ido.ProjectRegistered.Parser, new[]{ "ProjectId", "AcceptedSymbol", "ProjectSymbol", "CrowdFundingType", "CrowdFundingIssueAmount", "PreSalePrice", "StartTime", "EndTime", "MinSubscription", "MaxSubscription", "PublicSalePrice", "ListMarketInfo", "LiquidityLockProportion", "UnlockTime", "IsEnableWhitelist", "WhitelistId", "IsBurnRestToken", "TotalPeriod", "AdditionalInfo", "TargetRaisedAmount", "Creator", "FirstDistributeProportion", "RestPeriodDistributeProportion", "PeriodDuration", "VirtualAddress", "TokenReleaseTime" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ewell.Contracts.Ido.LiquidatedDamageConfig), global::Ewell.Contracts.Ido.LiquidatedDamageConfig.Parser, new[]{ "DefaultLiquidatedDamageProportion" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ewell.Contracts.Ido.ProjectRegistered), global::Ewell.Contracts.Ido.ProjectRegistered.Parser, new[]{ "ProjectId", "AcceptedSymbol", "ProjectSymbol", "CrowdFundingType", "CrowdFundingIssueAmount", "PreSalePrice", "StartTime", "EndTime", "MinSubscription", "MaxSubscription", "PublicSalePrice", "ListMarketInfo", "LiquidityLockProportion", "UnlockTime", "IsEnableWhitelist", "WhitelistId", "IsBurnRestToken", "TotalPeriod", "AdditionalInfo", "TargetRaisedAmount", "Creator", "FirstDistributeProportion", "RestPeriodDistributeProportion", "PeriodDuration", "VirtualAddress", "TokenReleaseTime", "LiquidatedDamageProportion" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Ewell.Contracts.Ido.NewWhitelistIdSet), global::Ewell.Contracts.Ido.NewWhitelistIdSet.Parser, new[]{ "ProjectId", "WhitelistId" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Ewell.Contracts.Ido.AdditionalInfoUpdated), global::Ewell.Contracts.Ido.AdditionalInfoUpdated.Parser, new[]{ "ProjectId", "AdditionalInfo" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Ewell.Contracts.Ido.ProjectCanceled), global::Ewell.Contracts.Ido.ProjectCanceled.Parser, new[]{ "ProjectId" }, null, null, null, null),
@@ -244,7 +261,8 @@ namespace Ewell.Contracts.Ido {
             new pbr::GeneratedClrTypeInfo(typeof(global::Ewell.Contracts.Ido.LiquidatedDamageClaimed), global::Ewell.Contracts.Ido.LiquidatedDamageClaimed.Parser, new[]{ "ProjectId", "User", "InvestSymbol", "Amount" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Ewell.Contracts.Ido.Claimed), global::Ewell.Contracts.Ido.Claimed.Parser, new[]{ "ProjectId", "User", "ProjectSymbol", "Amount", "LatestPeriod", "TotalPeriod" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Ewell.Contracts.Ido.ReFunded), global::Ewell.Contracts.Ido.ReFunded.Parser, new[]{ "ProjectId", "User", "InvestSymbol", "Amount" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ewell.Contracts.Ido.Withdrawn), global::Ewell.Contracts.Ido.Withdrawn.Parser, new[]{ "ProjectId", "AcceptedSymbol", "WithdrawAmount", "ProjectSymbol", "IsBurnRestToken", "BurnAmount" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ewell.Contracts.Ido.Withdrawn), global::Ewell.Contracts.Ido.Withdrawn.Parser, new[]{ "ProjectId", "AcceptedSymbol", "WithdrawAmount", "ProjectSymbol", "IsBurnRestToken", "BurnAmount" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ewell.Contracts.Ido.LiquidatedDamageProportionUpdated), global::Ewell.Contracts.Ido.LiquidatedDamageProportionUpdated.Parser, new[]{ "ProjectId", "LiquidatedDamageProportion" }, null, null, null, null)
           }));
     }
     #endregion
@@ -601,6 +619,7 @@ namespace Ewell.Contracts.Ido {
       periodDuration_ = other.periodDuration_;
       tokenReleaseTime_ = other.tokenReleaseTime_ != null ? other.tokenReleaseTime_.Clone() : null;
       whitelistUrl_ = other.whitelistUrl_;
+      liquidatedDamageProportion_ = other.liquidatedDamageProportion_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -886,6 +905,18 @@ namespace Ewell.Contracts.Ido {
       }
     }
 
+    /// <summary>Field number for the "liquidated_damage_proportion" field.</summary>
+    public const int LiquidatedDamageProportionFieldNumber = 24;
+    private int liquidatedDamageProportion_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int LiquidatedDamageProportion {
+      get { return liquidatedDamageProportion_; }
+      set {
+        liquidatedDamageProportion_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -924,6 +955,7 @@ namespace Ewell.Contracts.Ido {
       if (PeriodDuration != other.PeriodDuration) return false;
       if (!object.Equals(TokenReleaseTime, other.TokenReleaseTime)) return false;
       if (WhitelistUrl != other.WhitelistUrl) return false;
+      if (LiquidatedDamageProportion != other.LiquidatedDamageProportion) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -954,6 +986,7 @@ namespace Ewell.Contracts.Ido {
       if (PeriodDuration != 0L) hash ^= PeriodDuration.GetHashCode();
       if (tokenReleaseTime_ != null) hash ^= TokenReleaseTime.GetHashCode();
       if (WhitelistUrl.Length != 0) hash ^= WhitelistUrl.GetHashCode();
+      if (LiquidatedDamageProportion != 0) hash ^= LiquidatedDamageProportion.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -1064,6 +1097,10 @@ namespace Ewell.Contracts.Ido {
         output.WriteRawTag(186, 1);
         output.WriteString(WhitelistUrl);
       }
+      if (LiquidatedDamageProportion != 0) {
+        output.WriteRawTag(192, 1);
+        output.WriteInt32(LiquidatedDamageProportion);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -1166,6 +1203,10 @@ namespace Ewell.Contracts.Ido {
         output.WriteRawTag(186, 1);
         output.WriteString(WhitelistUrl);
       }
+      if (LiquidatedDamageProportion != 0) {
+        output.WriteRawTag(192, 1);
+        output.WriteInt32(LiquidatedDamageProportion);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -1244,6 +1285,9 @@ namespace Ewell.Contracts.Ido {
       }
       if (WhitelistUrl.Length != 0) {
         size += 2 + pb::CodedOutputStream.ComputeStringSize(WhitelistUrl);
+      }
+      if (LiquidatedDamageProportion != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(LiquidatedDamageProportion);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -1346,6 +1390,9 @@ namespace Ewell.Contracts.Ido {
       }
       if (other.WhitelistUrl.Length != 0) {
         WhitelistUrl = other.WhitelistUrl;
+      }
+      if (other.LiquidatedDamageProportion != 0) {
+        LiquidatedDamageProportion = other.LiquidatedDamageProportion;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -1475,6 +1522,10 @@ namespace Ewell.Contracts.Ido {
             WhitelistUrl = input.ReadString();
             break;
           }
+          case 192: {
+            LiquidatedDamageProportion = input.ReadInt32();
+            break;
+          }
         }
       }
     #endif
@@ -1601,6 +1652,10 @@ namespace Ewell.Contracts.Ido {
           }
           case 186: {
             WhitelistUrl = input.ReadString();
+            break;
+          }
+          case 192: {
+            LiquidatedDamageProportion = input.ReadInt32();
             break;
           }
         }
@@ -3765,6 +3820,241 @@ namespace Ewell.Contracts.Ido {
 
   }
 
+  public sealed partial class UpdateLiquidatedDamageProportionInput : pb::IMessage<UpdateLiquidatedDamageProportionInput>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<UpdateLiquidatedDamageProportionInput> _parser = new pb::MessageParser<UpdateLiquidatedDamageProportionInput>(() => new UpdateLiquidatedDamageProportionInput());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<UpdateLiquidatedDamageProportionInput> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Ewell.Contracts.Ido.EwellContractReflection.Descriptor.MessageTypes[11]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public UpdateLiquidatedDamageProportionInput() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public UpdateLiquidatedDamageProportionInput(UpdateLiquidatedDamageProportionInput other) : this() {
+      projectId_ = other.projectId_ != null ? other.projectId_.Clone() : null;
+      liquidatedDamageProportion_ = other.liquidatedDamageProportion_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public UpdateLiquidatedDamageProportionInput Clone() {
+      return new UpdateLiquidatedDamageProportionInput(this);
+    }
+
+    /// <summary>Field number for the "project_id" field.</summary>
+    public const int ProjectIdFieldNumber = 1;
+    private global::AElf.Types.Hash projectId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::AElf.Types.Hash ProjectId {
+      get { return projectId_; }
+      set {
+        projectId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "liquidated_damage_proportion" field.</summary>
+    public const int LiquidatedDamageProportionFieldNumber = 2;
+    private int liquidatedDamageProportion_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int LiquidatedDamageProportion {
+      get { return liquidatedDamageProportion_; }
+      set {
+        liquidatedDamageProportion_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as UpdateLiquidatedDamageProportionInput);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(UpdateLiquidatedDamageProportionInput other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(ProjectId, other.ProjectId)) return false;
+      if (LiquidatedDamageProportion != other.LiquidatedDamageProportion) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (projectId_ != null) hash ^= ProjectId.GetHashCode();
+      if (LiquidatedDamageProportion != 0) hash ^= LiquidatedDamageProportion.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (projectId_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(ProjectId);
+      }
+      if (LiquidatedDamageProportion != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(LiquidatedDamageProportion);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (projectId_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(ProjectId);
+      }
+      if (LiquidatedDamageProportion != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(LiquidatedDamageProportion);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (projectId_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(ProjectId);
+      }
+      if (LiquidatedDamageProportion != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(LiquidatedDamageProportion);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(UpdateLiquidatedDamageProportionInput other) {
+      if (other == null) {
+        return;
+      }
+      if (other.projectId_ != null) {
+        if (projectId_ == null) {
+          ProjectId = new global::AElf.Types.Hash();
+        }
+        ProjectId.MergeFrom(other.ProjectId);
+      }
+      if (other.LiquidatedDamageProportion != 0) {
+        LiquidatedDamageProportion = other.LiquidatedDamageProportion;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            if (projectId_ == null) {
+              ProjectId = new global::AElf.Types.Hash();
+            }
+            input.ReadMessage(ProjectId);
+            break;
+          }
+          case 16: {
+            LiquidatedDamageProportion = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            if (projectId_ == null) {
+              ProjectId = new global::AElf.Types.Hash();
+            }
+            input.ReadMessage(ProjectId);
+            break;
+          }
+          case 16: {
+            LiquidatedDamageProportion = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   /// <summary>
   ///Output
   /// </summary>
@@ -3782,7 +4072,7 @@ namespace Ewell.Contracts.Ido {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ewell.Contracts.Ido.EwellContractReflection.Descriptor.MessageTypes[11]; }
+      get { return global::Ewell.Contracts.Ido.EwellContractReflection.Descriptor.MessageTypes[12]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3960,7 +4250,7 @@ namespace Ewell.Contracts.Ido {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ewell.Contracts.Ido.EwellContractReflection.Descriptor.MessageTypes[12]; }
+      get { return global::Ewell.Contracts.Ido.EwellContractReflection.Descriptor.MessageTypes[13]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4204,7 +4494,7 @@ namespace Ewell.Contracts.Ido {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ewell.Contracts.Ido.EwellContractReflection.Descriptor.MessageTypes[13]; }
+      get { return global::Ewell.Contracts.Ido.EwellContractReflection.Descriptor.MessageTypes[14]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4242,6 +4532,7 @@ namespace Ewell.Contracts.Ido {
       enabled_ = other.enabled_;
       virtualAddressHash_ = other.virtualAddressHash_ != null ? other.virtualAddressHash_.Clone() : null;
       tokenReleaseTime_ = other.tokenReleaseTime_ != null ? other.tokenReleaseTime_.Clone() : null;
+      liquidatedDamageProportion_ = other.liquidatedDamageProportion_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -4467,6 +4758,18 @@ namespace Ewell.Contracts.Ido {
       }
     }
 
+    /// <summary>Field number for the "liquidated_damage_proportion" field.</summary>
+    public const int LiquidatedDamageProportionFieldNumber = 20;
+    private int liquidatedDamageProportion_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int LiquidatedDamageProportion {
+      get { return liquidatedDamageProportion_; }
+      set {
+        liquidatedDamageProportion_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -4500,6 +4803,7 @@ namespace Ewell.Contracts.Ido {
       if (Enabled != other.Enabled) return false;
       if (!object.Equals(VirtualAddressHash, other.VirtualAddressHash)) return false;
       if (!object.Equals(TokenReleaseTime, other.TokenReleaseTime)) return false;
+      if (LiquidatedDamageProportion != other.LiquidatedDamageProportion) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -4525,6 +4829,7 @@ namespace Ewell.Contracts.Ido {
       if (Enabled != false) hash ^= Enabled.GetHashCode();
       if (virtualAddressHash_ != null) hash ^= VirtualAddressHash.GetHashCode();
       if (tokenReleaseTime_ != null) hash ^= TokenReleaseTime.GetHashCode();
+      if (LiquidatedDamageProportion != 0) hash ^= LiquidatedDamageProportion.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -4615,6 +4920,10 @@ namespace Ewell.Contracts.Ido {
         output.WriteRawTag(154, 1);
         output.WriteMessage(TokenReleaseTime);
       }
+      if (LiquidatedDamageProportion != 0) {
+        output.WriteRawTag(160, 1);
+        output.WriteInt32(LiquidatedDamageProportion);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -4697,6 +5006,10 @@ namespace Ewell.Contracts.Ido {
         output.WriteRawTag(154, 1);
         output.WriteMessage(TokenReleaseTime);
       }
+      if (LiquidatedDamageProportion != 0) {
+        output.WriteRawTag(160, 1);
+        output.WriteInt32(LiquidatedDamageProportion);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -4760,6 +5073,9 @@ namespace Ewell.Contracts.Ido {
       }
       if (tokenReleaseTime_ != null) {
         size += 2 + pb::CodedOutputStream.ComputeMessageSize(TokenReleaseTime);
+      }
+      if (LiquidatedDamageProportion != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(LiquidatedDamageProportion);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -4847,6 +5163,9 @@ namespace Ewell.Contracts.Ido {
           TokenReleaseTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
         }
         TokenReleaseTime.MergeFrom(other.TokenReleaseTime);
+      }
+      if (other.LiquidatedDamageProportion != 0) {
+        LiquidatedDamageProportion = other.LiquidatedDamageProportion;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -4954,6 +5273,10 @@ namespace Ewell.Contracts.Ido {
               TokenReleaseTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
             }
             input.ReadMessage(TokenReleaseTime);
+            break;
+          }
+          case 160: {
+            LiquidatedDamageProportion = input.ReadInt32();
             break;
           }
         }
@@ -5064,6 +5387,10 @@ namespace Ewell.Contracts.Ido {
             input.ReadMessage(TokenReleaseTime);
             break;
           }
+          case 160: {
+            LiquidatedDamageProportion = input.ReadInt32();
+            break;
+          }
         }
       }
     }
@@ -5085,7 +5412,7 @@ namespace Ewell.Contracts.Ido {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ewell.Contracts.Ido.EwellContractReflection.Descriptor.MessageTypes[14]; }
+      get { return global::Ewell.Contracts.Ido.EwellContractReflection.Descriptor.MessageTypes[15]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5708,7 +6035,7 @@ namespace Ewell.Contracts.Ido {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ewell.Contracts.Ido.EwellContractReflection.Descriptor.MessageTypes[15]; }
+      get { return global::Ewell.Contracts.Ido.EwellContractReflection.Descriptor.MessageTypes[16]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5971,7 +6298,7 @@ namespace Ewell.Contracts.Ido {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ewell.Contracts.Ido.EwellContractReflection.Descriptor.MessageTypes[16]; }
+      get { return global::Ewell.Contracts.Ido.EwellContractReflection.Descriptor.MessageTypes[17]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -6263,7 +6590,7 @@ namespace Ewell.Contracts.Ido {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ewell.Contracts.Ido.EwellContractReflection.Descriptor.MessageTypes[17]; }
+      get { return global::Ewell.Contracts.Ido.EwellContractReflection.Descriptor.MessageTypes[18]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -6441,7 +6768,7 @@ namespace Ewell.Contracts.Ido {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ewell.Contracts.Ido.EwellContractReflection.Descriptor.MessageTypes[18]; }
+      get { return global::Ewell.Contracts.Ido.EwellContractReflection.Descriptor.MessageTypes[19]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -6750,7 +7077,7 @@ namespace Ewell.Contracts.Ido {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ewell.Contracts.Ido.EwellContractReflection.Descriptor.MessageTypes[19]; }
+      get { return global::Ewell.Contracts.Ido.EwellContractReflection.Descriptor.MessageTypes[20]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -6965,7 +7292,7 @@ namespace Ewell.Contracts.Ido {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ewell.Contracts.Ido.EwellContractReflection.Descriptor.MessageTypes[20]; }
+      get { return global::Ewell.Contracts.Ido.EwellContractReflection.Descriptor.MessageTypes[21]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -7274,7 +7601,7 @@ namespace Ewell.Contracts.Ido {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ewell.Contracts.Ido.EwellContractReflection.Descriptor.MessageTypes[21]; }
+      get { return global::Ewell.Contracts.Ido.EwellContractReflection.Descriptor.MessageTypes[22]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -7452,7 +7779,7 @@ namespace Ewell.Contracts.Ido {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ewell.Contracts.Ido.EwellContractReflection.Descriptor.MessageTypes[22]; }
+      get { return global::Ewell.Contracts.Ido.EwellContractReflection.Descriptor.MessageTypes[23]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -7630,7 +7957,7 @@ namespace Ewell.Contracts.Ido {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ewell.Contracts.Ido.EwellContractReflection.Descriptor.MessageTypes[23]; }
+      get { return global::Ewell.Contracts.Ido.EwellContractReflection.Descriptor.MessageTypes[24]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -7851,6 +8178,195 @@ namespace Ewell.Contracts.Ido {
 
   }
 
+  public sealed partial class LiquidatedDamageConfig : pb::IMessage<LiquidatedDamageConfig>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<LiquidatedDamageConfig> _parser = new pb::MessageParser<LiquidatedDamageConfig>(() => new LiquidatedDamageConfig());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<LiquidatedDamageConfig> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Ewell.Contracts.Ido.EwellContractReflection.Descriptor.MessageTypes[25]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public LiquidatedDamageConfig() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public LiquidatedDamageConfig(LiquidatedDamageConfig other) : this() {
+      defaultLiquidatedDamageProportion_ = other.defaultLiquidatedDamageProportion_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public LiquidatedDamageConfig Clone() {
+      return new LiquidatedDamageConfig(this);
+    }
+
+    /// <summary>Field number for the "default_liquidated_damage_proportion" field.</summary>
+    public const int DefaultLiquidatedDamageProportionFieldNumber = 1;
+    private int defaultLiquidatedDamageProportion_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int DefaultLiquidatedDamageProportion {
+      get { return defaultLiquidatedDamageProportion_; }
+      set {
+        defaultLiquidatedDamageProportion_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as LiquidatedDamageConfig);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(LiquidatedDamageConfig other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (DefaultLiquidatedDamageProportion != other.DefaultLiquidatedDamageProportion) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (DefaultLiquidatedDamageProportion != 0) hash ^= DefaultLiquidatedDamageProportion.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (DefaultLiquidatedDamageProportion != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(DefaultLiquidatedDamageProportion);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (DefaultLiquidatedDamageProportion != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(DefaultLiquidatedDamageProportion);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (DefaultLiquidatedDamageProportion != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(DefaultLiquidatedDamageProportion);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(LiquidatedDamageConfig other) {
+      if (other == null) {
+        return;
+      }
+      if (other.DefaultLiquidatedDamageProportion != 0) {
+        DefaultLiquidatedDamageProportion = other.DefaultLiquidatedDamageProportion;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            DefaultLiquidatedDamageProportion = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 8: {
+            DefaultLiquidatedDamageProportion = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   public sealed partial class ProjectRegistered : pb::IMessage<ProjectRegistered>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -7865,7 +8381,7 @@ namespace Ewell.Contracts.Ido {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ewell.Contracts.Ido.EwellContractReflection.Descriptor.MessageTypes[24]; }
+      get { return global::Ewell.Contracts.Ido.EwellContractReflection.Descriptor.MessageTypes[26]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -7911,6 +8427,7 @@ namespace Ewell.Contracts.Ido {
       periodDuration_ = other.periodDuration_;
       virtualAddress_ = other.virtualAddress_ != null ? other.virtualAddress_.Clone() : null;
       tokenReleaseTime_ = other.tokenReleaseTime_ != null ? other.tokenReleaseTime_.Clone() : null;
+      liquidatedDamageProportion_ = other.liquidatedDamageProportion_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -8232,6 +8749,18 @@ namespace Ewell.Contracts.Ido {
       }
     }
 
+    /// <summary>Field number for the "liquidated_damage_proportion" field.</summary>
+    public const int LiquidatedDamageProportionFieldNumber = 27;
+    private int liquidatedDamageProportion_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int LiquidatedDamageProportion {
+      get { return liquidatedDamageProportion_; }
+      set {
+        liquidatedDamageProportion_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -8273,6 +8802,7 @@ namespace Ewell.Contracts.Ido {
       if (PeriodDuration != other.PeriodDuration) return false;
       if (!object.Equals(VirtualAddress, other.VirtualAddress)) return false;
       if (!object.Equals(TokenReleaseTime, other.TokenReleaseTime)) return false;
+      if (LiquidatedDamageProportion != other.LiquidatedDamageProportion) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -8306,6 +8836,7 @@ namespace Ewell.Contracts.Ido {
       if (PeriodDuration != 0L) hash ^= PeriodDuration.GetHashCode();
       if (virtualAddress_ != null) hash ^= VirtualAddress.GetHashCode();
       if (tokenReleaseTime_ != null) hash ^= TokenReleaseTime.GetHashCode();
+      if (LiquidatedDamageProportion != 0) hash ^= LiquidatedDamageProportion.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -8428,6 +8959,10 @@ namespace Ewell.Contracts.Ido {
         output.WriteRawTag(210, 1);
         output.WriteMessage(TokenReleaseTime);
       }
+      if (LiquidatedDamageProportion != 0) {
+        output.WriteRawTag(216, 1);
+        output.WriteInt32(LiquidatedDamageProportion);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -8542,6 +9077,10 @@ namespace Ewell.Contracts.Ido {
         output.WriteRawTag(210, 1);
         output.WriteMessage(TokenReleaseTime);
       }
+      if (LiquidatedDamageProportion != 0) {
+        output.WriteRawTag(216, 1);
+        output.WriteInt32(LiquidatedDamageProportion);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -8629,6 +9168,9 @@ namespace Ewell.Contracts.Ido {
       }
       if (tokenReleaseTime_ != null) {
         size += 2 + pb::CodedOutputStream.ComputeMessageSize(TokenReleaseTime);
+      }
+      if (LiquidatedDamageProportion != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(LiquidatedDamageProportion);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -8749,6 +9291,9 @@ namespace Ewell.Contracts.Ido {
           TokenReleaseTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
         }
         TokenReleaseTime.MergeFrom(other.TokenReleaseTime);
+      }
+      if (other.LiquidatedDamageProportion != 0) {
+        LiquidatedDamageProportion = other.LiquidatedDamageProportion;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -8897,6 +9442,10 @@ namespace Ewell.Contracts.Ido {
               TokenReleaseTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
             }
             input.ReadMessage(TokenReleaseTime);
+            break;
+          }
+          case 216: {
+            LiquidatedDamageProportion = input.ReadInt32();
             break;
           }
         }
@@ -9048,6 +9597,10 @@ namespace Ewell.Contracts.Ido {
             input.ReadMessage(TokenReleaseTime);
             break;
           }
+          case 216: {
+            LiquidatedDamageProportion = input.ReadInt32();
+            break;
+          }
         }
       }
     }
@@ -9069,7 +9622,7 @@ namespace Ewell.Contracts.Ido {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ewell.Contracts.Ido.EwellContractReflection.Descriptor.MessageTypes[25]; }
+      get { return global::Ewell.Contracts.Ido.EwellContractReflection.Descriptor.MessageTypes[27]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -9313,7 +9866,7 @@ namespace Ewell.Contracts.Ido {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ewell.Contracts.Ido.EwellContractReflection.Descriptor.MessageTypes[26]; }
+      get { return global::Ewell.Contracts.Ido.EwellContractReflection.Descriptor.MessageTypes[28]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -9557,7 +10110,7 @@ namespace Ewell.Contracts.Ido {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ewell.Contracts.Ido.EwellContractReflection.Descriptor.MessageTypes[27]; }
+      get { return global::Ewell.Contracts.Ido.EwellContractReflection.Descriptor.MessageTypes[29]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -9755,7 +10308,7 @@ namespace Ewell.Contracts.Ido {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ewell.Contracts.Ido.EwellContractReflection.Descriptor.MessageTypes[28]; }
+      get { return global::Ewell.Contracts.Ido.EwellContractReflection.Descriptor.MessageTypes[30]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -9990,7 +10543,7 @@ namespace Ewell.Contracts.Ido {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ewell.Contracts.Ido.EwellContractReflection.Descriptor.MessageTypes[29]; }
+      get { return global::Ewell.Contracts.Ido.EwellContractReflection.Descriptor.MessageTypes[31]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -10419,7 +10972,7 @@ namespace Ewell.Contracts.Ido {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ewell.Contracts.Ido.EwellContractReflection.Descriptor.MessageTypes[30]; }
+      get { return global::Ewell.Contracts.Ido.EwellContractReflection.Descriptor.MessageTypes[32]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -10774,7 +11327,7 @@ namespace Ewell.Contracts.Ido {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ewell.Contracts.Ido.EwellContractReflection.Descriptor.MessageTypes[31]; }
+      get { return global::Ewell.Contracts.Ido.EwellContractReflection.Descriptor.MessageTypes[33]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -11092,7 +11645,7 @@ namespace Ewell.Contracts.Ido {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ewell.Contracts.Ido.EwellContractReflection.Descriptor.MessageTypes[32]; }
+      get { return global::Ewell.Contracts.Ido.EwellContractReflection.Descriptor.MessageTypes[34]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -11410,7 +11963,7 @@ namespace Ewell.Contracts.Ido {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ewell.Contracts.Ido.EwellContractReflection.Descriptor.MessageTypes[33]; }
+      get { return global::Ewell.Contracts.Ido.EwellContractReflection.Descriptor.MessageTypes[35]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -11802,7 +12355,7 @@ namespace Ewell.Contracts.Ido {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ewell.Contracts.Ido.EwellContractReflection.Descriptor.MessageTypes[34]; }
+      get { return global::Ewell.Contracts.Ido.EwellContractReflection.Descriptor.MessageTypes[36]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -12120,7 +12673,7 @@ namespace Ewell.Contracts.Ido {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ewell.Contracts.Ido.EwellContractReflection.Descriptor.MessageTypes[35]; }
+      get { return global::Ewell.Contracts.Ido.EwellContractReflection.Descriptor.MessageTypes[37]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -12480,6 +13033,241 @@ namespace Ewell.Contracts.Ido {
           }
           case 48: {
             BurnAmount = input.ReadInt64();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  public sealed partial class LiquidatedDamageProportionUpdated : pb::IMessage<LiquidatedDamageProportionUpdated>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<LiquidatedDamageProportionUpdated> _parser = new pb::MessageParser<LiquidatedDamageProportionUpdated>(() => new LiquidatedDamageProportionUpdated());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<LiquidatedDamageProportionUpdated> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Ewell.Contracts.Ido.EwellContractReflection.Descriptor.MessageTypes[38]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public LiquidatedDamageProportionUpdated() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public LiquidatedDamageProportionUpdated(LiquidatedDamageProportionUpdated other) : this() {
+      projectId_ = other.projectId_ != null ? other.projectId_.Clone() : null;
+      liquidatedDamageProportion_ = other.liquidatedDamageProportion_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public LiquidatedDamageProportionUpdated Clone() {
+      return new LiquidatedDamageProportionUpdated(this);
+    }
+
+    /// <summary>Field number for the "project_id" field.</summary>
+    public const int ProjectIdFieldNumber = 1;
+    private global::AElf.Types.Hash projectId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::AElf.Types.Hash ProjectId {
+      get { return projectId_; }
+      set {
+        projectId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "liquidated_damage_proportion" field.</summary>
+    public const int LiquidatedDamageProportionFieldNumber = 2;
+    private int liquidatedDamageProportion_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int LiquidatedDamageProportion {
+      get { return liquidatedDamageProportion_; }
+      set {
+        liquidatedDamageProportion_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as LiquidatedDamageProportionUpdated);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(LiquidatedDamageProportionUpdated other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(ProjectId, other.ProjectId)) return false;
+      if (LiquidatedDamageProportion != other.LiquidatedDamageProportion) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (projectId_ != null) hash ^= ProjectId.GetHashCode();
+      if (LiquidatedDamageProportion != 0) hash ^= LiquidatedDamageProportion.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (projectId_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(ProjectId);
+      }
+      if (LiquidatedDamageProportion != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(LiquidatedDamageProportion);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (projectId_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(ProjectId);
+      }
+      if (LiquidatedDamageProportion != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(LiquidatedDamageProportion);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (projectId_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(ProjectId);
+      }
+      if (LiquidatedDamageProportion != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(LiquidatedDamageProportion);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(LiquidatedDamageProportionUpdated other) {
+      if (other == null) {
+        return;
+      }
+      if (other.projectId_ != null) {
+        if (projectId_ == null) {
+          ProjectId = new global::AElf.Types.Hash();
+        }
+        ProjectId.MergeFrom(other.ProjectId);
+      }
+      if (other.LiquidatedDamageProportion != 0) {
+        LiquidatedDamageProportion = other.LiquidatedDamageProportion;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            if (projectId_ == null) {
+              ProjectId = new global::AElf.Types.Hash();
+            }
+            input.ReadMessage(ProjectId);
+            break;
+          }
+          case 16: {
+            LiquidatedDamageProportion = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            if (projectId_ == null) {
+              ProjectId = new global::AElf.Types.Hash();
+            }
+            input.ReadMessage(ProjectId);
+            break;
+          }
+          case 16: {
+            LiquidatedDamageProportion = input.ReadInt32();
             break;
           }
         }
