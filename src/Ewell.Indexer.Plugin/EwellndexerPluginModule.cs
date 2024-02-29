@@ -48,5 +48,5 @@ public class EwellIndexerPluginModule : AElfIndexerClientPluginBaseModule<EwellI
     }
 
     protected override string ClientId => "AElfIndexer_Ewell";
-    protected override string Version => "cbaf1be1769e4c4b8469038a4ca4398e";
+    protected override string Version => "a5ca1e69c38b4b6fb13f55fe991866b3";
 }

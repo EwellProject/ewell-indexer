@@ -363,13 +363,6 @@ namespace Ewell.Contracts.Ido {
         __Marshaller_aelf_Hash,
         __Marshaller_google_protobuf_Empty);
 
-    static readonly aelf::Method<global::AElf.Types.Hash, global::Google.Protobuf.WellKnownTypes.Empty> __Method_LockLiquidity = new aelf::Method<global::AElf.Types.Hash, global::Google.Protobuf.WellKnownTypes.Empty>(
-        aelf::MethodType.Action,
-        __ServiceName,
-        "LockLiquidity",
-        __Marshaller_aelf_Hash,
-        __Marshaller_google_protobuf_Empty);
-
     static readonly aelf::Method<global::AElf.Types.Hash, global::Google.Protobuf.WellKnownTypes.Empty> __Method_Withdraw = new aelf::Method<global::AElf.Types.Hash, global::Google.Protobuf.WellKnownTypes.Empty>(
         aelf::MethodType.Action,
         __ServiceName,

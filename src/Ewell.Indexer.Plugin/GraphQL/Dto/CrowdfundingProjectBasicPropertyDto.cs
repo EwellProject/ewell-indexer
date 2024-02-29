@@ -30,4 +30,5 @@ public class CrowdfundingProjectBasicPropertyDto : CrowdfundingProjectBaseDto
     public long ReceivableLiquidatedDamageAmount { get; set; }
     public DateTime? LastModificationTime { get; set; }
     public string VirtualAddress { get; set; }
+    public int? LiquidatedDamageProportion { get; set; }
 }

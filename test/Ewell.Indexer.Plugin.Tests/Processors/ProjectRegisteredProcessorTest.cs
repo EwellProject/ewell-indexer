@@ -29,6 +29,6 @@ public class ProjectRegisteredProcessorTest : EwellIndexerPluginTestBase
         projectIndex.Id.ShouldBe(projectId);
         projectIndex.TargetRaisedAmount.ShouldBe(200000000);
         projectIndex.RestPeriodDistributeProportion.ShouldBe(50);
-        projectIndex.LiquidatedDamageProportion.ShouldBe(20_000000);
+        projectIndex.LiquidatedDamageProportion.ShouldBe(null);
     }
 }

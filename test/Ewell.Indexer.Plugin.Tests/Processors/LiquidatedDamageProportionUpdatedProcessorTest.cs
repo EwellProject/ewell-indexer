@@ -30,12 +30,11 @@ public class LiquidatedDamageProportionUpdatedProcessorTest : EwellIndexerPlugin
         var expectedLiquidatedDamageProportion = 20_000000;
         var logEvent = new LiquidatedDamageProportionUpdated
         {
-            ProjectId = HashHelper.ComputeFrom(ProjectId),
+            ProjectId = HashHelper.ComputeFrom(Id),
             LiquidatedDamageProportion = expectedLiquidatedDamageProportion
         };
         await MockEventProcess(logEvent.ToLogEvent(), processor);
-        var projectId = HashHelper.ComputeFrom(Id).ToHex();
-        var projectIndex = await _crowdfundingProjectRepository.GetFromBlockStateSetAsync(projectId, Chain_AELF);
+        var projectIndex = await _crowdfundingProjectRepository.GetFromBlockStateSetAsync(ProjectId, Chain_AELF);
         projectIndex.ShouldNotBeNull();
         projectIndex.LiquidatedDamageProportion.ShouldBe(expectedLiquidatedDamageProportion);
     }
