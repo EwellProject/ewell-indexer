@@ -36,7 +36,6 @@ public abstract class EwellIndexerPluginTestBase : EwellIndexerOrleansTestBase<E
     public string previousBlockHash = "e38c4fb1cf6af05878657cb3f7b5fc8a5fcfb2eec19cd76b73abb831973fbf4e";
     public string transactionId = "c1e625d135171c766999274a00a7003abed24cfe59a7215aabf1472ef20a2da2";
     public long blockHeight = 120;
-
     public static string Chain_AELF = "tDVV";
     public static string TestSymbol = "Ewell_Test";
     public static string Id = "123456555111";
@@ -144,7 +143,23 @@ public abstract class EwellIndexerPluginTestBase : EwellIndexerOrleansTestBase<E
         };
         return await InitializeBlockStateSetAsync(blockStateSet, logEventContext.ChainId);
     }
+    
+    protected async Task MockEventProcess(LogEvent logEvent, IAElfLogEventProcessor processor)
+    {
+        var logEventContext = MockLogEventContext(blockHeight, Chain_AELF);
 
+        // step1: create blockStateSet
+        var blockStateSetKey = await MockBlockState(logEventContext);
+
+        // step2: create logEventInfo
+        var logEventInfo = MockLogEventInfo(logEvent);
+
+        // step3 call the logic
+        await processor.HandleEventAsync(logEventInfo, logEventContext);
+
+        // step4 save data after logic
+        await BlockStateSetSaveDataAsync<LogEventInfo>(blockStateSetKey);
+    }
 
     protected async Task MockProjectRegistered()
     {
@@ -201,7 +216,7 @@ public abstract class EwellIndexerPluginTestBase : EwellIndexerOrleansTestBase<E
             TransactionId = transactionId,
             BlockTime = DateTime.UtcNow
         };
-
+        
         var processor = GetRequiredService<ProjectRegisteredProcessor>();
         await processor.HandleEventAsync(logEventInfo, logEventContext);
 

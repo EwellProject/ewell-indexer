@@ -2,6 +2,7 @@
 using AElfIndexer.Client;
 using AElfIndexer.Client.Handlers;
 using AElfIndexer.Grains.State.Client;
+using Ewell.Contracts.Ido;
 using Ewell.Indexer.Plugin.GraphQL;
 using Ewell.Indexer.Plugin.GraphQL.Dto;
 using Ewell.Indexer.Plugin.Processors;
@@ -36,6 +37,7 @@ public class EwellIndexerPluginModule : AElfIndexerClientPluginBaseModule<EwellI
         serviceCollection.AddSingleton<IAElfLogEventProcessor<LogEventInfo>, RefundedProcessor>();
         serviceCollection.AddSingleton<IAElfLogEventProcessor<LogEventInfo>, ClaimedProcessor>();
         serviceCollection.AddSingleton<IAElfLogEventProcessor<LogEventInfo>, AdditionalInfoUpdatedProcessor>();
+        serviceCollection.AddSingleton<IAElfLogEventProcessor<LogEventInfo>, LiquidatedDamageProportionUpdatedProcessor>();
         serviceCollection.AddSingleton<IAElfLogEventProcessor<LogEventInfo>, ClaimDamageLogEventProcessor>();
         serviceCollection.AddSingleton<IAElfLogEventProcessor<LogEventInfo>, NewWhitelistIdSetLogEventProcessor>();
         serviceCollection.AddSingleton<IAElfLogEventProcessor<LogEventInfo>, PeriodUpdatedProcessor>();
