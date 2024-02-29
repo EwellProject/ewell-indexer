@@ -593,7 +593,6 @@ namespace Ewell.Contracts.Ido {
       }
     }
     #endregion
-    
   }
 }
 #endregion
