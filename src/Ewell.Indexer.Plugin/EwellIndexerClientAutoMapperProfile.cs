@@ -31,6 +31,8 @@ public class EwellIndexerClientAutoMapperProfile : Profile
                 => opt.MapFrom(source => source.UnlockTime == null ? (DateTime?)null : source.UnlockTime.ToDateTime()
                 )).ForMember(des => des.WhitelistId, opt
                 => opt.MapFrom(source => source.WhitelistId == null ? string.Empty : source.WhitelistId.ToHex()
+                )).ForMember(des => des.LiquidatedDamageProportion, opt
+                => opt.MapFrom(source => source.LiquidatedDamageProportion != null ? source.LiquidatedDamageProportion.Value : (int?)null
                 ));
         // agent
         CreateMap<ProxyAccountCreated, ProxyAccountIndex>()
